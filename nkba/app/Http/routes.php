@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	Notify::success('مرحبا','تسجيل دخول');
+	Notify::success('مرحبا','تسجيل الدخول');
     return view('welcome');
 });
 
