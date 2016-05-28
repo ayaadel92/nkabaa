@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+	Notify::success('مرحبا','تسجيل دخول');
     return view('welcome');
 });
 
@@ -27,3 +28,6 @@ Route::auth();
   Route::resource('/fin', 'EngineerController');
   
   Route::resource('/member-aditions', 'MemberAditionsController');
+
+  Route::post('transfer', 
+  ['as' => 'transfer_store', 'uses' => 'TransferController@transfer']);
