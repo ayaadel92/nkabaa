@@ -30,4 +30,8 @@ Route::auth();
   Route::resource('/member-aditions', 'MemberAditionsController');
 
   Route::post('transfer', 
-  ['as' => 'transfer_store', 'uses' => 'TransferController@transfer']);
+  ['as' => 'transfer_store', 'uses' => 'TransferController@store']);
+
+   Route::get('/new', function(){
+   	return view('transfer/new');
+   });

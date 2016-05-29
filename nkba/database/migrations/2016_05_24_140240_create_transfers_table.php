@@ -16,11 +16,12 @@ class CreateTransfersTable extends Migration
             $table->increments('id');
             $table->string('transfer_date');
             $table->string('eng_id');
+            $table->string('health_id');
             $table->string('patient_name');
-            $table->enum('patient_type', ['Engineer', 'Relative']); 
+            $table->enum('patient_type', ['engineer', 'relative']); 
             $table->integer('percentage');
-            $table->enum('status', ['Accepted', 'Refused'])->nullable(); 
-            $table->enum('type', ['Rediopology', 'Analysis','Surgery']); 
+            $table->string('status')->nullable(); 
+            $table->enum('type', ['rediopology', 'analysis']); 
             $table->integer('total_cost');
             $table->string('medical_diagnosis');
             $table->integer('doctor_name')->unsigned()->nullable();

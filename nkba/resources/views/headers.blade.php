@@ -26,13 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="/assets/js/modernizr.custom.53451.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/js/jquery.gallery.js"></script>
-<!--   <script type="text/javascript">
-   $(function() {
-    $('#dg-container').gallery({
-     autoplay : true
-    });
-   });
-  </script> -->
+
 
   <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
@@ -56,4 +50,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  textarea {
    resize: none;
 }
+li{
+  text-decoration-style: none;
+}
   </style>
+
