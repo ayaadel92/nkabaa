@@ -16,6 +16,7 @@ class CreateEngineersTable extends Migration
             $table->increments('id');
             $table->string('name'); // 2sm el mohnds 
             $table->string('email');
+            $table->enum('joined',['yes','no']);
             $table->string('national_id')->nullable(); // dah rkm el bt2a 
             $table->string('address'); // 3nwan el mohds 
             $table->string('phone_number')->nullable(); // rkm el phone el mohnds 
