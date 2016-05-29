@@ -27,3 +27,5 @@ Route::auth();
   Route::resource('/fin', 'EngineerController');
   
   Route::resource('/member-aditions', 'MemberAditionsController');
+  
+  Route::resource('/task', 'TasksController');

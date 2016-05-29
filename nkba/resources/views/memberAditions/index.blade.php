@@ -30,11 +30,15 @@
                                 <li>الاشتراك لزوجه 140 </li>
                             </ul>
                         </div>
+<div class="container-fluid">
+    <canvas id="PieChart" style="width:50%;"></canvas>
+</div>
 
 
                         <button  id="show" class="hvr-shutter-in-horizontal more">اضف عضو جديد <span class= "glyphicon glyphicon-plus"> </span></button>
 
-
+ <div class="clearfix"></div>
+        <div class="clearfix"></div> 
                         <div  id="hidden" >
                             <div class="container">
                                 <div id="custom_carousel" class="carousel slide" data-ride="carousel" >
@@ -43,10 +47,22 @@
                                         <div class="item active">
                                             <div class="container">
                                                 <div class="row">
-                                                    <div class="col-md-3"><img src="/assets/images/post3.jpg" class="img-responsive"></div>
+                                                    <div class="col-md-3"><img src="/assets/images/pic8.jpg" class="img-responsive"></div>
                                                     <div class="col-md-9">
                                                         <h2>لاشتراك لوالد الورق المطلوب رفعه </h2>
-                                                       
+                                                    {{ Form::open(array('route' => 'member-aditions.store', 'files' => true)) }}
+
+                                                    <li>
+						<div class="form-group">
+							{{ Form::label('path', 'اختر صورة') }}
+							{{ Form::file('path') }}
+						</div>
+				                    	</li>
+
+                                                        <button type="submit" class="btn btn-default">edit</button>
+                                                        {!! Form::close() !!}
+
+
                                                     </div>
                                                 </div>
                                             </div>            
@@ -54,10 +70,9 @@
                                         <div class="item">
                                             <div class="container">
                                                 <div class="row">
-                                                    <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                                    <div class="col-md-3"><img src="/assets/images/pic7.jpg" class="img-responsive"></div>
                                                     <div class="col-md-9">
                                                         <h2>Slide 2</h2>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
                                                     </div>
                                                 </div>
                                             </div>            
@@ -65,10 +80,9 @@
                                         <div class="item">
                                             <div class="container">
                                                 <div class="row">
-                                                    <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                                    <div class="col-md-3"><img src="/assets/images/pic9.jpg" class="img-responsive"></div>
                                                     <div class="col-md-9">
                                                         <h2>Slide 4</h2>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
                                                     </div>
                                                 </div>
                                             </div>           
@@ -76,10 +90,9 @@
                                         <div class="item">
                                             <div class="container">
                                                 <div class="row">
-                                                    <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                                                    <div class="col-md-3"><img src="/assets/images/pic10.jpg" class="img-responsive"></div>
                                                     <div class="col-md-9">
                                                         <h2>Slide 3</h2>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
                                                     </div>
                                                 </div>
                                             </div>           
@@ -89,10 +102,10 @@
                                     <!-- End Carousel Inner -->
                                     <div class="controls">
                                         <ul class="nav">
-                                            <li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img src="http://placehold.it/50x50"><small>Slide One</small></a></li>
-                                            <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://placehold.it/50x50"><small>Slide Two</small></a></li>
-                                            <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://placehold.it/50x50"><small>Slide Three</small></a></li>
-                                            <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://placehold.it/50x50"><small>Slide Four</small></a></li>
+                                            <li data-target="#custom_carousel" data-slide-to="0" class="hvr-shutter-in-horizontal more"><a href="#"><small>Slide One</small></a></li>
+                                            <li data-target="#custom_carousel" data-slide-to="1" class="hvr-shutter-in-horizontal more"><a href="#"><small>Slide Two</small></a></li>
+                                            <li data-target="#custom_carousel" data-slide-to="2" class="hvr-shutter-in-horizontal more"><a href="#"><small>Slide Three</small></a></li>
+                                            <li data-target="#custom_carousel" data-slide-to="3" class="hvr-shutter-in-horizontal more"><a href="#"><small>Slide Four</small></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -175,7 +188,7 @@
 
         <div class="clearfix"></div>
         <div class="clearfix"></div>       
-        <div class="clearfix"></div>
+        <div style="height:200px"></div>
 
 
 

@@ -148,7 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        Fx3costa\Laravelchartjs\Providers\ChartjsServiceProvider::class,
         /*
          * Application Service Providers...
          */
