@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-{{ Form::open(array('route' => 'transfer_store' ))}}    
+{{ Form::open(array('route' => 'transfer.store' ))}}    
 <div class="table-responsive">
   <table class=" table col-sm-8 teble-restrict">  
 
@@ -103,7 +103,7 @@
     <td>{{Form::label(' التاريخ',' التاريخ',array('class' => 'style' ))}}</td>
     <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-calendar"></i>
                                                                                      </span>
-              {{ Form::date('date', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-8']) }}
+              {{ Form::date('transfer_date', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-8']) }}
     </td>
 </tr>  
 
@@ -119,7 +119,13 @@
     </div>
 </div>
 
-
+@if($errors->any())
+    <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </div>
+@endif
 
 <button class="btn btn-info" onclick="
 @if (Session::has('notifier.notice'))
