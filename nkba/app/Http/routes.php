@@ -13,22 +13,22 @@
 
 Route::get('/', function () {
 	Notify::success('مرحبا','تسجيل الدخول');
-    return view('welcome');
+	return view('welcome');
 });
 
 Route::auth();
 
- Route::resource('/home', 'HomeController');
- 
- Route::resource('/engineer', 'EngineerController');
+Route::resource('/home', 'HomeController');
+
+Route::resource('/engineer', 'EngineerController');
 //Route::put('/home/id', 'HomeController@update');
 
- Route::resource('/users', 'UserController');
- 
-  Route::resource('/fin', 'EngineerController');
-  
-  Route::resource('/member-aditions', 'MemberAditionsController');
+Route::resource('/users', 'UserController');
 
-  Route::resource('transfer','TransferController');
+Route::resource('/fin', 'EngineerController');
 
-   Route::resource('/create','TransferController@create');
+Route::resource('/member-aditions', 'MemberAditionsController');
+
+Route::resource('transfer','TransferController');
+
+Route::resource('/create','TransferController@create');
