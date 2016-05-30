@@ -84,4 +84,17 @@ class AEngineersController extends Controller
         ->withErrors($validation)
         ->with('message', 'There were validation errors.');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        // get the engineer
+        $engineer = Engineer::find($id);
+        return View('admin.engineers.show',compact('engineer'));
+    }
 }
