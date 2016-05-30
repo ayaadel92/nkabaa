@@ -9,12 +9,11 @@
 				عرض كل المهندسين
 			</header>
 			<div class="panel-body">
-				@if ($users->count())
+				@if ($engineers->count())
 				<table class="table" >
 					<thead>
 						<tr>
 							<th style="float: right;">id</th>
-							<th style="float: right;">role</th>
 							<th style="float: right;">name</th>
 							<th style="float: right;">email</th>
 							<th style="float: right;">password</th>
@@ -25,24 +24,23 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($users as $user)
+						@foreach($engineers as $engineer)
 						<tr>
-							<td style="float: right;">{{ $user['id']}}</td>
-							<td style="float: right;">{{ $user['role'] }}</td>
-							<td style="float: right;">{{ $user['name'] }}</td>
-							<td style="float: right;">{{ $user['email'] }}</td>
-							<td style="float: right;">{{ $user['password'] }}</td>
-							<td style="float: right;">{{ $user['relative_num'] }}</td>
-							<td style="float: right;">{{ $user['eng_id'] }}</td>
-							<td style="float: right;">{{ $user['gradu_year'] }}</td>
+							<td style="float: right;">{{ $engineer['id']}}</td>
+							<td style="float: right;">{{ $engineer['name'] }}</td>
+							<td style="float: right;">{{ $engineer['email'] }}</td>
+							<td style="float: right;">{{ $engineer['password'] }}</td>
+							<td style="float: right;">{{ $engineer['relative_num'] }}</td>
+							<td style="float: right;">{{ $engineer['eng_id'] }}</td>
+							<td style="float: right;">{{ $engineer['gradu_year'] }}</td>
 							<td style="float: right;">
-								{{ link_to_route('admin-engineer.show', 'عرض', array($user->id), array('class' => 'btn btn-info')) }}
+								{{ link_to_route('admin-engineer.show', 'عرض', array($engineer->id), array('class' => 'btn btn-info')) }}
 							</td>
 							<td style="float: right;">
-								{{ link_to_route('admin-engineer.edit', 'تعديل', array($user->id), array('class' => 'btn btn-success')) }}
+								{{ link_to_route('admin-engineer.edit', 'تعديل', array($engineer->id), array('class' => 'btn btn-success')) }}
 							</td>
 							<td style="float: right;">
-								{{ Form::open(array('method' => 'DELETE', 'route' => array('admin-engineer.destroy', $user->id))) }}
+								{{ Form::open(array('method' => 'DELETE', 'route' => array('admin-engineer.destroy', $engineer->id))) }}
 								{{ Form::submit('حذف', array('class' => 'btn btn-danger')) }}
 								{{ Form::close() }}
 							</td>
