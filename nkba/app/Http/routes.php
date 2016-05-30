@@ -32,3 +32,6 @@ Route::resource('/member-aditions', 'MemberAditionsController');
 Route::resource('transfer','TransferController');
 
 Route::resource('/create','TransferController@create');
+
+//Admin routes
+Route::resource('admin','AdminController');
