@@ -97,4 +97,39 @@ class AEngineersController extends Controller
         $engineer = Engineer::find($id);
         return View('admin.engineers.show',compact('engineer'));
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $engineer = Engineer::find($id);
+        return View('admin.engineers.edit',compact('engineer'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $engineer = Engineer::findOrFail($id);
+        $validation=$this->validate($request, [
+            'name' => 'required',
+            'email' => 'required'
+            ]);
+        $input = $request->all();
+        $engineer->fill($input)->save();
+        return Redirect::route('admin-engineer.show',$engineer->id)
+        ->withInput()
+        ->withErrors($validation)
+        ->with('message', 'There were validation errors.');
+    }
+
 }
