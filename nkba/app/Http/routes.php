@@ -12,7 +12,8 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+	Notify::success('مرحبا','تسجيل الدخول');
+	return view('welcome');
 });
 
 Route::auth();
@@ -32,3 +33,12 @@ Route::resource('/task', 'TasksController');
 
 Route::resource('/complain', 'ComplaintssController');
 
+
+
+Route::resource('transfer','TransferController');
+
+Route::resource('/create','TransferController@create');
+
+//Admin routes
+Route::resource('admin','AdminController');
+Route::resource('admin-engineer','Admin\Engineers\AEngineersController');

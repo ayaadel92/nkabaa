@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -149,6 +149,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Fx3costa\Laravelchartjs\Providers\ChartjsServiceProvider::class,
+        Jleon\LaravelPnotify\NotifyServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -204,6 +206,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
          'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+         'Notify' => Jleon\LaravelPnotify\Notify::class,
 
     ],
 

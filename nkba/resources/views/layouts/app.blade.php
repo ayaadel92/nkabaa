@@ -5,11 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>نقابة المهندسين</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+
+<!-- jQuery -->
+<script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+<!-- jQuery UI -->
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" media="all" rel="stylesheet" type="text/css" />
+<!--     PNotify -->  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/pnotify.core.min.css"/>
+<!--     <link rel="stylesheet" href="/assets/css/pnotify.buttons.min.css"/> 
+ --> <link href="/assets/css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/jquery.pnotify.default.css">
+
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -26,6 +38,7 @@
     </style>
 
     @include('headers')
+
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -41,18 +54,16 @@
                 </button>
                 
                  <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
-                </a>
+            
+            <a class="navbar-brand" href="{{url('/')}}">الرئيسية</a>
             </div>
-
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                      @if (!Auth::guest())
                          @if (Auth::user()->type == "engineer")
                          
-                    <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الرئيسية</a></li>
+                    <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a></li>
                             @endif
                     @else
                      <li><a href="{{ url('/login') }}">الرئيسية</a></li>
@@ -80,15 +91,25 @@
             </div>
         </div>
     </nav>
-
+@include('laravelPnotify::notify')
     @yield('content')
     
     
     
 
+  
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
+       <!-- pnotify -->
+       <script type="text/javascript" src="/assets/js/jquery.pnotify.js"></script>
+
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="/assets/js/pnotify.core.min.js"></script>
+<!--     <script type="text/javascript" src="assets/js/pnotify.buttons.min.js"></script>
+ -->    <script type="text/javascript" src="/assets/js/pnotify.custom.min.js"></script>
 </body>
 </html>
