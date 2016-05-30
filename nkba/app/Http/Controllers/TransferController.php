@@ -19,9 +19,9 @@ class TransferController extends Controller
 
     	public function store(Request $request){
 
-    		$input=Input::all();
-    		$validation=Validator::make($input, Transfer::$transfer_rules);
-    		$transfer= new Transfer;
+		$input=Input::all();
+		$validation=Validator::make($input, Transfer::$transfer_rules);
+		$transfer= new Transfer;
     		  if ($validation->passes())
 		        {                 
 		        		
@@ -39,13 +39,11 @@ class TransferController extends Controller
 		        	$transfer->percentage=$input['percentage'];
 		        	$transfer->transfer_date=$input['transfer_date']	;
 		        	$transfer->save();
-		        }
-		        $id=$transfer->id;
-		        	Notify::success('مرحبا',$id);
-
-		        //$this->show($id);
-		       // return view('transfer.new');
-		     return Redirect::route('transfer.show',$id)->withErrors($validation);
+		           $id=$transfer->id;
+		           //$this->show($id);
+		           // return view('transfer.new');
+		           return Redirect::route('transfer.show',$id)->withErrors($validation);
+		     }		     
 	}
 
 	public function show($id)

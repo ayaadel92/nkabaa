@@ -9,7 +9,7 @@
         <td>{{ Form::label ('ﺭﻗﻢ اﻟﻌﻀﻮﻳﻪ ' ,'ﺭﻗﻢ اﻟﻌﻀﻮﻳﻪ ',array('class' => 'style control-label' ) ) }}</td>
           <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil">   </i>
                                                                                                      </span>
-                    {{ Form::text('eng_id', null, array('class'=>'form-control col-sm-8')) }}
+                    {{ Form::text('eng_id', null, array('required','class'=>'form-control col-sm-8')) }}
           </td>           
    </tr>
 
@@ -17,7 +17,7 @@
           <td>{{Form::label(' ﺭﻗﻢ اﻟﺒﻄﺎﻗﺔ اﻟﻌﻼﺟﻴﺔ ',' ﺭﻗﻢ اﻟﺒﻄﺎﻗﺔ اﻟﻌﻼﺟﻴﺔ ',array('class' => 'style' ) )}}</td>
           <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
                                                                                                  </span>
-                    {{ Form::text('health_id', null,array('class'=>'form-control col-sm-8')) }}
+                    {{ Form::text('health_id', null,array('required','class'=>'form-control col-sm-8')) }}
           </td>
    </tr>
 
@@ -25,7 +25,15 @@
           <td>{{Form::label(' اسم المريض ',' اسم المريض ',array('class' => 'style' ))}}</td>
           <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
                                                                                           </span>
-                    {{ Form::text('patient_name', null,array('class'=>'form-control col-sm-8')) }}
+                    {{ Form::text('patient_name', null,array('required','class'=>'form-control col-sm-8')) }}
+         </td>
+   </tr>
+
+      <tr>      
+          <td>{{Form::label(' رقم الريض ',' رقم الريض ',array('class' => 'style' ))}}</td>
+          <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
+                                                                                          </span>
+                    {{ Form::text('patient_number', null,array('required','class'=>'form-control col-sm-8')) }}
          </td>
    </tr>
 
@@ -34,7 +42,7 @@
              <td>{{Form::label(' درجة القرابة ',' درجة القرابة ',array('class' => 'style' ))}}</td>
               <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i>
                                                                                                          </span>
-                      {{ Form::select('patient_type',['engineer'=>'المهندس','relative'=>'قريب'],'المهندس',array('class'=>'form-control col-sm-8')) }}
+                      {{ Form::select('patient_type',['engineer'=>'المهندس','relative'=>'قريب'],'المهندس',array('required','class'=>'form-control col-sm-8')) }}
              </td>
      </div>
   </tr>   
@@ -42,14 +50,14 @@
   <tr>      
       <td>{{Form::label(' التشخيص الطبى ',' التشخيص الطبى ',array('class' => 'style' ))}}</td>
       <td>
-          {{ Form::textarea('medical_diagnosis', null,array('class'=>'form-control col-sm-9', 'rows' => 3)) }}</td>
+          {{ Form::textarea('medical_diagnosis', null,array('required','class'=>'form-control col-sm-9', 'rows' => 3)) }}</td>
   </tr>
 
   <tr>      
         <td>{{Form::label(' نوع التحويل',' نوع التحويل',array('class' => 'style' ))}}</td>
         <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i>
                                                                                                          </span>
-                  {{ Form::select('type',['rediopology'=>'أشعة','analysis'=>'تحليل'],'analysis',array('class'=>'form-control col-sm-8')) }}
+                  {{ Form::select('type',['rediopology'=>'أشعة','analysis'=>'تحليل'],'analysis',array('required','class'=>'form-control col-sm-8')) }}
         </td>
  </tr>
 
@@ -80,7 +88,7 @@
     <td>{{Form::label(' التكلفة الكلية',' التكلفة الكلية',array('class' => 'style' ))}}</td>
     <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
 
-              {{ Form::text('total_cost', null, ['class'=>'form-control col-sm-8']) }}
+              {{ Form::text('total_cost', null, array('required','class'=>'form-control col-sm-8')) }}
     </td>
 </tr>            
 <tr>      

@@ -20,5 +20,4 @@ class Transfer extends Model
                     'total_cost'	              =>' required'
 );
 
-    
-}
+

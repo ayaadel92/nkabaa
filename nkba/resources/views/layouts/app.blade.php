@@ -54,18 +54,19 @@
                 </button>
                 
                  <!-- Branding Image -->
+            
+            <a class="navbar-brand" href="{{url('/')}}">الرئيسية</a>
             </div>
-
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                      @if (!Auth::guest())
                          @if (Auth::user()->type == "engineer")
                          
-                    <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الرئيسية</a></li>
+                    <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a></li>
                             @endif
                     @else
-                     <li><a href="{{ url('/') }}">الرئيسية</a></li>
+                     <li><a href="{{ url('/login') }}">الرئيسية</a></li>
                        @endif
                 </ul>
 
