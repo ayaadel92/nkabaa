@@ -35,7 +35,7 @@
                                                                                           </span>
                     {{ Form::text('patient_number', null,array('required','class'=>'form-control col-sm-8')) }}
          </td>
-   </tr>
+   </tr>                
 
    <tr>  
         <div class="form-group">      

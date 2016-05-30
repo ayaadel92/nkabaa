@@ -28,6 +28,12 @@
                     {{ Form::text('patient_name',  $transfer_row->patient_name ,array('class'=>'form-control col-sm-8','disabled')) }}
          </td>
    </tr>
+         <tr>      
+          <td>{{Form::label(' رقم الريض ',' رقم الريض ',array('class' => 'style' ))}}</td>
+          <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
+                                                                                          </span>
+                    {{ Form::text('patient_number', null$transfer_row->patient_id
+   </tr> 
 
    <tr>  
         <div class="form-group">      

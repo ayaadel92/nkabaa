@@ -70,20 +70,16 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         $user= User::create([
-//            'name' => $data['name'],
             'email' => $data['email'],
             
             'login' => $data['login'],
-            
-            
-            
-            
+
             'password' => bcrypt($data['password']),
         ]);
         Mail::send('emails.welcome',$data,function($message) use ($data)
          {
-         $message->from('nkapaproject@gmail.com','Learn Laravel');
-         $message->to($data['email'])->subject('Learn Laravel test email');
+         $message->from('nkabaalex@gmail.com','password' :$data['password']);
+         $message->to($data['email'])->subject('تفعيل الاشتراك بخدمات النقابة ');
          });       
         
         return $user;
