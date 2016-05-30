@@ -44,8 +44,8 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav ">
                     <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">المعلومات الشخيصه </a></li>
-                    <li><a href="#section2">كشف حساب </a></li>
-                    <li><a href="#section5">الشكاوي </a></li>
+                    <li><a href="{{ url('/fin') }}/{{ Auth::user()->id }}">كشف حساب </a></li>
+                    <li><a href="{{ url('/complain') }}/{{ Auth::user()->id }}">الشكاوي </a></li>
                     <li><a href="{{ url('/task') }}/{{ Auth::user()->id }}">مواعيدك </a></li>
                     <li><a href="#section5">اقرب دكتور اليك </a></li>
                     <li class="dropdown">

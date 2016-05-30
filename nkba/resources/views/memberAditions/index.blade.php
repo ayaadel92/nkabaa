@@ -30,9 +30,7 @@
                                 <li>الاشتراك لزوجه 140 </li>
                             </ul>
                         </div>
-<div class="container-fluid">
-    <canvas id="PieChart" style="width:50%;"></canvas>
-</div>
+
 
 
                         <button  id="show" class="hvr-shutter-in-horizontal more">اضف عضو جديد <span class= "glyphicon glyphicon-plus"> </span></button>
