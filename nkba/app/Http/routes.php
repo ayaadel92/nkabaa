@@ -35,3 +35,4 @@ Route::resource('/create','TransferController@create');
 
 //Admin routes
 Route::resource('admin','AdminController');
+Route::resource('admin-engineer','Admin\Engineers\AEngineersController');
