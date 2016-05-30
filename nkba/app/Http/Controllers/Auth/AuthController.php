@@ -78,7 +78,7 @@ class AuthController extends Controller
         ]);
         Mail::send('emails.welcome',$data,function($message) use ($data)
          {
-         $message->from('nkabaalex@gmail.com','password' :$data['password']);
+         $message->from('nkabaalex@gmail.com',$data['password']);
          $message->to($data['email'])->subject('تفعيل الاشتراك بخدمات النقابة ');
          });       
         
