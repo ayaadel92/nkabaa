@@ -132,4 +132,18 @@ class AEngineersController extends Controller
         ->with('message', 'There were validation errors.');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $engineer = Engineer::findOrFail($id);
+        $engineer->delete();
+        return Redirect::route('admin-engineer.index');
+    }
+
+
 }
