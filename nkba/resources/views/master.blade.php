@@ -48,6 +48,7 @@
                     <li><a href="{{ url('/complain') }}/{{ Auth::user()->id }}">الشكاوي </a></li>
                     <li><a href="{{ url('/task') }}/{{ Auth::user()->id }}">مواعيدك </a></li>
                     <li><a href="#section5">اقرب دكتور اليك </a></li>
+                    @if (Auth::user()->role == "engineer")
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">الاشتراكات 
                             <span class="caret"></span></a>
@@ -57,6 +58,7 @@
                             <li><a href="#"> تجديد الاشتراك</a></li> 
                         </ul>
                     </li>
+                    @endif
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container -->

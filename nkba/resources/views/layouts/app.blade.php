@@ -60,13 +60,18 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية
-                    </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
+                    @if (!Auth::guest())
+                        @if (Auth::user()->role == "engineer" || Auth::user()->role == "relative")
+                    <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a></li>
+                      @endif
+                      @endif
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">دخول</a></li>
                         <li><a href="{{ url('/register') }}">التسجيل</a></li>
                         @else

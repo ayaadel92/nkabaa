@@ -25,6 +25,8 @@ class CreateRelativesTable extends Migration {
             $table->integer('limit_id')->unsigned();
             $table->foreign('limit_id')->references('id')->on('limits')->onDelete('cascade'); // delete on cascade 
             $table->timestamps();
+            $table->integer('user_id')->unsigned()->unique();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // delete on cascade
             
         });
     }
