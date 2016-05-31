@@ -19,7 +19,13 @@
   
     @foreach ($transfers as $transfer)
      <p style="color:#000 "> {{ $transfer->type }}</p>
-     <p style="color:#000 "> {{ $transfer->doctor_name }}</p>
+     <p style="color:#000 "> {{ $transfer->transfer_date }}</p>
+      <p style="color:#000 "> {{ $transfer->total_cost }}</p>
+       <p style="color:#000 "> {{ $transfer->medical_diagnosis }}</p>
+        <p style="color:#000 "> {{ $transfer->doctor_name }}</p>
+         <p style="color:#000 "> {{ $transfer->hospital_name }}</p>
+      <p style="color:#000 "> {{ $transfer->lab_name }}</p>
+
     @endforeach
     
 

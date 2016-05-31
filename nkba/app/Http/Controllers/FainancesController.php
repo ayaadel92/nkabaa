@@ -65,8 +65,24 @@ class FainancesController extends Controller {
                         ->where('user_id', $id)
                         ->get();
                // print_r($limit);exit();
+             
                 $message = "";
-                return view('fin.index', compact(['limit','message']));
+                $user = DB::table('relatives')
+                    ->where('user_id', $id)
+                    ->get();
+                $name_relative=$user['0']->name;
+                $type_relative=$user['0']->relation_type;
+               $day= preg_split('/[\s\/]+/', Auth::user()->login);
+                 
+               //print_r($day['0']);exit();
+               //print_r( $day['0']);exit();
+                   $transfers=DB::table('transfers')
+                        ->where('eng_id', $day['0'])
+                        ->where('patient_name',$name_relative)       
+                        ->where('patient_type',$type_relative)
+                        ->get();
+            // print_r($transfers);exit();
+                return view('fin.index', compact(['limit','message','transfers']));
                 
             }
         }
