@@ -33,8 +33,6 @@ Route::resource('/task', 'TasksController');
 
 Route::resource('/complain', 'ComplaintssController');
 
-
-
 Route::resource('transfer','TransferController');
 
 Route::resource('/create','TransferController@create');
@@ -42,3 +40,7 @@ Route::resource('/create','TransferController@create');
 //Admin routes
 Route::resource('admin','AdminController');
 Route::resource('admin-engineer','Admin\Engineers\AEngineersController');
+
+//Employee
+Route::resource('employee-transfer','EmplyeeTransferController');
+
