@@ -11,7 +11,7 @@
     </div>
     @endif
 
-    @if ($limit && $message == ""&& $transfers)
+    @if ($limit && $message == ""|| $transfers)
     <p style="color:#000 "> {{ $limit['0']->total_remainder }}</p>
     <p style="color:#000 "> {{ $limit['0']->surgery_credit }}</p>
     <p style="color:#000 "> {{ $limit['0']->analysis_credit }}</p>
