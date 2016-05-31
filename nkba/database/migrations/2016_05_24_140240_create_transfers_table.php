@@ -24,9 +24,9 @@ class CreateTransfersTable extends Migration
             $table->enum('type', ['rediopology', 'analysis']); 
             $table->integer('total_cost');
             $table->string('medical_diagnosis');
-            $table->integer('doctor_name')->unsigned()->nullable();
-            $table->integer('hospital_name')->unsigned()->nullable();
-            $table->integer('lab_name')->unsigned()->nullable();
+            $table->string('doctor_name')->nullable();
+            $table->string('hospital_name')->nullable();
+            $table->string('lab_name')->nullable();
             $table->timestamps();
         });
     }
