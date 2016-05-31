@@ -60,14 +60,11 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                     @if (!Auth::guest())
-                         @if (Auth::user()->type == "engineer")
-                         
+                    @if (!Auth::guest())
+                        @if (Auth::user()->role == "engineer" || Auth::user()->role == "relative")
                     <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a></li>
-                            @endif
-                    @else
-                     <li><a href="{{ url('/login') }}">الرئيسية</a></li>
-                       @endif
+                      @endif
+                      @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
