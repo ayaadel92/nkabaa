@@ -36,6 +36,7 @@
 
                                         <div class="col-sm-6">
                                             <input type="text" name="name_hosptail" id="task-name" class="form-control" >
+                                            <textarea class="form-control" rows="5" name="dec"></textarea>
                                         </div>
                                     </div>
 
@@ -83,6 +84,7 @@
 
                                         <div class="col-sm-6">
                                             <input type="text" name="name_doctor" id="task-name" class="form-control" >
+                                             <textarea class="form-control" rows="5" name="dec"></textarea>
                                         </div>
                                     </div>
 
@@ -131,6 +133,7 @@
 
                                         <div class="col-sm-6">
                                             <input type="text" name="name_lab" id="task-name" class="form-control" >
+                                             <textarea class="form-control" rows="5" name="dec"></textarea>
                                         </div>
                                     </div>
 

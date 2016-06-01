@@ -18,7 +18,7 @@ class CreateTransfersTable extends Migration
             $table->string('eng_id');
             $table->string('health_id');
             $table->string('patient_name');
-            $table->enum('patient_type', ['engineer','father', 'mother', 'son','daugter', 'husband','wife']);
+            $table->enum('patient_type', ['مهندس','اب', 'ام', 'ابن','ابنه', 'زوج','زوجه']);
             $table->enum('status', ['yes', 'no']);
             $table->integer('percentage');
             $table->enum('type', ['rediopology', 'analysis']); 

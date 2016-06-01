@@ -54,7 +54,7 @@ class ComplaintssController extends Controller
        $complain->hospital_name = Request::get('name_hosptail'); 
        $complain->doctor_name = Request::get('name_doctor'); 
         $complain->lab_name = Request::get('name_lab');
-        $complain->description="hello";
+        $complain->description=Request::get('dec');
         $complain->user_id = Auth::user()->id;
         
        $complain->save();

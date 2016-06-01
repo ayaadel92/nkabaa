@@ -1,7 +1,7 @@
 @include('master')
 
 
-@if (Auth::user()->role == "engineer")
+@if (Auth::user()->role === "مهندس")
 
     <div class="container content" >
 
