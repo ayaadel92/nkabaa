@@ -12,7 +12,8 @@
         "laravelcollective/html": "^5.2",
         "sarav/laravel-multiauth": "^0.0.7",
         "fx3costa/laravelchartjs": "^1.3",
-        "jorgejavierleon/laravelpnotify": "^1.0"
+        "jorgejavierleon/laravelpnotify": "^1.0",
+        "predis/predis": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

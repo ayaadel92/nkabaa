@@ -15,20 +15,16 @@ use Illuminate\Support\Facades\Request as Request;
 
 class TasksController extends Controller {
 
-  
     protected $tasks;
-
 
     public function __construct() {
         $this->middleware('auth');
     }
 
- 
     public function index() {
         return view('tasks');
     }
 
-  
     public function store(Request $request) {
         $task = new Task;
         $task->name = Request::get('name'); //get to get data from object de 3'er el action bta3 el for 
@@ -44,21 +40,20 @@ class TasksController extends Controller {
                 ->get();
         return view('tasks.index', compact('tasks'));
     }
-    
-    
-     public function update(Request $request, $id)
-    {
-       
-         $task= Task::find($id);
-        $task->name = Request::get('name');//get to get data from object de 3'er el action bta3 el form
-         $id = Auth::user()->id;
-          $task->save();
+
+    public function update(Request $request, $id) {
+
+        $task = Task::find($id);
+        //print_r($task);exit();
+        $task->name = Request::get('name'); //get to get data from object de 3'er el action bta3 el form
+        $task->save();
+        $id = Auth::user()->id;
+
         return redirect("/task/$id");
     }
-    
-  
+
     public function destroy(Request $request, Task $task) {
-        
+
         $task->delete();
         $id = Auth::user()->id;
         return redirect("/task/$id");
