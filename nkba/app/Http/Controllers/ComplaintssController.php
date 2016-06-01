@@ -9,6 +9,7 @@ use App\Task;
 use Illuminate\Support\Facades\Auth;
 use DB;
 use App\User;
+use App\Complaint;
 use Illuminate\Support\Facades\Request as Request;
 
 class ComplaintssController extends Controller
@@ -49,17 +50,17 @@ class ComplaintssController extends Controller
      */
     public function store(Request $request)
     {
-//        $complain = new Complaint;
-//        $complain->description = Request::get('description'); //get to get data from object de 3'er el action bta3 el for 
-//        $complain->user_id = Auth::user()->id;
-//        $complain->hospital_name = Request::get('hospital_name');
-//        $complain->doctor_name = Request::get('doctor_name');
-//        $complain->lab_name = Request::get('lab_name');
-//        $complain->vedio_path = Request::get('vedio_path');
-//        $complain->save();
+        $complain = new Complaint;
+       $complain->hospital_name = Request::get('name_hosptail'); 
+       $complain->doctor_name = Request::get('name_doctor'); 
+        $complain->lab_name = Request::get('name_lab');
+        $complain->description="hello";
+        $complain->user_id = Auth::user()->id;
+        
+       $complain->save();
 //        $id = Auth::user()->id;
         
-        return redirect("/complain/$id");
+        return redirect("/complain/Auth::user()->id");
     }
 
     /**

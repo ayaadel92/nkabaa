@@ -43,8 +43,19 @@ class FainancesController extends Controller {
                 $limit = DB::table('limits')
                         ->where('user_id', $id)
                         ->get();
+                
+                
+                $user = DB::table('engineers')
+                    ->where('user_id', $id)
+                    ->get();
+                $name=$user['0']->name;
+                $type="engineer";
+                
+                
                 $transfers= DB::table('transfers')
                         ->where('eng_id', Auth::user()->login)
+                        ->where('patient_name',$name)       
+                        ->where('patient_type',$type)
                         ->get();
             // print_r($transfers);exit();
                 $message = "";
