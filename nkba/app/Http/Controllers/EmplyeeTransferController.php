@@ -50,7 +50,7 @@ class EmplyeeTransferController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('employee.show');
     }
 
     /**
