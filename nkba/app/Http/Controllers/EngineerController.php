@@ -21,7 +21,7 @@ class EngineerController extends Controller {
 
     public function show($id) {
          $role = Auth::user()->role;
-         if($role=="engineer"){
+         if($role ==="مهندس"){
         $user = DB::table('engineers')
                 ->where('user_id', $id)
                 ->get();

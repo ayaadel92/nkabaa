@@ -138,9 +138,11 @@
                 <ul class="nav navbar-nav">
 
                     @if (!Auth::guest())
-                        @if (Auth::user()->role == "engineer" || Auth::user()->role == "relative")
+                        @if (Auth::user()->role === "مهندس" || Auth::user()->role === "قريب")
                     <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a></li>
                       @endif
+                      @if (Auth::user()->role === "مستشفي" )
+                       @endif
                       @endif
 
                 </ul>

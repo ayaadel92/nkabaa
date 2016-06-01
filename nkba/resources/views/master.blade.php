@@ -48,7 +48,7 @@
                     <li><a href="{{ url('/complain') }}/{{ Auth::user()->id }}">الشكاوي </a></li>
                     <li><a href="{{ url('/task') }}/{{ Auth::user()->id }}">مواعيدك </a></li>
                     <li><a href="#section5">اقرب دكتور اليك </a></li>
-                    @if (Auth::user()->role == "engineer")
+                    @if (Auth::user()->role === "مهندس")
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">الاشتراكات 
                             <span class="caret"></span></a>
