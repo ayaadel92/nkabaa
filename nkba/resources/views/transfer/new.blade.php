@@ -31,7 +31,7 @@
 
 <tr>      
   <td>{{Form::label(' رقم الريض ',' رقم الريض ',array('class' => 'style' ))}}</td>
-  <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
+  <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
   </span>
   {{ Form::text('patient_number', null,array('required','class'=>'form-control col-sm-8')) }}
 </td>

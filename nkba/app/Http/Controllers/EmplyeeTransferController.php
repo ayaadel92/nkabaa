@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Transfer;
+
 
 class EmplyeeTransferController extends Controller
 {
@@ -16,8 +18,9 @@ class EmplyeeTransferController extends Controller
     public function index()
     {
         return view('employee.index');
+        
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
