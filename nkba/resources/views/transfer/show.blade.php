@@ -32,7 +32,8 @@
           <td>{{Form::label(' رقم الريض ',' رقم الريض ',array('class' => 'style' ))}}</td>
           <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
                                                                                           </span>
-                    {{ Form::text('patient_number', null$transfer_row->patient_id
+                    {{ Form::text('patient_number', $transfer_row->patient_id,array('class'=>'form-control col-sm-8','disabled')) }}
+         </td>
    </tr> 
 
    <tr>  
@@ -40,7 +41,7 @@
              <td>{{Form::label(' درجة القرابة ',' درجة القرابة ',array('class' => 'style' ))}}</td>
               <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i>
                                                                                                          </span>
-                      {{ Form::select('patient_type',['engineer'=>'المهندس','relative'=>'قريب'], $transfer_row->patient_type,array('class'=>'form-control col-sm-8','disabled')) }}
+                      {{ Form::text('patient_type', $transfer_row->patient_type,array('class'=>'form-control col-sm-8','disabled')) }}
              </td>
      </div>
   </tr>   
@@ -58,6 +59,13 @@
                   {{ Form::select('type',['rediopology'=>'أشعة','analysis'=>'تحليل'],$transfer_row->type,array('class'=>'form-control col-sm-8','disabled')) }}
         </td>
  </tr>
+   <tr>      
+        <td>{{Form::label(' اسم التحليل ',' اسم التحليل ',array('class' => 'style' ))}}</td>
+        <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
+                                                                                                       </span>
+                  {{ Form::text('list', $transfer_row->type_name,array('disabled','class'=>'form-control col-sm-8')) }}
+        </td>
+  </tr>
 
   <tr>      
         <td>{{Form::label(' اسم الطبيب ',' اسم الطبيب ',array('class' => 'style' ))}}</td>
@@ -117,8 +125,14 @@
 
 </table> 
 </div>
-
-    </div>
+<div>
+  <button class="btn btn-default" type="button" id="val">validate</button>
 </div>
-
+<script type="text/javascript">
+$(document).ready(function($){
+    $('#val').click(function(){
+      $.get("{{ url('val')}}" );
+  });
+  });
+</script>
 @endsection

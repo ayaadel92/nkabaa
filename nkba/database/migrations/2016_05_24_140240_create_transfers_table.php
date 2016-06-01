@@ -18,15 +18,16 @@ class CreateTransfersTable extends Migration
             $table->string('eng_id');
             $table->string('health_id');
             $table->string('patient_name');
-            $table->enum('patient_type', ['engineer', 'relative']);
+            $table->enum('patient_type', ['مهندس', 'زوجة','زوج','ابن','ابنة','أب','أم']);
             $table->integer('percentage');
-            $table->string('status')->nullable(); 
+            $table->enum('status',['yes','no']);
             $table->enum('type', ['rediopology', 'analysis']); 
+            $table->string('type_name');
             $table->integer('total_cost');
             $table->string('medical_diagnosis');
-            $table->integer('doctor_name')->unsigned()->nullable();
-            $table->integer('hospital_name')->unsigned()->nullable();
-            $table->integer('lab_name')->unsigned()->nullable();
+            $table->string('doctor_name');
+            $table->string('hospital_name');
+            $table->string('lab_name');
             $table->timestamps();
         });
     }

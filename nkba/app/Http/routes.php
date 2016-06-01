@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Input;
+use App\Analysisradios;
 /*
   |--------------------------------------------------------------------------
   | Application Routes
@@ -34,11 +35,29 @@ Route::resource('/task', 'TasksController');
 Route::resource('/complain', 'ComplaintssController');
 
 
-
+//transfer routes
 Route::resource('transfer','TransferController');
-
 Route::resource('/create','TransferController@create');
+Route::get('val','TransferController@validate_transfer');
+//get analaysis and radiobologies
+Route::get('api/dropdown', function(){
+  
+   $input = Input::get('option');
+   if($input==1)
+      {
+           $radios = Analysisradios::findradios();
+           return Response::json($radios->get(['id','name']));
+      }
+    elseif ($input==2) 
+      {
+           $analysis = Analysisradios::findanalysis();
+           return Response::json($analysis->get(['id','name']));
+      }
+});
+
 
 //Admin routes
 Route::resource('admin','AdminController');
 Route::resource('admin-engineer','Admin\Engineers\AEngineersController');
+
+
