@@ -130,7 +130,7 @@
                                         <label for="task-name" class="col-sm-3 control-label"><h4>اضف شكوي علي معمل او اشع</h4></label>
 
                                         <div class="col-sm-6">
-                                            <input type="text" name="name_doctor" id="task-name" class="form-control" >
+                                            <input type="text" name="name_lab" id="task-name" class="form-control" >
                                         </div>
                                     </div>
 
