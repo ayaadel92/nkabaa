@@ -50,7 +50,8 @@ class EmplyeeTransferController extends Controller
      */
     public function show($id)
     {
-        return view('employee.show');
+        $transfer=Transfer::findOrFail($id);
+        return view('employee.show',compact('transfer'));
     }
 
     /**
