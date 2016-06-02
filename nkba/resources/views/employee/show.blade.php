@@ -1,5 +1,4 @@
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>@extends('employee.layout.master-employee')
+@extends('employee.layout.master-employee')
 @section('content')
 
 <div class="row">

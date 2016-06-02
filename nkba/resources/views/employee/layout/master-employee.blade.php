@@ -30,6 +30,12 @@
       <script src="js/respond.min.js"></script>
       <script src="js/lte-ie7.js"></script>
       <![endif]-->
+      <style>
+        body {
+          font-family: "Times New Roman", Times, serif;
+        }
+      </style>
+
     </head>
 
     <body>

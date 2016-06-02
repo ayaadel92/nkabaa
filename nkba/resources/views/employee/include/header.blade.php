@@ -51,11 +51,10 @@
                 type: "GET",
                 success: function(data) {
                     if (data.length) {$('#transfers-number').text(data.length);}
-
-                    if (lastelem < 4) {
+                    if (count < 8) {
                         for (var i = 0; i < 5; i++) {
 
-                            $('.selected').append('<li id="'+i+'"><a  class="tranmenu" href="{{url("employee-transfer")}}/'+data[i].id+'"><div class="task-info">'+
+                            $('.external').before('<li id="'+i+'"><a  class="tranmenu" href="{{url("employee-transfer")}}/'+data[i].id+'"><div class="task-info">'+
                                '<div class="desc">تحويلة رقم '+data[i].id+'</div></div></a></li>');
                         }
                     }
