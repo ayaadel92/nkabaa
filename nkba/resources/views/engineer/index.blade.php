@@ -1,9 +1,14 @@
-@include('master')
+    @include('master')
 
+<div class="body">
 
-@if (Auth::user()->role == "engineer")
+@if (Auth::user()->role === "مهندس")
 
-    <div class="container content" >
+<div class="container text-center">    
+  <h3>What We Do</h3><br>
+  <div class="row">
+    <div class="col-sm-8">
+    
 
         <form class="well form-horizontal" action=" " method="post"  id="contact_form">
             <fieldset>
@@ -18,7 +23,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input  name="first_name" placeholder="{{$user['0']->name}}" class="form-control"  type="text" readonly>
+                            <input  name="first_name" placeholder="{{$user['0']->name}}" class="form-control"  type="text" readonly >
                         </div>
                     </div>
                 </div>
@@ -155,12 +160,27 @@
 
             </fieldset>
         </form>
+  
     </div>
-</div>
+
+     
+  
+    <div class="col-sm-4"> 
+      <img src="/assets/images/profile_img.png" class="img-responsive" style="width:100%" alt="Image">
+      <p>Project 2</p>    
+    </div>
+  
+  </div>
+</div><br>
+  
+        
 
 @else
-
- <div class="container content" >
+<div class="container text-center">    
+  <h3>What We Do</h3><br>
+  <div class="row">
+    <div class="col-sm-8">
+    
 
         <form class="well form-horizontal" action=" " method="post"  id="contact_form">
             <fieldset>
@@ -283,33 +303,32 @@
             </fieldset>
         </form>
     </div>
-</div>
+
+     
+  
+    <div class="col-sm-4"> 
+      <img src="/assets/images/profile_img.png" class="img-responsive" style="width:100%" alt="Image">
+      <p>Project 2</p>    
+    </div>
+  
+  </div>
+</div><br>
+
 @endif
 
+    <div class="footer">
+            <div class="container">
 
+                <div class="footer-text">
+                    <p>© ITI Graduation Project | Design by ITI</a> </p>
+                </div>
+            </div>
+        </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<style>
+  .body {
+      background-color: #b6b7b6;
+      padding-top: 0px;
+}
+</style>
