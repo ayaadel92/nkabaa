@@ -8,17 +8,17 @@
 		<div class="table-responsive">
 			<table class=" table col-sm-8 teble-restrict">  
 				<tr>
-				<td>البيانات</td>
-				<td></td>
+					<td>البيانات</td>
+					<td></td>
 				</tr>
 				<tr>
-				<td>رصيد المهندس</td>
-				<td></td>
+					<td>رصيد المهندس</td>
+					<td></td>
 				</tr>
 				
 				<tr>
-				<td>السماح بنوع التحليل او الأشعة</td>
-				<td></td>
+					<td>السماح بنوع التحليل او الأشعة</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td><button id='ok' class="btn btn-success">السماح</button></td>
@@ -107,7 +107,7 @@
 						</tr>            
 						<tr>      
 							<td>{{Form::label(' قبول التحويل؟',' قبول التحويل؟',array('class' => 'style' ))}}</td>
-							<td>{{ Form::text('status', $transfer->status,array('class'=>'form-control col-sm-8','disabled')) }}
+							<td>{{ Form::text('status', $transfer->status,array('class'=>'form-control col-sm-8','id'=>'status','disabled')) }}
 							</td>
 						</tr>
 
@@ -130,13 +130,42 @@
 	</div>
 </div>
 
-<script src="text/javascript">
+<script type="text/javascript">
 	(function ($){
+		// when accept the transfer
 		$('#ok').on('click',function() {
+			alert('hi');
 			$.ajax({
-				url: {{url('update')}}
+				url: "{{route('employee-transfer.update',$transfer->id)}}",
+				type : "PUT",
+				data : {"_token":"{{ csrf_token() }}","status": "yes","done": "yes"},
+				beforeSend: function(xhr){xhr.setRequestHeader('X-CSRF-TOKEN', $("#token").attr('content'));},
+				success: function(responseData) {
+					console.log('done');
+					$('#status').val('تمت');
+				},
+				error: function(err) {
+					console.log('error');
+				}
 			})
-		})
+		});
+		// when accept the transfer
+		$('#cancel').on('click',function() {
+			alert('welcome');
+			$.ajax({
+				url: "{{route('employee-transfer.update',$transfer->id)}}",
+				type : "PUT",
+				data : {"_token":"{{ csrf_token() }}","status": "no","done": "yes"},
+				beforeSend: function(xhr){xhr.setRequestHeader('X-CSRF-TOKEN', $("#token").attr('content'));},
+				success: function(responseData) {
+					$('#status').val('لم تتم');
+					console.log('done');
+				},
+				error: function(err) {
+					console.log('error');
+				}
+			})
+		});
 	})(jQuery);
 </script>
 

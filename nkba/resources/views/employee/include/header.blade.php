@@ -65,7 +65,7 @@
                 }
             })
         }
-          $('.tranmenu').live('click',function() {
+          $('.selected').on('click','a',function() {
             $(this).parent().remove();
             // $(this).parent()
             // parentNode.parentNode.removeChild(parentNode)

@@ -69,4 +69,3 @@ use App\Events\TransferEvent;
   // {
 
   // });
-
