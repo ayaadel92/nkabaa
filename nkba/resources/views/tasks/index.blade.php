@@ -41,6 +41,8 @@
 
                         <div class="col-sm-6">
                             <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
+                             <input type="date" name="date" id="task-name" class="form-control" value="{{ old('task') }}">
+                               <input type="time" name="time" id="task-name" class="form-control" value="{{ old('task') }}">
                         </div>
                     </div>
 
