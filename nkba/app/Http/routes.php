@@ -54,7 +54,7 @@ use App\Events\TransferEvent;
         $last_created = Transfer::orderBy('created_at','desc')->first();
         if ($last_created !== $created) {
           // print_r($created);exit;
-          $transfers = Transfer::where('created_at','>',$created)->get();
+          $transfers = Transfer::where([['created_at','>',$created],['done','=','no']])->get();
            // print_r(response()->json($transfers));exit;
            // print_r(response()->json($transfers)->getData()[0]);exit;
           return response()->json($transfers);

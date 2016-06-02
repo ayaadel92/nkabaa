@@ -1,11 +1,10 @@
 <!--header start-->
 <header class="header dark-bg">
-    <div class="toggle-nav">
-        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-    </div>
-
     <!--logo start-->
-    <a href="/employee-transfer" class="logo">نقابة <span class="lite">المهندسين</span></a>
+
+    <a href="/employee-transfer" class="logo">نقابة <span class="lite lite-special">المهندسين</span></a>
+    <img src="/assets/images/logo.png" width="100px" height="60 px" alt="">
+
     <!--logo end-->
 
     <div class="top-nav notification-row">                
@@ -15,8 +14,8 @@
             <!-- task notificatoin start -->
             <li id="task_notificatoin_bar" class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <span class="icon-task-l"></span>
-                    <span class="badge bg-important">5</span>
+                    <span class="icon-task-l" style="margin-right: 18px;"></span>
+                    <span class="badge bg-important" id="transfers-number"></span>
                 </a>
                 <ul class="dropdown-menu extended tasks-bar selected">
                     <div class="notify-arrow notify-arrow-blue"></div>
@@ -51,11 +50,13 @@
                 url: "{{url('ajax')}}/"+created,
                 type: "GET",
                 success: function(data) {
-                    if (lastelem < 5) {
+                    if (data.length) {$('#transfers-number').text(data.length);}
+
+                    if (lastelem < 4) {
                         for (var i = 0; i < 5; i++) {
 
                             $('.selected').append('<li id="'+i+'"><a  class="tranmenu" href="{{url("employee-transfer")}}/'+data[i].id+'"><div class="task-info">'+
-                             '<div class="desc">تحويلة رقم ' + (i+1) +'</div></div></a></li>');
+                               '<div class="desc">تحويلة رقم '+data[i].id+'</div></div></a></li>');
                         }
                     }
                     setTimeout(receiveTransfers,1000);
@@ -65,11 +66,6 @@
                 }
             })
         }
-          $('.selected').on('click','a',function() {
-            $(this).parent().remove();
-            // $(this).parent()
-            // parentNode.parentNode.removeChild(parentNode)
-        });
         receiveTransfers(); //call the function when the body load
 
     })(jQuery);
@@ -81,3 +77,9 @@
     //  console.log(data);
     // });
 </script>
+<style type="text/css">
+    img{
+        float: left;
+
+    }
+</style>

@@ -4,10 +4,7 @@
 @section('content')
 
 <section class="row">
-	<div class="col-sm-4">
-
-	</div>
-	<div class="col-sm-8 transfer" id="transfer" value="hi">
+	<div class="col-sm-10 transfer" id="transfer" value="hi">
 		<ul class="list-group transfers-list"></ul>
 	</div>
 </section>
@@ -24,9 +21,10 @@
 				type: "GET",
 				success: function(data) {
 					for (var i = 0; i < data.length; i++) {
-						$('.transfers-list').append('<li class="list-group-item" id="' +data[i].created_at+'" ><a href="employee-transfer/'+data[i].id+'">تحويلة رقم ' +data[i].id+'</a></li>');
+						$('.transfers-list').append('<li class="list-group-item text-center" id="' +data[i].created_at+'" ><a class="tranlist" href="employee-transfer/'+data[i].id+'">تحويلة رقم ' +data[i].id+'</a></li>');
 					}
 					setTimeout(receiveTransfers,1000);
+
 				},
 				error: function(err) {
 					setTimeout(receiveTransfers,5000);
@@ -46,7 +44,7 @@
 <style type="text/css">
 	a{
 		font-size: 24px;
-		color: #808080;
+		color: #5a9c39;
 		font-weight: bold;
 		text-decoration: none;  
 		display: block;
@@ -63,7 +61,7 @@
 
 
 	li:hover , li:focus{
-		background-color: #999999;
+		background-color: #2c8d28;
 		color: white;
 
 
