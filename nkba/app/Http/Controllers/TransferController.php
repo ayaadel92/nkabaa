@@ -88,9 +88,15 @@ class TransferController extends Controller
 					$relative = DB::table('relatives')
 					->where($where)
 					->get(); 
+					print_r($transfer->patient_type);exit;
+
 					$relativ=response()->json($relative)->getData()[0];
 					if($relativ->status==='نعم')
 					{
+						if ($relativ->relation_type == "ابن") {
+							$age < Carbon\Carbon::now() - $relative->birth_date;
+							print_r($age);exit;
+						}
 						$limit=$relativ->limit_id;
 					}//end of relative status check=yes
 					else{

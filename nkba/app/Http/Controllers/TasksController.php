@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Auth;
 //use App\Repositories\TaskRepository;
 use DB;
 use App\User;
+use DateTime;
 use Illuminate\Support\Facades\Request as Request;
+use Mail;
 
 class TasksController extends Controller {
 
@@ -28,9 +30,43 @@ class TasksController extends Controller {
     public function store(Request $request) {
         $task = new Task;
         $task->name = Request::get('name'); //get to get data from object de 3'er el action bta3 el for 
+        $task->time = Request::get('time');
+        $task->date = Request::get('date');
         $task->user_id = Auth::user()->id;
         $task->save();
         $id = Auth::user()->id;
+
+
+        $dt = new \DateTime("NOW");
+
+        $x = $dt->format('Y-m-d H:i:s');
+        $date = preg_split('/\W/', $x, 0, PREG_SPLIT_NO_EMPTY);
+        $year = $date['0'];
+
+        $month = $date['1'];
+        $day = $date['2'];
+        $hour = $date['3'];
+        $min = $date['4'];
+        $date2 = preg_split('/\W/', Request::get('time'), 0, PREG_SPLIT_NO_EMPTY);
+        $hour1 = $date2['0'];
+        $min1 = $date2['1'];
+        $date3 = preg_split('/\W/', Request::get('date'), 0, PREG_SPLIT_NO_EMPTY);
+         $year1 = $date3['0'];
+        $month1 = $date3['1'];
+        $day1 = $date3['2'];
+         $user = DB::table('engineers')
+                    ->where('user_id', $id)
+                    ->get();
+        if($year==$year1 && $month1==$month && $day==$day1 && $hour1==$hour && $min1 ==$min ){
+             Mail::send('emails.welcome',$user,function($message) use ($user)
+         {
+         $message->from('nkabaalex@gmail.com');
+         $message->to($user['0']->email)->subject("مواعيدك");
+         });   
+        }
+        
+        
+        
         return redirect("/task/$id");
     }
 
@@ -46,8 +82,40 @@ class TasksController extends Controller {
         $task = Task::find($id);
         //print_r($task);exit();
         $task->name = Request::get('name'); //get to get data from object de 3'er el action bta3 el form
+        $task->time = Request::get('time');
+        $task->date = Request::get('date');
         $task->save();
         $id = Auth::user()->id;
+
+
+        $dt = new \DateTime("NOW");
+
+        $x = $dt->format('Y-m-d H:i:s');
+        $date = preg_split('/\W/', $x, 0, PREG_SPLIT_NO_EMPTY);
+        $year = $date['0'];
+
+        $month = $date['1'];
+        $day = $date['2'];
+        $hour = $date['3'];
+        $min = $date['4'];
+        $date2 = preg_split('/\W/', Request::get('time'), 0, PREG_SPLIT_NO_EMPTY);
+        $hour1 = $date2['0'];
+        $min1 = $date2['1'];
+        $date3 = preg_split('/\W/', Request::get('date'), 0, PREG_SPLIT_NO_EMPTY);
+         $year1 = $date3['0'];
+        $month1 = $date3['1'];
+        $day1 = $date3['2'];
+         $user = DB::table('engineers')
+                    ->where('user_id', $id)
+                    ->get();
+        if($year==$year1 && $month1==$month && $day==$day1 && $hour1==$hour && $min1 ==$min ){
+             Mail::send('emails.welcome',$user,function($message) use ($user)
+         {
+         $message->from('nkabaalex@gmail.com');
+         $message->to($user['0']->email)->subject("مواعيدك");
+         });   
+        }
+        
 
         return redirect("/task/$id");
     }
