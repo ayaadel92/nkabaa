@@ -14,6 +14,8 @@ use DB;
 use Session;
 use Event;
 use App\Events\TransferEvent;
+use Carbon\Carbon;
+use DateTime;
 
 class TransferController extends Controller
 {
@@ -82,7 +84,7 @@ class TransferController extends Controller
 				}//end of patient is engineer 
 				else
 				{
-					$where = ['eng_id'=> $transfer->eng_id, 'relation_type' => $transfer->patient_type,'name'=>$transfer->patient_name];
+					$where = ['eng_id'=> $transfer->eng_id, 'relation_type' => $transfer->patient_type,'name'=> $transfer->patient_name];
 					$relative = DB::table('relatives')
 					->where($where)
 					->get(); 
@@ -90,9 +92,11 @@ class TransferController extends Controller
 					if($relativ->status==='نعم')
 					{
 						if ($relativ->relation_type == "ابن") {
-							$age < Carbon\Carbon::now() - $relative->birth_date;
-							print_r($age);exit;
-						}
+							$age = Carbon::now()->diff(new DateTime($relativ->birth_date));
+							if($age->y >= 24 ){
+								return "سن الابن اكبر من او يساوي 24";
+							}
+						} // check the age of son reach to 24
 						$limit=$relativ->limit_id;
 					}//end of relative status check=yes
 					else{
