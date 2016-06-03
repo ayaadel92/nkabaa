@@ -12,8 +12,6 @@ use App\Transfer;
 use Jleon\LaravelPnotify\Notify;
 use DB;
 use Session;
-use isEmpty;
-
 use Event;
 use App\Events\TransferEvent;
 
@@ -84,12 +82,10 @@ class TransferController extends Controller
 				}//end of patient is engineer 
 				else
 				{
-					$where = ['eng_id'=> $transfer->eng_id, 'relation_type' => $transfer->patient_type];
+					$where = ['eng_id'=> $transfer->eng_id, 'relation_type' => $transfer->patient_type,'name'=>$transfer->patient_name];
 					$relative = DB::table('relatives')
 					->where($where)
 					->get(); 
-					print_r($transfer->patient_type);exit;
-
 					$relativ=response()->json($relative)->getData()[0];
 					if($relativ->status==='نعم')
 					{
