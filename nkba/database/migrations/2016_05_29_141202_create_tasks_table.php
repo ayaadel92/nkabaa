@@ -33,11 +33,4 @@ class CreateTasksTable extends Migration {
     }
 
 }
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 084cee9c1a23837971fca79afef01f0cc4d58a9e
->>>>>>> d2957b3d891625c10010f072f31897375f90b509
