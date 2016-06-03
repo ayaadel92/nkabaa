@@ -91,6 +91,10 @@ class TransferController extends Controller
 					$relativ=response()->json($relative)->getData()[0];
 					if($relativ->status==='نعم')
 					{
+						if ($relativ->relation_type == "ابن") {
+							$age < Carbon\Carbon::now();
+							print_r($age);exit;
+						}
 						$limit=$relativ->limit_id;
 					}//end of relative status check=yes
 					else{

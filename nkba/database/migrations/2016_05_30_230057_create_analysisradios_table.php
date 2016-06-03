@@ -15,7 +15,7 @@ class CreateAnalysisradiosTable extends Migration
         Schema::create('analysisradios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->enum('type',['analysis','radiopology']);
+            $table->enum('type',['تحليل','اشعة']);
             $table->enum('limit',['yes','no']);
             $table->integer('limits_num');
         });
