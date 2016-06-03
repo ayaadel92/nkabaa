@@ -103,7 +103,7 @@
   <td>{{Form::label(' قبول التحويل؟',' قبول التحويل؟',array('class' => 'style' ))}}</td>
   <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i></span>
 
-    {{ Form::select('accepted',['نعم'=>'لا'],'',array('class'=>'form-control col-sm-8','disabled')) }}
+    {{ Form::select('accepted',['نعم'=>'لا'],'',array('class'=>'form-control col-sm-8','readonly')) }}
   </td>
 </tr>
 
