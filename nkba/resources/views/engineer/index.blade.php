@@ -8,9 +8,9 @@
 @if (Auth::user()->role === "مهندس")
 
 <div class="container text-center">    
-  <h3>What We Do</h3><br>
+
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-4">
+    <div class="col-sm-8 col-sm-offset-2">
     
 
         <form class=" form-horizontal" action=" " method="post"  id="contact_form">
@@ -23,10 +23,10 @@
 
                 <div class="form-group" style="margin-top:30px">
                     <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 30'> الاسم</p>  </label>  
-                    <div class="col-md-10 inputGroupContainer">
+                    <div class="col-md-12 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input  name="first_name" placeholder="{{$user['0']->name}}" class="form-control"  type="text" readonly >
+                            <input  name="first_name" placeholder="{{$user['0']->name}}" class="form-control"  type="text" readonly style="height: 80px">
                         </div>
                     </div>
                 </div>
@@ -340,16 +340,18 @@
 /*      background-color: #b6b7b6;*/
       padding-top: 0px;
       
-      background-image: url('/assets/images/technical.jpg');
+/*      background-image: url('/assets/images/bg_img.jpg');*/
       background-size:cover;
       position:relative;
 }
-.overlay {
+/*.overlay {
     position: absolute;
     background: rgba(0,0,0,0.2);
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-}
+}*/
+
+
 </style>

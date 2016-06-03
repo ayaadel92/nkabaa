@@ -18,7 +18,6 @@
                 <div class="col-md-5 about-top-left">
                     <img src="/assets/images/complaint.jpg" class="img-responsive" alt="" style="width: 400px; height:600px"/>
                 </div>
-                
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -38,7 +37,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="panel-body">
-                        <form action="/complain" method="POST" class="form-horizontal">
+                        <form action="/complain" method="POST" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             Task Name 
@@ -48,7 +47,7 @@
                                 <div class="col-sm-6">
                                     <input type="text" name="name_hosptail" id="task-name" class="form-control" >
                                     <textarea class="form-control" rows="5" name="dec"></textarea>
-                                    <input type="file" name="fileToUpload" id="fileToUpload" multiple="multiple">
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
                                 </div>
                             </div>
 
@@ -84,7 +83,7 @@
             </div>
             <div class="modal-body">
                 <div class="panel-body">
-                    <form action="/complain" method="POST" class="form-horizontal">
+                    <form action="/complain" method="POST" class="form-horizontal" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         Task Name 
@@ -92,8 +91,9 @@
                             <label for="task-name" class="col-sm-3 control-label"><h4>اضف شكوي علي دكتور</h4></label>
 
                             <div class="col-sm-6">
-                                <input type="text" name="name_doctor" id="task-name" class="form-control" >
-                                <textarea class="form-control" rows="5" name="dec"></textarea>
+                                   <input type="text" name="name_doctor" id="task-name" class="form-control" >
+                                    <textarea class="form-control" rows="5" name="dec"></textarea>
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
                             </div>
                         </div>
 
@@ -130,7 +130,7 @@
             </div>
             <div class="modal-body">
                 <div class="panel-body">
-                    <form action="/complain" method="POST" class="form-horizontal">
+                    <form action="/complain" method="POST" class="form-horizontal" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         Task Name 
@@ -140,6 +140,7 @@
                             <div class="col-sm-6">
                                 <input type="text" name="name_lab" id="task-name" class="form-control" >
                                 <textarea class="form-control" rows="5" name="dec"></textarea>
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
                             </div>
                         </div>
 

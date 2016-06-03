@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Task;
@@ -12,24 +11,22 @@ use App\User;
 use App\Complaint;
 use Illuminate\Support\Facades\Request as Request;
 use Illuminate\Support\Facades\Input;
+use Mail;
+//use Illuminate\Http\Request;
 
-class ComplaintssController extends Controller
-{
+
+class ComplaintssController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
-    
-      public function __construct() {
+    public function __construct() {
         $this->middleware('auth');
     }
 
-    
-    
-    public function index()
-    {
+    public function index() {
         //
     }
 
@@ -38,8 +35,7 @@ class ComplaintssController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -49,36 +45,47 @@ class ComplaintssController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $complain = new Complaint;
-       $complain->hospital_name = Request::get('name_hosptail'); 
-       $complain->doctor_name = Request::get('name_doctor'); 
+        $complain->hospital_name = Request::get('name_hosptail');
+        $complain->doctor_name = Request::get('name_doctor');
         $complain->lab_name = Request::get('name_lab');
-        $complain->description=Request::get('dec');
-        //fileToUpload
-//        $destinationPath="/assets/images";
-//        $fileName = Request::get('fileToUpload')->getClientOriginalName();
-//        $complain->img_path=Request::get('fileToUpload')->move($destinationPath, $fileName);
-//        //print_r($complain->img_path);exit();
-//        //Input::file('photo')->move($destinationPath, $fileName);
+        $complain->description = Request::get('dec');
+        $complain->user_id=Auth::user()->id;
+        $destinatonPath = '';
+        $filename = '';
+
+        $file = Request::file('fileToUpload');
+        $destinationPath = public_path() . '/assets/images/';
+        $extension = Request::file('fileToUpload')->getClientOriginalExtension();
+         $filename =Auth::user()->login .'.'.'-'.rand(1111,9999).$extension;
+        $file->move($destinationPath,$filename);
+
+        $complain->img_path = "$destinationPath " . $filename;
+
+        $complain->save();
+        $id = Auth::user()->id;
+        
+         $user = DB::table('engineers')
+                    ->where('user_id', $id)
+                    ->get();
+         $mail=$user['0']->email;
+         $des= Request::get('dec');
+        $data = array('k1' => "$filename", 'k2' => "$mail",'k3' => "$des");
+        Mail::send('emails.complain',$data,function($message) use ($data)
+        {
+            $MailBody = "الصوره الشكاوي".$data['k1']."المشكله".$data['k3'];  
+            $message->setBody($MailBody, 'text/html');
+            $message->from( $data['k2']);
+            $message->to('nkabaalex@gmail.com','Admin')->subject('شكوي  ');
+        });     
         
         
-      $file = array_get(Request::get('fileToUpload'),'fileToUpload');
-           // SET UPLOAD PATH
-            $destinationPath = '/assets/images';
-            // GET THE FILE EXTENSION
-            $extension = $file->getClientOriginalExtension();
-            // RENAME THE UPLOAD WITH RANDOM NUMBER
-            $fileName = rand(11111, 99999) . '.' . $extension;
-            // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
-            $upload_success = $file->move($destinationPath, $fileName);
-        $complain->img_path= $fileName;
-        $complain->user_id = Auth::user()->id;
         
-       $complain->save();
-//        $id = Auth::user()->id;
-        $id=Auth::user()->id;
+        
+        
+        
+        
         return redirect("/complain/$id");
     }
 
@@ -88,11 +95,10 @@ class ComplaintssController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
-         $tasks="hello";
-        
+        $tasks = "hello";
+
         return view('complain.index', compact('tasks'));
     }
 
@@ -102,8 +108,7 @@ class ComplaintssController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -114,8 +119,7 @@ class ComplaintssController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -125,8 +129,8 @@ class ComplaintssController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }
