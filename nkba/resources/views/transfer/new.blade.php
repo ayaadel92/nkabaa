@@ -4,7 +4,7 @@
 <div class="container">
   <div class="container-fluid bg-1 text-center">
     <h2 class="margin">التحويلات</h2>
-    <img src="../assets/images/b4.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="200">
+    <img src="../assets/images/12.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="420" height="200">
   </div>
 </div>
 
@@ -15,7 +15,7 @@
       <table class=" table col-sm-8 teble-restrict" style="margin-top:30px">  
 
         <tr>              
-          <td>{{ Form::label ('ﺭﻗﻢ اﻟﻌﻀﻮﻳﻪ ' ,'ﺭﻗﻢ اﻟﻌﻀﻮﻳﻪ ',array('class' => 'style control-label ' ) ) }}</td>
+          <td>{{ Form::label ('ﺭﻗﻢ العضوية ' ,'ﺭﻗﻢ العضوية ',array('class' => 'style control-label ' ) ) }}</td>
           <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil">   </i>
           </span>
           {{ Form::text('eng_id', null, array('required','class'=>'form-control col-sm-8')) }}
@@ -43,7 +43,7 @@
      <td>{{Form::label(' درجة القرابة ',' درجة القرابة ',array('class' => 'style' ))}}</td>
      <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i>
      </span>
-     {{ Form::select('patient_type',['مهندس'=>'المهندس','زوجة'=>'زوجة','زوج'=>'زوج','الن'=>'ابن','ابنة'=>'ابنة','أب'=>'أب','أم'=>'أم'],'المهندس',array('required','class'=>'form-control col-sm-8')) }}
+     {{ Form::select('patient_type',['مهندس'=>'مهندس/مهندسة','زوجه'=>'زوجه','زوج'=>'زوج','ابن'=>'ابن','ابنه'=>'ابنه','اب'=>'اب','ام'=>'ام'],'المهندس',array('required','class'=>'form-control col-sm-8')) }}
    </td>
  </div>
 </tr>   
@@ -103,7 +103,7 @@
   <td>{{Form::label(' قبول التحويل؟',' قبول التحويل؟',array('class' => 'style' ))}}</td>
   <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i></span>
 
-    {{ Form::select('accepted',['نعم'=>'لا'],'',array('class'=>'form-control col-sm-8','disabled')) }}
+    {{ Form::text('accepted',null,array('class'=>'form-control col-sm-8','readonly')) }}
   </td>
 </tr>
 

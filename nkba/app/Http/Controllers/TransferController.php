@@ -44,7 +44,7 @@ class TransferController extends Controller
 			$transfer->hospital_name=$input['hospital_name'];
 			$transfer->lab_name=$input['lab_name'];
 			$transfer->total_cost=$input['total_cost'];
-			$transfer->status=$input['status'];
+			$transfer->accepted=$input['accepted'];
 			$transfer->percentage=$input['percentage'];
 			$transfer->transfer_date=$input['transfer_date']	;
 			$transfer->save();
