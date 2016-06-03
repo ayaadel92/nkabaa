@@ -1,7 +1,12 @@
 <?php
+use Illuminate\Support\Facades\Input;
+use App\Analysisradios;
 use App\Transfer;
+use App\Events\TransferEvent;
+
 
 // use Illuminate\Http\Request;
+
 /*
   |--------------------------------------------------------------------------
   | Application Routes
@@ -38,6 +43,25 @@ use App\Transfer;
 
   Route::resource('transfer','TransferController');
 
+//transfer routes
+Route::resource('transfer','TransferController');
+Route::resource('/create','TransferController@create');
+Route::get('transfer-valid','TransferController@validate_transfer');
+//get analaysis and radiobologies
+Route::get('api/dropdown', function(){
+  
+   $input = Input::get('option');
+   if($input==1)
+      {
+           $radios = Analysisradios::findradios();
+           return Response::json($radios->get(['id','name']));
+      }
+    elseif ($input==2) 
+      {
+           $analysis = Analysisradios::findanalysis();
+           return Response::json($analysis->get(['id','name']));
+      }
+});
   Route::resource('/create','TransferController@create');
 
 //Admin routes
@@ -47,16 +71,24 @@ use App\Transfer;
 //Employee
   Route::resource('employee-transfer','EmplyeeTransferController');
 // Route::get('/ajax','EmplyeeTransferController@ajax');
-  Route::get('/ajax',function(){
+  Route::get('ajax/{created}',function($created){
     if (Request::ajax()) {
-      if (Transfer::where('done','yes')->count() > 0) {
-        $transfers = Transfer::where('done','yes')->get();
-            // print_r(json_encode($transfers));exit;
-        // print_r(response()->json($transfers)->getData()[0]);exit;
-
-        return response()->json($transfers);
-             }
-        return "data has ajax";
+      if (Transfer::where('done','no')->count() > 0) {
+        $last_created = Transfer::orderBy('created_at','desc')->first();
+        if ($last_created !== $created) {
+          // print_r($created);exit;
+          $transfers = Transfer::where([['created_at','>',$created],['done','=','no']])->get();
+           // print_r(response()->json($transfers));exit;
+           // print_r(response()->json($transfers)->getData()[0]);exit;
+          return response()->json($transfers);
+        }
+        
       }
-    });
+    }
+  });
 
+  //event
+  // Route::get('event',function()
+  // {
+
+  // });

@@ -35,3 +35,18 @@ alert('done');
 		});
 	}
 	recieveTransfer()
+
+	/************************************************************/
+	$('#getRequest').on('click',function(){
+		$.ajax({
+			url:'{{url("ajax")}}',
+			type: "GET",
+			success: function(data) {
+				alert(data[0].done);
+				$('#transfer').append('<ul class="list-group">'+
+					'<li class="list-group-item"><a href="employee-transfer/'+data[0].id+'">تحويلة رقم </a></li>'+
+					'</ul>');
+			}
+		})
+
+	})

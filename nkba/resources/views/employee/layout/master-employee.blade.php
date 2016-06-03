@@ -6,6 +6,7 @@
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
   <meta name="author" content="GeeksLabs">
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+  <meta id="token" name="token" content="{{ csrf_token() }}">
   <link rel="shortcut icon" href="img/favicon.png">
 
   <title>Form Validation | Creative - Bootstrap 3 Responsive Admin Template</title>
@@ -29,6 +30,12 @@
       <script src="js/respond.min.js"></script>
       <script src="js/lte-ie7.js"></script>
       <![endif]-->
+      <style>
+        body {
+          font-family: "Times New Roman", Times, serif;
+        }
+      </style>
+
     </head>
 
     <body>

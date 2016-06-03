@@ -31,7 +31,7 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/';
     
-     protected $username = 'login';
+    protected $username = 'login';
 
     /**
      * Create a new authentication controller instance.
@@ -53,12 +53,12 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
 //            'name' => 'required|max:255',//
-            
-             'login'=>'required|max:50|unique:users',
 
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+           'login'=>'required|max:50|unique:users',
+
+           'email' => 'required|email|max:255|unique:users',
+           'password' => 'required|min:6|confirmed',
+           ]);
     }
 
     /**
@@ -75,12 +75,15 @@ class AuthController extends Controller
             'login' => $data['login'],
 
             'password' => bcrypt($data['password']),
-        ]);
+            ]);
+
         Mail::send('emails.welcome',$data,function($message) use ($data)
-         {
-         $message->from('nkabaalex@gmail.com',$data['password']);
-         $message->to($data['email'])->subject('تفعيل الاشتراك بخدمات النقابة ');
-         });       
+        {
+            $MailBody = $data['password'];
+            $message->setBody($MailBody, 'text/html');
+            $message->from('nkabaalex@gmail.com','Admin');
+            $message->to($data['email'])->subject('تفعيل الاشتراك بخدمات النقابة ');
+        });       
         
         return $user;
     }
