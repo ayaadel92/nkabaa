@@ -143,13 +143,13 @@ $.pnotify({
   type:'info'
 }); 
 @endif ">notify</button> 
-
-@endsection
-<script src="text/javascript">
+<script type="text/javascript">
   $(document).ready(function() {
     $('#submitbtn').on('click',function() {
       alert('hi');
     })
   })
 </script>
+@endsection
+
 

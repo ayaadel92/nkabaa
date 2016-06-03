@@ -77,7 +77,7 @@ class EmplyeeTransferController extends Controller
         // $transfer = Transfer::findOrFail($id);
         $input = $request->all();
         $transfer = Transfer::where('id', $id)
-                ->update(['status' => $input['status'],'done' => $input['done']]);
+                ->update(['accepted' => $input['accepted'],'done' => $input['done']]);
                 print_r($transfer);exit;
         return view('employee.show',compact('transfer'));
     }
