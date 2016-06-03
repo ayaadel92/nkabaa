@@ -10,18 +10,24 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Http\Requests;
 use App\Transfer;
 use Jleon\LaravelPnotify\Notify;
+use DB;
+use Session;
+use isEmpty;
 
 use Event;
 use App\Events\TransferEvent;
 
 class TransferController extends Controller
 {
+	public static  $count=0;
+           // public function __construct() {
+           //       $this->middleware('auth');
+           //  }
 	public function create(){
 		return view('transfer.new');
 	}
 
 	public function store(Request $request){
-
 		$input=Input::all();
 		$validation=Validator::make($input, Transfer::$transfer_rules);
 		$transfer= new Transfer;
@@ -42,13 +48,15 @@ class TransferController extends Controller
 			$transfer->percentage=$input['percentage'];
 			$transfer->transfer_date=$input['transfer_date']	;
 			$transfer->save();
-			$id=$transfer->id;
+			if($transfer->save()){
+				TransferController::$count ++;
+				Notify::success('لديك'.TransferController::$count.'طلبات تحويل','تنبيه');
+				$id=$transfer->id;
+				Session::set('val',$transfer);
+				return Redirect::route('transfer.show',$id);	
+			}
 			// Event::fire(new TransferEvent()); // fire the transfer event
-
-		           //$this->show($id);
-		           // return view('transfer.new');
 			event(new TransferEvent(new Transfer($transfer->toarray())));
-			return Redirect::route('transfer.show',$id)->withErrors($validation);
 		}		     
 	}
 
@@ -56,6 +64,52 @@ class TransferController extends Controller
 	{
 		$transfer_row=Transfer::find($id);
 		return view('transfer.show',compact('transfer_row'));
+	}
+
+	public function validate_transfer()
+	{
+		$transfer=response()->json(Session::get('val'))->getData();
+		$engineer = DB::table('engineers')          
+		->where('eng_id', $transfer->eng_id)
+		->get(); 
+		$enginer=response()->json($engineer)->getData()[0];
+
+		if(DB::table('engineers')->where('eng_id',$transfer->eng_id)->count()>0)
+		{
+			if($enginer->status==="نعم")
+			{
+				if($transfer->patient_type==="مهندس")
+				{
+					$limit=$enginer->limit_id;
+				}//end of patient is engineer 
+				else
+				{
+					$where = ['eng_id'=> $transfer->eng_id, 'relation_type' => $transfer->patient_type];
+					$relative = DB::table('relatives')
+					->where($where)
+					->get(); 
+					$relativ=response()->json($relative)->getData()[0];
+					if($relativ->status==='نعم')
+					{
+						$limit=$relativ->limit_id;
+					}//end of relative status check=yes
+					else{
+						return "القريب غير مشترك";
+					}
+				}//end of patient is relative
+
+
+			}//end of engineer status check=yes
+
+			else{
+				Notify::success('الاشتراك','غير مشترك');
+				
+			}//end of engineer status check=no
+		}//end of engineer found 
+		else{
+			Notify::success('الاشتراك','لست');
+		}//end of engineer not found 
+
 	}
 
 }

@@ -62,55 +62,61 @@
                 <ul class="nav navbar-nav">
 
                     @if (!Auth::guest())
-                        @if (Auth::user()->role === "مهندس" || Auth::user()->role === "قريب")
+
+                    @if (Auth::user()->role === "مهندس" || Auth::user()->role === "قريب")
                     <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a></li>
-                      @endif
-                      @if (Auth::user()->role === "مستشفي" )
-                       @endif
-                      @endif
+                    @endif
+                    @if (Auth::user()->role === "مستشفي" )
+                    @endif
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">دخول</a></li>
-                        <li><a href="{{ url('/register') }}">التسجيل</a></li>
-                        @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+                    <li><a href="{{ url('/login') }}">دخول</a></li>
+                    <li><a href="{{ url('/register') }}">التسجيل</a></li>
+                    @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>خروج</a></li>
-                            </ul>
-                        </li>
-                        @endif
-                    </ul>
-                </div>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>خروج</a></li>
+                        </ul>
+                    </li>
+                    @endif
+                </ul>
             </div>
-        </nav>
-        @include('laravelPnotify::notify')
-        @yield('content')
+        </div>
+    </nav>
+    @include('laravelPnotify::notify')
+    @yield('content')
 
 
 
 
 
-        <!-- JavaScripts -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <<<<<<< HEAD
+    <!-- JavaScripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    =======
+    <!-- JavaScripts -->
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    >>>>>>> 19f900e7fb22975a3e0596915c49298cfd0fdca4
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
-        <!-- pnotify -->
-        <script type="text/javascript" src="/assets/js/jquery.pnotify.js"></script>
+    <!-- pnotify -->
+    <script type="text/javascript" src="/assets/js/jquery.pnotify.js"></script>
 
-        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-        <script type="text/javascript" src="/assets/js/pnotify.core.min.js"></script>
-<!--     <script type="text/javascript" src="assets/js/pnotify.buttons.min.js"></script>
--->    <script type="text/javascript" src="/assets/js/pnotify.custom.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="/assets/js/pnotify.core.min.js"></script>
+    <!--     <script type="text/javascript" src="assets/js/pnotify.buttons.min.js"></script>-->
+    <script type="text/javascript" src="/assets/js/pnotify.custom.min.js"></script>
 </body>
 </html>

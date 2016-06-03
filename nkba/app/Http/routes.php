@@ -1,9 +1,12 @@
 <?php
+use Illuminate\Support\Facades\Input;
+use App\Analysisradios;
 use App\Transfer;
 use App\Events\TransferEvent;
 
 
 // use Illuminate\Http\Request;
+
 /*
   |--------------------------------------------------------------------------
   | Application Routes
@@ -39,6 +42,25 @@ use App\Events\TransferEvent;
 
   Route::resource('transfer','TransferController');
 
+//transfer routes
+Route::resource('transfer','TransferController');
+Route::resource('/create','TransferController@create');
+Route::get('transfer-valid','TransferController@validate_transfer');
+//get analaysis and radiobologies
+Route::get('api/dropdown', function(){
+  
+   $input = Input::get('option');
+   if($input==1)
+      {
+           $radios = Analysisradios::findradios();
+           return Response::json($radios->get(['id','name']));
+      }
+    elseif ($input==2) 
+      {
+           $analysis = Analysisradios::findanalysis();
+           return Response::json($analysis->get(['id','name']));
+      }
+});
   Route::resource('/create','TransferController@create');
 
 //Admin routes
