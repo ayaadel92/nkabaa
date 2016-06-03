@@ -72,11 +72,11 @@ Route::get('api/dropdown', function(){
 // Route::get('/ajax','EmplyeeTransferController@ajax');
   Route::get('ajax/{created}',function($created){
     if (Request::ajax()) {
-      if (Transfer::where('done','no')->count() > 0) {
+      if (Transfer::where('done','لا')->count() > 0) {
         $last_created = Transfer::orderBy('created_at','desc')->first();
         if ($last_created !== $created) {
           // print_r($created);exit;
-          $transfers = Transfer::where([['created_at','>',$created],['done','=','no']])->get();
+          $transfers = Transfer::where([['created_at','>',$created],['done','=','لا']])->get();
            // print_r(response()->json($transfers));exit;
            // print_r(response()->json($transfers)->getData()[0]);exit;
           return response()->json($transfers);

@@ -50,7 +50,7 @@
                 url: "{{url('ajax')}}/"+created,
                 type: "GET",
                 success: function(data) {
-                    if (data.length) {$('#transfers-number').text(data.length);}
+                    if (data.length){$('#transfers-number').text(data.length);}
                     if (count < 8) {
                         for (var i = 0; i < 5; i++) {
 

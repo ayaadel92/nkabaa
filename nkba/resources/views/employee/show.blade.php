@@ -127,7 +127,7 @@
 						{{Form::label(' قبول التحويل؟',' قبول التحويل؟',array('class' => 'style' ))}}
 					</td>
 					<td>
-						{{ Form::text('status', $transfer->status,array('class'=>'form-control col-sm-8','id'=>'status','disabled')) }}
+						{{ Form::text('accepted', $transfer->accepted,array('class'=>'form-control col-sm-8','id'=>'accepted','disabled')) }}
 					</td>
 				</tr>
 				<tr>      
@@ -161,11 +161,11 @@
 			$.ajax({
 				url: "{{route('employee-transfer.update',$transfer->id)}}",
 				type : "PUT",
-				data : {"_token":"{{ csrf_token() }}","status": "yes","done": "yes"},
+				data : {"_token":"{{ csrf_token() }}","accepted": "نعم","done": "نعم"},
 				beforeSend: function(xhr){xhr.setRequestHeader('X-CSRF-TOKEN', $("#token").attr('content'));},
 				success: function(responseData) {
 					console.log('done');
-					$('#status').val('تمت');
+					$('#accepted').val('نعم');
 				},
 				error: function(err) {
 					console.log('error');
@@ -177,10 +177,10 @@
 			$.ajax({
 				url: "{{route('employee-transfer.update',$transfer->id)}}",
 				type : "PUT",
-				data : {"_token":"{{ csrf_token() }}","status": "no","done": "yes"},
+				data : {"_token":"{{ csrf_token() }}","accepted": "لا","done": "نعم"},
 				beforeSend: function(xhr){xhr.setRequestHeader('X-CSRF-TOKEN', $("#token").attr('content'));},
 				success: function(responseData) {
-					$('#status').val('لم تتم');
+					$('#accepted').val('لا');
 					console.log('done');
 				},
 				error: function(err) {
