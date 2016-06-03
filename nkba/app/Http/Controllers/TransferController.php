@@ -103,6 +103,15 @@ class TransferController extends Controller
 						return "القريب غير مشترك";
 					}
 				}//end of patient is relative
+				$limit_obj= DB::table('limits')
+				->where('id', $limit)
+				->get(); 
+				$limit_json=response()->json($limit_obj)->getData()[0];
+				if((1000-$limit_json->analysis_credit)>=$transfer->total_cost)//credit_analysis=the reminder from 1000LE
+				{
+					return('التحويلة مقبولة');
+				}
+
 
 
 			}//end of engineer status check=yes
