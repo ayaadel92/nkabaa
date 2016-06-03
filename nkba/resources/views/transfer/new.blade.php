@@ -167,7 +167,7 @@ $(document).ready(function($){
   });
 </script>
 @endsection
-<script src="text/javascript">
+<script type="text/javascript">
   $(document).ready(function() {
     $('#submitbtn').on('click',function() {
       alert('hi');
