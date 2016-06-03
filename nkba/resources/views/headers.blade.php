@@ -58,7 +58,6 @@ li{
         color: #ffffff;
     }
         .container-fluid {
-        padding-top: 50px;
         padding-bottom: 50px;
     }
     .margin {margin-bottom: 20px;}

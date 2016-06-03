@@ -47,11 +47,13 @@
              </td>
      </div>
   </tr>   
+ 
+ 
 
-  <tr>      
-      <td>{{Form::label(' التشخيص الطبى ',' التشخيص الطبى ',array('class' => 'style' ))}}</td>
-      <td>
-          {{ Form::textarea('medical_diagnosis', null,array('required','class'=>'form-control col-sm-9', 'rows' => 3)) }}</td>
+<tr>      
+  <td>{{Form::label(' التشخيص الطبى ',' التشخيص الطبى ',array('class' => 'style' ))}}</td>
+  <td>
+    {{ Form::textarea('medical_diagnosis', null,array('required','class'=>'form-control col-sm-9', 'rows' => 3)) }}</td>
   </tr>
 
   <tr>      
@@ -70,78 +72,80 @@
         </td>
  </tr>
 
-  <tr>      
-        <td>{{Form::label(' اسم الطبيب ',' اسم الطبيب ',array('class' => 'style' ))}}</td>
-        <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
-                                                                                                       </span>
-                  {{ Form::text('doctor_name', null, ['class'=>'form-control col-sm-8']) }}
-        </td>
-  </tr>  
+<tr>      
+  <td>{{Form::label(' اسم الطبيب ',' اسم الطبيب ',array('class' => 'style' ))}}</td>
+  <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
+  </span>
+  {{ Form::text('doctor_name', null, ['class'=>'form-control col-sm-8']) }}
+</td>
+</tr>  
 
-   <tr>      
-        <td>{{Form::label(' اسم المستشفى ',' اسم المستشفى ',array('class' => 'style' ))}}</td>
-        <td ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
-                                                                                                </span>
-                  {{ Form::text('hospital_name', null, ['class'=>'form-control col-sm-8']) }}
-        </td>
- </tr> 
-
- <tr>      
-      <td>{{Form::label(' اسم المعمل',' اسم المعمل',array('class' => 'style' ))}}</td>
-      <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
-                {{ Form::text('lab_name', null, ['class'=>'form-control col-sm-8']) }}
-      </td>
+<tr>      
+  <td>{{Form::label(' اسم المستشفى ',' اسم المستشفى ',array('class' => 'style' ))}}</td>
+  <td ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
+  </span>
+  {{ Form::text('hospital_name', null, ['class'=>'form-control col-sm-8']) }}
+</td>
 </tr> 
 
 <tr>      
-    <td>{{Form::label(' التكلفة الكلية',' التكلفة الكلية',array('class' => 'style' ))}}</td>
-    <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
+  <td>{{Form::label(' اسم المعمل',' اسم المعمل',array('class' => 'style' ))}}</td>
+  <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
+    {{ Form::text('lab_name', null, ['class'=>'form-control col-sm-8']) }}
+  </td>
+</tr> 
 
-              {{ Form::text('total_cost', null, array('required','class'=>'form-control col-sm-8')) }}
-    </td>
+<tr>      
+  <td>{{Form::label(' التكلفة الكلية',' التكلفة الكلية',array('class' => 'style' ))}}</td>
+  <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
+
+    {{ Form::text('total_cost', null, array('required','class'=>'form-control col-sm-8')) }}
+  </td>
 </tr>            
 <tr>      
-    <td>{{Form::label(' قبول التحويل؟',' قبول التحويل؟',array('class' => 'style' ))}}</td>
-    <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i></span>
+  <td>{{Form::label(' قبول التحويل؟',' قبول التحويل؟',array('class' => 'style' ))}}</td>
+  <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i></span>
 
-              {{ Form::text('status',null,['class'=>'form-control col-sm-8']) }}
-    </td>
+    {{ Form::select('accepted',['نعم'=>'لا'],'',array('class'=>'form-control col-sm-8','disabled')) }}
+  </td>
 </tr>
 
 <tr>      
-      <td>{{Form::label(' نسبة مساهمة النقابة',' نسبة مساهمة النقابة',array('class' => 'style' ))}}</td>
-      <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
+  <td>{{Form::label(' نسبة مساهمة النقابة',' نسبة مساهمة النقابة',array('class' => 'style' ))}}</td>
+  <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
 
-                {{ Form::text('percentage', null, ['class'=>'form-control col-sm-8']) }}
-      </td>
+    {{ Form::text('percentage', null, ['class'=>'form-control col-sm-8']) }}
+  </td>
 </tr>   
 
 <tr>      
-    <td>{{Form::label(' التاريخ',' التاريخ',array('class' => 'style' ))}}</td>
-    <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-calendar"></i>
-                                                                                     </span>
-              {{ Form::date('transfer_date', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-8']) }}
-    </td>
+  <td>{{Form::label(' التاريخ',' التاريخ',array('class' => 'style' ))}}</td>
+  <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-calendar"></i>
+  </span>
+  {{ Form::date('transfer_date', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-8']) }}
+</td>
 </tr>  
 
-  <tr>      
-        <td></td>
-        <td > {{ Form::submit('إرسال التحويل',array('class'=>'btn btn-success  form-control col-sm-9 ')) }}</td>
-  </tr>  
+<tr>      
+  <td></td>
+  <td > {{ Form::submit('إرسال التحويل',array('class'=>'btn btn-success  form-control col-sm-9 ','id'=>'submitbtn','name'=>'submit')) }}</td>
+</tr>  
 
 </table> 
 </div>
 </fieldset>
-    {{Form::close()}}
+ 
+{{Form::close()}}
 
-   </div>
+</div>
+</div>
 
 @if($errors->any())
-    <div class="alert alert-danger">
-        @foreach($errors->all() as $error)
-            <p>{{ $error }}</p>
-        @endforeach
-    </div>
+<div class="alert alert-danger">
+  @foreach($errors->all() as $error)
+  <p>{{ $error }}</p>
+  @endforeach
+</div>
 @endif
 
 
@@ -162,5 +166,12 @@ $(document).ready(function($){
     });
   });
 </script>
-
 @endsection
+<script src="text/javascript">
+  $(document).ready(function() {
+    $('#submitbtn').on('click',function() {
+      alert('hi');
+    })
+  })
+</script>
+

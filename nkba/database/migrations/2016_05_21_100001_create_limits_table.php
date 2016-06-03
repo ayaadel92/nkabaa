@@ -18,6 +18,8 @@ class CreateLimitsTable extends Migration
             $table->integer('surgery_credit');// flos el 3mlyt 
             $table->integer('analysis_credit');// flos el t7lel w el 2sh3a 
             $table->integer('radiopology_credit');
+            $table->integer('user_id')->unsigned()->unique();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // delete on cascade
             });
     }
 

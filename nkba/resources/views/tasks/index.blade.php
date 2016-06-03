@@ -106,7 +106,7 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                                    {!! Form::open(['route'=>['task.update',Auth::user()->id],'method'=>'put' ]) !!}
+                                                    {!! Form::open(['route'=>['task.update',$task->id],'method'=>'put' ]) !!}
 
                                                     <div class="form-group">
 

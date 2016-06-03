@@ -6,8 +6,7 @@ use App\Http\Requests;
 use DB;
 use App\User;
 use Illuminate\Support\Facades\Request as Request;
-
-
+use Illuminate\Support\Facades\Auth;
 
 class EngineerController extends Controller {
 
@@ -21,10 +20,19 @@ class EngineerController extends Controller {
     }
 
     public function show($id) {
+         $role = Auth::user()->role;
+         if($role=="engineer"){
         $user = DB::table('engineers')
                 ->where('user_id', $id)
                 ->get();
         return view('engineer.index', compact('user'));
+         }else{
+              $user = DB::table('relatives')
+                ->where('user_id', $id)
+                ->get();
+              //print_r( $user);exit();
+        return view('engineer.index', compact('user'));
+         }
     }
 
     public function update(Request $request, $id) {

@@ -2,36 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Task;
-use Illuminate\Support\Facades\Auth;
-use DB;
-use App\User;
-use App\Complaint;
-use Illuminate\Support\Facades\Request as Request;
+use App\Transfer;
 
-class ComplaintssController extends Controller
+
+class EmplyeeTransferController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
-    
-      public function __construct() {
-        $this->middleware('auth');
-    }
-
-    
-    
     public function index()
     {
-        //
+        return view('employee.index');
+        
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -50,17 +39,7 @@ class ComplaintssController extends Controller
      */
     public function store(Request $request)
     {
-        $complain = new Complaint;
-       $complain->hospital_name = Request::get('name_hosptail'); 
-       $complain->doctor_name = Request::get('name_doctor'); 
-        $complain->lab_name = Request::get('name_lab');
-        $complain->description="hello";
-        $complain->user_id = Auth::user()->id;
-        
-       $complain->save();
-//        $id = Auth::user()->id;
-        
-        return redirect("/complain/Auth::user()->id");
+        //
     }
 
     /**
@@ -71,10 +50,7 @@ class ComplaintssController extends Controller
      */
     public function show($id)
     {
-        //
-         $tasks="hello";
-        
-        return view('complain.index', compact('tasks'));
+        return view('employee.show');
     }
 
     /**
