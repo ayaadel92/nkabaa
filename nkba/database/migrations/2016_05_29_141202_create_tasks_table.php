@@ -14,7 +14,8 @@ class CreateTasksTable extends Migration {
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            
+            $table->date('date');
+            $table->time('time');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // delete on cascade
 
@@ -32,3 +33,7 @@ class CreateTasksTable extends Migration {
     }
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 084cee9c1a23837971fca79afef01f0cc4d58a9e

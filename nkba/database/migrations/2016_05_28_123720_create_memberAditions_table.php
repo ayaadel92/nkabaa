@@ -18,7 +18,7 @@ class CreateMemberAditionsTable extends Migration
             $table->integer('eng_id')->unsigned();
             $table->foreign('eng_id')->references('id')->on('users')->onDelete('cascade');
             $table->enum('relation_type', ['اب', 'ام', 'ابن','ابنه', 'زوج','زوجه'])->require(); // dah el no3 
-            $table->string('require_data')->require(); // dah l sora 
+            $table->string('reqire_data')->require(); // dah l sora 
             $table->string('photo')->require(); // dah l sora 
             $table->integer('user_id')->unsigned()->unique();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // delete on cascade

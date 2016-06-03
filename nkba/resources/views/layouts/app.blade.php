@@ -69,6 +69,7 @@
                     @if (Auth::user()->role === "مستشفي" )
                     @endif
                     @endif
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -94,7 +95,6 @@
     </nav>
     @include('laravelPnotify::notify')
     @yield('content')
-
 
     <!-- JavaScripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
