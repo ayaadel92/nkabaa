@@ -2,6 +2,8 @@
 use Illuminate\Support\Facades\Input;
 use App\Analysisradios;
 use App\Transfer;
+use App\Events\TransferEvent;
+
 
 // use Illuminate\Http\Request;
 
@@ -68,16 +70,24 @@ Route::get('api/dropdown', function(){
 //Employee
   Route::resource('employee-transfer','EmplyeeTransferController');
 // Route::get('/ajax','EmplyeeTransferController@ajax');
-  Route::get('/ajax',function(){
+  Route::get('ajax/{created}',function($created){
     if (Request::ajax()) {
-      if (Transfer::where('done','yes')->count() > 0) {
-        $transfers = Transfer::where('done','yes')->get();
-            // print_r(json_encode($transfers));exit;
-        // print_r(response()->json($transfers)->getData()[0]);exit;
-
-        return response()->json($transfers);
-             }
-        return "data has ajax";
+      if (Transfer::where('done','no')->count() > 0) {
+        $last_created = Transfer::orderBy('created_at','desc')->first();
+        if ($last_created !== $created) {
+          // print_r($created);exit;
+          $transfers = Transfer::where([['created_at','>',$created],['done','=','no']])->get();
+           // print_r(response()->json($transfers));exit;
+           // print_r(response()->json($transfers)->getData()[0]);exit;
+          return response()->json($transfers);
+        }
+        
       }
-    });
+    }
+  });
 
+  //event
+  // Route::get('event',function()
+  // {
+
+  // });

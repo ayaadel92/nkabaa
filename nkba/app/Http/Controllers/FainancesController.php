@@ -28,7 +28,7 @@ class FainancesController extends Controller {
 
         $role = Auth::user()->role;
 
-        if ($role == "engineer") {
+        if ($role === "مهندس") {
             $user = DB::table('engineers')
                     ->where('user_id', $id)
                     ->get();
@@ -49,7 +49,7 @@ class FainancesController extends Controller {
                     ->where('user_id', $id)
                     ->get();
                 $name=$user['0']->name;
-                $type="engineer";
+                $type="مهندس";
                 
                 
                 $transfers= DB::table('transfers')

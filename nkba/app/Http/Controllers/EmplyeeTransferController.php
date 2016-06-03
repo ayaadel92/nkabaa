@@ -50,7 +50,8 @@ class EmplyeeTransferController extends Controller
      */
     public function show($id)
     {
-        return view('employee.show');
+        $transfer=Transfer::findOrFail($id);
+        return view('employee.show',compact('transfer'));
     }
 
     /**
@@ -73,7 +74,12 @@ class EmplyeeTransferController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $transfer = Transfer::findOrFail($id);
+        $input = $request->all();
+        $transfer = Transfer::where('id', $id)
+                ->update(['status' => $input['status'],'done' => $input['done']]);
+                print_r($transfer);exit;
+        return view('employee.show',compact('transfer'));
     }
 
     /**

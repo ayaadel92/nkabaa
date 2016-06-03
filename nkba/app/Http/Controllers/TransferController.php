@@ -14,6 +14,9 @@ use DB;
 use Session;
 use isEmpty;
 
+use Event;
+use App\Events\TransferEvent;
+
 class TransferController extends Controller
 {
 	public static  $count=0;
@@ -25,7 +28,6 @@ class TransferController extends Controller
 	}
 
 	public function store(Request $request){
-		
 		$input=Input::all();
 		$validation=Validator::make($input, Transfer::$transfer_rules);
 		$transfer= new Transfer;
@@ -37,13 +39,12 @@ class TransferController extends Controller
 			$transfer->patient_name=$input['patient_name'];
 			$transfer->patient_type=$input['patient_type'];
 			$transfer->medical_diagnosis  =$input['medical_diagnosis'];
-			$transfer->type=$input['type'];
-			$transfer->type_name=$input['list'];	
+			$transfer->type=$input['type'];	
 			$transfer->doctor_name=$input['doctor_name'];
 			$transfer->hospital_name=$input['hospital_name'];
 			$transfer->lab_name=$input['lab_name'];
-			$transfer->status=$input['status'];
 			$transfer->total_cost=$input['total_cost'];
+			$transfer->status=$input['status'];
 			$transfer->percentage=$input['percentage'];
 			$transfer->transfer_date=$input['transfer_date']	;
 			$transfer->save();
@@ -54,9 +55,8 @@ class TransferController extends Controller
 				Session::set('val',$transfer);
 				return Redirect::route('transfer.show',$id);	
 			}
-			// $id=$transfer->id;
-			// Session::set('val',$transfer);
-			// return Redirect::route('transfer.show',$id);		               
+			// Event::fire(new TransferEvent()); // fire the transfer event
+			event(new TransferEvent(new Transfer($transfer->toarray())));
 		}		     
 	}
 
@@ -65,8 +65,6 @@ class TransferController extends Controller
 		$transfer_row=Transfer::find($id);
 		return view('transfer.show',compact('transfer_row'));
 	}
-
-
 
 	public function validate_transfer()
 	{

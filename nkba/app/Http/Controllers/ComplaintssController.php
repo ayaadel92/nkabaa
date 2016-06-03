@@ -11,6 +11,7 @@ use DB;
 use App\User;
 use App\Complaint;
 use Illuminate\Support\Facades\Request as Request;
+use Illuminate\Support\Facades\Input;
 
 class ComplaintssController extends Controller
 {
@@ -54,13 +55,31 @@ class ComplaintssController extends Controller
        $complain->hospital_name = Request::get('name_hosptail'); 
        $complain->doctor_name = Request::get('name_doctor'); 
         $complain->lab_name = Request::get('name_lab');
-        $complain->description="hello";
+        $complain->description=Request::get('dec');
+        //fileToUpload
+//        $destinationPath="/assets/images";
+//        $fileName = Request::get('fileToUpload')->getClientOriginalName();
+//        $complain->img_path=Request::get('fileToUpload')->move($destinationPath, $fileName);
+//        //print_r($complain->img_path);exit();
+//        //Input::file('photo')->move($destinationPath, $fileName);
+        
+        
+      $file = array_get(Request::get('fileToUpload'),'fileToUpload');
+           // SET UPLOAD PATH
+            $destinationPath = '/assets/images';
+            // GET THE FILE EXTENSION
+            $extension = $file->getClientOriginalExtension();
+            // RENAME THE UPLOAD WITH RANDOM NUMBER
+            $fileName = rand(11111, 99999) . '.' . $extension;
+            // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+            $upload_success = $file->move($destinationPath, $fileName);
+        $complain->img_path= $fileName;
         $complain->user_id = Auth::user()->id;
         
        $complain->save();
 //        $id = Auth::user()->id;
-        
-        return redirect("/complain/Auth::user()->id");
+        $id=Auth::user()->id;
+        return redirect("/complain/$id");
     }
 
     /**

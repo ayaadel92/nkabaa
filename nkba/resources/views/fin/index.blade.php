@@ -1,7 +1,24 @@
 @include('master')
 
-
+        <div class="clearfix"></div>
+        <div class="clearfix"></div> 
 <div class="container content" >
+    <div class="container">
+        <h3 class="tittle  pull-right">كشف حساب التامين الصحي </h3>
+        <div class="clearfix"></div>
+        <div class="about-top">
+            <div class="col-md-7 about-top-right">
+                <h4>نقدم لك خدمتنا فقط لاسعادك </h4>
+                <p> متابعه الرصيد العمليات الخاصه بيك  </p>
+                <p> متابعه الرصيدالتحليل الخاصه بيك  </p>
+                <p> متابعه الرصيدالاشعه الخاصه بيك  </p>
+                
+                
+
+
+                <div class="sing-img-text-left">
+                    <div class="blog-right1">
+                                            <div class="container content" >
 
     @if($message && $limit == ""&& $transfers == "")      
     <div class="alert alert-warning" style="height: 300px">
@@ -12,15 +29,10 @@
     @endif
 
     @if ($limit && $message == ""|| $transfers)
-
-    <p style="color:#000 "> {{ $limit['0']->analysis_credit }}</p>
-     
     <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="text-center text-uppercase">
-                <h2>كشف الحساب</h2>
-            </div>
+            
             <!-- //.text-center -->
         </div>
         <!-- //.col-md-12 -->
@@ -63,7 +75,7 @@
                     </div>
                     <!-- //.item -->
                     <p style="color:#000"> المتبقي من التحليل </p>
-                    <div class="item">
+                    <div class="item  pull-right">
                         <div class="bar">
                             <span class="percent">{{($limit['0']->analysis_credit/1000)*100}}%</span>
             
@@ -95,41 +107,97 @@
         </div>
         <!-- //.col-md-4 -->
     </div>
+    
     <!-- //.row -->
 </div>
 <!-- //.container -->
+</div>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-5 about-top-left">
+                    <img src="/assets/images/mony.jpg" class="img-responsive" alt="" style="height: 250px ;width: 400px"/>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>  
+
+<div class="container content" >
+ <div class="clearfix"></div>
+        <div class="clearfix"></div> 
+        <table class="table table-hover">
+    <thead>
+      <tr>
+          <th style="color:#019e59">نوع التحويله </th>
+            <th style="color:#019e59">التاريخ  </th>
+               <th style="color:#019e59"> سعر التكلفه </th>
+               <th style="color:#019e59"> التشخيص </th>
+                  <th style="color:#019e59"> اسم الدكتور </th>
+                   <th style="color:#019e59"> اسم المستشفي </th>
+                    <th style="color:#019e59"> اسم المعمل  </th>
+       
+      </tr>
+    </thead>
+    <tbody>
+     
   
     @foreach ($transfers as $transfer)
-     <p style="color:#000 "> {{ $transfer->type }}</p>
-     <p style="color:#000 "> {{ $transfer->transfer_date }}</p>
-      <p style="color:#000 "> {{ $transfer->total_cost }}</p>
-       <p style="color:#000 "> {{ $transfer->medical_diagnosis }}</p>
-        <p style="color:#000 "> {{ $transfer->doctor_name }}</p>
-         <p style="color:#000 "> {{ $transfer->hospital_name }}</p>
-      <p style="color:#000 "> {{ $transfer->lab_name }}</p>
-
+    <tr>
+        <td style="color:#777">  <p style="color:#000 "> {{ $transfer->type }}</p> </td> 
+    <td  style="color:#777" >  <p style="color:#000 "> {{ $transfer->transfer_date }}</p> </td> 
+    <td  style="color:#777">   <p style="color:#000 "> {{ $transfer->total_cost }}</p> </td> 
+     <td  style="color:#777">   <p style="color:#000 "> {{ $transfer->medical_diagnosis }}</p> </td> 
+    <td  style="color:#777">     <p style="color:#000 "> {{ $transfer->doctor_name }}</p> </td> 
+    <td  style="color:#777">      <p style="color:#000 "> {{ $transfer->hospital_name }}</p> </td> 
+   <td  style="color:#777">    <p style="color:#000 "> {{ $transfer->lab_name }}</p> </td> 
+ </tr>
     @endforeach
     
-
-
-    @endif
-
+</tbody>
+  </table>
 </div>
+    @endif    
+    
+        <div style="height:200px"></div>
+
+
+
+        <div class="footer">
+            <div class="container">
+
+                <div class="footer-text">
+                    <p>© ITI Graduation Project | Design by ITI</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
 
 
 
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto);
-
-body {
-    background-color: #f2f2f2;
-    color: #000;
-    font-family: 'Roboto', sans-serif;
+  .body {
+      background-color: #c1e8c8;
+      padding-top: 0px;
 }
 
+
 .bar-chart {
-    position: relative;
+    padding-left: 50px;
     width: 100%;
     margin-top: 15px;
 }
@@ -194,7 +262,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ff4081;
+    background-color: #decba5;
     z-index: 5;
 }
 
@@ -214,7 +282,7 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #3e50b4;
+    background-color: #019e59;
     z-index: 10;
 }
 
@@ -246,6 +314,12 @@ body {
     };
 });
 </script>
+
+
+
+
+
+
 
 
 

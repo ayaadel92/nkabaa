@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use Event;
+
+use App\Transfer;
+
+use App\Events\TransferEvent;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Transfer::created(function ($item) {
+            Event::fire(new TransferEvent($item));
+        });
     }
 
     /**

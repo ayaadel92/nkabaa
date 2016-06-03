@@ -178,3 +178,20 @@
             </div>
         </div>
 
+<script>
+//	(function ($){
+//		$('#task-name').on('click',function(){
+//			$.ajax({
+//				url:'{{url("ajax")}}',
+//				type: "GET",
+//				success: function(data) {
+//					$('#hidden').append();
+//				}
+//			})
+//
+//		})
+//	})(jQuery);
+
+	
+	
+</script>
