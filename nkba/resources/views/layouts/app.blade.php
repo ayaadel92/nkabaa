@@ -62,19 +62,14 @@
                 <ul class="nav navbar-nav">
 
                     @if (!Auth::guest())
-<<<<<<< HEAD
-                    @if (Auth::user()->role == "engineer" || Auth::user()->role == "relative")
-                    <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a></li>
-                    @endif
-                    @endif
-=======
+
                         @if (Auth::user()->role === "مهندس" || Auth::user()->role === "قريب")
                     <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a></li>
                       @endif
                       @if (Auth::user()->role === "مستشفي" )
                        @endif
                       @endif
->>>>>>> f72d873b92c80ee34e0abdbc76128fc38901d647
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->

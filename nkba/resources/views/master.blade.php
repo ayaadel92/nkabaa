@@ -23,10 +23,10 @@
 
 </style>
 
-
+<div class="container">
         <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div style="width:2000px;height: 500px">
-  <img src="/assets/images/final.jpg" alt="" style="width:2000px;height: 500px">
+        <div style="width:1142px;height: 500px">
+  <img src="/assets/images/final.jpg" alt="" style="width:1142px;height: 500px">
 
     </div>
 
@@ -65,6 +65,7 @@
     </div><!--/.navbar -->
 
 </div>
+
 
 
 

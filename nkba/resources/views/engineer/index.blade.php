@@ -1,4 +1,5 @@
     @include('master')
+    <div class="container">
     <div style="height: 200px" >
          <h3 class="tittle  pull-right " style="font-size:30px">المعلومات الشخصيه بالمهندس</h3>
     </div>
@@ -174,10 +175,12 @@
   
   </div>
 </div><br>
-  
-        
+</div>
+</div>     
 
 @else
+
+<div class="container">
 <div class="container text-center">    
   <h3>What We Do</h3><br>
   <div class="row">
@@ -315,7 +318,7 @@
   
   </div>
 </div><br>
-
+</div>
 @endif
 
     <div class="footer">
@@ -337,7 +340,7 @@
 /*      background-color: #b6b7b6;*/
       padding-top: 0px;
       
-      background-image: url('/assets/images/Noted.mp4');
+      background-image: url('/assets/images/technical.jpg');
       background-size:cover;
       position:relative;
 }
