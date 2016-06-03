@@ -19,7 +19,7 @@ class CreateRelativesTable extends Migration {
             $table->integer('eng_id')->unsigned();
             $table->string('birth_date'); 
             $table->enum('gender', ['ذكر', 'انثى']); // dah el no3 
-            $table->enum('relation_type', ['اب', 'ام', 'ابن','ابنه', 'زوج','زوجه']); // dah el no3 
+            $table->enum('relation_type', ['اب', 'ام', 'ابن','ابمه', 'زوج','زوجه']); // dah el no3 
             $table->string('national_id'); // dah rkm el bt2a 
             $table->string('path')->nullable(); // dah l sora 
             $table->integer('limit_id')->unsigned();

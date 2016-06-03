@@ -33,3 +33,4 @@ class CreateTasksTable extends Migration {
     }
 
 }
+
