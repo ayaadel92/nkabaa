@@ -11,17 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-    <!-- jQuery -->
-    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
-    <!-- jQuery UI -->
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" media="all" rel="stylesheet" type="text/css" />
-    <!--     PNotify -->  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/pnotify.core.min.css"/>
-<!--     <link rel="stylesheet" href="/assets/css/pnotify.buttons.min.css"/> 
---> <link href="/assets/css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="/assets/css/jquery.pnotify.default.css">
-
+    
 
 <!-- Styles -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -38,7 +28,6 @@
 </style>
 
 @include('headers')
-
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -93,7 +82,8 @@
             </div>
         </div>
     </nav>
-    @include('laravelPnotify::notify')
+        @include('laravelPnotify::notify')
+
     @yield('content')
 
     <!-- JavaScripts -->

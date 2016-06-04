@@ -19,10 +19,12 @@ use DateTime;
 
 class TransferController extends Controller
 {
-	public static  $count=0;
            // public function __construct() {
            //       $this->middleware('auth');
            //  }
+	public function index(){
+		return view('transfer.index');
+	}
 	public function create(){
 		return view('transfer.new');
 	}
@@ -50,11 +52,11 @@ class TransferController extends Controller
 			$transfer->transfer_date=$input['transfer_date']	;
 			$transfer->save();
 			if($transfer->save()){
-				TransferController::$count ++;
-				Notify::success('لديك'.TransferController::$count.'طلبات تحويل','تنبيه');
-				$id=$transfer->id;
-				Session::set('val',$transfer);
-				return Redirect::route('transfer.show',$id);	
+				//$id=$transfer->id;
+				//Session::set('val',$transfer);
+				return Redirect::route('transfer.create');	
+				// return view('transfer.new');
+
 			}
 			// Event::fire(new TransferEvent()); // fire the transfer event
 			event(new TransferEvent(new Transfer($transfer->toarray())));
@@ -67,4 +69,9 @@ class TransferController extends Controller
 		return view('transfer.show',compact('transfer_row'));
 	}
 
+	public function confirm($id){
+		DB::table('transfers')
+	            ->where('id', $id)
+	            ->update(['confirm' => 'نعم']);
+	}
 }

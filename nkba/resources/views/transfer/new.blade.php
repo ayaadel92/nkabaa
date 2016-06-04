@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('transfer.master')
 
 @section('content')
 <div class="container">
@@ -41,9 +41,7 @@
   <tr>  
     <div class="form-group">      
      <td>{{Form::label(' درجة القرابة ',' درجة القرابة ',array('class' => 'style' ))}}</td>
-
-     <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i>
-     </span>
+     <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i></span>
      {{ Form::select('patient_type',['مهندس'=>'مهندس/مهندسة','زوجه'=>'زوجه','زوج'=>'زوج','ابن'=>'ابن','ابنه'=>'ابنه','اب'=>'اب','ام'=>'ام'],'المهندس',array('required','class'=>'form-control col-sm-8')) }}
    </td>
  </div>
