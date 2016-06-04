@@ -33,9 +33,9 @@ class FainancesController extends Controller {
                     ->where('user_id', $id)
                     ->get();
             // print_r($user['0'] -> status);exit();
-            if ($user['0']->status == "no") {
-                $message = "yes 7lwa ";
-                 $limit="";
+            if ($user['0']->status == "ﻻ") {
+                $message = "يرجى إعادة تجديد الإشتراك";
+                $limit="";
                 $transfers="";
                 return view('fin.index', compact(['message','limit','transfers']));
                 
@@ -65,8 +65,8 @@ class FainancesController extends Controller {
             $user = DB::table('relatives')
                     ->where('user_id', $id)
                     ->get();
-            if ($user['0']->status == "no") {
-                $message = "mohndsk mdf3sh ya 7wan ";
+            if ($user['0']->status == "ﻻ") {
+                $message = "يرجى إعادة تجديد الإشتراك";
                  $limit="";
                   $transfers="";
                 return view('fin.index',compact(['message','limit','transfers']));

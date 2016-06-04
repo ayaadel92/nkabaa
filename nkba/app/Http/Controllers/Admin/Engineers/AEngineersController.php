@@ -56,7 +56,7 @@ class AEngineersController extends Controller
                 'role' => 'engineer',
                 'login' => $input['eng_id'],
                 'email' => $input['email'],
-                'password' => $input['password']
+                'password' => bcrypt($input['password'])
                 ));
             //add engineer in engineers table
             $engineer = new Engineer;

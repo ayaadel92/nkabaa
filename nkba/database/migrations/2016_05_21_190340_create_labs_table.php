@@ -19,7 +19,7 @@ class CreateLabsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('governorate');
             $table->string('area'); 
-            $table->enum('type', ['analysis_lab', 'ray_center']); // dah el no3 
+            $table->enum('type', ['مركز اشعة', 'معمل تحاليل']); // dah el no3 
             $table->string('discription')->nullable();
             $table->string('path')->nullable();
             $table->timestamps();

@@ -16,11 +16,11 @@ class CreateEngineersTable extends Migration
             $table->increments('id');
             $table->string('name'); // 2sm el mohnds 
             $table->string('email');
-            $table->enum('status',['yes','no']);
+            $table->enum('status',['نعم','لا']);
             $table->string('national_id')->nullable(); // dah rkm el bt2a 
             $table->string('address'); // 3nwan el mohds 
             $table->string('phone_number')->nullable(); // rkm el phone el mohnds 
-            $table->string('birth_date'); // melad el mohnds 
+            $table->date('birth_date'); // melad el mohnds 
             $table->string('gradu_year')->nullable(); // snt el t5rog 
             $table->string('relative_num')->nullable(); // dah 3dat el moshrken m3h 
             $table->enum('gender', ['Male', 'Female']); // dah el no3 

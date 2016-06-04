@@ -41,6 +41,8 @@
 
                         <div class="col-sm-6">
                             <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
+                             <input type="date" name="date" id="task-name" class="form-control" value="{{ old('task') }}">
+                               <input type="time" name="time" id="task-name" class="form-control" value="{{ old('task') }}">
                         </div>
                     </div>
 
@@ -178,3 +180,20 @@
             </div>
         </div>
 
+<script>
+//	(function ($){
+//		$('#task-name').on('click',function(){
+//			$.ajax({
+//				url:'{{url("ajax")}}',
+//				type: "GET",
+//				success: function(data) {
+//					$('#hidden').append();
+//				}
+//			})
+//
+//		})
+//	})(jQuery);
+
+	
+	
+</script>

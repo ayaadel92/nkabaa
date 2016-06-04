@@ -16,7 +16,6 @@
 							<th style="float: right;">id</th>
 							<th style="float: right;">name</th>
 							<th style="float: right;">email</th>
-							<th style="float: right;">password</th>
 							<th style="float: right;">relatives number</th>
 							<th style="float: right;">card id</th>
 							<th style="float: right;">graduation year</th>
@@ -29,7 +28,6 @@
 							<td style="float: right;">{{ $engineer['id']}}</td>
 							<td style="float: right;">{{ $engineer['name'] }}</td>
 							<td style="float: right;">{{ $engineer['email'] }}</td>
-							<td style="float: right;">{{ $engineer['password'] }}</td>
 							<td style="float: right;">{{ $engineer['relative_num'] }}</td>
 							<td style="float: right;">{{ $engineer['eng_id'] }}</td>
 							<td style="float: right;">{{ $engineer['gradu_year'] }}</td>

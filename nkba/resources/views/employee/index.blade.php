@@ -1,62 +1,57 @@
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>@extends('employee.layout.master-employee')
+@extends('employee.layout.master-employee')
 @section('content')
 
 <section class="row">
-	<div class="col-sm-4" style="background-color: rgba(250,69,62,0.3); height: 500px;">
-
+	<div class="col-sm-10 transfer" id="transfer" value="hi">
+		<ul class="list-group transfers-list"></ul>
 	</div>
-	<div class="col-sm-8" id="transfer"  style="background-color: rgba(7,51,9,0.2); height: 500px;">
-
-	</div>
-	<button type="button" class="btn btn-warning" id="getRequest" onclick="function hi() {
-		alert('$(this).text()');
-	}"> get request </button>
-
-	
 </section>
 <script>
 	(function ($){
-		$('#getRequest').on('click',function(){
+		
+		function receiveTransfers() {
+			var created;
+			created = $('li').last().attr('id');
+			
+			if (!created) {created = 0;}
 			$.ajax({
-				url:'{{url("ajax")}}',
+				url: "{{url('ajax')}}/"+created,
 				type: "GET",
 				success: function(data) {
-
-					alert(data[0].done);
-					$('#transfer').append('<ul class="list-group">'+
-						'<li class="list-group-item"><a href="employee-transfer/'+data[0].id+'">تحويلة رقم </a></li>'+
-						'</ul>');
+					for (var i = 0; i < data.length; i++) {
+						$('.transfers-list').append('<li class="list-group-item text-center" id="' +data[i].created_at+'" ><a class="tranlist" href="employee-transfer/'+data[i].id+'">تحويلة رقم ' +data[i].id+'</a></li>');
+					}
+					setTimeout(receiveTransfers,1000);
+				},
+				error: function(err) {
+					setTimeout(receiveTransfers,5000);
 				}
 			})
-
-		})
+		}
+		receiveTransfers(); //call the function when the body load
 	})(jQuery);
 
-	
-	
 </script>
 <style type="text/css">
 	a{
 		font-size: 24px;
-		color: #808080;
+		color: #5a9c39;
 		font-weight: bold;
 		text-decoration: none;  
 		display: block;
-
-
+	}
+	li{
+		margin: 20px;
 	}
 	a:hover ,a:focus{
 		color: white;
 		text-decoration: none;
 	}
 
-
 	li:hover , li:focus{
-		background-color: #999999;
+		background-color: #2c8d28;
 		color: white;
-
-
 	}
 </style>
 

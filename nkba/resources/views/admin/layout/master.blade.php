@@ -6,22 +6,23 @@
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <meta id="token" name="token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Form Validation | Creative - Bootstrap 3 Responsive Admin Template</title>
 
     <!-- Bootstrap CSS -->    
-    {!!Html::style('assets/admin/css/bootstrap.min.css')!!}
-    {!!Html::style('assets/css/bootstrap-rtl.css')!!}
+    {!!Html::style('/assets/admin/css/bootstrap.min.css')!!}
+    {!!Html::style('/assets/css/bootstrap-rtl.css')!!}
     <!-- bootstrap theme -->
-    {!! Html::style('assets/admin/css/bootstrap-theme.css') !!}
+    {!! Html::style('/assets/admin/css/bootstrap-theme.css') !!}
     <!--external css-->
     <!-- font icon -->
-    {!! Html::style('assets/admin/css/elegant-icons-style.css') !!}
-    {!! Html::style('assets/admin/css/font-awesome.min.css') !!}
+    {!! Html::style('/assets/admin/css/elegant-icons-style.css') !!}
+    {!! Html::style('/assets/admin/css/font-awesome.min.css') !!}
     <!-- Custom styles -->
-    {!! Html::style('assets/admin/css/style.css') !!}
-    {!! Html::style('assets/admin/css/style-responsive.css') !!}
+    {!! Html::style('/assets/admin/css/style.css') !!}
+    {!! Html::style('/assets/admin/css/style-responsive.css') !!}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
@@ -47,21 +48,21 @@
   <!-- container section end -->
 
     <!-- javascripts -->
-    {!!Html::script('assets/admin/js/jquery.js')!!}
-    {!! Html::script('assets/admin/js/bootstrap.min.js') !!}
+    {!!Html::script('/assets/admin/js/jquery.js')!!}
+    {!! Html::script('/assets/admin/js/bootstrap.min.js') !!}
 
     <!-- nice scroll -->
-    {!! Html::script('assets/admin/js/jquery.scrollTo.min.js') !!}
-    {!! Html::script('assets/admin/js/jquery.nicescroll.js') !!}
+    {!! Html::script('/assets/admin/js/jquery.scrollTo.min.js') !!}
+    {!! Html::script('/assets/admin/js/jquery.nicescroll.js') !!}
 
     <!-- jquery validate js -->
-    {!! Html::script('assets/admin/js/jquery.validate.min.js') !!}
+    {!! Html::script('/assets/admin/js/jquery.validate.min.js') !!}
 
     <!-- custom form validation script for this page-->
-    {!! Html::script('assets/admin/js/form-validation-script.js') !!}
+    {!! Html::script('/assets/admin/js/form-validation-script.js') !!}
 
     <!--custome script for all page-->
-    {!! Html::script('assets/admin/js/scripts.js') !!}
+    {!! Html::script('/assets/admin/js/scripts.js') !!}
 
 
 
