@@ -40,6 +40,7 @@ class TransferController extends Controller
 			$transfer->patient_type=$input['patient_type'];
 			$transfer->medical_diagnosis  =$input['medical_diagnosis'];
 			$transfer->type=$input['type'];	
+			$transfer->type_name=$input['type_name'];
 			$transfer->doctor_name=$input['doctor_name'];
 			$transfer->hospital_name=$input['hospital_name'];
 			$transfer->lab_name=$input['lab_name'];
