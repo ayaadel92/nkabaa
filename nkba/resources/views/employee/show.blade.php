@@ -3,25 +3,22 @@
 
 <div class="row">
 	<div class="col-sm-5">
-		<h1 class="text-center">بيانات المهندس</h1>
+		<h1 class="text-center">بيانات المريض</h1><br>
 		<div class="table-responsive">
 			<table class=" table col-sm-12 teble-restrict">  
 				<tr>
-					<td>البيانات</td>
-					<td></td>
+					<td>اسم المهندس</td>
+					<td>{{ $msg1 }}</td>
 				</tr>
 				<tr>
-					<td>رصيد المهندس</td>
-					<td></td>
+					<td>السماح بالتحويل</td>
+					<td>{{ $msg2 }}</td>
 				</tr>
 				<tr>
-					<td>السماح بنوع التحليل او الأشعة</td>
-					<td></td>
+					<td><br><br><div class="text-center"> <button id='ok' class="btn btn-success pull-center">السماح</button></div></td>
+					<td><br><br><div class="text-center"> <button id='cancel' class="btn btn-danger">الرفض</button></div></td>
 				</tr>
-				<tr>
-					<td><button id='ok' class="btn btn-success">السماح</button></td>
-					<td><button id='cancel' class="btn btn-danger">الرفض</button></td>
-				</tr>
+
 			</table>
 			
 
@@ -56,14 +53,6 @@
 						{{ Form::text('patient_name',  $transfer->patient_name ,array('class'=>'form-control col-sm-8','disabled')) }}
 					</td>
 				</tr>
-				<tr>      
-					<td>
-						{{Form::label(' رقم الريض ',' رقم الريض ',array('class' => 'style' ))}}
-					</td>
-					<td>
-						{{ Form::text('patient_number', $transfer->patient_id,array('class'=>'form-control col-sm-8','disabled' ,'rows' => 3)) }}
-					</td>
-				</tr> 
 				<tr>  
 					<div class="form-group">      
 						<td>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('transfer.master')
 
 @section('content')
 
@@ -115,24 +115,21 @@
   {{ Form::date('transfer_date', $transfer_row->transfer_date,array('class'=>'form-control col-sm-8','disabled')) }}
 </td>
 </tr>  
-
-
-
 </table> 
 </div>
 <div>
-  <button class="btn btn-default" type="button" id="val">validate</button>
-
+  <button class="btn btn-info" type="button" id="con">Confirm</button>
 </div>
 </div>
 <script type="text/javascript">
   $(document).ready(function($){
-    $('#val').click(function(){
+    $('#con').click(function(){
       $.ajax({
-        url: '{{ url('transfer-valid')}}',
+        url: '{{ url('transfer-confirm', $transfer_row->id)}}',
         type:  'GET'
       });
     });
   });
 </script>
 @endsection
+
