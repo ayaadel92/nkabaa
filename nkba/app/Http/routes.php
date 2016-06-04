@@ -46,7 +46,7 @@ use App\Events\TransferEvent;
 //transfer routes
 Route::resource('transfer','TransferController');
 Route::resource('/create','TransferController@create');
-Route::get('transfer-valid','TransferController@validate_transfer');
+Route::get('transfer-valid/{id}','TransferController@validate_transfer');
 //get analaysis and radiobologies
 Route::get('api/dropdown', function(){
   
@@ -70,25 +70,16 @@ Route::get('api/dropdown', function(){
 
 //Employee
   Route::resource('employee-transfer','EmplyeeTransferController');
-// Route::get('/ajax','EmplyeeTransferController@ajax');
+// Route::get('ajax/{created}','EmplyeeTransferController@ajax');
   Route::get('ajax/{created}',function($created){
     if (Request::ajax()) {
       if (Transfer::where('done','لا')->count() > 0) {
         $last_created = Transfer::orderBy('created_at','desc')->first();
         if ($last_created !== $created) {
-          // print_r($created);exit;
           $transfers = Transfer::where([['created_at','>',$created],['done','=','لا']])->get();
-           // print_r(response()->json($transfers));exit;
-           // print_r(response()->json($transfers)->getData()[0]);exit;
           return response()->json($transfers);
         }
         
       }
     }
   });
-
-  //event
-  // Route::get('event',function()
-  // {
-
-  // });

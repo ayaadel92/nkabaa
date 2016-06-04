@@ -41,12 +41,9 @@
   <tr>  
     <div class="form-group">      
      <td>{{Form::label(' درجة القرابة ',' درجة القرابة ',array('class' => 'style' ))}}</td>
-<<<<<<< HEAD
-     <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i></span>
-=======
+
      <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i>
      </span>
->>>>>>> 70c93218704071351a6616162882ef0168ec7453
      {{ Form::select('patient_type',['مهندس'=>'مهندس/مهندسة','زوجه'=>'زوجه','زوج'=>'زوج','ابن'=>'ابن','ابنه'=>'ابنه','اب'=>'اب','ام'=>'ام'],'المهندس',array('required','class'=>'form-control col-sm-8')) }}
    </td>
  </div>

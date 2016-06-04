@@ -35,11 +35,12 @@ class TransferController extends Controller
 		{                 
 
 			$transfer->eng_id=$input['eng_id'];
-			$transfer->health_id	= $input['health_id'];
+			$transfer->health_id = $input['health_id'];
 			$transfer->patient_name=$input['patient_name'];
 			$transfer->patient_type=$input['patient_type'];
 			$transfer->medical_diagnosis  =$input['medical_diagnosis'];
 			$transfer->type=$input['type'];	
+			$transfer->type_name=$input['list'];	
 			$transfer->doctor_name=$input['doctor_name'];
 			$transfer->hospital_name=$input['hospital_name'];
 			$transfer->lab_name=$input['lab_name'];
@@ -64,67 +65,6 @@ class TransferController extends Controller
 	{
 		$transfer_row=Transfer::find($id);
 		return view('transfer.show',compact('transfer_row'));
-	}
-
-	public function validate_transfer()
-	{
-		$transfer=response()->json(Session::get('val'))->getData();
-		$engineer = DB::table('engineers')          
-		->where('eng_id', $transfer->eng_id)
-		->get(); 
-		$enginer=response()->json($engineer)->getData()[0];
-
-		if(DB::table('engineers')->where('eng_id',$transfer->eng_id)->count()>0)
-		{
-			if($enginer->status==="نعم")
-			{
-				if($transfer->patient_type==="مهندس")
-				{
-					$limit=$enginer->limit_id;
-				}//end of patient is engineer 
-				else
-				{
-					$where = ['eng_id'=> $transfer->eng_id, 'relation_type' => $transfer->patient_type,'name'=> $transfer->patient_name];
-					$relative = DB::table('relatives')
-					->where($where)
-					->get(); 
-					$relativ=response()->json($relative)->getData()[0];
-					if($relativ->status==='نعم')
-					{
-						if ($relativ->relation_type == "ابن") {
-							$age = Carbon::now()->diff(new DateTime($relativ->birth_date));
-							if($age->y >= 24 ){
-								return "سن الابن اكبر من او يساوي 24";
-							}
-						} // check the age of son reach to 24
-						$limit=$relativ->limit_id;
-					}//end of relative status check=yes
-					else{
-						return "القريب غير مشترك";
-					}
-				}//end of patient is relative
-				$limit_obj= DB::table('limits')
-				->where('id', $limit)
-				->get(); 
-				$limit_json=response()->json($limit_obj)->getData()[0];
-				if((1000-$limit_json->analysis_credit)>=$transfer->total_cost)//credit_analysis=the reminder from 1000LE
-				{
-					return('التحويلة مقبولة');
-				}
-
-
-
-			}//end of engineer status check=yes
-
-			else{
-				Notify::success('الاشتراك','غير مشترك');
-				
-			}//end of engineer status check=no
-		}//end of engineer found 
-		else{
-			Notify::success('الاشتراك','لست');
-		}//end of engineer not found 
-
 	}
 
 }

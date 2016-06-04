@@ -129,7 +129,7 @@
   $(document).ready(function($){
     $('#val').click(function(){
       $.ajax({
-        url: '{{ url('transfer-valid')}}',
+        url: '{{ url('transfer-valid', $transfer_row->id)}}',
         type:  'GET'
       });
     });
