@@ -1,5 +1,4 @@
 <?php
-use Illuminate\Support\Facades\Input;
 use App\Analysisradios;
 use App\Transfer;
 use Illuminate\Support\Facades\Input;
