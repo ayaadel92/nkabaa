@@ -40,7 +40,7 @@
 
       <div class="item">
         <img src="/assets/images/image4.jpg" alt="Flower" width="100%" height="640px">
-      </div>
+`      </div>
     </div>
 
     <!-- Left and right controls -->
