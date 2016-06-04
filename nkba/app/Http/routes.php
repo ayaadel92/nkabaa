@@ -41,12 +41,11 @@ use App\Events\TransferEvent;
 
   Route::resource('/complain', 'ComplaintssController');
 
-  Route::resource('transfer','TransferController');
 
 //transfer routes
 Route::resource('transfer','TransferController');
 Route::resource('/create','TransferController@create');
-Route::get('transfer-valid/{id}','TransferController@validate_transfer');
+Route::get('/transfer-confirm/{id}','TransferController@confirm');
 //get analaysis and radiobologies
 Route::get('api/dropdown', function(){
   
@@ -62,7 +61,23 @@ Route::get('api/dropdown', function(){
            return Response::json($analysis->get(['id','name']));
       }
 });
-  Route::resource('/create','TransferController@create');
+
+//acceptance transfer
+Route::get('ajax-response/{updated}',function($updated){
+    if (Request::ajax()) {
+        $where = ['done'=>'نعم', 'confirm' =>'لا'];
+      if (Transfer::where($where)->count() > 0) {
+        $last_updated = Transfer::orderBy('updated_at','desc')->first();
+        if($last_updated->created_at !=$last_updated->updated_at){
+        if ($last_updated!== $updated) {
+          $transfers = Transfer::where([['updated_at','>',$updated],[$where]])->get();
+          return response()->json($transfers);
+        }
+        }
+      }
+    }
+  });
+
 
 //Admin routes
   Route::resource('admin','AdminController');

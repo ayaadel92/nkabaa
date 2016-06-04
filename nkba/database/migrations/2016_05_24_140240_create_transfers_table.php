@@ -21,6 +21,7 @@ class CreateTransfersTable extends Migration
             $table->enum('patient_type', ['مهندس', 'اب','ام','ابن','ابنه','زوج','زوجه']);
             $table->enum('accepted',['لا' , 'نعم']);
             $table->enum('done', ['لا' , 'نعم']);
+             $table->enum('confirm', ['لا' , 'نعم']);
             $table->integer('percentage');
             $table->enum('type', ['اشعة', 'تحاليل']); 
             $table->string('type_name');
