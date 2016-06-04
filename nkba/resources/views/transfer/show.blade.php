@@ -114,13 +114,17 @@
   </span>
   {{ Form::date('transfer_date', $transfer_row->transfer_date,array('class'=>'form-control col-sm-8','disabled')) }}
 </td>
+</tr>
+<td>
+</td>
+<td>
+    <button class="btn btn-info form-control col-sm-9" type="button" id="con">Confirm</button>
+</td>
 </tr>  
 </table> 
 </div>
 <div>
-  <button class="btn btn-info" type="button" id="con">Confirm</button>
-</div>
-</div>
+
 <script type="text/javascript">
   $(document).ready(function($){
     $('#con').click(function(){

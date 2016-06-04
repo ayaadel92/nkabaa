@@ -45,7 +45,7 @@ use App\Events\TransferEvent;
 //transfer routes
 Route::resource('transfer','TransferController');
 Route::resource('/create','TransferController@create');
-Route::get('/transfer-confirm','TransferController@confirm');
+Route::get('/transfer-confirm/{id}','TransferController@confirm');
 //get analaysis and radiobologies
 Route::get('api/dropdown', function(){
   
@@ -65,7 +65,7 @@ Route::get('api/dropdown', function(){
 //acceptance transfer
 Route::get('ajax-response/{updated}',function($updated){
     if (Request::ajax()) {
-        $where = ['done'=>'لا', 'confirm' =>'لا'];
+        $where = ['done'=>'نعم', 'confirm' =>'لا'];
       if (Transfer::where($where)->count() > 0) {
         $last_updated = Transfer::orderBy('updated_at','desc')->first();
         if($last_updated->created_at !=$last_updated->updated_at){

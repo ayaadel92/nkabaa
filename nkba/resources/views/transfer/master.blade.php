@@ -84,7 +84,6 @@ $.ajax({
                 url: "{{url('ajax-response')}}/"+updated,
                 type: "GET",
                 success: function(data) {
-                    Notify::success('رد','رد النقابة');
                     if (data.length){$('#transfers-number').text(data.length);}
                     if (count < 8) {
                         for (var i = 0; i < 5; i++) {
