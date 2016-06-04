@@ -242,7 +242,7 @@
                                 <label for="task-name" class="col-sm-3 control-label"><h4> الاشتراك ابنه </h4></label>
 
                                 <div class="col-sm-6">
-                                    <input type="text" name="father" value="ابمه" id="task-name" class="form-control" readonly="" >
+                                    <input type="text" name="father" value="ابنه" id="task-name" class="form-control" readonly="" >
                                   
                                     <p style="color:#000"> رفع الصوره الشخصيه لابنه</p>
                                     <input type="file" name="fileToUpload" id="fileToUpload">

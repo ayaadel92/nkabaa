@@ -96,7 +96,7 @@
   <td>{{Form::label(' قبول التحويل؟',' قبول التحويل؟',array('class' => 'style' ))}}</td>
   <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i></span>
 
-    {{ Form::text('accepted', $transfer_row->accepted,array('class'=>'form-control col-sm-8','disabled')) }}
+    {{ Form::text('accepted', $transfer_row->accepted,array('class'=>'form-control col-sm-8','readonly')) }}
   </td>
 </tr>
 
@@ -129,7 +129,7 @@
   $(document).ready(function($){
     $('#val').click(function(){
       $.ajax({
-        url: '{{ url('transfer-valid')}}',
+        url: '{{ url('transfer-valid', $transfer_row->id)}}',
         type:  'GET'
       });
     });

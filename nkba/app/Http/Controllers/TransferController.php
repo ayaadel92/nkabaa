@@ -12,10 +12,10 @@ use App\Transfer;
 use Jleon\LaravelPnotify\Notify;
 use DB;
 use Session;
-use isEmpty;
-
 use Event;
 use App\Events\TransferEvent;
+use Carbon\Carbon;
+use DateTime;
 
 class TransferController extends Controller
 {
@@ -35,16 +35,17 @@ class TransferController extends Controller
 		{                 
 
 			$transfer->eng_id=$input['eng_id'];
-			$transfer->health_id	= $input['health_id'];
+			$transfer->health_id = $input['health_id'];
 			$transfer->patient_name=$input['patient_name'];
 			$transfer->patient_type=$input['patient_type'];
 			$transfer->medical_diagnosis  =$input['medical_diagnosis'];
 			$transfer->type=$input['type'];	
+			$transfer->type_name=$input['list'];	
 			$transfer->doctor_name=$input['doctor_name'];
 			$transfer->hospital_name=$input['hospital_name'];
 			$transfer->lab_name=$input['lab_name'];
 			$transfer->total_cost=$input['total_cost'];
-			$transfer->status=$input['status'];
+			$transfer->accepted=$input['accepted'];
 			$transfer->percentage=$input['percentage'];
 			$transfer->transfer_date=$input['transfer_date']	;
 			$transfer->save();
@@ -64,52 +65,6 @@ class TransferController extends Controller
 	{
 		$transfer_row=Transfer::find($id);
 		return view('transfer.show',compact('transfer_row'));
-	}
-
-	public function validate_transfer()
-	{
-		$transfer=response()->json(Session::get('val'))->getData();
-		$engineer = DB::table('engineers')          
-		->where('eng_id', $transfer->eng_id)
-		->get(); 
-		$enginer=response()->json($engineer)->getData()[0];
-
-		if(DB::table('engineers')->where('eng_id',$transfer->eng_id)->count()>0)
-		{
-			if($enginer->status==="نعم")
-			{
-				if($transfer->patient_type==="مهندس")
-				{
-					$limit=$enginer->limit_id;
-				}//end of patient is engineer 
-				else
-				{
-					$where = ['eng_id'=> $transfer->eng_id, 'relation_type' => $transfer->patient_type];
-					$relative = DB::table('relatives')
-					->where($where)
-					->get(); 
-					$relativ=response()->json($relative)->getData()[0];
-					if($relativ->status==='نعم')
-					{
-						$limit=$relativ->limit_id;
-					}//end of relative status check=yes
-					else{
-						return "القريب غير مشترك";
-					}
-				}//end of patient is relative
-
-
-			}//end of engineer status check=yes
-
-			else{
-				Notify::success('الاشتراك','غير مشترك');
-				
-			}//end of engineer status check=no
-		}//end of engineer found 
-		else{
-			Notify::success('الاشتراك','لست');
-		}//end of engineer not found 
-
 	}
 
 }
