@@ -1,7 +1,6 @@
 @extends('admin.layout.master')
 @section('content')
 
-<!-- Form validations -->              
 <div class="row">
 	<div class="col-sm-10" style="float: left;">
 		<section class="panel">
@@ -61,14 +60,20 @@
 						رقم حساب مصرفي: {{ $engineer->credit_number }}
 					</li>
 					<div style="height: 30px;"></div>
-					<li>
-						{{ link_to_route('admin-engineer.edit', 'تعديل', array($engineer->id), array('class' => 'btn btn-success')) }}
-
-						{{ link_to_route('admin-engineer.destroy', 'حذف', array($engineer->id), array('class' => 'btn btn-danger')) }}
-					</li>
 				</ul>
-				{{ Form::close() }}
-
+				<table>
+					<tr>
+						<td>
+							{{ link_to_route('admin-engineer.edit', 'تعديل', array($engineer->id), array('class' => 'btn btn-success')) }}
+						</td>
+						<td style="width: 30px;"></td>
+						<td>
+							{{ Form::open(array('method' => 'DELETE', 'route' => array('admin-engineer.destroy', $engineer->id))) }}
+							{{ Form::submit('حذف', array('class' => 'btn btn-danger')) }}
+							{{ Form::close() }}
+						</td>
+					</tr>
+				</table>
 				@if ($errors->any())
 				<ul>
 					{{ implode('', $errors->all('<li class="error">:message</li>')) }}

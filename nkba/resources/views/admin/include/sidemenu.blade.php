@@ -19,7 +19,29 @@
                     <li>{{ link_to_route('admin-engineer.index', 'عرض الكل') }}</li>  
                     <li>{{ link_to_route('admin-engineer.create', 'إضافة مهندس') }}</li>
                 </ul>
-            </li>       
+            </li> 
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
+                    <i class="icon_document_alt"></i>
+                    <span>الأقارب</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    <li>{{ link_to_route('admin-relative.index', 'عرض الكل') }}</li>                          
+                    <li>{{ link_to_route('admin-relative.create', 'إضافة قريب') }}</li>
+                </ul>
+            </li>  
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
+                    <i class="icon_document_alt"></i>
+                    <span>رصيد المهندس</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    <li>{{ link_to_route('admin-limit.index', 'عرض الكل') }}</li>                          
+                    <li>{{ link_to_route('admin-limit.create', 'إضافة رصيد') }}</li>
+                </ul>
+            </li>        
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_document_alt"></i>

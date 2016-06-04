@@ -99,7 +99,9 @@ class EmplyeeTransferController extends Controller
                             $msg2= "التحويلة غير مقبولة ﻻنه تم القيام بها من قبل";
                             return  view('employee.show',compact('transfer','msg1','msg2'));
                         }
-                        return "التحويلة مقبولة لانها لم تتعدي الحدود المسموح بها";
+                        $msg1= $enginer->name;
+                        $msg2= "التحويلة مقبولة لانها لم تتعدي الحدود المسموح بها";
+                        return  view('employee.show',compact('transfer','msg1','msg2'));
                     }//end of checking if the analysis has limits
                     else{
                         $msg1= $enginer->name;

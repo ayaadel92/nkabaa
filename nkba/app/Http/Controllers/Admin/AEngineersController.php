@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Admin\Engineers;
+namespace App\Http\Controllers\Admin;
 
 use DB;
 use App\User;
@@ -53,7 +53,7 @@ class AEngineersController extends Controller
         {
             //add engineer in users table
             $user = User::create(array(
-                'role' => 'engineer',
+                'role' => 'مهندس',
                 'login' => $input['eng_id'],
                 'email' => $input['email'],
                 'password' => bcrypt($input['password'])
