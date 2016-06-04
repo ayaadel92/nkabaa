@@ -1,5 +1,6 @@
 <?php
 use App\Transfer;
+use Illuminate\Support\Facades\Input;
 
 // use Illuminate\Http\Request;
 /*
@@ -13,10 +14,33 @@ use App\Transfer;
   |
  */
 
-  Route::get('/', function () {
-   Notify::success('مرحبا','تسجيل الدخول');
-   return view('welcome');
- });
+  // Route::get('/', function () {
+ //   // Notify::success('مرحبا','تسجيل الدخول');
+ //   $user=DB::select('select d.id,d.name,d.degree,d.specialization,d.phone,d.area,d.path,e.rate from doctors d,evaluate_doctors e where e.doctor_id=d.id and e.rate>=6');
+ //   $cou=count($user);
+        // $areas=DB::select('select area from doctors group by area');
+        //  $area=response()->json($areas)->getData();
+        // return $area;
+ //    return view('welcome')->with(print_r($user),$cou);
+  // $specializations=DB::select('select specialization from doctors group by specialization');
+  //  return $specializations;
+ //   // return view('welcome');
+   
+ // });
+  Route::get('/','EvaluateController@GetEvaluate');
+  // Route::get('/{id}','EvaluateController@');
+  Route::get('/SearchDoctor/{Data}','EvaluateController@SelectDoctors');
+  
+  Route::get('/DoctorSpecial/{Data}','EvaluateController@SelectDoctorsSpecial');
+  
+  Route::get('/DoctorName/{Data}','EvaluateController@SelectDoctorsName');
+ // Route::get('/SearchDoctor/{Data}',function()
+ //  {
+
+ //  $VarData=Input::get('Data');
+ //      print($VarData);
+
+ //  });
 
   Route::auth();
 
