@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMemberAditionsTable extends Migration
+class CreateMembersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,17 @@ class CreateMemberAditionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('memberAditions', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->enum('relation_type', ['اب', 'ام', 'ابن','ابنه', 'زوج','زوجه']); // dah el no3 
             $table->integer('eng_id')->unsigned();
-            $table->foreign('eng_id')->references('id')->on('users')->onDelete('cascade');
-            $table->enum('relation_type', ['اب', 'ام', 'ابن','ابنه', 'زوج','زوجه'])->require(); // dah el no3 
-            $table->string('require_data')->require(); // dah l sora 
+            $table->foreign('eng_id')->references('id')->on('users')->onDelete('cascade'); 
             $table->string('photo')->require(); // dah l sora 
-            $table->integer('user_id')->unsigned()->unique();
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // delete on cascade
-
+             $table->string('require_data');
+            
         });
     }
 
@@ -33,6 +33,6 @@ class CreateMemberAditionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('memberAditions');
+        Schema::drop('members');
     }
 }

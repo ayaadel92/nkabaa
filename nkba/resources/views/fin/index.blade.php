@@ -1,8 +1,9 @@
 @include('master')
 
-<div class="clearfix"></div>
-<div class="clearfix"></div> 
-<div class="container content" >
+        <div class="clearfix"></div>
+        <div class="clearfix"></div> 
+<div class="container content" style="margin-top: 100px">
+
     <div class="container">
         <h3 class="tittle  pull-right">كشف حساب التأمين الصحي </h3>
         <div class="clearfix"></div>

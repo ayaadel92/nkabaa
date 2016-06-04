@@ -58,10 +58,14 @@ class TasksController extends Controller {
                     ->where('user_id', $id)
                     ->get();
         if($year==$year1 && $month1==$month && $day==$day1 && $hour1==$hour && $min1 ==$min ){
-             Mail::send('emails.welcome',$user,function($message) use ($user)
+             Mail::send('emails.tasks',$user,function($message) use ($user)
          {
-         $message->from('nkabaalex@gmail.com');
-         $message->to($user['0']->email)->subject("مواعيدك");
+
+            $MailBody = Request::get('date');
+            $message->setBody($MailBody, 'text/html');
+            $message->from('nkabaalex@gmail.com','Admin');
+            $message->to($user['0']->email)->subject('التذكير بمواعيد الادويه ');  
+                 
          });   
         }
         

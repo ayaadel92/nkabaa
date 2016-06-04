@@ -35,7 +35,7 @@ use App\Events\TransferEvent;
   Route::resource('/fin', 'FainancesController');
    Route::resource('/rin', 'RenewsController');
 
-  Route::resource('/member-aditions', 'MemberAditionsController');
+  Route::resource('/member', 'MembersController');
 
   Route::resource('/task', 'TasksController');
 
