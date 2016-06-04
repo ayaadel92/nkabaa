@@ -14,7 +14,7 @@
 {{-- <div class="container">
   <br>
       <div class="clearfix"> </div> 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" height="618px">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -27,19 +27,19 @@
     <div class="clearfix"> </div> 
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="/assets/images/index-1_img-2.jpg" alt="Chania" width="800" height="345">
+        <img src="/assets/images/image1.jpg" alt="Chania" width="100%" height="640px">
       </div>
 
       <div class="item">
-        <img src="/assets/images/index-1_img-3.jpg" alt="Chania" width="800" height="345">
+        <img src="/assets/images/image2.jpg" alt="Chania" width="100%" height="640px">
       </div>
     
       <div class="item">
-        <img src="/assets/images/index-1_img-4.jpg" alt="Flower" width="800" height="345">
+        <img src="/assets/images/image3.jpg" alt="Flower" width="100%" height="640px">
       </div>
 
       <div class="item">
-        <img src="/assets/images/index-1_img-5.jpg" alt="Flower" width="800" height="345">
+        <img src="/assets/images/image4.jpg" alt="Flower" width="100%" height="640px">
       </div>
     </div>
 

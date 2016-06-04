@@ -104,7 +104,9 @@ Route::get('ajax-response/{updated}',function($updated){
 
 //Admin routes
   Route::resource('admin','AdminController');
-  Route::resource('admin-engineer','Admin\Engineers\AEngineersController');
+  Route::resource('admin-engineer','Admin\AEngineersController');
+  Route::resource('admin-limit','Admin\ALimitsController');
+  Route::resource('admin-relative','Admin\ARelativesController');
 
 //Employee
   Route::resource('employee-transfer','EmplyeeTransferController');
