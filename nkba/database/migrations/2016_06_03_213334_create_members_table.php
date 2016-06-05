@@ -21,7 +21,7 @@ class CreateMembersTable extends Migration
             $table->string('photo')->require(); // dah l sora 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // delete on cascade
-             $table->string('require_data');
+            $table->string('require_data');
             
         });
     }

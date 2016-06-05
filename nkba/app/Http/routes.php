@@ -1,7 +1,7 @@
 <?php
-use Illuminate\Support\Facades\Input;
 use App\Analysisradios;
 use App\Transfer;
+use Illuminate\Support\Facades\Input;
 use App\Events\TransferEvent;
 
 
@@ -18,10 +18,33 @@ use App\Events\TransferEvent;
   |
  */
 
-  Route::get('/', function () {
-   Notify::success('مرحبا','تسجيل الدخول');
-   return view('welcome');
- });
+  // Route::get('/', function () {
+ //   // Notify::success('مرحبا','تسجيل الدخول');
+ //   $user=DB::select('select d.id,d.name,d.degree,d.specialization,d.phone,d.area,d.path,e.rate from doctors d,evaluate_doctors e where e.doctor_id=d.id and e.rate>=6');
+ //   $cou=count($user);
+        // $areas=DB::select('select area from doctors group by area');
+        //  $area=response()->json($areas)->getData();
+        // return $area;
+ //    return view('welcome')->with(print_r($user),$cou);
+  // $specializations=DB::select('select specialization from doctors group by specialization');
+  //  return $specializations;
+ //   // return view('welcome');
+   
+ // });
+  Route::get('/','EvaluateController@GetEvaluate');
+  // Route::get('/{id}','EvaluateController@');
+  Route::get('/SearchDoctor/{Data}','EvaluateController@SelectDoctors');
+  
+  Route::get('/DoctorSpecial/{Data}','EvaluateController@SelectDoctorsSpecial');
+  
+  Route::get('/DoctorName/{Data}','EvaluateController@SelectDoctorsName');
+ // Route::get('/SearchDoctor/{Data}',function()
+ //  {
+
+ //  $VarData=Input::get('Data');
+ //      print($VarData);
+
+ //  });
 
   Route::auth();
 
@@ -81,7 +104,9 @@ Route::get('ajax-response/{updated}',function($updated){
 
 //Admin routes
   Route::resource('admin','AdminController');
-  Route::resource('admin-engineer','Admin\Engineers\AEngineersController');
+  Route::resource('admin-engineer','Admin\AEngineersController');
+  Route::resource('admin-limit','Admin\ALimitsController');
+  Route::resource('admin-relative','Admin\ARelativesController');
 
 //Employee
   Route::resource('employee-transfer','EmplyeeTransferController');
