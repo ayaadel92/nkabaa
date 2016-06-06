@@ -6,7 +6,7 @@
 	<div class="col-sm-10" style="float: left;">
 		<section class="panel">
 			<header class="panel-heading">
-				عرض كل المهندسين
+				عرض كل الأقارب
 			</header>
 			<div class="panel-body">
 				@if ($relatives->count())
@@ -56,7 +56,7 @@
 					</tbody>
 				</table>
 				@else
-				لا يوجد مهندسين
+				لا يوجد الأقارب
 				@endif
 			</div>
 		</section>

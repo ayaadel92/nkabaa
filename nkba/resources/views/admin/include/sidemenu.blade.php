@@ -9,7 +9,18 @@
                     <span>الصفحة الرئيسية</span>
                 </a>
             </li>
-	        <li class="sub-menu">
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
+                    <i class="icon_document_alt"></i>
+                    <span>المستخدمين</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    <li>{{ link_to_route('admin-user.index', 'عرض الكل') }}</li>  
+                    <li>{{ link_to_route('admin-user.create', 'إضافة مستخدم') }}</li>
+                </ul>
+            </li> 
+            <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_document_alt"></i>
                     <span>المهندسين</span>
@@ -49,8 +60,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="form_component.html">عرض الكل</a></li>                          
-                    <li><a class="" href="form_validation.html">إضافة طبيب</a></li>
+                    <li>{{ link_to_route('admin-doctor.index', 'عرض الكل') }}</li>                          
+                    <li>{{ link_to_route('admin-doctor.create', 'إضافة طبيب') }}</li>
                 </ul>
             </li>  
             <li class="sub-menu">
@@ -60,8 +71,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="form_component.html">عرض الكل</a></li>                          
-                    <li><a class="" href="form_validation.html">إضافة مستشفى</a></li>
+                    <li>{{ link_to_route('admin-hospital.index', 'عرض الكل') }}</li>                          
+                    <li>{{ link_to_route('admin-hospital.create', 'إضافة مستشفى') }}</li>
                 </ul>
             </li>  
             <li class="sub-menu">
@@ -71,8 +82,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="form_component.html">عرض الكل</a></li>                          
-                    <li><a class="" href="form_validation.html">إضافة معمل</a></li>
+                    <li>{{ link_to_route('admin-lab.index', 'عرض الكل') }}</li>                          
+                    <li>{{ link_to_route('admin-lab.create', 'إضافة معمل') }}</li>
                 </ul>
             </li>  
             <li class="sub-menu">
@@ -82,8 +93,7 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="form_component.html">عرض الكل</a></li>                          
-                    <li><a class="" href="form_validation.html">إضافة تحويلة</a></li>
+                    <li>{{ link_to_route('admin-transfer.index', 'عرض الكل') }}</li>
                 </ul>
             </li>  
         </ul>

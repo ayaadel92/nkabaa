@@ -22,7 +22,7 @@ class CreateHospitalsTable extends Migration
             $table->string('discription')->nullable();
             $table->string('path')->nullable();          
             $table->timestamps();
-                   $table->integer('user_id')->unsigned()->unique();
+            $table->integer('user_id')->unsigned()->unique()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // delete on cascade
         });
     }

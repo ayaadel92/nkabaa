@@ -6,7 +6,7 @@
 	<div class="col-sm-10" style="float: left;">
 		<section class="panel">
 			<header class="panel-heading">
-				عرض كل المهندسين
+				عرض كل الأرصدة
 			</header>
 			<div class="panel-body">
 				@if ($limits->count())
@@ -45,7 +45,7 @@
 					</tbody>
 				</table>
 				@else
-				لا يوجد مهندسين
+				لا يوجد الأرصدة
 				@endif
 			</div>
 		</section>

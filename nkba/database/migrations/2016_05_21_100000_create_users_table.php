@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             // el mostshfa leha rkm td5ol beh 
             // el m3ml leh rkm yd5ol beh 
             $table->string('email')->unique();
-            $table->enum('role', ['مهندس', 'قريب','موظف','ادمن','معمل','مستشفي']);
+            $table->enum('role', ['مهندس', 'قريب','موظف','ادمن','معمل','مستشفي','طبيب']);
             // typs el users elly d5len 3la system bt3y 
             $table->string('password');  
             $table->rememberToken();

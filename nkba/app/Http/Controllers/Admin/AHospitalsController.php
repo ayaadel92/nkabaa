@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
-use App\User;
-use App\Relative;
+use App\Hospital;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -13,8 +12,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
-
-class ARelativesController extends Controller
+class AHospitalsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,10 +21,10 @@ class ARelativesController extends Controller
      */
     public function index()
     {
-        $relatives = Relative::all();
-        $relatives->toarray();
-        return view('admin.relatives.index', compact('relatives'));
-    }
+        $hospitals = Hospital::all();
+        $hospitals->toarray();
+        return view('admin.hospitals.index', compact('hospitals'));
+   }
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +33,8 @@ class ARelativesController extends Controller
      */
     public function create()
     {
-        return view('admin.relatives.new');
+        return view('admin.hospitals.new');
+        
     }
 
     /**
@@ -47,29 +46,24 @@ class ARelativesController extends Controller
     public function store(Request $request)
     {
         $input = Input::all();
-        // $validation = Validator::make($input, Relative::$rules);
+        // $validation = Validator::make($input, Hospital::$rules);
         // if ($validation->passes())
         // {
-            // `id`, `status`, `name`, `health_id`, `eng_id`, `birth_date`, `gender`, `relation_type`, `national_id`, `path`, `limit_id`, `user_id`
-            //add relative in relatives table
-            $relative = new Relative;
-            $relative->status = $input['status'];
-            $relative->name = $input['name'];
-            $relative->health_id = $input['health_id'];
-            $relative->eng_id = $input['eng_id'];
-            $relative->birth_date = $input['birth_date'];
-            $relative->gender = $input['gender'];
-            $relative->relation_type = $input['relation_type'];
-            $relative->national_id = $input['national_id'];
-            $relative->path = $input['path'];
-            $relative->limit_id = $input['limit_id'];
-            $relative->user_id = $user->id;
-            $relative->save();
-            
-            return Redirect::route('admin-relative.index');
+            //add hospital in hospitals table 
+        $hospital = new hospital;
+        $hospital->name = $input['name'];
+        $hospital->address = $input['address'];
+        $hospital->phone = $input['phone'];
+        $hospital->governorate = $input['governorate'];
+        $hospital->area = $input['area'];
+        $hospital->discription = $input['discription'];
+        $hospital->path = $input['path'];
+        $hospital->save();
+
+        return Redirect::route('admin-hospital.index');
         // } 
 
-        // return Redirect::route('admin-relative.create')
+        // return Redirect::route('admin-hospital.create')
         // ->withInput()
         // ->withErrors($validation)
         // ->with('message', 'There were validation errors.');
@@ -82,10 +76,10 @@ class ARelativesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        // get the relative
-        $relative = Relative::find($id);
-        return View('admin.relatives.show',compact('relative'));
+    { 
+        // get the hospital
+        $hospital = Hospital::find($id);
+        return View('admin.hospitals.show',compact('hospital'));
     }
 
     /**
@@ -96,8 +90,8 @@ class ARelativesController extends Controller
      */
     public function edit($id)
     {
-       $relative = Relative::find($id);
-       return View('admin.relatives.edit',compact('relative'));
+        $hospital = Hospital::find($id);
+        return View('admin.hospitals.edit',compact('hospital'));
    }
 
     /**
@@ -109,14 +103,14 @@ class ARelativesController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $relative = Relative::findOrFail($id);
+        $hospital = Hospital::findOrFail($id);
        // $validation=$this->validate($request, [
        //  'name' => 'required',
        //  'email' => 'required'
        //  ]);
        $input = $request->all();
-       $relative->fill($input)->save();
-       return Redirect::route('admin-relative.show',$relative->id);
+       $hospital->fill($input)->save();
+       return Redirect::route('admin-hospital.show',$hospital->id);
        // ->withInput()
        // ->withErrors($validation)
        // ->with('message', 'There were validation errors.');
@@ -130,8 +124,8 @@ class ARelativesController extends Controller
      */
     public function destroy($id)
     {
-       $relative = Relative::findOrFail($id);
-       $relative->delete();
-       return Redirect::route('admin-relative.index');
+        $hospital = Hospital::findOrFail($id);
+        $hospital->delete();
+        return Redirect::route('admin-hospital.index');
    }
 }
