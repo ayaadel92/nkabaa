@@ -89,9 +89,6 @@
 --> <link href="/assets/css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="/assets/css/jquery.pnotify.default.css">
 
-=======
-    
->>>>>>> 8763a8b5257a32c52c168cdd8a5d6db90045ab36
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">

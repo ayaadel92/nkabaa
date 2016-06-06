@@ -146,6 +146,7 @@ h1 {
 </fieldset> --}}
 
 {{-- this is true stars --}}
+@if (!Auth::guest())
 <h1>Star Rating</h1>
   <form>
     <fieldset id="reviewStars-input">
@@ -159,8 +160,9 @@ h1 {
 
       </span>
     </fieldset>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
   </form>
+  @endif
 <!-- End Star Of Evaluate -->
                    
                  </article>
@@ -170,13 +172,13 @@ h1 {
            @endforeach
 
 <script type="text/javascript">
-var logID = 'log',
-log = $('<div id="'+logID+'"></div>');
-$('body').append(log);
-$('[type*="radio"]').change(function () {
-  var me = $(this);
-  log.html(me.attr('value'));
-});
+// var logID = 'log',
+// log = $('<div id="'+logID+'"></div>');
+// $('body').append(log);
+// $('[type*="radio"]').change(function () {
+//   var me = $(this);
+//   log.html(me.attr('value'));
+// });
 </script>
 </body>
 </html>
