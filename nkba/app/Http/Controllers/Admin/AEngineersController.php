@@ -48,16 +48,9 @@ class AEngineersController extends Controller
     public function store(Request $request)
     {
         $input = Input::all();
-        $validation = Validator::make($input, Engineer::$rules);
-        if ($validation->passes())
-        {
-            //add engineer in users table
-            $user = User::create(array(
-                'role' => 'مهندس',
-                'login' => $input['eng_id'],
-                'email' => $input['email'],
-                'password' => bcrypt($input['password'])
-                ));
+        // $validation = Validator::make($input, Engineer::$rules);
+        // if ($validation->passes())
+        // {
             //add engineer in engineers table
             $engineer = new Engineer;
             $engineer->user_id = $user->id;
@@ -77,12 +70,12 @@ class AEngineersController extends Controller
             $engineer->save();
             
             return Redirect::route('admin-engineer.index');
-        } 
+        // } 
 
-        return Redirect::route('admin-engineer.create')
-        ->withInput()
-        ->withErrors($validation)
-        ->with('message', 'There were validation errors.');
+        // return Redirect::route('admin-engineer.create')
+        // ->withInput()
+        // ->withErrors($validation)
+        // ->with('message', 'There were validation errors.');
     }
 
     /**
