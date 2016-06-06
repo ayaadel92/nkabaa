@@ -123,20 +123,22 @@ h1 {
 
 
 <!-- This is true stars -->
+@if (!Auth::guest())
   <h1>Star Rating</h1>
   <form>
     <fieldset id="reviewStars-input">
       <span class="star-cb-group">
-        <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5"></label>
+        <input type="radio" id="rating-5" name="{{ $doc->id }}" value="5" /><label for="rating-5"></label>
         <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4"></label>
-        <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3"></label>
-        <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2"></label>
-        <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1"></label>
-        <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0"></label>
+        <input type="radio" id="rating-3" name="{{ $doc->id }}" value="3" /><label for="rating-3"></label>
+        <input type="radio" id="rating-2" name="{{ $doc->id }}" value="2" /><label for="rating-2"></label>
+        <input type="radio" id="rating-1" name="{{ $doc->id }}" value="1" /><label for="rating-1"></label>
+        <input type="radio" id="rating-0" name="{{ $doc->id }}" value="0" class="star-cb-clear" /><label for="rating-0"></label>
       </span>
     </fieldset>
     
   </form>
+  @endif
 
   
   <!-- End Star Of Evaluate -->
@@ -150,20 +152,21 @@ h1 {
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 @endforeach
+
 <script type="text/javascript">
 
-$(document).ready(function () {
+// $(document).ready(function () {
   
 
-var logID = 'log':
-log = $('<div id="'+logID+'"></div>');
-$('body').append(log);
-$('[type*="radio"]').change(function () {
-  var me = $(this);
-  log.html(me.attr('value'));
-});
+// var logID = 'log':
+// log = $('<div id="'+logID+'"></div>');
+// $('body').append(log);
+// $('[type*="radio"]').change(function () {
+//   var me = $(this);
+//   log.html(me.attr('value'));
+// });
 
-});
+// });
 
 </script>
 </body>
