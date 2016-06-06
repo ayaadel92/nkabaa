@@ -3,7 +3,7 @@
 <head>
   <title>LOL</title>
 
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <style type="text/css">
 /*EndTesting*/
 #reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
@@ -95,6 +95,7 @@ h1 {
 }
 
 </style>
+</head>
 <body>
 	
 
@@ -123,17 +124,22 @@ h1 {
 
 
 <!-- This is true stars -->
+
+<h5>User_ID:{{ $User_ID }}</h5>
+<h5>Rate:{{ $Value_Rate }}</h5>
+<h5>Doctor:{{ $Doctor_ID}}</h5>
+
 @if (!Auth::guest())
   <h1>Star Rating</h1>
-  <form>
+  <form id='3' name='{{ Auth::id() }}' >
     <fieldset id="reviewStars-input">
       <span class="star-cb-group">
-        <input type="radio" id="rating-5" name="{{ $doc->id }}" value="5" /><label for="rating-5"></label>
-        <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4"></label>
-        <input type="radio" id="rating-3" name="{{ $doc->id }}" value="3" /><label for="rating-3"></label>
-        <input type="radio" id="rating-2" name="{{ $doc->id }}" value="2" /><label for="rating-2"></label>
-        <input type="radio" id="rating-1" name="{{ $doc->id }}" value="1" /><label for="rating-1"></label>
-        <input type="radio" id="rating-0" name="{{ $doc->id }}" value="0" class="star-cb-clear" /><label for="rating-0"></label>
+        <input type="radio" id="rating-5" name="{{ $doc->id }}" value="5" onclick="Rate()" /><label for="rating-5"></label>
+        <input type="radio" id="rating-4" name="{{ $doc->id }}" value="4" checked="checked" onclick="Rate()" /><label for="rating-4"></label>
+        <input type="radio" id="rating-3" name="{{ $doc->id }}" value="3"  onclick="Rate()" /><label for="rating-3"></label>
+        <input type="radio" id="rating-2" name="{{ $doc->id }}" value="2"  onclick="Rate()" /><label for="rating-2"></label>
+        <input type="radio" id="rating-1" name="{{ $doc->id }}" value="1" onclick="Rate()" /><label for="rating-1"></label>
+        <input type="radio" id="rating-0" name="{{ $doc->id }}" value="0" class="star-cb-clear" onclick="Rate()" /><label for="rating-0"></label>
       </span>
     </fieldset>
     
@@ -153,21 +159,6 @@ h1 {
 
 @endforeach
 
-<script type="text/javascript">
-
-// $(document).ready(function () {
-  
-
-// var logID = 'log':
-// log = $('<div id="'+logID+'"></div>');
-// $('body').append(log);
-// $('[type*="radio"]').change(function () {
-//   var me = $(this);
-//   log.html(me.attr('value'));
-// });
-
-// });
-
-</script>
+<script type="text/javascript" src="/JavaScriptAndCssFiles/JavascriptRate.js"></script>
 </body>
 </html>

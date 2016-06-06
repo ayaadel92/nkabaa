@@ -38,6 +38,13 @@ use App\Events\TransferEvent;
   Route::get('/DoctorSpecial/{Data}','EvaluateController@SelectDoctorsSpecial');
   
   Route::get('/DoctorName/{Data}','EvaluateController@SelectDoctorsName');
+
+// Route::get('/SearchDoctor','EvaluateController@InsertRate');
+  
+//   Route::get('/DoctorSpecial','EvaluateController@InsertRate');
+  
+//   Route::get('/DoctorName','EvaluateController@InsertRate');
+  
  // Route::get('/SearchDoctor/{Data}',function()
  //  {
 
