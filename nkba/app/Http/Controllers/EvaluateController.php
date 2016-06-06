@@ -18,16 +18,16 @@ class EvaluateController extends Controller
   public function GetEvaluate()
   {
 
-   $users=DB::select('select d.id,d.name,d.degree,d.specialization,d.phone,d.area,d.path,e.rate from doctors d,evaluate_doctors e where e.doctor_id=d.id and e.rate>=6 ');
+   $users=DB::select('select d.id,d.name,d.degree,d.specialization,d.phone,d.area,d.path,e.rate from doctors d,evaluate_doctors e where e.doctor_id=d.id and e.rate>=8 ');
 
    $coUsers=count($users);
    $use=response()->json($users)->getData();
 
-   $hospitals=DB::select('select d.id,d.name,d.address,d.phone,d.area,d.path,d.discription,e.rate from hospitals d,evaluate_hospitals e where e.hospital_id=d.id and e.rate>=6 ');
+   $hospitals=DB::select('select d.id,d.name,d.address,d.phone,d.area,d.path,d.discription,e.rate from hospitals d,evaluate_hospitals e where e.hospital_id=d.id and e.rate>=8  ');
    $coHospital=count($hospitals);
    $hospital=response()->json($hospitals)->getData();
 
-   $labs=DB::select('select d.id,d.name,d.address,d.phone,d.area,d.path,d.type,d.discription,e.rate from labs d,evaluate_labs e where e.lab_id=d.id and e.rate>=6 ');
+   $labs=DB::select('select d.id,d.name,d.address,d.phone,d.area,d.path,d.type,d.discription,e.rate from labs d,evaluate_labs e where e.lab_id=d.id and e.rate>=8 ');
    $colab=count($labs);
    $lab=response()->json($labs)->getData();
 

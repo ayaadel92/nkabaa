@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LOL</title>
+  <title>Search Doctors</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <style type="text/css">
 /*sprite with stars*/
@@ -128,6 +128,8 @@ h1 {
                    <p>Phone:{{
                      $doc->phone
                    }}</p><br>
+                    <a href="http://localhost:8000/">Back</a>
+                  
                   <!-- Begine Star Of Evaluate-->
                        {{-- <div class="rating">
                         <span id="1">☆</span><span id="2">☆</span><span id="3">☆</span><span id="4">☆</span><span id="5">☆</span>
@@ -149,9 +151,7 @@ h1 {
 
 {{-- this is true stars --}}
 
-<h5>User_ID:{{ $User_ID }}</h5>
-<h5>Rate:{{ $Value_Rate }}</h5>
-<h5>Doctor:{{ $Doctor_ID}}</h5>
+
 
 @if (!Auth::guest())
 <h1>Star Rating</h1>
