@@ -46,6 +46,9 @@ class ComplaintssController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+//    $name = Input::get("Auth::user()->id");
+//
+//        print_r($name);exit();
         $complain = new Complaint;
         $complain->hospital_name = Request::get('name_hosptail');
         $complain->doctor_name = Request::get('name_doctor');
@@ -79,13 +82,7 @@ class ComplaintssController extends Controller {
             $message->from( $data['k2']);
             $message->to('nkabaalex@gmail.com','Admin')->subject('شكوي  ');
         });     
-        
-        
-        
-        
-        
-        
-        
+     
         return redirect("/complain/$id");
     }
 
@@ -97,9 +94,15 @@ class ComplaintssController extends Controller {
      */
     public function show($id) {
         //
-        $tasks = "hello";
+      
+    if(Auth::user()->id == $id ){
 
-        return view('complain.index', compact('tasks'));
+          return view('complain.index', compact('tasks'));
+        }
+        else{
+            return redirect("/");
+        }
+       
     }
 
     /**

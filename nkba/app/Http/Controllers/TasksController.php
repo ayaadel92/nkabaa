@@ -75,10 +75,15 @@ class TasksController extends Controller {
     }
 
     public function show($id) {
+        if(Auth::user()->id == $id ){
         $tasks = DB::table('tasks')
                 ->where('user_id', $id)
                 ->get();
         return view('tasks.index', compact('tasks'));
+        }
+        else{
+             return redirect("/");
+        }
     }
 
     public function update(Request $request, $id) {

@@ -76,9 +76,13 @@ class MembersController extends Controller
     }
     public function show($id)
     {
-        $tasks = "hello";
-
-        return view('member.index', compact('tasks'));
+       
+          if(Auth::user()->id == $id ){
+        return view('member.index');
+          }
+          else{
+              return redirect("/");
+          }
     }
 
     
