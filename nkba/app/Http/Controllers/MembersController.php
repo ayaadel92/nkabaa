@@ -76,13 +76,18 @@ class MembersController extends Controller
     }
     public function show($id)
     {
-       
+         $role = Auth::user()->role;
+      if($role == "مهندس"||$role == "قريب"){
           if(Auth::user()->id == $id ){
         return view('member.index');
           }
           else{
               return redirect("/");
           }
+    }
+    else{
+        return redirect("/");
+    }
     }
 
     

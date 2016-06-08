@@ -8,7 +8,7 @@
         <div style="height: 100px"></div> 
     </div>
  
-         <h5 style="color:#B32B2B" class="fa fa-camera-retro fa-2x">المطلبات الاساسيه الاشتراك في التامين الصحي </h5>
+         <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">المطلبات الاساسيه الاشتراك في التامين الصحي </h5>
          <p style="font-size: 25px" class="animate slideInDown"> اذا كنت تريد الاشتراك لوالد فأورق المطلوبه صوره لشخص بالضافه الي صوره البطاقه  </p>
                 <p style="font-size: 25px" class="animate slideInDown"> اذا كنت تريد الاشتراك   الوالده  فأورق المطلوبه صوره لشخص بالضافه الي شهاده الميلاد </p>
                 <p style="font-size: 25px" class="animate slideInDown"> اذا كنت تريد الاشتراك الابن  فأورق المطلوبه صوره لشخص بالضافه الي شهاده الميلاد  علي ان يكون اقل من سن التخرج</p>
@@ -21,7 +21,7 @@
                     <div class="blog-right1">
 
                         <div class="categories">
-                            <h5 style="color:#B32B2B" class="fa fa-camera-retro fa-2x">المطلبات الاساسيه الاشتراك في التامين الصحي</h5>
+                            <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">المطلبات الاساسيه الاشتراك في التامين الصحي</h5>
                             <div class="clearfix"> </div>
                             
                         </div>
@@ -294,10 +294,7 @@
     <div class="container">
         <div class="row">
 
-            <!-- Copyright -->
-            <div id="copyright" class="col-md-12>
-                 <p  style="font-size: 20px ; color: #fff">(c) ITI OPEN SOURCE AYA ADEL & AYA AHMED & MANAR AHMED & MERVET MOSAD </p>
-            </div>
+   
             <!-- End Copyright -->
         </div>
     </div>

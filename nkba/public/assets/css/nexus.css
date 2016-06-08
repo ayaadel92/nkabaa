@@ -715,7 +715,7 @@ p.site-slogan {
   width: 100%;
 }
 #hornav .container {
-  background-color: #313131;
+  background-color: #994d33;
   box-shadow: 0 -4px 0 #3D7A33 inset, 0 0 20px rgba(0, 0, 0, 0.1);
   min-height: 60px;
   display: block;
@@ -870,15 +870,16 @@ p.site-slogan {
   /*Sidebar Sub Navigation*/
 }
 .sidebar-nav li a {
-  background: #313131;
-  border-bottom: 1px solid #d8d8d8;
-  display: block;
-  padding: 10px 20px;
-  outline: none;
-  color: #3D7A33;
-  font-size: 16px;
-  font-weight: 300;
+  background: rgb(227, 247, 201);
+    border-bottom: 1px solid #C77575;
+    display: block;
+    padding: 20px 20px;
+    outline: none;
+    color: #3D7A33;
+    font-size: 16px;
+    font-weight: 300;
 }
+
 .sidebar-nav li a:hover {
   text-decoration: none;
 }
@@ -1548,18 +1549,18 @@ a.slicknav_item [class*=" fa-"] {
   transition: transform 0.4s ease-out;
 }
 .portfolio-group figcaption {
-  color: #ffffff;
+  color: #000;
   top: 0;
   left: 0;
   padding: 30px 40px;
-  background-color: #000000;
+  background-color: #EEE;
   text-align: left;
   text-transform: none;
   position: absolute;
   z-index: 1;
 }
 .portfolio-group h3 {
-  color: #ffffff;
+  color: #750A0A;
   margin: 0;
   padding: 0px 0px 5px;
   font-size: 20px;

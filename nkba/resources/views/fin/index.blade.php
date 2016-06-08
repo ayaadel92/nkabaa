@@ -9,9 +9,9 @@
         <div style="height: 100px"></div> 
     </div>
         <div class="container content" >
-<i class="fa fa-camera-retro fa-2x" style="size: 20px"> متابعة رصيد العمليات</i> 
+<i class="fa-stethoscope fa-2x" style="size: 20px"> متابعة رصيد العمليات</i> 
                 <br>
-               <i class="fa fa-camera-retro fa-2x">متابعة رصيد التحاليل والأشعة</i> 
+               <i class="fa-stethoscope fa-2x">متابعة رصيد التحاليل والأشعة</i> 
    <div style="height: 100px"></div> 
                 <div class="sing-img-text-left">
                     <div class="blog-right1">
@@ -43,7 +43,8 @@
 
 
                                             <div class="chart clearfix">
-                                              <p style="color:#B32B2B ; font-size: 25px" > المتبقي من الإجمالي </p>
+                                              <p style="color:#B32B2B ; font-size: 25px" > المتبقي من الإجمالي :{{$limit['0']->total_remainder}}</p>
+                                             
                                               <div class="item animate swing">
 
                                                 <div class="bar">
@@ -58,7 +59,7 @@
                                                 <!-- //.bar -->
                                             </div>
                                             <!-- //.item -->
-                                            <p style="color:#B32B2B ; font-size: 25px"> التمبقي من العمليات </p>
+                                            <p style="color:#B32B2B ; font-size: 25px"> التمبقي من العمليات :{{$limit['0']->surgery_credit}}</p>
                                             <div class="item animate swing">
                                                 <div class="bar">
                                                     <span class="percent">{{($limit['0']->surgery_credit/5000)*100}}%</span>
@@ -71,7 +72,7 @@
                                                 <!-- //.bar -->
                                             </div>
                                             <!-- //.item -->
-                                            <p style="color:#B32B2B ; font-size: 25px"> المتبقي من التحليل و الأشعة</p>
+                                            <p style="color:#B32B2B ; font-size: 25px"> المتبقي من التحليل و الأشعة:{{$limit['0']->analysis_credit}}</p>
                                             <div class="item  animate swing">
                                                 <div class="bar">
                                                     <span class="percent">{{($limit['0']->analysis_credit/1000)*100}}%</span>
@@ -152,11 +153,7 @@
     <div class="container">
         <div class="row">
 
-            <!-- Copyright -->
-            <div id="copyright" class="col-md-12>
-                 <p class="pull-right" style="font-size: 20px ; color: #fff">(c) ITI OPEN SOURCE AYA ADEL & AYA AHMED & MANAR AHMED & MERVET MOSAD </p>
-            </div>
-            <!-- End Copyright -->
+          
         </div>
     </div>
 </div>

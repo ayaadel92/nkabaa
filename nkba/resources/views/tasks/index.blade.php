@@ -177,11 +177,7 @@
     <div class="container">
         <div class="row">
 
-            <!-- Copyright -->
-            <div id="copyright" class="col-md-12>
-                 <p class="pull-right" style="font-size: 20px ; color: #fff">(c) ITI OPEN SOURCE AYA ADEL & AYA AHMED & MANAR AHMED & MERVET MOSAD </p>
-            </div>
-            <!-- End Copyright -->
+         
         </div>
     </div>
 </div>

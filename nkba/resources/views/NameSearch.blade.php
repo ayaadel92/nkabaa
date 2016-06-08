@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>LOL</title>
-
+@extends('layouts.app')
+@section('content')
 
 <style type="text/css">
 /*EndTesting*/

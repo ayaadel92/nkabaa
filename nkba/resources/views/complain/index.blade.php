@@ -11,11 +11,11 @@
     </div>
    
             
-<i class="fa fa-camera-retro fa-2x animate flash" style="size: 20px"> اصبح من حقك ان تضع ملاحظاتك علي مستشفي</i> 
+<i class="fa-user-md fa-2x animate flash" style="size: 20px"> اصبح من حقك ان تضع ملاحظاتك علي مستشفي</i> 
                 <br>
-               <i class="fa fa-camera-retro fa-2x animate flash">اصبح من حقك ان تضع ملاحظاتك علي الدكتور</i> 
+               <i class="fa-user-md fa-2x animate flash">اصبح من حقك ان تضع ملاحظاتك علي الدكتور</i> 
                  <br>
-               <i class="fa fa-camera-retro fa-2x animate flash">اصبح من حقك ان تضع ملاحظاتك علي المعمل الاشعه و التحليل </i> 
+               <i class="fa-user-md fa-2x animate flash">اصبح من حقك ان تضع ملاحظاتك علي المعمل الاشعه و التحليل </i> 
    <div style="height: 100px"></div> 
            
             
@@ -275,11 +275,6 @@
     <div class="container">
         <div class="row">
 
-            <!-- Copyright -->
-            <div id="copyright" class="col-md-12>
-                 <p class="pull-right" style="font-size: 20px ; color: #fff;">(c) ITI OPEN SOURCE AYA ADEL & AYA AHMED & MANAR AHMED & MERVET MOSAD </p>
-            </div>
-            <!-- End Copyright -->
         </div>
     </div>
 </div>

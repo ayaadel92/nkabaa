@@ -75,6 +75,8 @@ class TasksController extends Controller {
     }
 
     public function show($id) {
+          $role = Auth::user()->role;
+        if ($role == "مهندس" || $role == "قريب") {
         if(Auth::user()->id == $id ){
         $tasks = DB::table('tasks')
                 ->where('user_id', $id)
@@ -83,6 +85,10 @@ class TasksController extends Controller {
         }
         else{
              return redirect("/");
+        }
+        }
+        else{
+            return redirect("/");
         }
     }
 

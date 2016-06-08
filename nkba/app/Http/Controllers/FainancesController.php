@@ -27,6 +27,7 @@ class FainancesController extends Controller {
     public function show($id) {
 
         $role = Auth::user()->role;
+      if($role == "مهندس"||$role == "قريب"){
              if(Auth::user()->id == $id ){
         if ($role === "مهندس") {
             $user = DB::table('engineers')
@@ -101,6 +102,10 @@ class FainancesController extends Controller {
     else{
          return redirect("/");
     }
+      }
+      else{
+            return redirect("/");
+      }
     }
 
     public function edit($id) {
