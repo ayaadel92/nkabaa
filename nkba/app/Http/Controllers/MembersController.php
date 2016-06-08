@@ -61,7 +61,7 @@ class MembersController extends Controller
        $data = array('k1' => "$filename", 'k2' => "$type",'k3' => "$mail" ,'k4' => "$filename1");
         Mail::send('emails.renews',$data,function($message) use ($data)
         {
-            $MailBody =  "نوع لاضافه".  "". $data['k2']."اضافه عضويه جديدالصوره اشخصيه بهذا الاسم"."     ".$data['k1']."         "."الملف المطلوب ".$data['k4'];  
+            $MailBody =  "<p style='color:#3D7A33;font-size:30px'>"."نوع لاضافه".  "</p>"."<br>". $data['k2']."<br>". "<p style='color:#3D7A33;font-size:30px'>"."اضافه عضويه جديدالصوره اشخصيه بهذا الاسم"."  </p>   "."<br>".$data['k1'].    "<p style='color:#3D7A33;font-size:30px'>"."الملف المطلوب "."</p>"."<br>".$data['k4'];  
             $message->setBody($MailBody, 'text/html');
             $message->from( $data['k3']);
             $message->to('nkabaalex@gmail.com','Admin')->subject("اضافه عضويه جديده");

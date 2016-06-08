@@ -77,7 +77,7 @@ class ComplaintssController extends Controller {
         $data = array('k1' => "$filename", 'k2' => "$mail",'k3' => "$des");
         Mail::send('emails.complain',$data,function($message) use ($data)
         {
-            $MailBody = "الصوره الشكاوي".$data['k1']."المشكله".$data['k3'];  
+          $MailBody ="<p style='color:#3D7A33;font-size:30px'>". "الصوره الشكاوي"."</p>"."<br> ".$data['k1']."<br>"."<p style='color:#3D7A33;font-size:30px'>"."المشكله"."</p>"."<br>".$data['k3'];  
             $message->setBody($MailBody, 'text/html');
             $message->from( $data['k2']);
             $message->to('nkabaalex@gmail.com','Admin')->subject('شكوي  ');

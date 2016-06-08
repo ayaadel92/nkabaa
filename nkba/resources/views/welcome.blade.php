@@ -352,7 +352,7 @@ function GetValueSelected()
         location.href = "http://localhost:8000/SearchDoctor/"+ValueArea;
 
         console.log(ValueArea);
-         alert(ValueArea);
+        
     };
 
   }
@@ -368,7 +368,7 @@ function GetValueSelected()
         location.href = "http://localhost:8000/DoctorSpecial/"+ValueArea;
 
         console.log(ValueArea);
-         alert(ValueArea);
+         
     };
   }
   else if(SelectElemet==3)
@@ -382,7 +382,7 @@ function GetValueSelected()
         location.href = "http://localhost:8000/DoctorName/"+ValueArea;
 
         console.log(ValueArea);
-         alert(ValueArea);
+         
     };
   }
 }
