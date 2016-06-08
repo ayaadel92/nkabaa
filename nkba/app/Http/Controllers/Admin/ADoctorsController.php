@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
-use App\User;
-use App\Relative;
+use App\Doctor;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -13,8 +12,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
-
-class ARelativesController extends Controller
+class ADoctorsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,9 +21,9 @@ class ARelativesController extends Controller
      */
     public function index()
     {
-        $relatives = Relative::all();
-        $relatives->toarray();
-        return view('admin.relatives.index', compact('relatives'));
+        $doctors = Doctor::all();
+        $doctors->toarray();
+        return view('admin.doctors.index', compact('doctors'));
     }
 
     /**
@@ -35,7 +33,7 @@ class ARelativesController extends Controller
      */
     public function create()
     {
-        return view('admin.relatives.new');
+        return view('admin.doctors.new');
     }
 
     /**
@@ -47,29 +45,28 @@ class ARelativesController extends Controller
     public function store(Request $request)
     {
         $input = Input::all();
-        // $validation = Validator::make($input, Relative::$rules);
+        // $validation = Validator::make($input, Doctor::$rules);
         // if ($validation->passes())
         // {
-            // `id`, `status`, `name`, `health_id`, `eng_id`, `birth_date`, `gender`, `relation_type`, `national_id`, `path`, `limit_id`, `user_id`
-            //add relative in relatives table
-            $relative = new Relative;
-            $relative->status = $input['status'];
-            $relative->name = $input['name'];
-            $relative->health_id = $input['health_id'];
-            $relative->eng_id = $input['eng_id'];
-            $relative->birth_date = $input['birth_date'];
-            $relative->gender = $input['gender'];
-            $relative->relation_type = $input['relation_type'];
-            $relative->national_id = $input['national_id'];
-            $relative->path = $input['path'];
-            $relative->limit_id = $input['limit_id'];
-            $relative->user_id = $user->id;
-            $relative->save();
-            
-            return Redirect::route('admin-relative.index');
+            //add doctor in doctors table
+        $doctor = new Doctor;
+        $doctor->name = $input['name'];
+        $doctor->degree = $input['degree'];
+        $doctor->specialization = $input['specialization'];
+        $doctor->address = $input['address'];
+        $doctor->phone = $input['phone'];
+        $doctor->governorate = $input['governorate'];
+        $doctor->area = $input['area'];
+        $doctor->price = $input['price'];
+        $doctor->mobile = $input['mobile'];
+        $doctor->discription = $input['discription'];
+        $doctor->path = $input['path'];
+        $doctor->save();
+
+        return Redirect::route('admin-doctor.index');
         // } 
 
-        // return Redirect::route('admin-relative.create')
+        // return Redirect::route('admin-doctor.create')
         // ->withInput()
         // ->withErrors($validation)
         // ->with('message', 'There were validation errors.');
@@ -83,9 +80,9 @@ class ARelativesController extends Controller
      */
     public function show($id)
     {
-        // get the relative
-        $relative = Relative::find($id);
-        return View('admin.relatives.show',compact('relative'));
+        // get the doctor
+        $doctor = Doctor::find($id);
+        return View('admin.doctors.show',compact('doctor'));
     }
 
     /**
@@ -96,9 +93,9 @@ class ARelativesController extends Controller
      */
     public function edit($id)
     {
-       $relative = Relative::find($id);
-       return View('admin.relatives.edit',compact('relative'));
-   }
+        $doctor = Doctor::find($id);
+        return View('admin.doctors.edit',compact('doctor'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -109,18 +106,18 @@ class ARelativesController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $relative = Relative::findOrFail($id);
+        $doctor = Doctor::findOrFail($id);
        // $validation=$this->validate($request, [
        //  'name' => 'required',
        //  'email' => 'required'
        //  ]);
-       $input = $request->all();
-       $relative->fill($input)->save();
-       return Redirect::route('admin-relative.show',$relative->id);
+        $input = $request->all();
+        $doctor->fill($input)->save();
+        return Redirect::route('admin-doctor.show',$doctor->id);
        // ->withInput()
        // ->withErrors($validation)
        // ->with('message', 'There were validation errors.');
-   }
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -130,8 +127,8 @@ class ARelativesController extends Controller
      */
     public function destroy($id)
     {
-       $relative = Relative::findOrFail($id);
-       $relative->delete();
-       return Redirect::route('admin-relative.index');
-   }
+        $doctor = Doctor::findOrFail($id);
+        $doctor->delete();
+        return Redirect::route('admin-doctor.index');
+    }
 }

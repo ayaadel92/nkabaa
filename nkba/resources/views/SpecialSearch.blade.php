@@ -16,11 +16,10 @@
                 <img class="margin-bottom-20" src="{{$doc->path}}" alt="thumb1" style="height: 300px">
             </div>
             <div class="col-md-7">
-                <h5> الاسم:{{$doc->name }}</h5>
+                          <h5> الاسم:{{$doc->name }}</h5>
            <p>العنوان:{{ $doc->address}}</p><br>
            <p>الوصف :{{$doc->discription }}</p><br>
            <p>الهاتف :{{$doc->phone}}</p><br>
-                <!-- Read More -->
                 <form>
                     <fieldset id="reviewStars-input">
                         <span class="star-cb-group">
@@ -42,6 +41,7 @@
     </div>
 </div>
     @endforeach
+
 <div id="footer" class="background-grey" style="background-color: #555555">
     <div class="container">
         <div class="row">
@@ -51,10 +51,9 @@
     </div>
 </div>
 </div>
-
-
 @endsection
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <style type="text/css">
     /*EndTesting*/
     #reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {

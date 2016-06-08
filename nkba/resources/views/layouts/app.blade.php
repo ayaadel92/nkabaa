@@ -51,6 +51,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+
   <link href="favicon.ico" rel="shortcut icon">
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="/assets/css/bootstrap.css" rel="stylesheet">
@@ -62,6 +63,23 @@
         <link rel="stylesheet" href="/assets/css/custom.css" rel="stylesheet">
         <!-- Google Fonts-->
         <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+
+
+<!--<![endif]-->
+    <!--[if lt IE 8]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+         <img src="/assets/images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+     </a>
+    </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/ie.css">
+        <![endif]-->
+        {{-- End End End --}}
+        <!-- Fonts -->
+   
 
 
      <!-- Styles -->

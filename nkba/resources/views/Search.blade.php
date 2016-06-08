@@ -141,11 +141,8 @@
         text-align: center;
         background: transparent;
     }
-    h1 {
-        text-align: center;
-    }
-
 </style>
+
 
 <script type="text/javascript">
     var logID = 'log',
@@ -156,3 +153,4 @@
         log.html(me.attr('value'));
     });
 </script>
+

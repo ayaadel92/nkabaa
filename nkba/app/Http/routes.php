@@ -38,6 +38,13 @@ use App\Events\TransferEvent;
   Route::get('/DoctorSpecial/{Data}','EvaluateController@SelectDoctorsSpecial');
   
   Route::get('/DoctorName/{Data}','EvaluateController@SelectDoctorsName');
+
+// Route::get('/SearchDoctor','EvaluateController@InsertRate');
+  
+//   Route::get('/DoctorSpecial','EvaluateController@InsertRate');
+  
+//   Route::get('/DoctorName','EvaluateController@InsertRate');
+  
  // Route::get('/SearchDoctor/{Data}',function()
  //  {
 
@@ -104,9 +111,14 @@ Route::get('ajax-response/{updated}',function($updated){
 
 //Admin routes
   Route::resource('admin','AdminController');
+  Route::resource('admin-user','Admin\AUsersController');
   Route::resource('admin-engineer','Admin\AEngineersController');
   Route::resource('admin-limit','Admin\ALimitsController');
   Route::resource('admin-relative','Admin\ARelativesController');
+  Route::resource('admin-doctor','Admin\ADoctorsController');
+  Route::resource('admin-hospital','Admin\AHospitalsController');
+  Route::resource('admin-lab','Admin\ALabsController');
+  Route::resource('admin-transfer','Admin\ATransfersController');
 
 //Employee
   Route::resource('employee-transfer','EmplyeeTransferController');

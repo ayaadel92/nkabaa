@@ -147,8 +147,7 @@
                       <button id="myButton3" class="float-left submit-button" >Search</button>
                     </div>
 
-        
-       
+
     </div>
 </div>
 

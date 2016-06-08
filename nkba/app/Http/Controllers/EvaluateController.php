@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 class EvaluateController extends Controller {
 
     //
+
     public function GetEvaluate() {
 
         $users = DB::select('select d.id,d.name,d.degree,d.specialization,d.phone,d.area,d.discription,d.path,e.rate from doctors d,evaluate_doctors e where e.doctor_id=d.id and e.rate>=6 ');
@@ -32,14 +33,23 @@ class EvaluateController extends Controller {
         $coareas = count($areas);
         $area = response()->json($areas)->getData();
 
+
         $specializations = DB::select('select specialization from doctors group by specialization');
         $specialization = response()->json($specializations)->getData();
+
 
 
         return view('welcome', compact('users', 'hospitals', 'labs', 'area', 'specialization'));
     }
 
-    public function SelectDoctors($Data , Request $request) {
+ 
+
+
+
+        
+    
+
+    public function SelectDoctors($Data, Request $request) {
         $VarData = $Data;
         $User_ID = $request['UserId'];
         $Value_Rate = $request['RateValue'];
@@ -77,7 +87,8 @@ class EvaluateController extends Controller {
         return view('Search', compact('doctor', 'User_ID', 'Value_Rate', 'Doctor_ID'));
     }
 
-    public function SelectDoctorsSpecial($Data , Request $request) {
+    public function SelectDoctorsSpecial($Data, Request $request) {
+
         $VarData = $Data;
         $User_ID = $request['UserId'];
         $Value_Rate = $request['RateValue'];
@@ -147,5 +158,6 @@ class EvaluateController extends Controller {
 
         return view('NameSearch', compact('doctor', 'User_ID', 'Value_Rate', 'Doctor_ID'));
     }
+    
 
 }
