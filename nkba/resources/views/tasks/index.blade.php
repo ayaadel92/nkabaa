@@ -74,7 +74,7 @@
                 <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> اضافه:</p>  </label>  
                 <div class="col-md-8 inputGroupContainer">
 
-                    <button type="submit" class="btn-green">
+                    <button type="submit" class="btn-green" id="naaa">
                         <i class="fa fa-btn fa-plus"></i>Add Task
                     </button>
                 </div>
@@ -97,14 +97,18 @@
 
             <div class="panel-body">
                 <table class="table table-striped task-table">
-                    <thead>
+                    <th><p style="color:#000">التاريخ</p></th>
                     <th><p style="color:#000">مواعيدك</p></th>
+                 <th><p style="color:#000">الوقت</p></th>
+
                     <th>&nbsp;</th>
                     </thead>
                     <tbody>
                         @foreach ($tasks as $task)
                         <tr>
-                            <td class="table-text"><div><p style='color:#000'>{{ $task->name }}</p></div></td>
+                            <td class="table-text" style="width: 200px"><div><p style='color:#000'>{{ $task->name }}</p></div></td>
+                            <td class="table-text" style="width: 200px"><div><p style='color:#000'>{{ $task->date }}</p></div></td>
+                            <td class="table-text" style="width: 200px"><div><p style='color:#000'>{{ $task->time }}</p></div></td>
 
                             <!-- Task Delete Button -->
                             <td>
@@ -213,6 +217,34 @@
 
         });
     });
+
+//   $(document).ready(function () {
+//         $("#naaa").click(function () {
+//             var form_data={
+//                    	email: $("#email").val(),
+//                    	password: $("#password").val()
+//                    	
+//                    };
+//                    $.ajax({
+//                       type: "POST",
+//                       url: "http://localhost/phpproj/salafwsharebootstrap/public_html/loginajax.php",
+//                       data: form_data,
+//                       success: function(response)
+//                       {
+//                     
+//                       	 if(response =="success")
+//                       	 {  
+//                       		window.location.href = 'http://localhost/phpproj/salafwsharebootstrap/public_html/index.php'
+//                       	 }
+//                       	else
+//                       	{
+//                       		$("#message").html(response);
+//                       	}
+//                        
+//                       }
+//         });
+//         
+//   }}
 
 
 </script>
