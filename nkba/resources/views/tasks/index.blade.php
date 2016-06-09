@@ -18,72 +18,72 @@
     </div>
 
     <!--     unnamed.png-->
-<!--<div class="col-md-8 ">
-    
-    <div style="height: 150px"></div> 
-</div>-->
+    <!--<div class="col-md-8 ">
+        
+        <div style="height: 150px"></div> 
+    </div>-->
 
     <!-- Display Validation Errors -->
 
 
     <div class="container" style="margin-top: 50px">
-    <!-- New Task Form -->
-    <form action="/task" method="POST" class="form-horizontal">
-        {{ csrf_field() }}
+        <!-- New Task Form -->
+        <form action="/task" method="POST" class="form-horizontal">
+            {{ csrf_field() }}
 
-        <!-- Task Name -->
-        <div class="form-group animate swing">
-            <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> مسمي معادك:</p>  </label>  
-            <div class="col-md-8 inputGroupContainer">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <!-- Task Name -->
+            <div class="form-group animate swing">
+                <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> مسمي معادك:</p>  </label>  
+                <div class="col-md-8 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
 
-                    <input type="text" name="name" id="task-name" class="col-sm-6" value="{{ old('task') }}">
+                        <input type="text" name="name" id="task-name" class="col-sm-6" value="{{ old('task') }}">
+                    </div>
                 </div>
             </div>
-        </div>
 
 
 
-        <div class="form-group animate swing">
-            <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> التاريخ:</p>  </label>  
-            <div class="col-md-8 inputGroupContainer">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <div class="form-group animate swing">
+                <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> التاريخ:</p>  </label>  
+                <div class="col-md-8 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
 
-                    <input type="date" name="date" id="task-name" class="col-sm-6" value="{{ old('task') }}">
+                        <input type="date" name="date" id="task-name" class="col-sm-6" value="{{ old('task') }}">
 
+                    </div>
                 </div>
-            </div>
-        </div>    
+            </div>    
 
-        <div class="form-group animate swing">
-            <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> الوقت:</p>  </label>  
-            <div class="col-md-8 inputGroupContainer">
-               
+            <div class="form-group animate swing">
+                <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> الوقت:</p>  </label>  
+                <div class="col-md-8 inputGroupContainer">
+
                     <input type="time" name="time" id="task-name" class="col-sm-6" value="{{ old('task') }}">
 
+                </div>
+            </div>      
+
+
+            <!-- Add Task Button -->
+            <div class="form-group animate swing">
+                <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> اضافه:</p>  </label>  
+                <div class="col-md-8 inputGroupContainer">
+
+                    <button type="submit" class="btn-green">
+                        <i class="fa fa-btn fa-plus"></i>Add Task
+                    </button>
+                </div>
             </div>
-        </div>      
+        </form>
+        <button  id="show" class="btn-bronze">عرض مواعيدك <span class= "glyphicon glyphicon-plus"> </span></button>
+    </div>
 
 
-        <!-- Add Task Button -->
-       <div class="form-group animate swing">
-            <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> اضافه:</p>  </label>  
-            <div class="col-md-8 inputGroupContainer">
-               
-                <button type="submit" class="btn-green">
-                    <i class="fa fa-btn fa-plus"></i>Add Task
-                </button>
-            </div>
-        </div>
-    </form>
-    <button  id="show" class="btn-bronze">عرض مواعيدك <span class= "glyphicon glyphicon-plus"> </span></button>
-</div>
-
-    
 
 
 
@@ -119,12 +119,12 @@
 
                             </td>
                             <td>
-<!--                                <button type="button" class="btn-green" data-toggle="modal" data-target="#myModal">تعديل المعاد   <span class="glyphicon glyphicon-send"></span></button>
+                                <button type="button" class="btn-green" data-toggle="modal" data-target="#myModal{{ $task->id}}" id="update-task-{{ $task->id}}">تعديل المعاد   <span class="glyphicon glyphicon-send"></span></button>
 
-                                <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal fade" id="myModal{{ $task->id}}" role="dialog">
                                     <div class="modal-dialog">
 
-                                         Modal content
+                                        Modal content
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -132,24 +132,36 @@
                                             </div>
                                             <div class="modal-body">
 
-                                                {!! Form::open(['route'=>['task.update',$task->id],'method'=>'put' ]) !!}
+                                                {!! Form::model($task, [
+                                                'method' => 'PUT',
+                                                'route' => ['task.update', $task->id]
+                                                ]) !!}
 
                                                 <div class="form-group">
-
-                                                    <label for="exampleInputEmail1"> ادخل المعاد الجديد </label>
-                                                    <input type="text" class="form-control" value="name" name="name">
+                                                    {!! Form::label('name', 'name:', ['class' => 'control-label']) !!}
+                                                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
                                                 </div>
 
+                                                <div class="form-group">
+                                                    {!! Form::label('date', 'date:', ['class' => 'control-label']) !!}
+                                                    {!! Form::date('date', null, ['class' => 'form-control']) !!}
+                                                </div>
+                                                
+                                                   <div class="form-group">
+                                                    {!! Form::label('time', 'time:', ['class' => 'control-label']) !!}
+                                                    {!! Form::time('time', null, ['class' => 'form-control']) !!}
+                                                </div>
 
+                                                {!! Form::submit('Update Task', ['class' => 'btn btn-primary']) !!}
 
-                                                <button type="submit" class="btn-green">edit</button>
                                                 {!! Form::close() !!}
+
 
                                             </div>
                                         </div>
 
                                     </div>
-                                </div>-->
+                                </div>
                             </td>
 
 
@@ -177,7 +189,7 @@
     <div class="container">
         <div class="row">
 
-         
+
         </div>
     </div>
 </div>
