@@ -30,7 +30,7 @@ use Illuminate\Http\Request;
   // $specializations=DB::select('select specialization from doctors group by specialization');
   //  return $specializations;
  //   // return view('welcome');
-   
+
  // });
   Route::get('/','EvaluateController@GetEvaluate');
   // Route::get('/{id}','EvaluateController@');
@@ -64,7 +64,7 @@ use Illuminate\Http\Request;
   Route::resource('/users', 'UserController');
 
   Route::resource('/fin', 'FainancesController');
-   Route::resource('/rin', 'RenewsController');
+  Route::resource('/rin', 'RenewsController');
 
   Route::resource('/member', 'MembersController');
 
@@ -74,85 +74,85 @@ use Illuminate\Http\Request;
 
 
 //transfer routes
-Route::resource('transfer','TransferController');
-Route::resource('/create','TransferController@create');
-Route::get('/transfer-confirm/{id}','TransferController@confirm');
+  Route::resource('transfer','TransferController');
+  Route::resource('/create','TransferController@create');
+  Route::get('/transfer-confirm/{id}','TransferController@confirm');
 //get analaysis and radiobologies
-Route::get('api/dropdown', function(){
-  
+  Route::get('api/dropdown', function(){
+
    $input = Input::get('option');
    if($input==1)
-      {
-           $radios = Analysisradios::findradios();
-           return Response::json($radios->get(['id','name']));
-      }
-    elseif ($input==2) 
-      {
-           $analysis = Analysisradios::findanalysis();
-           return Response::json($analysis->get(['id','name']));
-      }
-});
+   {
+     $radios = Analysisradios::findradios();
+     return Response::json($radios->get(['id','name']));
+   }
+   elseif ($input==2) 
+   {
+     $analysis = Analysisradios::findanalysis();
+     return Response::json($analysis->get(['id','name']));
+   }
+ });
 //get percentages
-Route::get('api/degree', function(){
-  
+  Route::get('api/degree', function(){
+
    $input = Input::get('option');
    if($input==1)
-      {
-           $perc = Percentages::findengperc();
-           return Response::json($perc->get(['percent']));
-      }
-    elseif ($input==2) 
-      {
-            $perc = Percentages::findwifeperc();
-           return Response::json($perc ->get(['percent']));
-      }
-    elseif ($input==3) 
-      {
-            $perc = Percentages::findhosperc();
-           return Response::json($perc ->get(['percent']));
-      }
-        elseif ($input==4) 
-      {
-            $perc = Percentages::findsonperc();
-           return Response::json($perc ->get(['percent']));
-      }
-          elseif ($input==5) 
-      {
-            $perc = Percentages::finddoutperc();
-           return Response::json($perc ->get(['percent']));
-      }
-          elseif ($input==6) 
-      {
-            $perc = Percentages::findfathperc();
-           return Response::json($perc ->get(['percent']));
-      }
-          elseif ($input==7) 
-      {
-            $perc = Percentages::findmothperc();
-           return Response::json($perc ->get(['percent']));
-      }
+   {
+     $perc = Percentages::findengperc();
+     return Response::json($perc->get(['percent']));
+   }
+   elseif ($input==2) 
+   {
+    $perc = Percentages::findwifeperc();
+    return Response::json($perc ->get(['percent']));
+  }
+  elseif ($input==3) 
+  {
+    $perc = Percentages::findhosperc();
+    return Response::json($perc ->get(['percent']));
+  }
+  elseif ($input==4) 
+  {
+    $perc = Percentages::findsonperc();
+    return Response::json($perc ->get(['percent']));
+  }
+  elseif ($input==5) 
+  {
+    $perc = Percentages::finddoutperc();
+    return Response::json($perc ->get(['percent']));
+  }
+  elseif ($input==6) 
+  {
+    $perc = Percentages::findfathperc();
+    return Response::json($perc ->get(['percent']));
+  }
+  elseif ($input==7) 
+  {
+    $perc = Percentages::findmothperc();
+    return Response::json($perc ->get(['percent']));
+  }
 });
 
 //get card_id
-Route::get('api/card', function(Request $request){
-     $input=$request->all();
+  Route::get('api/card', function(Request $request){
+   $input=$request->all();
      //print_r($input);
-           $card = Engineer::findengid($input);
-           return Response::json($card->get(['health_id']));
-      
-});
+   $card = Engineer::findengid($input);
+   return Response::json($card->get(['health_id']));
+
+ });
 
 //acceptance transfer
-Route::get('ajax-response/{updated}',function($updated){
+  Route::get('ajax-response/{updated}',function($updated){
     if (Request::ajax()) {
-        $where = ['done'=>'نعم', 'confirm' =>'لا'];
+      $where = ['done'=>'نعم', 'confirm' =>'لا'];
       if (Transfer::where($where)->count() > 0) {
         $last_updated = Transfer::orderBy('updated_at','desc')->first();
         if($last_updated->created_at !=$last_updated->updated_at){
-        if ($last_updated!== $updated) {
-          $transfers = Transfer::where([['updated_at','>',$updated],[$where]])->get();
-          return response()->json($transfers);
-        }
+          if ($last_updated!== $updated) {
+            $transfers = Transfer::where([['updated_at','>',$updated],[$where]])->get();
+            return response()->json($transfers);
+          }
         }
       }
     }
@@ -168,11 +168,11 @@ Route::get('ajax-response/{updated}',function($updated){
   Route::resource('admin-doctor','Admin\ADoctorsController');
   Route::resource('admin-hospital','Admin\AHospitalsController');
   Route::resource('admin-lab','Admin\ALabsController');
-  Route::resource('admin-transfer','Admin\ATransfersController');
 
 //Employee
-  Route::resource('employee-transfer','EmplyeeTransferController');
-// Route::get('ajax/{created}','EmplyeeTransferController@ajax');
+  Route::get('/employee-transfer/confirmed',array('as' => 'employee-transfer.confirmed', 'uses' => 'EmplyeeTransferController@confirmed'));
+  Route::get('/employee-transfer/decreaseLimit/{id}',array('as' => 'employee-transfer.decreaseLimit', 'uses' => 'EmplyeeTransferController@decreaseLimit'));
+  Route::put('/employee-transfer/decreaseInsure',array('as' => 'employee-transfer.decreaseInsure', 'uses' => 'EmplyeeTransferController@decreaseInsure'));
   Route::get('ajax/{created}',function($created){
     if (Request::ajax()) {
       if (Transfer::where('done','لا')->count() > 0) {
@@ -185,3 +185,17 @@ Route::get('ajax-response/{updated}',function($updated){
       }
     }
   });
+  Route::get('ajaxConfirm/{updated}',function($updated){
+    if (Request::ajax()) {
+      if (Transfer::where('done','نعم')->count() > 0) {
+        $last_updated = Transfer::orderBy('updated_at','desc')->first();
+        if ($last_updated !== $updated) {
+          $transfers = Transfer::where([['updated_at','>',$updated],['done','=','نعم'],['confirm','=','نعم']])->get();
+          return response()->json($transfers);
+        }
+        
+      }
+    }
+  });
+  Route::resource('employee-transfer','EmplyeeTransferController');
+

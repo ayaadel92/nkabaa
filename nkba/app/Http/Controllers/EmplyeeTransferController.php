@@ -141,9 +141,13 @@ class EmplyeeTransferController extends Controller
         print_r($transfer);exit;
         return view('employee.show',compact('transfer'));
     }
+
+    public function confirmed()
+    {
+        return view('employee.confirmed');
+    }
     public function decreaseLimit($id)
     {
-        //'total_remainder', 'surgery_credit', 'analysis_credit', 'user_id'
        $transfer_obj = DB::table('transfers')->where('id',$id)->get();
        $transfer = response()->json($transfer_obj)->getData()[0];
        if($transfer->patient_type==="مهندس")
@@ -167,15 +171,20 @@ class EmplyeeTransferController extends Controller
         }
         else{
             $limit_json=response()->json($limit_obj)->getData()[0];
-            DB::table('limits')
-            ->where('id',$limit_json->id)
-            ->update([
-                'analysis_credit' => $limit_json->analysis_credit - $transfer->total_cost,
-                'total_remainder'=> $limit_json->total_remainder - $transfer->total_cost]);
         }
         $analysis_credit = $limit_json->analysis_credit;
-        $total_remainder = $limit_json->total_remainder
-        return view('employee.decrease_done',compact('analysis_credit','total_remainder'));
+        $total_remainder = $limit_json->total_remainder;
+        $limit_id = $limit_json->id;
+        return view('employee.decrease_done',compact('analysis_credit', 'limit_id', 'total_remainder','transfer'));
     }
-
+    public function decreaseInsure($limit_id , $analysis_credit, $total_remainder, $transfer_cost)
+    {
+        //'total_remainder', 'surgery_credit', 'analysis_credit', 'user_id'
+        DB::table('limits')
+        ->where('id',$limit_id)
+        ->update([
+            'analysis_credit' => $analysis_credit - $transfer_cost,
+            'total_remainder'=> $total_remainder - $transfer_cost]);
+        return Redirect::route('employee.confirmed');
+    }
 }
