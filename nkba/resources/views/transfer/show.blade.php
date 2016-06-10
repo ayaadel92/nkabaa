@@ -118,7 +118,12 @@
 <td>
 </td>
 <td>
-    <button class="btn btn-info form-control col-sm-9" type="button" id="con">Confirm</button>
+if($transfer_row->accepted=="لا"){
+    <button class="btn btn-info form-control col-sm-9" type="button" id="con" disabled>Confirm</button>
+    }else
+    {
+      <button class="btn btn-info form-control col-sm-9" type="button" id="con" >Confirm</button>
+    }
 </td>
 </tr>  
 </table> 

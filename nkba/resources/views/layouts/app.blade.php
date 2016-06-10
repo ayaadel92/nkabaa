@@ -55,7 +55,8 @@
                     @if (Auth::user()->role === "مهندس" || Auth::user()->role === "قريب")
                     <li><a href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a></li>
                     @endif
-                    @if (Auth::user()->role === "مستشفي" )
+                    @if (Auth::user()->role === "مستشفي" || Auth::user()->role === "معمل")
+                     <li><a href="{{ url('/create') }}/{{ Auth::user()->id }}">التحويلات</a></li>                  
                     @endif
                     @endif
 
@@ -82,7 +83,6 @@
             </div>
         </div>
     </nav>
-        @include('laravelPnotify::notify')
 
     @yield('content')
 

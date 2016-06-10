@@ -83,7 +83,7 @@
       </div>
           <div class="clearfix"> </div> 
       </div>
-      <a href="/create"> <div class="s-sub">
+     <div class="s-sub">
       <div class="col-md-2 icon">
         <i class="glyphicon glyphicon-time"></i>
       </div>
@@ -92,7 +92,7 @@
       </div>
           <div class="clearfix"> </div> 
       </div>
-     </div></a>
+     </div>
      <div class="col-md-4 serve-icons">
       <div class="s-sub">
       <div class="col-md-2 icon">
