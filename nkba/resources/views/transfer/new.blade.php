@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <div class="container-fluid bg-1 text-center">
-    <h2 class="margin">التحويلات</h2>
+    <h3 class="margin">التحويلات</h3>
     <img src="../assets/images/12.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="420" height="200">
   </div>
 </div>
@@ -18,7 +18,7 @@
           <td>{{ Form::label ('ﺭﻗﻢ العضوية ' ,'ﺭﻗﻢ العضوية ',array('class' => 'style control-label ' ) ) }}</td>
           <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil">   </i>
           </span>
-          {{ Form::text('eng_id', null, array('required','class'=>'form-control col-sm-8 member')) }}
+          {{ Form::text('eng_id', null, array('required','class'=>'form-control col-sm-8 member','oninvalid'=>"setCustomValidity('أدخل رقم العضوية ')",'onchange'=>"try{setCustomValidity('')}catch(e){}")) }}
         </td>           
       </tr>
 
@@ -26,7 +26,7 @@
         <td>{{Form::label(' ﺭﻗﻢ اﻟﺒﻄﺎﻗﺔ اﻟﻌﻼﺟﻴﺔ ',' ﺭﻗﻢ اﻟﺒﻄﺎﻗﺔ اﻟﻌﻼﺟﻴﺔ ',array('class' => 'style' ) )}}</td>
         <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
         </span>
-        {{ Form::text('health_id', null,array('class'=>'form-control col-sm-8 card','readonly')) }}
+        {{ Form::text('health_id', null,array('required','class'=>'form-control col-sm-8 card','readonly','oninvalid'=>"setCustomValidity('أدخل رقم البطاقة الصحية ')",'onchange'=>"try{setCustomValidity('')}catch(e){}")) }}
       </td>
     </tr>
 
@@ -34,7 +34,7 @@
       <td>{{Form::label(' اسم المريض ',' اسم المريض ',array('class' => 'style' ))}}</td>
       <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
       </span>
-      {{ Form::text('patient_name', null,array('required','class'=>'form-control col-sm-8')) }}
+      {{ Form::text('patient_name', null,array('required','class'=>'form-control col-sm-8','oninvalid'=>"setCustomValidity('أدخل اسم امريض ')",'onchange'=>"try{setCustomValidity('')}catch(e){}")) }}
     </td>
   </tr>
 
@@ -57,7 +57,7 @@
 <tr>      
   <td>{{Form::label(' التشخيص الطبى ',' التشخيص الطبى ',array('class' => 'style' ))}}</td>
   <td>
-    {{ Form::textarea('medical_diagnosis', null,array('required','class'=>'form-control col-sm-9', 'rows' => 3)) }}</td>
+    {{ Form::textarea('medical_diagnosis', null,array('required','class'=>'form-control col-sm-9', 'rows' => 3,'oninvalid'=>"setCustomValidity('أدخل التشخيص الطبى ')",'onchange'=>"try{setCustomValidity('')}catch(e){}")) }}</td>
   </tr>
 
   <tr>      
@@ -103,7 +103,7 @@
   <td>{{Form::label(' التكلفة الكلية',' التكلفة الكلية',array('class' => 'style' ))}}</td>
   <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
 
-    {{ Form::text('total_cost', null, array('required','class'=>'form-control col-sm-8')) }}
+    {{ Form::text('total_cost', null, array('required','class'=>'form-control col-sm-8','oninvalid'=>"setCustomValidity('أدخل التكلفة الكلية ')",'onchange'=>"try{setCustomValidity('')}catch(e){}",'pattern'=>"[0-9]{10}")) }}
   </td>
 </tr>            
 <tr>      
