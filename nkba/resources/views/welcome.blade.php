@@ -1,49 +1,15 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-  <br>
-      <div class="clearfix"> </div> 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->'
-    <div class="clearfix"> </div> 
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="/assets/images/image1.jpg" alt="Chania" width="800" height="345">
-      </div>
-
-      <div class="item">
-        <img src="/assets/images/image2.jpg" alt="Chania" width="800" height="345">
-      </div>
-    
-      <div class="item">
-        <img src="/assets/images/image3.jpg" alt="Flower" width="800" height="345">
-      </div>
-
-      <div class="item">
-        <img src="/assets/images/image4.jpg" alt="Flower" width="800" height="345">
-      </div>
+<!--rgb(17, 113, 37)-->
+<div id="" class="bottom-border-shadow">
+    <div class="container no-padding background-white bottom-border">
+        <div class="row">
+ 
+               <img src="/assets/img/slideshow/image11.jpg" alt="Logo" />
+        </div>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 </div>
+<<<<<<< HEAD
 
     <!--//end-banner-->
     
@@ -241,232 +207,384 @@
       <li><a href="#">6</a></li>
       <li><a class="last" href="#">Next</a></li>
      </ul>
+=======
+<div id="icons" class="bottom-border-shadow">
+    <div class="container background-grey bottom-border">
+        <div class="row padding-vert-60">
+            <!-- Icons -->
+            <div class="col-md-4 text-center">
+                <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">خدمات التحويلات </h2>
+                <p class="animate fadeIn"> لان اصبح من الهل دون ضايع وقتك في الذهاب الي النقابه لاخذ التحويله العلاجيه دون مشقه</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">اقرب دكتور اليك</h2>
+                <p class="animate fadeIn"> اوجد اقرب دكتور اليك علي حسب موقعك الخغرافي</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">كشف الحساب </h2>
+                <p class="animate fadeIn">اصبح من السهل معرفك حسابات التامين الصحي الخاص بيك و البيانات الكامله الخاصه بيك </p>
+            </div>
+            <!-- End Icons -->
+        </div>
+
+        <div class="row padding-vert-60">
+            <!-- Icons -->
+            <div class="col-md-4 text-center">
+                <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">ملفك الشخصي </h2>
+                <p class="animate fadeIn">اصبح من السهل معرفه معلومات الشخصيه محدثه من النقابه بستمرار </p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">مواعيدك الشخصيه</h2>
+                <p class="animate fadeIn">لان مواعيد الشخصيه تهمنا باضافه ان مواعيد ادويتك و جوزاتك مهمه بنسبه لنا </p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">الشكاوي</h2>
+                <p class="animate fadeIn">لان ريك ما يدعمنا اصبح من حقك ان تبدي برايك او شكاوتك في اي وقت و سوف نهتم بيها </p>
+            </div>
+            <!-- End Icons -->
+        </div>
+        <div class="row padding-vert-60">
+            <!-- Icons -->
+            <div class="col-md-4 text-center">
+                <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">التجديد الاشتراك </h2>
+                <p class="animate fadeIn"> اصبح من حقك ان توفر وقتك و تجديد الاشتركات الخاصه بيك سواء الاشتراك السنوي او الاشتراك في التامين عن طريق التليفون</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">الاشتراك التامين</h2>
+                <p class="animate fadeIn">لان اصبح من حقك الاشتراك لك ولاسرتك سواء ولادتك او ولادك او لزوجتك او لابنك عن طريق الانترنت </p>
+            </div>
+            
+            <!-- End Icons -->
+        </div>
+>>>>>>> f7e313c6940401043097d7e24bd89587b71d875a
     </div>
-   <!--//End-news-pagenate-->
- </div> 
+</div>
 
 
 
 
+<div id="content" class="bottom-border-shadow">
+    <div class="container background-white bottom-border">
+        <div class="row margin-vert-30">
+            <!-- Main Text -->
+            <div class="col-md-12">
+                <h3 style="color: #3D7A33">اهلا بيك في نقابه مهندسين الاسكندريه</h3>
+                <div style="height: 50px"></div> 
+                <p style="alignment-adjust: central"> لان هدفنا اسعادك و تحقيق الرفاهيه المطلوبه لحياه اسعد لكل المهندسين المصرين فاصبح من الوجب عمل هذا الموقع لتحقيق كل رغبتك</p>
+                <p style="alignment-adjust: central"> المهندس هو من تقوم علي اكتافه الدول المتقدمه فلاهتمام بك جزاء لا يتجزء من منظومه التطور التي تسعد اليها البلاد </p>
+            </div>
+            <!-- End Main Text -->
+            
+        </div>
+    </div>
+</div>
+
+
+<div id="icons" class="bottom-border-shadow">
+    <div class="container background-grey bottom-border">
+        
+                  <div class="form-group">
+                    <center><h3 style="color: #3D7A33"> البحث عن طبيب</h3></center>
+                    <label><h5>اختر نوعيه البحث </h5></label>
+                    <select class="input-large form-control" id="choice" onchange="GetValueSelected()">
+                      <option value="" selected="selected">--اختر--</option>
+                      <option value="1">المحافظه</option>
+                      <option value="2" >التخصص</option>
+                      <option value="3">اسم الدكتور</option>
+
+
+                    </select>
+
+                    <div id="glopalSelect" style=" visibility: hidden;">
+                      <p> اختر المحافظه</p>
+                      <select class="input-large form-control" name="choice" >
+                        <option value="1" selected="selected">الاسكندريه</option>
 
 
 
+                      </select>
+                    </div>
+                    <div id="areaSelect" style=" visibility: hidden;">
+                      <p> اختر المنطقه</p>
+                      <select class="input-large form-control" name="choice" id="area">
+                        <option value="" selected="selected">--اختر--</option>
+                        @foreach($area as $areas)
+                        @foreach($areas as $ar)
+                        <option value="{{$ar}}" >{{$ar}}</option>
+                        @endforeach   
+                        @endforeach
+                      </select>
+                     <button id="myButton" class="float-left submit-button" >Search</button>
+                    </div>
 
 
+                    <div id="specialSelect" style=" visibility: hidden;">
+                      <p>اختر التخصص</p>
+                      <select class="input-large form-control" name="choice" id="special">
+                        <option value=" " selected="selected">--اختر--</option>
+                        @foreach($specialization as $specials)
+                            @foreach($specials as $special)
+                               <option value="{{$special}}" >{{$special}}</option>
+                            @endforeach   
+                        @endforeach
 
 
+                      </select>
+                      <button id="myButton2" class="float-left submit-button" >Search</button>
+                    </div>
+
+                    <div id="nameDoctor" style=" visibility: hidden;">
+                      <p>ادخل اسم الدكتور</p>
+                      <input type="text" vlaue="namedoctor" name="doctor" id="nameDoctor2">
+                      <button id="myButton3" class="float-left submit-button" >Search</button>
+                    </div>
 
 
+    </div>
+</div>
 
-
-
-
-
-
-
-<div class="blog-section">
- <div class="container"> 
-   <h3 class="tittle  pull-right">اﻟﺪﻛﺘﻮﺭ اﻻﻋﻠﻲ ﺗﻘﻴﻤﺎ</h3>
-   <div class="clearfix"> </div>
-  <div class="blog-post-grids">
-   <div class="blog-post">
-     <a href="single.html"><img src="/assets/images/b2.jpg" class="img-responsive" alt="  "/></a>
-     <div class="text">
-      <a href="single.html"> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ</a>
-     </div>
-     <div class="admin-tag">
-     
-     <p class="erat">ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 
-ﻻاﺗﺼﺎﻝ ﺑﻴﻨﺎ ﻳﺮﺟﻲ اﻟﻌﻠﻢ اﻥ ﺳﺎﻋﺎﺕ اﻟﻌﻤﻞ      
-ﻣﻦ اﻟﺤﺎﺩﻳﻪ ﻋﺸﺮ اﻟﻲ ﺛﺎﻧﻴﻪ ﻋﺸﺮ      
-اﺛﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﺦ     </p>
-     <a href="single.html" class="hvr-shutter-in-horizontal more">Readmore<span> </span></a>
-     </div>
-   </div>
   
-  </div>
-  <div class="blog-post-grids">
-   <div class="blog-post">
-    <a href="single.html"><img src="/assets/images/b3.jpg" class="img-responsive" alt="  "/></a>
-    <div class="text">
-      <a href="single.html"> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ</a>
-     </div>
-     <div class="admin-tag">
-     
-     <p class="erat">ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 
-ﻻاﺗﺼﺎﻝ ﺑﻴﻨﺎ ﻳﺮﺟﻲ اﻟﻌﻠﻢ اﻥ ﺳﺎﻋﺎﺕ اﻟﻌﻤﻞ      
-ﻣﻦ اﻟﺤﺎﺩﻳﻪ ﻋﺸﺮ اﻟﻲ ﺛﺎﻧﻴﻪ ﻋﺸﺮ      
-اﺛﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﺦ     </p>
-     <a href="single.html" class="hvr-shutter-in-horizontal more">Readmore<span> </span></a>
-     </div>
-   </div>
-  
-  </div>
-  <div class="blog-post-grids">
-   <div class="blog-post">
-    <a href="single.html"><img src="/assets/images/b4.jpg" class="img-responsive" alt="  "/></a>
-    <div class="text">
-      <a href="single.html"> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ</a>
-     </div>
-     <div class="admin-tag">
-     
-     <p class="erat">ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 
-ﻻاﺗﺼﺎﻝ ﺑﻴﻨﺎ ﻳﺮﺟﻲ اﻟﻌﻠﻢ اﻥ ﺳﺎﻋﺎﺕ اﻟﻌﻤﻞ      
-ﻣﻦ اﻟﺤﺎﺩﻳﻪ ﻋﺸﺮ اﻟﻲ ﺛﺎﻧﻴﻪ ﻋﺸﺮ      
-اﺛﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﺦ     </p>
-     <a href="single.html" class="hvr-shutter-in-horizontal more">Readmore<span> </span></a>
-     </div>
-   </div>
+    
+<div id="content" class="bottom-border-shadow">
+    <div class="container background-white bottom-border">
+         <div id="portfolio" class="bottom-border-shadow">
+                <div class="container bottom-border">
+                    <div class="row padding-top-40">
+                        <ul class="portfolio-group">
+                            <!-- Portfolio Item -->
+                             <center><h1 style="color: #3D7A33">المستشفيات الاعلي تقيما</h1></center>
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeInLeft">
+                                        <img alt="image1" src="{{$hospitals['0']->path}}"  style="height: 300px">
+                                        <figcaption>
+                                          <center> <h1>{{$hospitals['0']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$hospitals['0']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$hospitals['0']->rate}}</span></center>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeIn">
+                                        <img alt="image2" src="{{$hospitals['1']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$hospitals['1']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$hospitals['1']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$hospitals['1']->rate}}</span></center>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$hospitals['2']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$hospitals['2']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$hospitals['2']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$hospitals['2']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                       
+                            <!-- //Portfolio Item// -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="content" class="bottom-border-shadow">
+    <div class="container background-grey bottom-border">
+         <div id="portfolio" class="bottom-border-shadow">
+                <div class="container bottom-border">
+                    <div class="row padding-top-40">
+                        <ul class="portfolio-group">
+                            <!-- Portfolio Item -->
+                             <center><h1 style="color: #3D7A33"> الدكتور اعلي تقيما</h1></center>
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                   <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$users['0']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$users['0']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$users['0']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$users['0']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$users['1']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$users['1']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$users['1']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$users['1']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                 <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$users['2']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$users['2']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$users['2']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$users['2']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                       
+                            <!-- //Portfolio Item// -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div id="content" class="bottom-border-shadow">
+    <div class="container background-white bottom-border">
+         <div id="portfolio" class="bottom-border-shadow">
+                <div class="container bottom-border">
+                    <div class="row padding-top-40">
+                        <ul class="portfolio-group">
+                            <!-- Portfolio Item -->
+                            <center><h1 style="color: #3D7A33"> المعامل الاعلي تقيما </h1></center>
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                     <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$labs['0']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$labs['0']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$labs['0']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['0']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                   <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$labs['1']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$labs['1']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$labs['1']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['1']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$labs['2']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$labs['2']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$labs['2']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['2']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                       
+                            <!-- //Portfolio Item// -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Portfolio -->
+
+<div id="footer" class="background-grey" style="background-color: #555555">
+    <div class="container">
+        <div class="row">
+       
    
-   <div class="clearfix"> </div>
-  </div>
-  <div class="clearfix"> </div>
- </div>
- <!--start-news-pagenate-->
-    <div class="blog-pagenat">
-     <ul>
-      <li><a class="frist" href="#">Prev</a></li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">6</a></li>
-      <li><a class="last" href="#">Next</a></li>
-     </ul>
+       
     </div>
-   <!--//End-news-pagenate-->
- </div> 
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="blog-section">
- <div class="container"> 
-   <h3 class="tittle  pull-right">اﻟﻤﻌﺎﻣﻞ ﻭ اﻻﺷﺎﻋﺎﺕ </h3>
-   <div class="clearfix"> </div>
-  <div class="blog-post-grids">
-   <div class="blog-post">
-     <a href="single.html"><img src="/assets/images/b2.jpg" class="img-responsive" alt="  "/></a>
-     <div class="text">
-      <a href="single.html"> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ</a>
-     </div>
-     <div class="admin-tag">
-     
-     <p class="erat">ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 
-ﻻاﺗﺼﺎﻝ ﺑﻴﻨﺎ ﻳﺮﺟﻲ اﻟﻌﻠﻢ اﻥ ﺳﺎﻋﺎﺕ اﻟﻌﻤﻞ      
-ﻣﻦ اﻟﺤﺎﺩﻳﻪ ﻋﺸﺮ اﻟﻲ ﺛﺎﻧﻴﻪ ﻋﺸﺮ      
-اﺛﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﺦ     </p>
-     <a href="single.html" class="hvr-shutter-in-horizontal more">Readmore<span> </span></a>
-     </div>
-   </div>
-  
-  </div>
-  <div class="blog-post-grids">
-   <div class="blog-post">
-    <a href="single.html"><img src="/assets/images/b3.jpg" class="img-responsive" alt="  "/></a>
-    <div class="text">
-      <a href="single.html"> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ</a>
-     </div>
-     <div class="admin-tag">
-     
-     <p class="erat">ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 
-ﻻاﺗﺼﺎﻝ ﺑﻴﻨﺎ ﻳﺮﺟﻲ اﻟﻌﻠﻢ اﻥ ﺳﺎﻋﺎﺕ اﻟﻌﻤﻞ      
-ﻣﻦ اﻟﺤﺎﺩﻳﻪ ﻋﺸﺮ اﻟﻲ ﺛﺎﻧﻴﻪ ﻋﺸﺮ      
-اﺛﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﺦ     </p>
-     <a href="single.html" class="hvr-shutter-in-horizontal more">Readmore<span> </span></a>
-     </div>
-   </div>
-  
-  </div>
-  <div class="blog-post-grids">
-   <div class="blog-post">
-    <a href="single.html"><img src="/assets/images/b4.jpg" class="img-responsive" alt="  "/></a>
-    <div class="text">
-      <a href="single.html"> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ</a>
-     </div>
-     <div class="admin-tag">
-     
-     <p class="erat">ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 
-ﻻاﺗﺼﺎﻝ ﺑﻴﻨﺎ ﻳﺮﺟﻲ اﻟﻌﻠﻢ اﻥ ﺳﺎﻋﺎﺕ اﻟﻌﻤﻞ      
-ﻣﻦ اﻟﺤﺎﺩﻳﻪ ﻋﺸﺮ اﻟﻲ ﺛﺎﻧﻴﻪ ﻋﺸﺮ      
-اﺛﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﺦ     </p>
-     <a href="single.html" class="hvr-shutter-in-horizontal more">Readmore<span> </span></a>
-     </div>
-   </div>
-   
-   <div class="clearfix"> </div>
-  </div>
-  <div class="clearfix"> </div>
- </div>
- <!--start-news-pagenate-->
-    <div class="blog-pagenat">
-     <ul>
-      <li><a class="frist" href="#">Prev</a></li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">6</a></li>
-      <li><a class="last" href="#">Next</a></li>
-     </ul>
-    </div>
-   <!--//End-news-pagenate-->
- </div> 
-
-
-
-
-
-
-
-
-
-<!-- footer-->
- <div class="footer">
-  <div class="container">
-  
-     <div class="footer-text">
-      <p>© ITI Graduation Project | Design by ITI</a> </p>
-     </div>
-    </div>
-   </div>
-   <!-- footer-->
-    <!--start-smoth-scrolling-->
-      <script type="text/javascript">
-         $(document).ready(function() {
-          /*
-          var defaults = {
-             containerID: 'toTop', // fading element id
-           containerHoverID: 'toTopHover', // fading element hover id
-           scrollSpeed: 1200,
-           easingType: 'linear' 
-           };
-          */
-          
-          $().UItoTop({ easingType: 'easeOutQuart' });
-          
-         });
-        </script>
-  <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-<!--JS-->
-<script type="text/javascript" src="/assets/js/bootstrap-3.1.1.min.js"></script>
-
-<!--//JS-->
-
-</body>
-</html>
 @endsection
+<script type="text/javascript">
+function GetValueSelected()
+{
+   
+  var SelectElemet=document.getElementById('choice').value;
+  if(SelectElemet==1)
+  {
+
+    document.getElementById('glopalSelect').style.visibility="visible";
+    document.getElementById('specialSelect').style.visibility="hidden";
+    document.getElementById('nameDoctor').style.visibility="hidden";
+    document.getElementById('areaSelect').style.visibility="visible";
+     
+
+    document.getElementById("myButton").onclick = function () {
+      var ValueArea=document.getElementById('area').value;
+        location.href = "http://localhost:8000/SearchDoctor/"+ValueArea;
+
+        console.log(ValueArea);
+        
+    };
+
+  }
+  else if(SelectElemet==2)
+  {
+
+    document.getElementById('specialSelect').style.visibility="visible";
+    document.getElementById('glopalSelect').style.visibility="hidden";
+    document.getElementById('nameDoctor').style.visibility="hidden";
+    document.getElementById('areaSelect').style.visibility="hidden";
+    document.getElementById("myButton2").onclick = function () {
+      var ValueArea=document.getElementById('special').value;
+        location.href = "http://localhost:8000/DoctorSpecial/"+ValueArea;
+
+        console.log(ValueArea);
+         
+    };
+  }
+  else if(SelectElemet==3)
+  {
+    document.getElementById('nameDoctor').style.visibility="visible";
+    document.getElementById('specialSelect').style.visibility="hidden";
+    document.getElementById('glopalSelect').style.visibility="hidden";
+    document.getElementById('areaSelect').style.visibility="hidden";
+    document.getElementById("myButton3").onclick = function () {
+      var ValueArea=document.getElementById('nameDoctor2').value;
+        location.href = "http://localhost:8000/DoctorName/"+ValueArea;
+
+        console.log(ValueArea);
+         
+    };
+  }
+}
+
+
+</script>

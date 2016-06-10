@@ -1,20 +1,21 @@
 @include('master')
 
-<div class="clearfix"></div>
-<div class="clearfix"></div> 
-<div class="container content" >
-    <div class="container">
-        <h3 class="tittle  pull-right">كشف حساب التأمين الصحي </h3>
-        <div class="clearfix"></div>
-        <div class="about-top">
-            <div class="col-md-7 about-top-right">
-                <h4>نقدم لك خدمتنا فقط لاسعادك </h4>
-                <p>متابعة رصيد العمليات</p>
-                <p>متابعة رصيد التحاليل والأشعة</p>
+     <div class="col-md-9"> 
 
+<div style="height: 100px"></div> 
+    <div style="margin-right: 0px" >
+        <h3 style="color: #3D7A33 ;alignment-adjust: left">كشف الحساب الخاص بيك </h3>
+         <h5 style="color: #3D7A33 ;alignment-adjust: left">نقدم لك خدمتنا فقط لاسعادك </h5>
+        <div style="height: 100px"></div> 
+    </div>
+        <div class="container content" >
+<i class="fa-stethoscope fa-2x" style="size: 20px"> متابعة رصيد العمليات</i> 
+                <br>
+               <i class="fa-stethoscope fa-2x">متابعة رصيد التحاليل والأشعة</i> 
+   <div style="height: 100px"></div> 
                 <div class="sing-img-text-left">
                     <div class="blog-right1">
-                        <div class="container content" >
+                       
 
                             @if($message && $limit == ""&& $transfers == "")      
                             <div class="alert alert-warning" style="height: 300px">
@@ -25,7 +26,7 @@
                             @endif
 
                             @if ($limit && $message == ""|| $transfers)
-                            <div class="container">
+                            
                                 <div class="row">
                                     <div class="col-md-12">
 
@@ -36,14 +37,15 @@
                                 <!-- //.row -->
 
                                 <div class="row">
-                                    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                                    <div class="col-sm-8 ">
                                         <div class="bar-chart">
 
 
 
                                             <div class="chart clearfix">
-                                              <p style="color:#000"> المتبقي من الإجمالي </p>
-                                              <div class="item">
+                                              <p style="color:#B32B2B ; font-size: 25px" > المتبقي من الإجمالي :{{$limit['0']->total_remainder}}</p>
+                                             
+                                              <div class="item animate swing">
 
                                                 <div class="bar">
 
@@ -57,8 +59,8 @@
                                                 <!-- //.bar -->
                                             </div>
                                             <!-- //.item -->
-                                            <p style="color:#000"> التمبقي من العمليات </p>
-                                            <div class="item">
+                                            <p style="color:#B32B2B ; font-size: 25px"> التمبقي من العمليات :{{$limit['0']->surgery_credit}}</p>
+                                            <div class="item animate swing">
                                                 <div class="bar">
                                                     <span class="percent">{{($limit['0']->surgery_credit/5000)*100}}%</span>
 
@@ -70,8 +72,8 @@
                                                 <!-- //.bar -->
                                             </div>
                                             <!-- //.item -->
-                                            <p style="color:#000"> المتبقي من التحليل و الأشعة</p>
-                                            <div class="item  pull-right">
+                                            <p style="color:#B32B2B ; font-size: 25px"> المتبقي من التحليل و الأشعة:{{$limit['0']->analysis_credit}}</p>
+                                            <div class="item  animate swing">
                                                 <div class="bar">
                                                     <span class="percent">{{($limit['0']->analysis_credit/1000)*100}}%</span>
 
@@ -90,41 +92,35 @@
                                 </div>
                                 <!-- //.col-md-4 -->
                             </div>
-
+ <div style="height: 100px"></div> 
                             <!-- //.row -->
-                        </div>
+                       
                         <!-- //.container -->
                     </div>
 
                 </div>
             </div>
-        </div>
+     
     </div>
 
 
-    <div class="col-md-5 about-top-left">
-        <img src="/assets/images/mony.jpg" class="img-responsive" alt="" style="height: 250px ;width: 400px"/>
-    </div>
     <div class="clearfix"></div>
-</div>
-</div>
 
-<div class="clearfix"></div>
-<div class="clearfix"></div>  
 
-<div class="container content" >
+
+
    <div class="clearfix"></div>
    <div class="clearfix"></div> 
    <table class="table table-hover">
     <thead>
       <tr>
-          <th style="color:#019e59">نوع التحويله </th>
-          <th style="color:#019e59">التأريخ  </th>
-          <th style="color:#019e59"> سعر التكلفة </th>
-          <th style="color:#019e59"> التشخيص </th>
-          <th style="color:#019e59"> اسم الدكتور </th>
-          <th style="color:#019e59"> اسم المستشفى </th>
-          <th style="color:#019e59"> اسم المعمل  </th>
+          <th style="color:#3D7A33 ; font-size: 25px">نوع التحويله </th>
+          <th style="color:#3D7A33; font-size: 25px" >التأريخ  </th>
+          <th style="color:#3D7A33; font-size: 25px"> سعر التكلفة </th>
+          <th style="color:#3D7A33; font-size: 25px"> التشخيص </th>
+          <th style="color:#3D7A33; font-size: 25px"> اسم الدكتور </th>
+          <th style="color:#3D7A33; font-size: 25px"> اسم المستشفى </th>
+          <th style="color:#3D7A33; font-size: 25px"> اسم المعمل  </th>
 
       </tr>
   </thead>
@@ -133,37 +129,34 @@
 
     @foreach ($transfers as $transfer)
     <tr>
-        <td style="color:#777">  <p style="color:#000 "> {{ $transfer->type }}</p> </td> 
-        <td  style="color:#777" >  <p style="color:#000 "> {{ $transfer->transfer_date }}</p> </td> 
-        <td  style="color:#777">   <p style="color:#000 "> {{ $transfer->total_cost }}</p> </td> 
-        <td  style="color:#777">   <p style="color:#000 "> {{ $transfer->medical_diagnosis }}</p> </td> 
-        <td  style="color:#777">     <p style="color:#000 "> {{ $transfer->doctor_name }}</p> </td> 
-        <td  style="color:#777">      <p style="color:#000 "> {{ $transfer->hospital_name }}</p> </td> 
-        <td  style="color:#777">    <p style="color:#000 "> {{ $transfer->lab_name }}</p> </td> 
+        <td style="color:#777">  <p style="color:#000 ; font-size: 20px"> {{ $transfer->type }}</p> </td> 
+        <td  style="color:#777" >  <p style="color:#000; font-size: 20px "> {{ $transfer->transfer_date }}</p> </td> 
+        <td  style="color:#777">   <p style="color:#000; font-size: 20px "> {{ $transfer->total_cost }}</p> </td> 
+        <td  style="color:#777">   <p style="color:#000 ; font-size: 20px"> {{ $transfer->medical_diagnosis }}</p> </td> 
+        <td  style="color:#777">     <p style="color:#000; font-size: 20px "> {{ $transfer->doctor_name }}</p> </td> 
+        <td  style="color:#777">      <p style="color:#000; font-size: 20px "> {{ $transfer->hospital_name }}</p> </td> 
+        <td  style="color:#777">    <p style="color:#000 ; font-size: 20px"> {{ $transfer->lab_name }}</p> </td> 
     </tr>
     @endforeach
     
 </tbody>
 </table>
-</div>
+
 @endif    
 
 <div style="height:200px"></div>
 
+</div>
 
-
-<div class="footer">
+</div>
+<div id="footer" class="background-grey" style="background-color: #555555">
     <div class="container">
+        <div class="row">
 
-        <div class="footer-text">
-            <p>© ITI Graduation Project | Design by ITI</a> </p>
+          
         </div>
     </div>
 </div>
-</div>
-
-
-
 
 
 
@@ -219,11 +212,7 @@ margin-top: 15px;
     left: auto;
 }
 
-.bar-chart > .legend > .item h4 {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+
 
 .bar-chart > .chart {
     position: relative;
@@ -265,7 +254,7 @@ margin-top: 15px;
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #019e59;
+    background-color: #3D7A33;
     z-index: 10;
 }
 

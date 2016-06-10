@@ -30,7 +30,7 @@ class CreateEngineersTable extends Migration
             $table->string('path')->nullable(); // dah l sora 
              $table->integer('limit_id')->unsigned()->nullable();
             $table->foreign('limit_id')->references('id')->on('limits')->onDelete('cascade'); // delete on cascade
-            $table->integer('user_id')->unsigned()->unique();
+            $table->integer('user_id')->unsigned()->unique()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // delete on cascade
             
             $table->timestamps();

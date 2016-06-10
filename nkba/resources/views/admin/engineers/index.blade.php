@@ -10,38 +10,38 @@
 			</header>
 			<div class="panel-body">
 				@if ($engineers->count())
-				<table class="table" >
+				<table class="table table-bordered" >
 					<thead>
 						<tr>
-							<th style="float: right;">id</th>
-							<th style="float: right;">name</th>
-							<th style="float: right;">email</th>
-							<th style="float: right;">relatives number</th>
-							<th style="float: right;">card id</th>
-							<th style="float: right;">graduation year</th>
-							<th colspan="4" style="float: right;"></th>
+							<th class="text-center">id</th>
+							<th class="text-center">name</th>
+							<th class="text-center">email</th>
+							<th class="text-center">relatives number</th>
+							<th class="text-center">card id</th>
+							<th class="text-center">graduation year</th>
+							<th colspan="4" class="text-center"></th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach($engineers as $engineer)
 						<tr>
-							<td style="float: right;">{{ $engineer['id']}}</td>
-							<td style="float: right;">{{ $engineer['name'] }}</td>
-							<td style="float: right;">{{ $engineer['email'] }}</td>
-							<td style="float: right;">{{ $engineer['relative_num'] }}</td>
-							<td style="float: right;">{{ $engineer['eng_id'] }}</td>
-							<td style="float: right;">{{ $engineer['gradu_year'] }}</td>
-							<td style="float: right;">
-								{{ link_to_route('admin-engineer.show', 'عرض', array($engineer->id), array('class' => 'btn btn-info')) }}
-							</td>
-							<td style="float: right;">
+							<td class="text-center">{{ $engineer['id']}}</td>
+							<td class="text-center">{{ $engineer['name'] }}</td>
+							<td class="text-center">{{ $engineer['email'] }}</td>
+							<td class="text-center">{{ $engineer['relative_num'] }}</td>
+							<td class="text-center">{{ $engineer['eng_id'] }}</td>
+							<td class="text-center">{{ $engineer['gradu_year'] }}</td>
+							<td class="text-center">
+								{{ link_to_route('admin-engineer.show', 'عرض', array($engineer->id), array('class' => 'btn btn-info')) }}</td>
+							<td class="text-center">
 								{{ link_to_route('admin-engineer.edit', 'تعديل', array($engineer->id), array('class' => 'btn btn-success')) }}
 							</td>
-							<td style="float: right;">
+							<td class="text-center">
 								{{ Form::open(array('method' => 'DELETE', 'route' => array('admin-engineer.destroy', $engineer->id))) }}
 								{{ Form::submit('حذف', array('class' => 'btn btn-danger')) }}
 								{{ Form::close() }}
 							</td>
+							
 						</tr>
 						@endforeach
 					</tbody>

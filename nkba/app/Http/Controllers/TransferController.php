@@ -16,17 +16,26 @@ use Event;
 use App\Events\TransferEvent;
 use Carbon\Carbon;
 use DateTime;
+use Illuminate\Support\Facades\Auth;
 
 class TransferController extends Controller
 {
-           public function __construct() {
-                 $this->middleware('auth');
-            }
+
+            public function __construct() {
+                  $this->middleware('auth');
+             }
 	public function index(){
 		return view('transfer.index');
 	}
 	public function create(){
+            
+            $role = Auth::user()->role;
+            if( Auth::user()->role == "معمل" || Auth::user()->role == "مستشفي"){
 		return view('transfer.new');
+            }
+            else{
+                 return redirect("/");
+            }
 	}
 
 	public function store(Request $request){

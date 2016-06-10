@@ -3,7 +3,7 @@
     <!--logo start-->
 
     <a href="/employee-transfer" class="logo">نقابة <span class="lite lite-special">المهندسين</span></a>
-    <img src="/assets/images/logo.png" width="100px" height="60 px" alt="">
+    <img src="/assets/images/logo_admin.png" width="100px" height="60 px" alt="">
 
     <!--logo end-->
 

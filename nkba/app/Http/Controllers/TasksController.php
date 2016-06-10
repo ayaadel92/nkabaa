@@ -15,6 +15,7 @@ use DateTime;
 use Illuminate\Support\Facades\Request as Request;
 use Mail;
 
+//use Request;
 class TasksController extends Controller {
 
     protected $tasks;
@@ -58,10 +59,14 @@ class TasksController extends Controller {
                     ->where('user_id', $id)
                     ->get();
         if($year==$year1 && $month1==$month && $day==$day1 && $hour1==$hour && $min1 ==$min ){
-             Mail::send('emails.welcome',$user,function($message) use ($user)
+             Mail::send('emails.tasks',$user,function($message) use ($user)
          {
-         $message->from('nkabaalex@gmail.com');
-         $message->to($user['0']->email)->subject("مواعيدك");
+
+            $MailBody = Request::get('date');
+            $message->setBody($MailBody, 'text/html');
+            $message->from('nkabaalex@gmail.com','Admin');
+            $message->to($user['0']->email)->subject('التذكير بمواعيد الادويه ');  
+                 
          });   
         }
         
@@ -71,53 +76,45 @@ class TasksController extends Controller {
     }
 
     public function show($id) {
+          $role = Auth::user()->role;
+        if ($role == "مهندس" || $role == "قريب") {
+        if(Auth::user()->id == $id ){
         $tasks = DB::table('tasks')
                 ->where('user_id', $id)
                 ->get();
         return view('tasks.index', compact('tasks'));
+        }
+        else{
+             return redirect("/");
+        }
+        }
+        else{
+            return redirect("/");
+        }
     }
 
     public function update(Request $request, $id) {
 
-        $task = Task::find($id);
-        //print_r($task);exit();
-        $task->name = Request::get('name'); //get to get data from object de 3'er el action bta3 el form
-        $task->time = Request::get('time');
-        $task->date = Request::get('date');
-        $task->save();
-        $id = Auth::user()->id;
-
-
-        $dt = new \DateTime("NOW");
-
-        $x = $dt->format('Y-m-d H:i:s');
-        $date = preg_split('/\W/', $x, 0, PREG_SPLIT_NO_EMPTY);
-        $year = $date['0'];
-
-        $month = $date['1'];
-        $day = $date['2'];
-        $hour = $date['3'];
-        $min = $date['4'];
-        $date2 = preg_split('/\W/', Request::get('time'), 0, PREG_SPLIT_NO_EMPTY);
-        $hour1 = $date2['0'];
-        $min1 = $date2['1'];
-        $date3 = preg_split('/\W/', Request::get('date'), 0, PREG_SPLIT_NO_EMPTY);
-         $year1 = $date3['0'];
-        $month1 = $date3['1'];
-        $day1 = $date3['2'];
-         $user = DB::table('engineers')
-                    ->where('user_id', $id)
-                    ->get();
-        if($year==$year1 && $month1==$month && $day==$day1 && $hour1==$hour && $min1 ==$min ){
-             Mail::send('emails.welcome',$user,function($message) use ($user)
-         {
-         $message->from('nkabaalex@gmail.com');
-         $message->to($user['0']->email)->subject("مواعيدك");
-         });   
-        }
+       // echo  $request->input('name');exit();
+        $id1 = Auth::user()->id;
+         $task = DB::table('tasks')
+                ->where('user_id',  $id1)
+                ->where('id',  $id)
+                ->update(['name' =>  Request::get('name'),'time' =>  Request::get('time'),'date' =>  Request::get('date')]);
         
+//        $task = Task::findOrFail($id);
+//
+//    $this->validate($request, [
+//        'title' => 'required',
+//        'description' => 'required'
+//    ]);
 
-        return redirect("/task/$id");
+//    $input = $request->all();
+//
+//    $task->fill($input)->save();
+
+
+        return redirect("/task/$id1");
     }
 
     public function destroy(Request $request, Task $task) {

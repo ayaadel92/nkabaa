@@ -21,6 +21,8 @@ class EngineerController extends Controller {
 
     public function show($id) {
          $role = Auth::user()->role;
+         if($role == "مهندس"||$role == "قريب"){
+         if(Auth::user()->id == $id ){
          if($role ==="مهندس"){
         $user = DB::table('engineers')
                 ->where('user_id', $id)
@@ -32,6 +34,14 @@ class EngineerController extends Controller {
                 ->get();
               //print_r( $user);exit();
         return view('engineer.index', compact('user'));
+         }
+         }
+         else{
+            return redirect("/");
+         }
+         }
+         else{
+             return redirect("/");
          }
     }
 
