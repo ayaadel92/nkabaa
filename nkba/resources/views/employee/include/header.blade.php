@@ -65,20 +65,42 @@
                 }
             })
         }
+
+        // function receiveConfirm() {
+        //     var created, lastelem;
+        //     var count = $(".selected").children().length;
+        //     created = $('li').last().attr('id');
+        //     lastelem = $('.selected li:last-child').attr('id');
+        //     if (!lastelem) {lastelem = 0;}
+        //     if (!created) {created = 0;}
+
+        //     $.ajax({
+        //         url: "{{url('ajax')}}/"+created,
+        //         type: "GET",
+        //         success: function(data) {
+        //             if (data.length){$('#transfers-number').text(data.length);}
+        //             if (count < 8) {
+        //                 for (var i = 0; i < 5; i++) {
+
+        //                     $('.external').before('<li id="'+i+'"><a  class="tranmenu" href="{{url("employee-transfer")}}/'+data[i].id+'"><div class="task-info">'+
+        //                        '<div class="desc">تحويلة رقم '+data[i].id+'</div></div></a></li>');
+        //                 }
+        //             }
+        //             setTimeout(receiveTransfers,1000);
+        //         },
+        //         error: function(err) {
+        //             setTimeout(receiveTransfers,5000);
+        //         }
+        //     })
+        // }
+
         receiveTransfers(); //call the function when the body load
+        // receiveConfirm();
 
     })(jQuery);
-
-    // var pusher = new Pusher('{{ env("PUSHER_KEY")}}');
-    // var channel = pusher.subscribe('event-tansfer');
-
-    // channel.bind('App\Events\TransferEvent', function(data) {
-    //  console.log(data);
-    // });
 </script>
 <style type="text/css">
     img{
         float: left;
-
     }
 </style>

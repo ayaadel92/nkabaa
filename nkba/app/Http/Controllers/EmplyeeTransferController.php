@@ -82,7 +82,7 @@ class EmplyeeTransferController extends Controller
                 ->where('id', $limit)
                 ->get(); 
                 $limit_json=response()->json($limit_obj)->getData()[0];
-                if((1000-$limit_json->analysis_credit)>=$transfer->total_cost)//credit_analysis=the reminder from 1000LE
+                if($limit_json->analysis_credit>=$transfer->total_cost)//credit_analysis=the reminder from 1000LE
                 {
                     $examine_obj = DB::table('analysisradios')
                     ->where('name', $transfer->type_name)
@@ -140,6 +140,42 @@ class EmplyeeTransferController extends Controller
         ->update(['accepted' => $input['accepted'],'done' => $input['done']]);
         print_r($transfer);exit;
         return view('employee.show',compact('transfer'));
+    }
+    public function decreaseLimit($id)
+    {
+        //'total_remainder', 'surgery_credit', 'analysis_credit', 'user_id'
+       $transfer_obj = DB::table('transfers')->where('id',$id)->get();
+       $transfer = response()->json($transfer_obj)->getData()[0];
+       if($transfer->patient_type==="مهندس")
+       {
+        $limit=$enginer->limit_id;
+        }//end of patient is engineer 
+        else
+        {
+            $where = ['eng_id'=> $transfer->eng_id, 'relation_type' => $transfer->patient_type,'name'=> $transfer->patient_name];
+            $relative = DB::table('relatives')
+            ->where($where)
+            ->get();
+            $relativ=response()->json($relative)->getData()[0];
+            $limit=$relativ->limit_id;
+        }//end of patient is relative
+        $limit_obj= DB::table('limits')
+        ->where('id', $limit)
+        ->get();
+        if(!$limit_obj){
+            return "هذا المستخدم غير مسجل بالويب سايت وﻻ يمكنك الخصم له من خلال الويب سايت";
+        }
+        else{
+            $limit_json=response()->json($limit_obj)->getData()[0];
+            DB::table('limits')
+            ->where('id',$limit_json->id)
+            ->update([
+                'analysis_credit' => $limit_json->analysis_credit - $transfer->total_cost,
+                'total_remainder'=> $limit_json->total_remainder - $transfer->total_cost]);
+        }
+        $analysis_credit = $limit_json->analysis_credit;
+        $total_remainder = $limit_json->total_remainder
+        return view('employee.decrease_done',compact('analysis_credit','total_remainder'));
     }
 
 }
