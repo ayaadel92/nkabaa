@@ -18,7 +18,7 @@
           <td>{{ Form::label ('ﺭﻗﻢ العضوية ' ,'ﺭﻗﻢ العضوية ',array('class' => 'style control-label ' ) ) }}</td>
           <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil">   </i>
           </span>
-          {{ Form::text('eng_id', null, array('required','class'=>'form-control col-sm-8')) }}
+          {{ Form::text('eng_id', null, array('required','class'=>'form-control col-sm-8 member')) }}
         </td>           
       </tr>
 
@@ -26,7 +26,7 @@
         <td>{{Form::label(' ﺭﻗﻢ اﻟﺒﻄﺎﻗﺔ اﻟﻌﻼﺟﻴﺔ ',' ﺭﻗﻢ اﻟﺒﻄﺎﻗﺔ اﻟﻌﻼﺟﻴﺔ ',array('class' => 'style' ) )}}</td>
         <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i>
         </span>
-        {{ Form::text('health_id', null,array('required','class'=>'form-control col-sm-8')) }}
+        {{ Form::text('health_id', null,array('class'=>'form-control col-sm-8 card','readonly')) }}
       </td>
     </tr>
 
@@ -42,7 +42,15 @@
     <div class="form-group">      
      <td>{{Form::label(' درجة القرابة ',' درجة القرابة ',array('class' => 'style' ))}}</td>
      <td  ><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-th-list"></i></span>
-     {{ Form::select('patient_type',['مهندس'=>'مهندس/مهندسة','زوجه'=>'زوجه','زوج'=>'زوج','ابن'=>'ابن','ابنه'=>'ابنه','اب'=>'اب','ام'=>'ام'],'المهندس',array('required','class'=>'form-control col-sm-8')) }}
+             <select id="degree" name="degree" class="form-control col-sm-8">
+          <option value="1"> مهندس/مهندسة</option>
+          <option value="2">زوجه</option>
+          <option value="3">زوج</option>
+           <option value="4">ابن</option>
+          <option value="5">ابنه</option>
+           <option value="6">اب</option>
+          <option value="7">ام</option>                  
+        </select>
    </td>
  </div>
 </tr>   
@@ -109,7 +117,7 @@
   <td>{{Form::label(' نسبة مساهمة النقابة',' نسبة مساهمة النقابة',array('class' => 'style' ))}}</td>
   <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
 
-    {{ Form::text('percentage', null, ['class'=>'form-control col-sm-8']) }}
+    {{ Form::text('percentage', ' ', array('class'=>'form-control col-sm-8 percentage','readonly')) }}
   </td>
 </tr>   
 
@@ -135,15 +143,8 @@
 </div>
 </div>
 
-@if($errors->any())
-<div class="alert alert-danger">
-  @foreach($errors->all() as $error)
-  <p>{{ $error }}</p>
-  @endforeach
-</div>
-@endif
-
-<script type="text/javascript">
+<!-- script to get analysis and radios
+ --><script type="text/javascript">
   $(document).ready(function($){
     $('#type').change(function(){
       $.get("{{ url('api/dropdown')}}", 
@@ -164,6 +165,43 @@
     $('#submitbtn').on('click',function() {
     })
   })
+</script>
+<!-- script to get percentages
+ -->
+ <script type="text/javascript">
+  $(document).ready(function($){
+    $('#degree').change(function(){
+      $.get("{{ url('api/degree')}}", 
+        { option: $(this).val() }, 
+        function(data) {
+          var percent = $('.percentage');
+          $.each(data, function(index, element) {
+            percent.val(element.percent);
+          });
+        });
+    });
+  });
+</script>
+
+<!-- ajax to auto fill card-id
+ -->
+ <script type="text/javascript">
+  $(document).ready(function($){
+    var mem=$('.member').val();
+    $('.member').blur(function(){
+      console.log('here')
+      $.ajax({
+        url:"{{url('api/card')}}?id="+$('.member').val(),
+        type: "GET"
+      }).success(function(data){
+          var card_id = $('.card');
+          $.each(data, function(index, element) {
+          card_id.val(element.health_id);
+      })
+ });
+    })
+  });
+
 </script>
 @endsection
 

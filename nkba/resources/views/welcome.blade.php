@@ -1,127 +1,298 @@
 @extends('layouts.app')
-
-<script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/jquery-migrate-1.2.1.js"></script>
-<script src="/assets/js/touchTouch.jquery.js"></script>
-<script src="/assets/js/script.js"></script>
-<!--[if (gt IE 9)|!(IE)]><!-->
-<script src="/assets/js/wow.js"></script>
-
-
 @section('content')
+<!--rgb(17, 113, 37)-->
+<div id="" class="bottom-border-shadow">
+    <div class="container no-padding background-white bottom-border">
+        <div class="row">
+ 
+               <img src="/assets/img/slideshow/image11.jpg" alt="Logo" />
+        </div>
+    </div>
+</div>
+<<<<<<< HEAD
 
-
-{{-- <div class="container">
-  <br>
-      <div class="clearfix"> </div> 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" height="618px">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->'
-    <div class="clearfix"> </div> 
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="/assets/images/image1.jpg" alt="Chania" width="100%" height="640px">
-      </div>
-
-      <div class="item">
-        <img src="/assets/images/image2.jpg" alt="Chania" width="100%" height="640px">
-      </div>
+    <!--//end-banner-->
     
-      <div class="item">
-        <img src="/assets/images/image3.jpg" alt="Flower" width="100%" height="640px">
+    <!--/services-->
+   <div class="services" id="services">
+       <div class="container">
+     <h3 class="tittle  pull-right">ﺧﺪﻣﺘﻨﺎ </h3>
+     <div class="clearfix"> </div> 
+        <div class="serve-top">
+     <div class="col-md-4 serve-icons">
+     <div class="s-sub">
+      <div class="col-md-2 icon">
+        <i class="glyphicon glyphicon-globe"></i>
       </div>
-
-      <div class="item">
-        <img src="/assets/images/image4.jpg" alt="Flower" width="100%" height="640px">
-`      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div> --}}
-
-{{-- begine slider --}}
-
-  {{-- <div class="full-width-container block-1">
-    <div class="camera_container">
-      <div id="camera_wrap">
-        <div class="item" data-src="/assets/images/index_img_slider-1.jpg">
-          <div class="camera_caption fadeIn">
-            <h3>We'll Give Your Business Fresh Ideas</h3>
-            <p>Contact Us by</p>
-            <a href="#" class="btn bd-ra"><span class="fa fa-envelope-o"></span></a>
-            <a href="#" class="btn bd-ra"><span class="fa fa-phone"></span></a>
-            <a href="#" class="btn bd-ra"><span class="fa fa-map-marker"></span></a>
-          </div>
-        </div>
-        <div class="item" data-src="/assets/images/index_img_slider-2.jpg">
-          <div class="camera_caption fadeIn">
-            <h3>We'll Make You Noticeable</h3>
-            <p>Contact Us by</p>
-            <a href="#" class="btn bd-ra"><span class="fa fa-envelope-o"></span></a>
-            <a href="#" class="btn bd-ra"><span class="fa fa-phone"></span></a>
-            <a href="#" class="btn bd-ra"><span class="fa fa-map-marker"></span></a>
-          </div>
-        </div>
+      <div class="col-md-10 serve-text">
+       <p> اﻻﺷﺘﺮاﻙ ﻓﻲ اﻟﺘﺎﻣﻴﻦ اﻟﺼﺤﻲ ﻟﻨﻘﺎﺑﻪ اﻟﻤﻬﻨﺪﺳﻴﻦ </p>
       </div>
-    </div>
+          <div class="clearfix"> </div> 
+      </div>
+      <div class="s-sub">
+      <div class="col-md-2 icon">
+        <i class="glyphicon glyphicon-briefcase"></i>
+      </div>
+      <div class="col-md-10 serve-text">
+       <p> ﺗﺠﺪﻳﺪ اﻻﺷﺘﺮاﻙ اﻟﺴﻨﻮﻱ ﺑﺎﻟﻨﻘﺎﺑﻪ </p>
+      </div>
+          <div class="clearfix"> </div> 
+      </div>
+     </div>
+     <div class="col-md-4 serve-icons">
+     <div class="s-sub">
+      <div class="col-md-2 icon">
+        <i class="glyphicon glyphicon-screenshot"></i>
+      </div>
+      <div class="col-md-10 serve-text">
+       <p> ﺗﺠﺪﻳﺪ اﻻﺷﺮاﻙ اﻟﺴﻨﻮﻱ اﻻﺷﺘﺮاﻙ ﻓﻲ اﻟﺘﺎﻣﻴﻦ اﻟﺼﺤﻲ ﻟﻨﻘﺎﺑﻪ اﻟﻤﻬﻨﺪﺳﻴﻦ</p>
+      </div>
+          <div class="clearfix"> </div> 
+      </div>
+     <div class="s-sub">
+      <div class="col-md-2 icon">
+        <i class="glyphicon glyphicon-time"></i>
+      </div>
+     <div class="col-md-10 serve-text">
+       <p> ﺧﺪﻣﻪ اﻟﺘﺤﻮﻳﻼﺕ ﺩﻭﻥ اﻟﺘﻌﺐ ﻓﻲ اﻟﺬﻫﺎﺏ اﻟﻲ اﻟﻨﻘﺎﺑﻪ ﻻﺧﺬ اﻟﺘﺤﻮﻳﻠﻪ ﻓﻮﻗﺘﻚ ﻳﻬﻤﻨﺎ </p>
+      </div>
+          <div class="clearfix"> </div> 
+      </div>
+     </div>
+     <div class="col-md-4 serve-icons">
+      <div class="s-sub">
+      <div class="col-md-2 icon">
+        <i class="glyphicon glyphicon-edit"></i>
+      </div>
+      <div class="col-md-10 serve-text">
+       <p> اﻟﺒﺤﺚ ﻋﻦ اﻗﺮﺏ ﺩﻛﺘﻮﺭ اﻭ ﻣﺸﻔﻲ اﻭ ﻋﻴﺎﺩﻩ ﺑﺎﻟﻘﺮﺏ ﻣﻨﻚ ﻓﺎﻥ ﺣﻴﺎﺗﻚ ﺗﻬﻤﻨﺎ </p>
+      </div>
+          <div class="clearfix"> </div> 
+      </div><div class="s-sub">
+      <div class="col-md-2 icon">
+        <i class="glyphicon glyphicon-certificate"></i>
+      </div>
+      <div class="col-md-10 serve-text">
+       <p> اﻟﺸﻜﻮﻱ ﻓﻲ ﺣﺎﻟﻪ ﻣﺎ اﺯاﻱ ﻛﺎﻧﺖ اﻟﺨﺪﻣﻪ اﻟﻤﻘﺪﻣﻪ ﻏﻴﺮ ﻛﺎﻓﻴﻪ ﻭ اﻟﻤﻘﺘﺮﺣﺎﺕ </p>
+      </div>
+          <div class="clearfix"> </div> 
+      </div>
+     </div>
+                          
+                          
+                          
+                            <div class="col-md-4 serve-icons">
+      <div class="s-sub">
+      <div class="col-md-2 icon">
+        <i class="glyphicon glyphicon-edit"></i>
+      </div>
+      <div class="col-md-10 serve-text">
+       <p> اﻻﻥ ﺗﻘﺪﺭ ﻣﻌﻨﺎ اﻥ ﺗﻘﻴﻢ اﻟﺪﻛﺘﻮﺭ ﻭ ﺫﻟﻚ ﻻﺭﺗﻔﺎﻉ ﺑﻤﺴﺘﻮﻱ اﻟﺨﺪﻣﻪ اﻟﺘﻲ ﻧﻘﺪﻣﻬﺎ ﻟﻚ </p>
+      </div>
+          <div class="clearfix"> </div> 
+      </div><div class="s-sub">
+      <div class="col-md-2 icon">
+        <i class="glyphicon glyphicon-certificate"></i>
+      </div>
+      <div class="col-md-10 serve-text">
+       <p> ﻣﻮاﻋﻴﺪﻙ اﻻﻥ ﺗﺴﻄﻴﻊ ﻋﻤﻞ ﺟﺪﻭﻝ ﺑﻤﻮﻋﻴﺪ اﻻﺩﻭﻳﻪ اﻟﺨﺎﺻﻪ ﺑﻴﻚ ﻓﺎﻥ اﻻﻫﺘﻤﺎﻡ ﺑﻴﻚ ﻫﺪﻓﻨﺎ </p>
+      </div>
+          <div class="clearfix"> </div> 
+      </div>
+     </div>
+                          
+                          
+     <div class="clearfix"> </div>  
+           </div> 
+       </div> 
+   </div>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="blog-section">
+ <div class="container"> 
+   <h3 class="tittle  pull-right">اﻟﻤﺴﺘﺸﻔﻴﺎﺕ اﻻﻋﻠﻲ ﺗﻘﻴﻢ</h3>
+   <div class="clearfix"> </div>
+  <div class="blog-post-grids">
+   <div class="blog-post">
+     <a href="single.html"><img src="/assets/images/b2.jpg" class="img-responsive" alt="  "/></a>
+     <div class="text">
+      <a href="single.html"> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ</a>
+     </div>
+     <div class="admin-tag">
+     
+     <p class="erat">ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 
+ﻻاﺗﺼﺎﻝ ﺑﻴﻨﺎ ﻳﺮﺟﻲ اﻟﻌﻠﻢ اﻥ ﺳﺎﻋﺎﺕ اﻟﻌﻤﻞ      
+ﻣﻦ اﻟﺤﺎﺩﻳﻪ ﻋﺸﺮ اﻟﻲ ﺛﺎﻧﻴﻪ ﻋﺸﺮ      
+اﺛﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﺦ     </p>
+     <a href="single.html" class="hvr-shutter-in-horizontal more">Readmore<span> </span></a>
+     </div>
+   </div>
+  
   </div>
-  --}}
-  {{-- end of slider --}}
-  {{-- begin search --}}
+  <div class="blog-post-grids">
+   <div class="blog-post">
+    <a href="single.html"><img src="/assets/images/b3.jpg" class="img-responsive" alt="  "/></a>
+    <div class="text">
+      <a href="single.html"> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ</a>
+     </div>
+     <div class="admin-tag">
+     
+     <p class="erat">ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 
+ﻻاﺗﺼﺎﻝ ﺑﻴﻨﺎ ﻳﺮﺟﻲ اﻟﻌﻠﻢ اﻥ ﺳﺎﻋﺎﺕ اﻟﻌﻤﻞ      
+ﻣﻦ اﻟﺤﺎﺩﻳﻪ ﻋﺸﺮ اﻟﻲ ﺛﺎﻧﻴﻪ ﻋﺸﺮ      
+اﺛﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﺦ     </p>
+     <a href="single.html" class="hvr-shutter-in-horizontal more">Readmore<span> </span></a>
+     </div>
+   </div>
+  
+  </div>
+  <div class="blog-post-grids">
+   <div class="blog-post">
+    <a href="single.html"><img src="/assets/images/b4.jpg" class="img-responsive" alt="  "/></a>
+    <div class="text">
+      <a href="single.html"> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ</a>
+     </div>
+     <div class="admin-tag">
+     
+     <p class="erat">ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 
+ﻻاﺗﺼﺎﻝ ﺑﻴﻨﺎ ﻳﺮﺟﻲ اﻟﻌﻠﻢ اﻥ ﺳﺎﻋﺎﺕ اﻟﻌﻤﻞ      
+ﻣﻦ اﻟﺤﺎﺩﻳﻪ ﻋﺸﺮ اﻟﻲ ﺛﺎﻧﻴﻪ ﻋﺸﺮ      
+اﺛﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﻤﺦ     </p>
+     <a href="single.html" class="hvr-shutter-in-horizontal more">Readmore<span> </span></a>
+     </div>
+   </div>
+   
+   <div class="clearfix"> </div>
+  </div>
+  <div class="clearfix"> </div>
+ </div>
+ <!--start-news-pagenate-->
+    <div class="blog-pagenat">
+     <ul>
+      <li><a class="frist" href="#">Prev</a></li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">6</a></li>
+      <li><a class="last" href="#">Next</a></li>
+     </ul>
+=======
+<div id="icons" class="bottom-border-shadow">
+    <div class="container background-grey bottom-border">
+        <div class="row padding-vert-60">
+            <!-- Icons -->
+            <div class="col-md-4 text-center">
+                <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">خدمات التحويلات </h2>
+                <p class="animate fadeIn"> لان اصبح من الهل دون ضايع وقتك في الذهاب الي النقابه لاخذ التحويله العلاجيه دون مشقه</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">اقرب دكتور اليك</h2>
+                <p class="animate fadeIn"> اوجد اقرب دكتور اليك علي حسب موقعك الخغرافي</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">كشف الحساب </h2>
+                <p class="animate fadeIn">اصبح من السهل معرفك حسابات التامين الصحي الخاص بيك و البيانات الكامله الخاصه بيك </p>
+            </div>
+            <!-- End Icons -->
+        </div>
 
- {{--  <div class="form-group">
-    <center> البحث عن طبيب</center>
-        <label>المحافظه</label>
-        <select class="input-large form-control">
-            <option value="" selected="selected">اختر محافظه</option>
-            <option value="alex" >الاسكندريه</option>
-           
-        </select>
-        <label>المنطقه</label>
-        <select class="input-large form-control">
-          {{-- <option value="" selected="selected">اختر المنطقه</option> --}}
-            {{--  @foreach($area as $areas)
-                 @foreach($areas as $ar)
-                     <option value="alex" >{{$ar}}</option>
-                  @endforeach   
-                  @endforeach --}}
+        <div class="row padding-vert-60">
+            <!-- Icons -->
+            <div class="col-md-4 text-center">
+                <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">ملفك الشخصي </h2>
+                <p class="animate fadeIn">اصبح من السهل معرفه معلومات الشخصيه محدثه من النقابه بستمرار </p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">مواعيدك الشخصيه</h2>
+                <p class="animate fadeIn">لان مواعيد الشخصيه تهمنا باضافه ان مواعيد ادويتك و جوزاتك مهمه بنسبه لنا </p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">الشكاوي</h2>
+                <p class="animate fadeIn">لان ريك ما يدعمنا اصبح من حقك ان تبدي برايك او شكاوتك في اي وقت و سوف نهتم بيها </p>
+            </div>
+            <!-- End Icons -->
+        </div>
+        <div class="row padding-vert-60">
+            <!-- Icons -->
+            <div class="col-md-4 text-center">
+                <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">التجديد الاشتراك </h2>
+                <p class="animate fadeIn"> اصبح من حقك ان توفر وقتك و تجديد الاشتركات الخاصه بيك سواء الاشتراك السنوي او الاشتراك في التامين عن طريق التليفون</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">الاشتراك التامين</h2>
+                <p class="animate fadeIn">لان اصبح من حقك الاشتراك لك ولاسرتك سواء ولادتك او ولادك او لزوجتك او لابنك عن طريق الانترنت </p>
+            </div>
+            
+            <!-- End Icons -->
+        </div>
+>>>>>>> f7e313c6940401043097d7e24bd89587b71d875a
+    </div>
+</div>
 
-       {{--  </select>
-        <label>التخصص</label>
-        <select class="input-large form-control"> --}}
-          {{-- <option value="" selected="selected">اختر المنطقه</option> --}}
-            {{--  @foreach($specialization as $specials)
-                 @foreach($specials as $special)
-                     <option value="alex" >{{$special}}</option>
-                  @endforeach   
-                  @endforeach --}}
-
-                  {{--  </select> --}}
-                  {{-- </div> --}}  
 
 
-                  {{-- end of search  --}}
 
-                  {{-- B Searching --}}
+<div id="content" class="bottom-border-shadow">
+    <div class="container background-white bottom-border">
+        <div class="row margin-vert-30">
+            <!-- Main Text -->
+            <div class="col-md-12">
+                <h3 style="color: #3D7A33">اهلا بيك في نقابه مهندسين الاسكندريه</h3>
+                <div style="height: 50px"></div> 
+                <p style="alignment-adjust: central"> لان هدفنا اسعادك و تحقيق الرفاهيه المطلوبه لحياه اسعد لكل المهندسين المصرين فاصبح من الوجب عمل هذا الموقع لتحقيق كل رغبتك</p>
+                <p style="alignment-adjust: central"> المهندس هو من تقوم علي اكتافه الدول المتقدمه فلاهتمام بك جزاء لا يتجزء من منظومه التطور التي تسعد اليها البلاد </p>
+            </div>
+            <!-- End Main Text -->
+            
+        </div>
+    </div>
+</div>
 
+
+<div id="icons" class="bottom-border-shadow">
+    <div class="container background-grey bottom-border">
+        
                   <div class="form-group">
-                    <center><h3> البحث عن طبيب</h3></center>
+                    <center><h3 style="color: #3D7A33"> البحث عن طبيب</h3></center>
                     <label><h5>اختر نوعيه البحث </h5></label>
                     <select class="input-large form-control" id="choice" onchange="GetValueSelected()">
                       <option value="" selected="selected">--اختر--</option>
@@ -177,273 +348,190 @@
                     </div>
 
 
-
-
-                    {{-- E searching --}}
-
-                    <hr>
-                    <!--end-banner-->
-                    {{-- test --}}
-                    <center>
-                      <table>  
-
-
-
-
-                       <section id="content">
-                        <div class="full-width-container block-1">
-                          <div class="container">
-
-                            <div class="row">
-
-                              <div id="touch_gallery">
-
-                               <tr>
-
-                                <td>
-                                  <br><br>
-                                  <div  class="alert alert-info" role="alert"><center>الخدمات المقدمه ذات تقيم : 4.5 <center></div>
-
-                                  <div class="grid_4">
-                                    <div class="img_container"><a href="/assets/images/index-2_img-1-big.jpg"><img src="/assets/images/index-2_img-1.jpg" alt="projects"></a></div>
-                                    <article>
-                                      <h4>تامين صحى </h4>
-                                      <p>لكا عضو فى الرعيه الصحيه له الحق فى الحصول على رعايه صحيه متكامله تشمل جميع التخصصات باسعار وخصوم محدده من قبل النقابه.</p>
-                                      <a href="">Readmore</a>
-                                    </article>
-                                  </div>
-                                </td>
-
-
-                                <td>
-                                  <br><br>
-                                  <div  class="alert alert-info" role="alert"><center>الخدمات المقدمه ذات تقيم : 4.5 <center></div> 
-                                  <div class="grid_4">
-                                    <div class="img_container"><a href="/assets/images/index-2_img-2-big.jpg"><img src="/assets/images/index-2_img-2.jpg" alt="projects"></a></div>
-                                    <article>
-                                      <h4>ادخال عضو جديد</h4>
-                                      <p>لكل عضو فى النقابه وايضا فى الرعايه الصحيه له الحق فى ادخال احد من ذو الاقار ولكا شخص يتم ادخاله له نسبه محدده تتوقف على درجه القرابه والتى يتم تحديدها من قبل النقابه والرعايه الصحيه للنقابه فهى تختلف من سنه الى اخرى.</p>
-                                      <a href="">Readmore</a>
-                                    </article>
-                                  </div>
-                                </td>
-
-
-                                <td>
-                                  <br><br>
-                                  <div  class="alert alert-info" role="alert"><center>الخدمات المقدمه ذات تقيم : 4.5 <center></div>
-                                  <div class="grid_4">
-                                    <div class="img_container"><a href="/assets/images/index-2_img-3-big.jpg"><img src="/assets/images/index-2_img-3.jpg" alt="projects"></a></div>
-                                    <article>
-                                      <h4>خدمات اخرى</h4>
-                                      <p>هناك  العديد من الخدمات التى يحصل عليها العضو بمجرد اشتراكه فى الرعايع الصحيه , فنحن نهدف فى النهايه الى خدمه صحه الاعضاء .</p>
-                                      <a href="">Readmore</a>
-                                    </article>
-                                  </div>
-                                </td>
-                              </tr>
-
-                              <br><br><br>
-                              <tr>
-
-
-                                @foreach($lab as $key)
-                                <div style=" width: 10px; height: 20px;">
-                                  <td>
-                                    <br><br>
-                                    <div  class="alert alert-info" role="alert"><center>{{$key->rate}} <center></div>
-                                    <div class="grid_4">
-                                      <div class="img_container"><a href="{{$key->path}}"><img src="{{$key->path}}" alt="projects"></a></div>
-                                      <article>
-                                        <h5> Name:{{
-                                         $key->name
-                                       }}</h5>
-                                       <p>Address:{{
-                                         $key->address
-                                       }}</p><br>
-                                       <p>Discription:{{
-                                         $key->discription
-                                       }}</p><br>
-                                       <p>Phone:{{
-                                         $key->phone
-                                       }}</p><br>
-                                       <p>Rate:{{
-                                         $key->rate
-                                       }}</p><br>
-                                       <a href="">Readmore</a>
-                                     </article>
-                                   </div>
-                                 </td>
-                               </div>
-                               @endforeach
-
-                             </tr>
-
-                             <tr>
-
-                {{-- <td>
-                  <br><br>
-                  <div  class="alert alert-info" role="alert"><center>االمستشفيات المقدمه ذات تقيم : 4.5 <center></div>
-              <div class="grid_4">
-                <div class="img_container"><a href="/assets/images/index-2_img-1-big.jpg"><img src="/assets/images/index-2_img-1.jpg" alt="projects"></a></div>
-                <article>
-                  <h4> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 1</h4>
-                  <p> تقدم المستفى رعايه متكامله فى ميع التخصصات ..</p><br><p>المواعيد : من الساعه التاسعه صباحا حتى الساعه التاسعه مساء وذلك فى جميع ايام الاسبوع </p>
-                  <a href="">Readmore</a>
-                </article>
-              </div>
-            </td> --}}
-            @foreach($hospital as $key)
-            <div style=" width: 10px; height: 20px;">
-              <td>
-                <br><br>
-                <div  class="alert alert-info" role="alert"><center>{{$key->rate}} <center></div>
-                <div class="grid_4">
-                  <div class="img_container"><a href="{{$key->path}}"><img src="{{$key->path}}" alt="projects"></a></div>
-                  <article>
-                    <h5> Name:{{
-                     $key->name
-                   }}</h5>
-                   <p>Address:{{
-                     $key->address
-                   }}</p><br>
-                   <p>Discription:{{
-                     $key->discription
-                   }}</p><br>
-                   <p>Phone:{{
-                     $key->phone
-                   }}</p><br>
-                   <p>Rate:{{
-                     $key->rate
-                   }}</p><br>
-                   <a href="">Readmore</a>
-                 </article>
-               </div>
-             </td>
-           </div>
-           @endforeach
-
-             {{--  <td>
-                <br><br>
-                <div  class="alert alert-info" role="alert"><center>االمستشفيات المقدمه ذات تقيم : 4.5 <center></div>
-              <div class="grid_4">
-                <div class="img_container"><a href="/assets/images/index-2_img-2-big.jpg"><img src="/assets/images/index-2_img-2.jpg" alt="projects"></a></div>
-                <article>
-                  <h4> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 2</h4>
-                  <p> تقدم المستفى رعايه متكامله فى ميع التخصصات ..</p><br>
-
-                  <a href="">Readmore</a>
-                </article>
-              </div>
-            </td> --}}
-
-
-
-             {{--  <td>
-                <br><br>
-                <div  class="alert alert-info" role="alert"><center>االمستشفيات المقدمه ذات تقيم : 4.5 <center></div>
-              <div class="grid_4">
-                <div class="img_container"><a href="/assets/images/index-2_img-3-big.jpg"><img src="/assets/images/index-2_img-3.jpg" alt="projects"></a></div>
-               <article>
-                  <h4> ﻣﺴﺘﺸﻔﻲ اﻟﺤﻤﺎﻳﺎﺕ 3</h4>
-                  <p> تقدم المستفى رعايه متكامله فى ميع التخصصات ..</p><br><p>المواعيد : من الساعه التاسعه صباحا حتى الساعه التاسعه مساء وذلك فى جميع ايام الاسبوع </p>
-                  <a href="">Readmore</a>
-                </article>
-              </div>
-            </td> --}}
-
-
-          </tr>
-
-          <tr>
-
-            {{-- <td>
-              <br><br>
-              <div  class="alert alert-info" role="alert"><center>الاطباء المقدمه ذات تقيم : 4.5 <center></div>
-            <div class="grid_4">
-              <div class="img_container"><a href="/assets/images/index-2_img-1-big.jpg"><img src="/assets/images/index-2_img-1.jpg" alt="projects"></a></div>
-              <article>
-                <h4> دكتور احمد رزق</h4>
-                <p> تخصص باطن  </p><br><p>مواعيد العمل من الساعه السادسه مساءا حتى الساعه الحاديه عشر مساءا</p>
-                <a href="">Readmore</a>
-              </article>
-            </div>
-          </td> --}}
-          
-          @foreach($use as $key)
-          <div style=" width: 10px; height: 20px;">
-            <td>
-              <br><br>
-              <div  class="alert alert-info" role="alert"><center>{{$key->rate}} <center></div>
-              <div class="grid_4">
-                <div class="img_container"><a href="{{$key->path}}"><img src="{{$key->path}}" alt="projects"></a></div>
-                <article>
-                  <h5> Name:{{
-                   $key->name
-                 }}</h5>
-                 <p>Degree:{{
-                   $key->degree
-                 }}</p><br>
-                 <p>Specialization:{{
-                   $key->specialization
-                 }}</p><br>
-                 <p>Phone:{{
-                   $key->phone
-                 }}</p><br>
-                 <p>Rate:{{
-                   $key->rate
-                 }}</p><br>
-                 <a href="">Readmore</a>
-               </article>
-             </div>
-           </td>
-         </div>
-         @endforeach
-          {{-- <td>
-            <br><br>
-            <div  class="alert alert-info" role="alert"><center>الاطباء المقدمه ذات تقيم : 4.5 <center></div>
-          <div class="grid_4">
-            <div class="img_container"><a href="/assets/images/index-2_img-3-big.jpg"><img src="/assets/images/index-2_img-3.jpg" alt="projects"></a></div>
-          <article>
-              <h4> دكتور ابراهيم محمود</h4>
-              <p> تخصص جراحه  </p><br><p></p>
-              <a href="">Readmore</a>
-            </article>
-          </div>
-        </td> --}}
-
-      </tr>
-
     </div>
-  </div>
-
 </div>
+
+  
+    
+<div id="content" class="bottom-border-shadow">
+    <div class="container background-white bottom-border">
+         <div id="portfolio" class="bottom-border-shadow">
+                <div class="container bottom-border">
+                    <div class="row padding-top-40">
+                        <ul class="portfolio-group">
+                            <!-- Portfolio Item -->
+                             <center><h1 style="color: #3D7A33">المستشفيات الاعلي تقيما</h1></center>
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeInLeft">
+                                        <img alt="image1" src="{{$hospitals['0']->path}}"  style="height: 300px">
+                                        <figcaption>
+                                          <center> <h1>{{$hospitals['0']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$hospitals['0']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$hospitals['0']->rate}}</span></center>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeIn">
+                                        <img alt="image2" src="{{$hospitals['1']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$hospitals['1']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$hospitals['1']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$hospitals['1']->rate}}</span></center>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$hospitals['2']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$hospitals['2']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$hospitals['2']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$hospitals['2']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                       
+                            <!-- //Portfolio Item// -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="content" class="bottom-border-shadow">
+    <div class="container background-grey bottom-border">
+         <div id="portfolio" class="bottom-border-shadow">
+                <div class="container bottom-border">
+                    <div class="row padding-top-40">
+                        <ul class="portfolio-group">
+                            <!-- Portfolio Item -->
+                             <center><h1 style="color: #3D7A33"> الدكتور اعلي تقيما</h1></center>
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                   <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$users['0']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$users['0']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$users['0']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$users['0']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$users['1']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$users['1']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$users['1']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$users['1']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                 <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$users['2']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$users['2']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$users['2']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$users['2']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                       
+                            <!-- //Portfolio Item// -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div id="content" class="bottom-border-shadow">
+    <div class="container background-white bottom-border">
+         <div id="portfolio" class="bottom-border-shadow">
+                <div class="container bottom-border">
+                    <div class="row padding-top-40">
+                        <ul class="portfolio-group">
+                            <!-- Portfolio Item -->
+                            <center><h1 style="color: #3D7A33"> المعامل الاعلي تقيما </h1></center>
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                     <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$labs['0']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$labs['0']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$labs['0']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['0']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                   <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$labs['1']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$labs['1']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$labs['1']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['1']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                            <!-- //Portfolio Item// -->
+                            <!-- Portfolio Item -->
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="#">
+                                    <figure class="animate fadeInRight">
+                                        <img alt="image2" src="{{$labs['2']->path}}" style="height: 300px">
+                                        <figcaption>
+                                            <center> <h1>{{$labs['2']->name}}</h1></center>
+                                            <center><span style="font-size: 25px ;color: #555555">{{$labs['2']->discription}}</span></center>
+                                            <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['2']->rate}}</span></center>
+                                        </figcaption>
+                                </a>
+                            </li>
+                       
+                            <!-- //Portfolio Item// -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Portfolio -->
+
+<div id="footer" class="background-grey" style="background-color: #555555">
+    <div class="container">
+        <div class="row">
+       
+   
+       
+    </div>
 </div>
-</section>
 
-<br>
-
-</table>
-</center>
-<br><br>
-<br><br>
-{{-- end test --}}
-
-
-
-
-
-
-
-
-
-<!--start-smoth-scrolling-->
-
-<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-<!--JS-->
-<script type="text/javascript" src="/assets/js/bootstrap-3.1.1.min.js"></script>
-
-<!--//JS-->
+@endsection
 <script type="text/javascript">
 function GetValueSelected()
 {
@@ -463,7 +551,7 @@ function GetValueSelected()
         location.href = "http://localhost:8000/SearchDoctor/"+ValueArea;
 
         console.log(ValueArea);
-         alert(ValueArea);
+        
     };
 
   }
@@ -479,7 +567,7 @@ function GetValueSelected()
         location.href = "http://localhost:8000/DoctorSpecial/"+ValueArea;
 
         console.log(ValueArea);
-         alert(ValueArea);
+         
     };
   }
   else if(SelectElemet==3)
@@ -493,14 +581,10 @@ function GetValueSelected()
         location.href = "http://localhost:8000/DoctorName/"+ValueArea;
 
         console.log(ValueArea);
-         alert(ValueArea);
+         
     };
   }
 }
 
 
 </script>
-
-</body>
-</html>
-@endsection

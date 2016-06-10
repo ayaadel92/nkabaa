@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use DB;
 // use Illuminate\Database\Eloquent\Model;
 
 class Engineer extends Authenticatable
@@ -31,5 +31,10 @@ class Engineer extends Authenticatable
     	'name' => 'required|min:2',
     	'email' => 'required|email'
     	);
+
+
+         public static function findengid($mem){
+           return DB::table('engineers')->where('eng_id', $mem);
+    }
    
 }

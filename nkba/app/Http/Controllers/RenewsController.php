@@ -10,16 +10,14 @@ use App\User;
 use Illuminate\Support\Facades\Request as Request;
 use Illuminate\Support\Facades\Auth;
 
+class RenewsController extends Controller {
 
-class RenewsController extends Controller
-{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
     }
 
@@ -28,8 +26,7 @@ class RenewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -39,8 +36,7 @@ class RenewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -50,52 +46,60 @@ class RenewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $member=Auth::user()->login;
-         
-        $user_1=DB::table('engineers')
-                ->where('eng_id', $member)
-                ->get();  //bgyb el mohnds               ---> deh elly hgyb mnha el mohnds dah el status bt3tha eh
-        
+    public function show($id) {
+        $role = Auth::user()->role;
+        if ($role == "مهندس" || $role == "قريب") {
+            if (Auth::user()->id == $id) {
+                $member = Auth::user()->login;
 
-         $renew=DB::table('renews')
-                ->where('eng_id', $member)
-                ->get();                        //--->gb kol w m3d elly sglhom feh 
-         
-         
-          $renew_count=DB::table('renews')
-                ->where('eng_id', $member)
-                ->count();  
-         
-         $number_status_no= DB::table('relatives')
-                ->where('eng_id', $member)
-                   ->where('status', "لا")
-                ->get();                           //---> gb kol el 2rb elly msh msglhom 
-         
-         
-         $number= DB::table('relatives')
-                ->where('eng_id', $member)
-                ->count();
-        
+                $user_1 = DB::table('engineers')
+                        ->where('eng_id', $member)
+                        ->get();  //bgyb el mohnds               ---> deh elly hgyb mnha el mohnds dah el status bt3tha eh
+
+
+                $renew = DB::table('renews')
+                        ->where('eng_id', $member)
+                        ->get();                        //--->gb kol w m3d elly sglhom feh 
+
+
+                $renew_count = DB::table('renews')
+                        ->where('eng_id', $member)
+                        ->count();
+
+                $number_status_no = DB::table('relatives')
+                        ->where('eng_id', $member)
+                        ->where('status', "لا")
+                        ->get();                           //---> gb kol el 2rb elly msh msglhom 
+
+
+                $number = DB::table('relatives')
+                        ->where('eng_id', $member)
+                        ->count();
+
 //         for($i=0;$i<=$renew_count;$i++){
 //             $name[i]=DB::table('relatives')
 //                ->where('eng_id', $member)
 //                     ->where('health_id',)
 //                ->count();  
 //         }
-       
-         
-         $memb= DB::select('select h.name,d.health_id,d.year from relatives h , renews d where h.health_id= d.health_id');
-         
-         
-       
-         
-          
-           
-           // $data = array("k1' => "$filename", 'k2' => "$type",'k3' => "$mail" ,'k4' => "$filename1");    
-       // print_r($memb);exit();
-        return view('rin.index', compact(['user_1','number_status_no','memb']));
+
+
+                $memb = DB::select('select h.name,d.health_id,d.year from relatives h , renews d where h.health_id= d.health_id');
+
+
+
+
+
+
+                // $data = array("k1' => "$filename", 'k2' => "$type",'k3' => "$mail" ,'k4' => "$filename1");    
+                // print_r($memb);exit();
+                return view('rin.index', compact(['user_1', 'number_status_no', 'memb']));
+            } else {
+                return redirect("/");
+            }
+        } else {
+            return redirect("/");
+        }
     }
 
     /**
@@ -104,8 +108,7 @@ class RenewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -116,8 +119,7 @@ class RenewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -127,8 +129,8 @@ class RenewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

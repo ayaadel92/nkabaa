@@ -3,8 +3,9 @@ use App\Analysisradios;
 use App\Transfer;
 use Illuminate\Support\Facades\Input;
 use App\Events\TransferEvent;
-
-
+use App\Percentages;
+use App\Engineer;
+use Illuminate\Http\Request;
 // use Illuminate\Http\Request;
 
 /*
@@ -18,8 +19,8 @@ use App\Events\TransferEvent;
   |
  */
 
+
   // Route::get('/', function () {
- //   // Notify::success('مرحبا','تسجيل الدخول');
  //   $user=DB::select('select d.id,d.name,d.degree,d.specialization,d.phone,d.area,d.path,e.rate from doctors d,evaluate_doctors e where e.doctor_id=d.id and e.rate>=6');
  //   $cou=count($user);
         // $areas=DB::select('select area from doctors group by area');
@@ -38,6 +39,13 @@ use App\Events\TransferEvent;
   Route::get('/DoctorSpecial/{Data}','EvaluateController@SelectDoctorsSpecial');
   
   Route::get('/DoctorName/{Data}','EvaluateController@SelectDoctorsName');
+
+// Route::get('/SearchDoctor','EvaluateController@InsertRate');
+  
+//   Route::get('/DoctorSpecial','EvaluateController@InsertRate');
+  
+//   Route::get('/DoctorName','EvaluateController@InsertRate');
+  
  // Route::get('/SearchDoctor/{Data}',function()
  //  {
 
@@ -83,6 +91,55 @@ Route::get('api/dropdown', function(){
            $analysis = Analysisradios::findanalysis();
            return Response::json($analysis->get(['id','name']));
       }
+});
+//get percentages
+Route::get('api/degree', function(){
+  
+   $input = Input::get('option');
+   if($input==1)
+      {
+           $perc = Percentages::findengperc();
+           return Response::json($perc->get(['percent']));
+      }
+    elseif ($input==2) 
+      {
+            $perc = Percentages::findwifeperc();
+           return Response::json($perc ->get(['percent']));
+      }
+    elseif ($input==3) 
+      {
+            $perc = Percentages::findhosperc();
+           return Response::json($perc ->get(['percent']));
+      }
+        elseif ($input==4) 
+      {
+            $perc = Percentages::findsonperc();
+           return Response::json($perc ->get(['percent']));
+      }
+          elseif ($input==5) 
+      {
+            $perc = Percentages::finddoutperc();
+           return Response::json($perc ->get(['percent']));
+      }
+          elseif ($input==6) 
+      {
+            $perc = Percentages::findfathperc();
+           return Response::json($perc ->get(['percent']));
+      }
+          elseif ($input==7) 
+      {
+            $perc = Percentages::findmothperc();
+           return Response::json($perc ->get(['percent']));
+      }
+});
+
+//get card_id
+Route::get('api/card', function(Request $request){
+     $input=$request->all();
+     //print_r($input);
+           $card = Engineer::findengid($input);
+           return Response::json($card->get(['health_id']));
+      
 });
 
 //acceptance transfer
