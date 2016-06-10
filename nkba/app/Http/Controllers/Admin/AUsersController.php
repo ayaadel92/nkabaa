@@ -59,7 +59,7 @@ class AUsersController extends Controller
             $user->role = $input['role'];
             $user->login = $input['login'];
             $user->email = $input['email'];
-            $user->password = $input['password'];
+            $user->password = bcrypt($input['password']);
             $user->save();
             return Redirect::route('admin-user.index');
         // } 
