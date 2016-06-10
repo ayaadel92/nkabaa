@@ -10,70 +10,84 @@
 			<div class="panel-body">
 				<!-- 'files' => true to accept uploading photos -->
 				<img src= "{{ $engineer->path }}">
-				<ul>
+				<div class="table-resposive">
+					<table class="table table-bordered">
 
-					<li>
-						الاسم: {{ $engineer->name }}
-					</li>
+					<tr>
+						<th class="text-center">الاسم</th>
+						<td class="text-center">{{ $engineer->name }}</td>
+					</tr>
 
-					<li>
-						الإيميل: {{ $engineer->email }}
-					</li>
+					<tr>
+						<th class="text-center">الإيميل</th>
+						<td class="text-center">{{ $engineer->email }}</td>
+					</tr>
 
-					<li>
-						الجنس: {{ $engineer->gender }}
-					</li>       
+					<tr>
+					<th class="text-center">الجنس</th>
+						<td class="text-center">{{ $engineer->gender }}</td>
+					</tr>       
 
-					<li>
-						العنوان: {{ $engineer->address }}
-					</li>
+					<tr>
+						<th class="text-center">العنوان</th>
+						<td class="text-center">{{ $engineer->address }}</td>
+					</tr>
 
-					<li>
-						الموبايل: {{ $engineer->phone_number }}
-					</li>
+					<tr>
+						<th class="text-center">الموبايل</th>
+						<td class="text-center">{{ $engineer->phone_number }}</td>
+					</tr>
 
-					<li>
-						تاريخ الميﻻد: {{ $engineer->birth_date }}
-					</li>
+					<tr>
+						<th class="text-center">تاريخ الميﻻد</th> 
+						<td class="text-center">{{ $engineer->birth_date }}</td>
+					</tr>
 					
-					<li>
-						سنة التخرج: {{ $engineer->gradu_year }}
-					</li>
+					<tr>
+						<th class="text-center">سنة التخرج</th>
+						<td class="text-center">{{ $engineer->gradu_year }}</td>
+					</tr>
 					
-					<li>
-						عدد الأقارب: {{ $engineer->relative_num }}
-					</li>
+					<tr>
+						<th class="text-center">عدد الأقارب</th>
+						<td class="text-center">{{ $engineer->relative_num }}</td>
+					</tr>
 
-					<li>
-						الرقم القومي: {{ $engineer->national_id }}
-					</li>
+					<tr>
+						<th class="text-center">الرقم القومي</th>
+						<td class="text-center">{{ $engineer->national_id }}</td>
+					</tr>
 
-					<li>
-						رقم العضوية: {{ $engineer->eng_id }}
-					</li>
+					<tr>
+						<th class="text-center">رقم الtضوية</th>
+						<td class="text-center">{{ $engineer->eng_id }}</td>
+					</tr>
 
-					<li>
-						رقم التأمين: {{ $engineer->health_id }}
-					</li>
+					<tr>
+						<th class="text-center">رقم التأمين</td>
+						<td class="text-center">{{ $engineer->health_id }}</td>
+					</tr>
 
-					<li>
-						رقم حساب مصرفي: {{ $engineer->credit_number }}
-					</li>
+					<tr>
+						<th class="text-center">رقم حساب مصرفي</th>
+						<td class="text-center">{{ $engineer->credit_number }}</td>
+					</tr>
 					<div style="height: 30px;"></div>
-				</ul>
+				</table>
 				<table>
 					<tr>
-						<td>
+						<td class="text-center">
 							{{ link_to_route('admin-engineer.edit', 'تعديل', array($engineer->id), array('class' => 'btn btn-success')) }}
 						</td>
-						<td style="width: 30px;"></td>
-						<td>
+						<td class="text-center" style="width: 30px;"></td>
+						<td class="text-center">
 							{{ Form::open(array('method' => 'DELETE', 'route' => array('admin-engineer.destroy', $engineer->id))) }}
 							{{ Form::submit('حذف', array('class' => 'btn btn-danger')) }}
 							{{ Form::close() }}
 						</td>
 					</tr>
 				</table>
+				</div>
 				@if ($errors->any())
 				<ul>
 					{{ implode('', $errors->all('<li class="error">:message</li>')) }}
