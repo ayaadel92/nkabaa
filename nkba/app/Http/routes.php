@@ -19,19 +19,6 @@ use Illuminate\Http\Request;
   |
  */
 
-
-  // Route::get('/', function () {
- //   $user=DB::select('select d.id,d.name,d.degree,d.specialization,d.phone,d.area,d.path,e.rate from doctors d,evaluate_doctors e where e.doctor_id=d.id and e.rate>=6');
- //   $cou=count($user);
-        // $areas=DB::select('select area from doctors group by area');
-        //  $area=response()->json($areas)->getData();
-        // return $area;
- //    return view('welcome')->with(print_r($user),$cou);
-  // $specializations=DB::select('select specialization from doctors group by specialization');
-  //  return $specializations;
- //   // return view('welcome');
-
- // });
   Route::get('/','EvaluateController@GetEvaluate');
   // Route::get('/{id}','EvaluateController@');
   Route::get('/SearchDoctor/{Data}','EvaluateController@SelectDoctors');
@@ -158,8 +145,8 @@ use Illuminate\Http\Request;
     }
   });
 
-
 //Admin routes
+  Route::get('/admin/login',array('as' => 'admin.login', 'uses' => 'AdminController@login'));
   Route::resource('admin','AdminController');
   Route::resource('admin-user','Admin\AUsersController');
   Route::resource('admin-engineer','Admin\AEngineersController');

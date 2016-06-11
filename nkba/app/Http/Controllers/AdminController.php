@@ -93,4 +93,18 @@ class AdminController extends Controller
     {
         //
     }
+
+    public function login(Request $request)
+    {
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $admin_count= DB::table('admins')
+        ->where([['email',$email],['password',$password]])->count();
+        if($admin_count > 0){
+            return view('admin.layout.master');
+        }
+        else{
+            return view('admin.admin');
+        }
+    }
 }
