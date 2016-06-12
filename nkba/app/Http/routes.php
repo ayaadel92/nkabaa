@@ -31,6 +31,8 @@ use App\Events\TransferEvent;
  //   // return view('welcome');
    
  // });
+
+  
   Route::get('/','EvaluateController@GetEvaluate');
   // Route::get('/{id}','EvaluateController@');
   Route::get('/SearchDoctor/{Data}','EvaluateController@SelectDoctors');
@@ -39,6 +41,11 @@ use App\Events\TransferEvent;
   
   Route::get('/DoctorName/{Data}','EvaluateController@SelectDoctorsName');
 
+  Route::get('/SearchHospital/{Data}','EvaluateController@SelectHospitalByGover');
+  
+  Route::get('/SearchLab/{Data}','EvaluateController@SelectLabByArea');
+
+   
 // Route::get('/SearchDoctor','EvaluateController@InsertRate');
   
 //   Route::get('/DoctorSpecial','EvaluateController@InsertRate');
@@ -71,7 +78,12 @@ use App\Events\TransferEvent;
 
   Route::resource('/complain', 'ComplaintssController');
 
+ // Route::get('/',function(){
+ //   $hospitals=DB::select('select d.id,d.name,d.address,d.phone,d.area,d.path,d.discription,e.rate from hospitals d,evaluate_hospitals e where e.hospital_id=d.id and e.rate>=8  ');
+ //   print_r($hospitals);
+  
 
+ // });
 //transfer routes
 Route::resource('transfer','TransferController');
 Route::resource('/create','TransferController@create');

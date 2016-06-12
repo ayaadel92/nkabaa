@@ -25,7 +25,7 @@ class EvaluateController extends Controller
 
    $hospitals=DB::select('select d.id,d.name,d.address,d.phone,d.area,d.path,d.discription,e.rate from hospitals d,evaluate_hospitals e where e.hospital_id=d.id and e.rate>=8  ');
    $coHospital=count($hospitals);
-   $hospital=response()->json($hospitals)->getData();
+   // $hospital=response()->json($hospitals)->getData();
 
    $labs=DB::select('select d.id,d.name,d.address,d.phone,d.area,d.path,d.type,d.discription,e.rate from labs d,evaluate_labs e where e.lab_id=d.id and e.rate>=8 ');
    $colab=count($labs);
@@ -38,8 +38,11 @@ class EvaluateController extends Controller
    $specializations=DB::select('select specialization from doctors group by specialization');
    $specialization=response()->json($specializations)->getData();
 
+  $areasLab=DB::select("select area from labs where governorate ='alex' group by area");
+   $coareasLab=count($areasLab);
+   $areaLab=response()->json($areasLab)->getData();
 
-   return view('welcome',compact('use','hospital','lab','area','specialization'));
+   return view('welcome',compact('use','hospitals','lab','area','specialization','areaLab'));
 
 
 
@@ -65,6 +68,7 @@ class EvaluateController extends Controller
  ->where('eng_id','=',$User_ID)
  ->get();
 
+ $countDoctor=count($doctor);
  $countRate=count($rate);
  if( !is_null($User_ID) && !is_null($Value_Rate ) && !is_null($Doctor_ID) )
  {
@@ -86,7 +90,14 @@ class EvaluateController extends Controller
  }
 
 // $doctor=response()->json($doctors)->getData();
-   return view('Search',compact('doctor','User_ID','Value_Rate','Doctor_ID'));
+ if($countDoctor == 0)
+     {
+       return view('NotFoundData');
+     }
+   else
+   {
+      return view('Search',compact('doctor','User_ID','Value_Rate','Doctor_ID'));
+   }
  }
 
  public function SelectDoctorsSpecial($Data , Request $request)
@@ -103,11 +114,10 @@ class EvaluateController extends Controller
   ->get();
 
   $rate=DB::table('evaluate_doctors')
-
  ->where('doctor_id','=',$Doctor_ID)
  ->where('eng_id','=',$User_ID)
  ->get();
-
+ $countDoctor=count($doctor);
  $countRate=count($rate);
 
  if( !is_null($User_ID) && !is_null($Value_Rate ) && !is_null($Doctor_ID) )
@@ -130,50 +140,113 @@ class EvaluateController extends Controller
  }
 
 // $doctor=response()->json($doctors)->getData();
-  return view('SpecialSearch',compact('doctor','User_ID','Value_Rate','Doctor_ID'));
+  if($countDoctor == 0)
+   {
+     return view('NotFoundData',compact('countDoctor'));
+   }
+  else
+    {
+      return view('SpecialSearch',compact('VarData','doctor','User_ID','Value_Rate','Doctor_ID'));
+    }
+  
 
 }
 public function SelectDoctorsName($Data , Request $request)
 {
- $VarData=$Data;
- $User_ID=$request['UserId'];
- $Value_Rate=$request['RateValue'];
- $Doctor_ID=$request['DoctorID'];
+  
+    $VarData=$Data;
+    $User_ID=$request['UserId'];
+    $Value_Rate=$request['RateValue'];
+    $Doctor_ID=$request['DoctorID'];
 
- $doctor=DB::table('doctors')
- ->where('governorate', '=', 'alex')
- ->where('name', '=', $VarData)
- ->get();
+     $doctor=DB::table('doctors')
+     ->where('governorate', '=', 'alex')
+     ->where('name', '=', $VarData)
+     ->get();
 
- $rate=DB::table('evaluate_doctors')
- ->where('doctor_id','=',$Doctor_ID)
- ->where('eng_id','=',$User_ID)
- ->get();
+     $rate=DB::table('evaluate_doctors')
+     ->where('doctor_id','=',$Doctor_ID)
+     ->where('eng_id','=',$User_ID)
+     ->get();
 
- $countRate=count($rate);
-if( !is_null($User_ID) && !is_null($Value_Rate ) && !is_null($Doctor_ID) )
- {
-       if($countRate!=0)
+     $countDoctor=count($doctor);
+     $countRate=count($rate);
+
+    if( !is_null($User_ID) && !is_null($Value_Rate ) && !is_null($Doctor_ID)  )
+     {
+           if($countRate!=0)
+           {
+               DB::table('evaluate_doctors')
+                      ->where('doctor_id', $Doctor_ID)
+                      ->where('eng_id', $User_ID)
+                      ->update(['$User_ID' => $Value_Rate]);
+
+           }
+           elseif($countRate==0)
+           {
+
+            DB::table('evaluate_doctors')->insert(
+              ['doctor_id' => $Doctor_ID, 'eng_id' => $User_ID, 'rate'=>$Value_Rate]
+          );
+           }
+     }
+    if($countDoctor == 0)
+         {
+           return view('NotFoundData');
+         }
+       else
        {
-           DB::table('evaluate_doctors')
-                  ->where('doctor_id', $Doctor_ID)
-                  ->where('eng_id', $User_ID)
-                  ->update(['$User_ID' => $Value_Rate]);
-
+          return view('NameSearch',compact('doctor','User_ID','Value_Rate','Doctor_ID'));
        }
-       elseif($countRate==0)
-       {
 
-        DB::table('evaluate_doctors')->insert(
-          ['doctor_id' => $Doctor_ID, 'eng_id' => $User_ID, 'rate'=>$Value_Rate]
-      );
-       }
- }
-
-
- return view('NameSearch',compact('doctor','User_ID','Value_Rate','Doctor_ID'));
+ 
+  
+ 
+ 
 }
 
+public function SelectHospitalByGover($Data , Request $request)
+{
+  $VarData=$Data;
+  $doctor=DB::table('hospitals')
+     ->where('governorate', '=', 'alex')
+     ->where('name', '=', $VarData)
+     ->get();
+
+  $CountHospital=count($doctor);
+   if($CountHospital == 0)
+         {
+           return view('NotFoundData');
+         }
+       else
+       {
+          return view('Search',compact('doctor'));
+       }
+
+
+}
+
+
+public function SelectLabByArea($Data , Request $request)
+{
+  $VarData=$Data;
+  $doctor=DB::table('labs')
+     ->where('governorate', '=', 'alex')
+     ->where('area', '=', $VarData)
+     ->get();
+
+  $CountHospital=count($doctor);
+  if($CountHospital == 0)
+         {
+           return view('NotFoundData');
+         }
+       else
+       {
+          
+          return view('SearchLabs',compact('doctor','VarData','CountHospital'));
+       }
+
+}
 
 
 }
