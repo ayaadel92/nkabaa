@@ -8,7 +8,7 @@
 				بيانات المهندس
 			</header>
 			<div class="panel-body">
-				<img src= "{{ $relative->path }}">
+				<img src= "{{ $relative->path }}" width="100px" height="100px">
 				<ul>
 					<li>
 						الاسم: {{ $relative->name }}

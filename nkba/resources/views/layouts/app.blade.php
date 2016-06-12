@@ -124,8 +124,15 @@
                             <a class="fa-gears " href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a>
                             @endif
                             @if(Auth::user()->role === "معمل" || Auth::user()->role === "مستشفي")
-                            <a class="fa-gears " href="{{ url('/create') }}">المعمل</a>
+                            <a class="fa-gears " href="{{ url('/create') }}">التحويلات</a>
                             @endif
+
+
+
+                            @if(Auth::user()->role === "موظف" )
+                            <a class="fa-gears " href="{{ url('/employee-transfer') }}">موظف</a>
+                            @endif
+
                             @endif
 
                         </li>

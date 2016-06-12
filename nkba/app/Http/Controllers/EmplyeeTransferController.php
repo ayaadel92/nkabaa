@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use App\Transfer;
@@ -13,7 +14,12 @@ use DateTime;
 
 class EmplyeeTransferController extends Controller
 {
-
+    public function __construct() {
+        $this->middleware('auth');
+        if(Auth::user()->role != "موظف" ){
+            return redirect("/");
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -148,10 +154,10 @@ class EmplyeeTransferController extends Controller
     }
     public function decreaseLimit($id)
     {
-       $transfer_obj = DB::table('transfers')->where('id',$id)->get();
-       $transfer = response()->json($transfer_obj)->getData()[0];
-       if($transfer->patient_type==="مهندس")
-       {
+     $transfer_obj = DB::table('transfers')->where('id',$id)->get();
+     $transfer = response()->json($transfer_obj)->getData()[0];
+     if($transfer->patient_type==="مهندس")
+     {
         $limit=$enginer->limit_id;
         }//end of patient is engineer 
         else

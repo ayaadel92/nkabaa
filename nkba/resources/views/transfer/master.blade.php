@@ -28,7 +28,7 @@
 <body>
 
 <nav class="navbar navbar-default " role="navigation">
-<ul class="nav pull-right ">
+<ul class="nav pull-right">
             <!-- task notificatoin start -->
             <li id="task_notificatoin_bar" class="dropdown ">
                 <a data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-bell col" href="#">
@@ -46,7 +46,9 @@
                 </ul>
             </li>
             <!-- task notificatoin end -->
-        </ul>
+        </ul><ul class="nav pull-left ">
+                      <li ><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>خروج</a></li></ul>
+
 </nav>
 
 @yield('content')

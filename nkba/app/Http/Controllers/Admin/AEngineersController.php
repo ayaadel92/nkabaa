@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Auth;
 class AEngineersController extends Controller
 {
     public function __construct() {
-         if (!Session::has('id')) {
-            return redirect("/admin/login");
-        }
+       if (!Session::has('id')) {
+        return redirect("/admin/login");
     }
+}
     /**
      * Display a listing of the resource.
      *
@@ -58,25 +58,34 @@ class AEngineersController extends Controller
         // $validation = Validator::make($input, Engineer::$rules);
         // if ($validation->passes())
         // {
-            //add engineer in engineers table
-            $engineer = new Engineer;
-            $engineer->user_id = $user->id;
-            $engineer->name = $input['name'];
-            $engineer->email = $input['email'];
-            $engineer->national_id = $input['national_id'];
-            $engineer->address = $input['address'];
-            $engineer->phone_number = $input['phone_number'];
-            $engineer->birth_date = $input['birth_date'];
-            $engineer->gradu_year = $input['gradu_year'];
-            $engineer->relative_num = $input['relative_num'];
-            $engineer->gender = $input['gender'];
-            $engineer->eng_id = $input['eng_id'];
-            $engineer->health_id = $input['health_id'];
-            $engineer->credit_number = $input['credit_number'];
-            $engineer->path = $input['path'];
-            $engineer->save();
-            
-            return Redirect::route('admin-engineer.index');
+      //add engineer in engineers table
+        $destinatonPath = '';
+        $photoname = '';
+        if(Input::file('path')){
+            $photo = Input::file('path');
+            $destinationPath = '/assets/images/';
+            $extension = Input::file('path')->getClientOriginalExtension();
+            $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
+            $photo->move($destinationPath,$photoname);
+        }
+        $engineer = new Engineer;
+        $engineer->user_id = $user->id;
+        $engineer->name = $input['name'];
+        $engineer->email = $input['email'];
+        $engineer->national_id = $input['national_id'];
+        $engineer->address = $input['address'];
+        $engineer->phone_number = $input['phone_number'];
+        $engineer->birth_date = $input['birth_date'];
+        $engineer->gradu_year = $input['gradu_year'];
+        $engineer->relative_num = $input['relative_num'];
+        $engineer->gender = $input['gender'];
+        $engineer->eng_id = $input['eng_id'];
+        $engineer->health_id = $input['health_id'];
+        $engineer->credit_number = $input['credit_number'];
+        $engineer->path = $destinationPath.$photoname;
+        $engineer->save();
+
+        return Redirect::route('admin-engineer.index');
         // } 
 
         // return Redirect::route('admin-engineer.create')
