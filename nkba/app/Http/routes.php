@@ -19,34 +19,32 @@ use Illuminate\Http\Request;
   |
  */
 
+
+ 
+  
+//Evaluation Route
   Route::get('/','EvaluateController@GetEvaluate');
-  // Route::get('/{id}','EvaluateController@');
+ 
+ //Search Routes
   Route::get('/SearchDoctor/{Data}','EvaluateController@SelectDoctors');
   
   Route::get('/DoctorSpecial/{Data}','EvaluateController@SelectDoctorsSpecial');
   
   Route::get('/DoctorName/{Data}','EvaluateController@SelectDoctorsName');
 
-// Route::get('/SearchDoctor','EvaluateController@InsertRate');
+  Route::get('/SearchHospital/{Data}','EvaluateController@SelectHospitalByGover');
   
-//   Route::get('/DoctorSpecial','EvaluateController@InsertRate');
-  
-//   Route::get('/DoctorName','EvaluateController@InsertRate');
-  
- // Route::get('/SearchDoctor/{Data}',function()
- //  {
+  Route::get('/SearchLab/{Data}','EvaluateController@SelectLabByArea');
 
- //  $VarData=Input::get('Data');
- //      print($VarData);
+   
 
- //  });
 
   Route::auth();
 
   Route::resource('/home', 'HomeController');
 
   Route::resource('/engineer', 'EngineerController');
-//Route::put('/home/id', 'HomeController@update');
+
 
   Route::resource('/users', 'UserController');
 
@@ -59,7 +57,7 @@ use Illuminate\Http\Request;
 
   Route::resource('/complain', 'ComplaintssController');
 
-
+ 
 //transfer routes
   Route::resource('transfer','TransferController');
   Route::resource('/create','TransferController@create');

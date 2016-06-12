@@ -17,6 +17,7 @@
             <div class="panel panel-default">
                
                 <center>
+                    <div><h5>Noties for First Registration : If You Are Engineer The Message send to Your Mail (Check You Mail After Regist), If You Are Not Engineer Or Rlative You Can't Get Messaage On Mail And You Can't Login </h5></div>
                 <div class="panel-heading"><h3>Login</h3></div>
                 <div class="panel-body">
                    <div class="jumbotron"> 
