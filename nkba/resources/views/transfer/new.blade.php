@@ -85,7 +85,7 @@
 </tr> 
 
 <tr>      
-  <td>{{Form::label(' اسم المعمل',' اسم المعمل',array('class' => 'style' ))}}</td>
+  <td>{{Form::label(' اسم المعمل',' اسم المعمل',array('class' => 'style','style'=>'font-size:30px' ))}}</td>
   <td><span class="input-group-addon  col-sm-1"><i class="glyphicon glyphicon-pencil"></i></span>
     {{ Form::text('lab_name', null, ['class'=>'form-control col-sm-8']) }}
   </td>

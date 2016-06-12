@@ -152,6 +152,7 @@ return [
         Jleon\LaravelPnotify\NotifyServiceProvider::class,
 
 
+
         /*
          * Application Service Providers...
          */

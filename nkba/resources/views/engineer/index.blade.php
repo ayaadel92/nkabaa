@@ -6,7 +6,7 @@
 <div class="col-md-9">
  <div style="height: 100px"></div> 
     <div style="margin-right: 0px" >
-        <h3 style="color: #3D7A33 ;alignment-adjust: left">المعلومات الشخصيه بالمهندس</h3>
+        <h3 style="color: #3D7A33 ;alignment-adjust: left">المعلومات الشخصيه</h3>
         <div style="height: 100px"></div> 
     </div>
 
@@ -181,7 +181,7 @@
 <div class="col-md-9">
   <div style="height: 100px"></div> 
     <div style="margin-right: 0px" >
-        <h3 style="color: #3D7A33 ;alignment-adjust: left">المعلومات الشخصيه بالقريب</h3>
+        <h3 style="color: #3D7A33 ;alignment-adjust: left">المعلومات الشخصيه </h3>
         <div style="height: 100px"></div> 
     </div>
 

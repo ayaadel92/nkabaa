@@ -33,7 +33,7 @@
 
             <!-- Task Name -->
             <div class="form-group animate swing">
-                <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> مسمي معادك:</p>  </label>  
+                <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> ميعادك:</p>  </label>  
                 <div class="col-md-8 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>

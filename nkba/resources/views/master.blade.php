@@ -9,7 +9,7 @@
                             <ul class="list-group sidebar-nav" id="sidebar-nav">
                                 <!-- Typography -->
                                 <li class="list-group-item list-toggle " style="color: #3D7A33"> 
-                                    <a class="accordion-toggle  active"  href="{{ url('/engineer') }}/{{ Auth::user()->id }}">المعلومات الشخيصه</a>
+                                    <a class="accordion-toggle  active"  href="{{ url('/engineer') }}/{{ Auth::user()->id }}">المعلومات الشخصيه</a>
                                 
                                 </li>
                                 <!-- End Typography -->

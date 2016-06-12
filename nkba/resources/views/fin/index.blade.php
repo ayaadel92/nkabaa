@@ -4,8 +4,8 @@
 
 <div style="height: 100px"></div> 
     <div style="margin-right: 0px" >
-        <h3 style="color: #3D7A33 ;alignment-adjust: left">كشف الحساب الخاص بيك </h3>
-         <h5 style="color: #3D7A33 ;alignment-adjust: left">نقدم لك خدمتنا فقط لاسعادك </h5>
+        <h3 style="color: #3D7A33 ;alignment-adjust: left">كشف الحساب الخاص بك </h3>
+         <h5 style="color: #3D7A33 ;alignment-adjust: left">نقدم لك خدمتنا فقط لإسعادك </h5>
         <div style="height: 100px"></div> 
     </div>
         <div class="container content" >
@@ -59,7 +59,7 @@
                                                 <!-- //.bar -->
                                             </div>
                                             <!-- //.item -->
-                                            <p style="color:#B32B2B ; font-size: 25px"> التمبقي من العمليات :{{$limit['0']->surgery_credit}}</p>
+                                            <p style="color:#B32B2B ; font-size: 25px"> المتبقي من العمليات :{{$limit['0']->surgery_credit}}</p>
                                             <div class="item animate swing">
                                                 <div class="bar">
                                                     <span class="percent">{{($limit['0']->surgery_credit/5000)*100}}%</span>
@@ -72,7 +72,7 @@
                                                 <!-- //.bar -->
                                             </div>
                                             <!-- //.item -->
-                                            <p style="color:#B32B2B ; font-size: 25px"> المتبقي من التحليل و الأشعة:{{$limit['0']->analysis_credit}}</p>
+                                            <p style="color:#B32B2B ; font-size: 25px"> المتبقي من التحاليل و الأشعة:{{$limit['0']->analysis_credit}}</p>
                                             <div class="item  animate swing">
                                                 <div class="bar">
                                                     <span class="percent">{{($limit['0']->analysis_credit/1000)*100}}%</span>
@@ -115,7 +115,7 @@
     <thead>
       <tr>
           <th style="color:#3D7A33 ; font-size: 25px">نوع التحويله </th>
-          <th style="color:#3D7A33; font-size: 25px" >التأريخ  </th>
+          <th style="color:#3D7A33; font-size: 25px" >التاريخ  </th>
           <th style="color:#3D7A33; font-size: 25px"> سعر التكلفة </th>
           <th style="color:#3D7A33; font-size: 25px"> التشخيص </th>
           <th style="color:#3D7A33; font-size: 25px"> اسم الدكتور </th>

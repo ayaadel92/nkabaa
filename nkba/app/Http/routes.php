@@ -1,10 +1,12 @@
 <?php
+
 use App\Analysisradios;
 use App\Transfer;
 use Illuminate\Support\Facades\Input;
 use App\Events\TransferEvent;
-
-
+//use Carbon;
+//use DateTime;
+//use DB;
 // use Illuminate\Http\Request;
 
 /*
@@ -18,120 +20,157 @@ use App\Events\TransferEvent;
   |
  */
 
-  // Route::get('/', function () {
- //   // Notify::success('مرحبا','تسجيل الدخول');
- //   $user=DB::select('select d.id,d.name,d.degree,d.specialization,d.phone,d.area,d.path,e.rate from doctors d,evaluate_doctors e where e.doctor_id=d.id and e.rate>=6');
- //   $cou=count($user);
-        // $areas=DB::select('select area from doctors group by area');
-        //  $area=response()->json($areas)->getData();
-        // return $area;
- //    return view('welcome')->with(print_r($user),$cou);
-  // $specializations=DB::select('select specialization from doctors group by specialization');
-  //  return $specializations;
- //   // return view('welcome');
-   
- // });
-  Route::get('/','EvaluateController@GetEvaluate');
-  // Route::get('/{id}','EvaluateController@');
-  Route::get('/SearchDoctor/{Data}','EvaluateController@SelectDoctors');
-  
-  Route::get('/DoctorSpecial/{Data}','EvaluateController@SelectDoctorsSpecial');
-  
-  Route::get('/DoctorName/{Data}','EvaluateController@SelectDoctorsName');
+// Route::get('/', function () {
+//   // Notify::success('مرحبا','تسجيل الدخول');
+//   $user=DB::select('select d.id,d.name,d.degree,d.specialization,d.phone,d.area,d.path,e.rate from doctors d,evaluate_doctors e where e.doctor_id=d.id and e.rate>=6');
+//   $cou=count($user);
+// $areas=DB::select('select area from doctors group by area');
+//  $area=response()->json($areas)->getData();
+// return $area;
+//    return view('welcome')->with(print_r($user),$cou);
+// $specializations=DB::select('select specialization from doctors group by specialization');
+//  return $specializations;
+//   // return view('welcome');
+// });
+Route::get('/', 'EvaluateController@GetEvaluate');
+// Route::get('/{id}','EvaluateController@');
+Route::get('/SearchDoctor/{Data}', 'EvaluateController@SelectDoctors');
+
+Route::get('/DoctorSpecial/{Data}', 'EvaluateController@SelectDoctorsSpecial');
+
+Route::get('/DoctorName/{Data}', 'EvaluateController@SelectDoctorsName');
 
 // Route::get('/SearchDoctor','EvaluateController@InsertRate');
-  
 //   Route::get('/DoctorSpecial','EvaluateController@InsertRate');
-  
 //   Route::get('/DoctorName','EvaluateController@InsertRate');
-  
- // Route::get('/SearchDoctor/{Data}',function()
- //  {
+// Route::get('/SearchDoctor/{Data}',function()
+//  {
+//  $VarData=Input::get('Data');
+//      print($VarData);
+//  });
 
- //  $VarData=Input::get('Data');
- //      print($VarData);
+Route::auth();
 
- //  });
+Route::resource('/home', 'HomeController');
 
-  Route::auth();
-
-  Route::resource('/home', 'HomeController');
-
-  Route::resource('/engineer', 'EngineerController');
+Route::resource('/engineer', 'EngineerController');
 //Route::put('/home/id', 'HomeController@update');
 
-  Route::resource('/users', 'UserController');
+Route::resource('/users', 'UserController');
 
-  Route::resource('/fin', 'FainancesController');
-   Route::resource('/rin', 'RenewsController');
+Route::resource('/fin', 'FainancesController');
+Route::resource('/rin', 'RenewsController');
 
-  Route::resource('/member', 'MembersController');
+Route::resource('/member', 'MembersController');
 
-  Route::resource('/task', 'TasksController');
+Route::resource('/task', 'TasksController');
 
-  Route::resource('/complain', 'ComplaintssController');
+Route::resource('/complain', 'ComplaintssController');
 
 
 //transfer routes
-Route::resource('transfer','TransferController');
-Route::resource('/create','TransferController@create');
-Route::get('/transfer-confirm/{id}','TransferController@confirm');
+Route::resource('transfer', 'TransferController');
+Route::resource('/create', 'TransferController@create');
+Route::get('/transfer-confirm/{id}', 'TransferController@confirm');
 //get analaysis and radiobologies
-Route::get('api/dropdown', function(){
-  
-   $input = Input::get('option');
-   if($input==1)
-      {
-           $radios = Analysisradios::findradios();
-           return Response::json($radios->get(['id','name']));
-      }
-    elseif ($input==2) 
-      {
-           $analysis = Analysisradios::findanalysis();
-           return Response::json($analysis->get(['id','name']));
-      }
+Route::get('api/dropdown', function() {
+
+    $input = Input::get('option');
+    if ($input == 1) {
+        $radios = Analysisradios::findradios();
+        return Response::json($radios->get(['id', 'name']));
+    } elseif ($input == 2) {
+        $analysis = Analysisradios::findanalysis();
+        return Response::json($analysis->get(['id', 'name']));
+    }
 });
 
 //acceptance transfer
-Route::get('ajax-response/{updated}',function($updated){
+Route::get('ajax-response/{updated}', function($updated) {
     if (Request::ajax()) {
-        $where = ['done'=>'نعم', 'confirm' =>'لا'];
-      if (Transfer::where($where)->count() > 0) {
-        $last_updated = Transfer::orderBy('updated_at','desc')->first();
-        if($last_updated->created_at !=$last_updated->updated_at){
-        if ($last_updated!== $updated) {
-          $transfers = Transfer::where([['updated_at','>',$updated],[$where]])->get();
-          return response()->json($transfers);
+        $where = ['done' => 'نعم', 'confirm' => 'لا'];
+        if (Transfer::where($where)->count() > 0) {
+            $last_updated = Transfer::orderBy('updated_at', 'desc')->first();
+            if ($last_updated->created_at != $last_updated->updated_at) {
+                if ($last_updated !== $updated) {
+                    $transfers = Transfer::where([['updated_at', '>', $updated], [$where]])->get();
+                    return response()->json($transfers);
+                }
+            }
         }
-        }
-      }
     }
-  });
+});
 
 
 //Admin routes
-  Route::resource('admin','AdminController');
-  Route::resource('admin-user','Admin\AUsersController');
-  Route::resource('admin-engineer','Admin\AEngineersController');
-  Route::resource('admin-limit','Admin\ALimitsController');
-  Route::resource('admin-relative','Admin\ARelativesController');
-  Route::resource('admin-doctor','Admin\ADoctorsController');
-  Route::resource('admin-hospital','Admin\AHospitalsController');
-  Route::resource('admin-lab','Admin\ALabsController');
-  Route::resource('admin-transfer','Admin\ATransfersController');
+Route::resource('admin', 'AdminController');
+Route::resource('admin-user', 'Admin\AUsersController');
+Route::resource('admin-engineer', 'Admin\AEngineersController');
+Route::resource('admin-limit', 'Admin\ALimitsController');
+Route::resource('admin-relative', 'Admin\ARelativesController');
+Route::resource('admin-doctor', 'Admin\ADoctorsController');
+Route::resource('admin-hospital', 'Admin\AHospitalsController');
+Route::resource('admin-lab', 'Admin\ALabsController');
+Route::resource('admin-transfer', 'Admin\ATransfersController');
 
 //Employee
-  Route::resource('employee-transfer','EmplyeeTransferController');
+Route::resource('employee-transfer', 'EmplyeeTransferController');
 // Route::get('ajax/{created}','EmplyeeTransferController@ajax');
-  Route::get('ajax/{created}',function($created){
+Route::get('ajax/{created}', function($created) {
     if (Request::ajax()) {
-      if (Transfer::where('done','لا')->count() > 0) {
-        $last_created = Transfer::orderBy('created_at','desc')->first();
-        if ($last_created !== $created) {
-          $transfers = Transfer::where([['created_at','>',$created],['done','=','لا']])->get();
-          return response()->json($transfers);
+        if (Transfer::where('done', 'لا')->count() > 0) {
+            $last_created = Transfer::orderBy('created_at', 'desc')->first();
+            if ($last_created !== $created) {
+                $transfers = Transfer::where([['created_at', '>', $created], ['done', '=', 'لا']])->get();
+                return response()->json($transfers);
+            }
         }
-        
-      }
     }
-  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Route::get('ajax-sendMail', function() {
+//    if (Request::ajax()) {
+//
+//        // 23d 3dd el users elly 3ndy 
+//        $count = DB::table('users')
+//                ->count();
+//        $tasks = DB::table('tasks')
+//                ->get();
+//
+//        for ($i = 0; $i <= $count; $i++) {
+//        $dataa=Carbon::now()->diff(new DateTime($tasks[$i]->date));
+//        
+//        if ($dataa=='0') {
+//           
+//                    return $tasks[$i]->name;
+//                }
+//            
+//           }
+//        }
+//    
+//});
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -69,7 +69,7 @@
         @if (count($memb) > 0)
             <div class="panel panel-default" style="background-color: rgb(227, 247, 201)">
                 <div class="panel-heading">
-                   القارب التي تم التسجيل لهم
+                   الاقارب الذين تم التسجيل لهم 
                 </div>
 
                 <div class="panel-body" >
