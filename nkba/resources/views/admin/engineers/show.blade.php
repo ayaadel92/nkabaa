@@ -9,7 +9,7 @@
 			</header>
 			<div class="panel-body">
 				<!-- 'files' => true to accept uploading photos -->
-				<img src= "{{ $engineer->path }}">
+				<img src= "{{ $engineer->path }}" width="100px" height="100px">
 				<div class="table-resposive">
 					<table class="table table-bordered">
 

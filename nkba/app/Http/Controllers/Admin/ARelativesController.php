@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
+use Session;
 use App\User;
 use App\Relative;
 use App\Http\Requests;
@@ -18,9 +19,8 @@ use Illuminate\Support\Facades\Auth;
 class ARelativesController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth');
-        if (!Auth::user() || Auth::user()->role != "ادمن") {
-            return redirect("/");
+        if (!Session::has('id')) {
+            return redirect("/admin/login");
         }
     }
     /**
@@ -57,23 +57,31 @@ class ARelativesController extends Controller
         // $validation = Validator::make($input, Relative::$rules);
         // if ($validation->passes())
         // {
-            // `id`, `status`, `name`, `health_id`, `eng_id`, `birth_date`, `gender`, `relation_type`, `national_id`, `path`, `limit_id`, `user_id`
+        $destinatonPath = '';
+        $photoname = '';
+        if(Input::file('path')){
+            $photo = Input::file('path');
+            $destinationPath = '/assets/images/';
+            $extension = Input::file('path')->getClientOriginalExtension();
+            $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
+            $photo->move($destinationPath,$photoname);
+        }
             //add relative in relatives table
-            $relative = new Relative;
-            $relative->status = $input['status'];
-            $relative->name = $input['name'];
-            $relative->health_id = $input['health_id'];
-            $relative->eng_id = $input['eng_id'];
-            $relative->birth_date = $input['birth_date'];
-            $relative->gender = $input['gender'];
-            $relative->relation_type = $input['relation_type'];
-            $relative->national_id = $input['national_id'];
-            $relative->path = $input['path'];
-            $relative->limit_id = $input['limit_id'];
-            $relative->user_id = $user->id;
-            $relative->save();
-            
-            return Redirect::route('admin-relative.index');
+        $relative = new Relative;
+        $relative->status = $input['status'];
+        $relative->name = $input['name'];
+        $relative->health_id = $input['health_id'];
+        $relative->eng_id = $input['eng_id'];
+        $relative->birth_date = $input['birth_date'];
+        $relative->gender = $input['gender'];
+        $relative->relation_type = $input['relation_type'];
+        $relative->national_id = $input['national_id'];
+        $relative->path = $destinationPath.$photoname;  
+        $relative->limit_id = $input['limit_id'];
+        $relative->user_id = $user->id;
+        $relative->save();
+
+        return Redirect::route('admin-relative.index');
         // } 
 
         // return Redirect::route('admin-relative.create')
@@ -103,9 +111,9 @@ class ARelativesController extends Controller
      */
     public function edit($id)
     {
-       $relative = Relative::find($id);
-       return View('admin.relatives.edit',compact('relative'));
-   }
+     $relative = Relative::find($id);
+     return View('admin.relatives.edit',compact('relative'));
+ }
 
     /**
      * Update the specified resource in storage.
@@ -116,18 +124,18 @@ class ARelativesController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $relative = Relative::findOrFail($id);
+     $relative = Relative::findOrFail($id);
        // $validation=$this->validate($request, [
        //  'name' => 'required',
        //  'email' => 'required'
        //  ]);
-       $input = $request->all();
-       $relative->fill($input)->save();
-       return Redirect::route('admin-relative.show',$relative->id);
+     $input = $request->all();
+     $relative->fill($input)->save();
+     return Redirect::route('admin-relative.show',$relative->id);
        // ->withInput()
        // ->withErrors($validation)
        // ->with('message', 'There were validation errors.');
-   }
+ }
 
     /**
      * Remove the specified resource from storage.
@@ -137,8 +145,8 @@ class ARelativesController extends Controller
      */
     public function destroy($id)
     {
-       $relative = Relative::findOrFail($id);
-       $relative->delete();
-       return Redirect::route('admin-relative.index');
-   }
+     $relative = Relative::findOrFail($id);
+     $relative->delete();
+     return Redirect::route('admin-relative.index');
+ }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
+use Session;
 use App\User;
 use App\Limit;
 
@@ -18,9 +19,8 @@ use Illuminate\Support\Facades\Auth;
 class ALimitsController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth');
-        if (!Auth::user() || Auth::user()->role != "ادمن") {
-            return redirect("/");
+        if (!Session::has('id')) {
+            return redirect("/admin/login");
         }
     }
     /**
