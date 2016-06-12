@@ -28,17 +28,17 @@
                                 <div class="col-md-4 text-center">
                                   <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
                                   <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">خدمات التحويلات </h2>
-                                  <p class="animate fadeIn"> لان اصبح من الهل دون ضايع وقتك في الذهاب الي النقابه لاخذ التحويله العلاجيه دون مشقه</p>
+                                  <p class="animate fadeIn">بدلا من  ضياع وقتك في الذهاب الي النقابه لعمل التحويلات العلاجيه الآن اصبح من السهل عليك عملها دون الحاجة الى ذلك</p>
                                 </div>
                                 <div class="col-md-4 text-center">
                                   <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
-                                  <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">اقرب دكتور اليك</h2>
-                                  <p class="animate fadeIn"> اوجد اقرب دكتور اليك علي حسب موقعك الخغرافي</p>
+                                  <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">اقرب دكتور إليك</h2>
+                                  <p class="animate fadeIn"> أقرب دكتور إليك بحسب موقعك الجغرافى</p>
                                 </div>
                                 <div class="col-md-4 text-center">
                                   <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
                                   <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">كشف الحساب </h2>
-                                  <p class="animate fadeIn">اصبح من السهل معرفك حسابات التامين الصحي الخاص بيك و البيانات الكامله الخاصه بيك </p>
+                                  <p class="animate fadeIn">يمكنك معرفة حساب التأمين الصحي الخاص بك و البيانات الكلية الخاصه بك </p>
                                 </div>
                         <!-- End Icons -->
                       </div>
@@ -48,17 +48,17 @@
                         <div class="col-md-4 text-center">
                           <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
                           <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">ملفك الشخصي </h2>
-                          <p class="animate fadeIn">اصبح من السهل معرفه معلومات الشخصيه محدثه من النقابه بستمرار </p>
+                          <p class="animate fadeIn">يمكنك معرفة معلوماتك الشخصيه أول بأول</p>
                         </div>
                         <div class="col-md-4 text-center">
                           <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
                           <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">مواعيدك الشخصيه</h2>
-                          <p class="animate fadeIn">لان مواعيد الشخصيه تهمنا باضافه ان مواعيد ادويتك و جوزاتك مهمه بنسبه لنا </p>
+                          <p class="animate fadeIn">لأن  رأيك يهمنا اصبح من حقك أن تبدي برأيك  في اي وقت و سوف نهتم بها </p>
                         </div>
                         <div class="col-md-4 text-center">
                           <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
                           <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">الشكاوي</h2>
-                          <p class="animate fadeIn">لان ريك ما يدعمنا اصبح من حقك ان تبدي برايك او شكاوتك في اي وقت و سوف نهتم بيها </p>
+                          <p class="animate fadeIn">لأن  رأيك يهمنا اصبح من حقك أن تبدي برأيك  في اي وقت و سوف نهتم بها </p>
                         </div>
               <!-- End Icons -->
             </div>
@@ -66,13 +66,14 @@
                         <!-- Icons -->
                                     <div class="col-md-4 text-center">
                                       <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
-                                      <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">التجديد الاشتراك </h2>
-                                      <p class="animate fadeIn"> اصبح من حقك ان توفر وقتك و تجديد الاشتركات الخاصه بيك سواء الاشتراك السنوي او الاشتراك في التامين عن طريق التليفون</p>
+                                      <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">تجديد الاشتراك </h2>
+                                      <p class="animate fadeIn"> الآن يمكنك تجديد إشتراكاتك سواء الإشتراك السنوي او الإشتراك في التأمين عن طريق خدمة موبى كاش</p>
                                     </div>
                                     <div class="col-md-4 text-center">
                                       <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
-                                      <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">الاشتراك التامين</h2>
-                                      <p class="animate fadeIn">لان اصبح من حقك الاشتراك لك ولاسرتك سواء ولادتك او ولادك او لزوجتك او لابنك عن طريق الانترنت </p>
+                			<h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">الإشتراك التأمينى</h2>
+               			      <p class="animate fadeIn">الآن اصبح من حقك الإشتراك لك ولاسرتك  عن طريق الموقع الخاص بنا </p>
+
                                     </div>
 
                         <!-- End Icons -->
@@ -291,7 +292,7 @@
               <div class="row padding-top-40">
                 <ul class="portfolio-group">
                   <!-- Portfolio Item -->
-                  <center><h1 style="color: #3D7A33">المستشفيات الاعلي تقيما</h1></center>
+                  <center><h1 style="color: #3D7A33">المستشفيات الاعلي تقييما</h1></center>
                   @if($hospitals)
                   <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
                     <a href="#">
@@ -300,7 +301,7 @@
                         <figcaption>
                           <center> <h1>{{$hospitals['0']->name}}</h1></center>
                           <center><span style="font-size: 25px ;color: #555555">{{$hospitals['0']->discription}}</span></center>
-                          <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$hospitals['0']->rate}}</span></center>
+                          <center><span style="color:#3D7A33 ;font-size: 20px">تقييم:{{$hospitals['0']->rate}}</span></center>
                         </figcaption>
                       </figure>
                     </a>
@@ -314,7 +315,7 @@
                         <figcaption>
                           <center> <h1>{{$hospitals['1']->name}}</h1></center>
                           <center><span style="font-size: 25px ;color: #555555">{{$hospitals['1']->discription}}</span></center>
-                          <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$hospitals['1']->rate}}</span></center>
+                          <center><span style="color:#3D7A33 ;font-size: 20px">تقييم:{{$hospitals['1']->rate}}</span></center>
                         </figcaption>
                       </figure>
                     </a>
@@ -328,7 +329,7 @@
                         <figcaption>
                           <center> <h1>{{$hospitals['2']->name}}</h1></center>
                           <center><span style="font-size: 25px ;color: #555555">{{$hospitals['2']->discription}}</span></center>
-                          <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$hospitals['2']->rate}}</span></center>
+                          <center><span style="color:#3D7A33 ;font-size: 20px">تقييم:{{$hospitals['2']->rate}}</span></center>
                         </figcaption>
                       </a>
                     </li>
@@ -348,7 +349,7 @@
               <div class="row padding-top-40">
                 <ul class="portfolio-group">
                   <!-- Portfolio Item -->
-                  <center><h1 style="color: #3D7A33"> الدكتور اعلي تقيما</h1></center>
+                  <center><h1 style="color: #3D7A33"> الدكتور اعلي تقييما</h1></center>
                   @if($users)
                   <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
                     <a href="#">
@@ -357,7 +358,7 @@
                       <figcaption>
                         <center> <h1>{{$users['0']->name}}</h1></center>
                         <center><span style="font-size: 25px ;color: #555555">{{$users['0']->discription}}</span></center>
-                        <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$users['0']->rate}}</span></center>
+                        <center><span style="color:#3D7A33 ;font-size: 20px">تقييم:{{$users['0']->rate}}</span></center>
                       </figcaption>
                     </a>
                   </li>
@@ -370,7 +371,7 @@
                         <figcaption>
                           <center> <h1>{{$users['1']->name}}</h1></center>
                           <center><span style="font-size: 25px ;color: #555555">{{$users['1']->discription}}</span></center>
-                          <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$users['1']->rate}}</span></center>
+                          <center><span style="color:#3D7A33 ;font-size: 20px">تقييم:{{$users['1']->rate}}</span></center>
                         </figcaption>
                       </a>
                     </li>
@@ -383,7 +384,7 @@
                         <figcaption>
                           <center> <h1>{{$users['2']->name}}</h1></center>
                           <center><span style="font-size: 25px ;color: #555555">{{$users['2']->discription}}</span></center>
-                          <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$users['2']->rate}}</span></center>
+                          <center><span style="color:#3D7A33 ;font-size: 20px">تقييم:{{$users['2']->rate}}</span></center>
                         </figcaption>
                       </a>
                     </li>
@@ -405,7 +406,7 @@
               <div class="row padding-top-40">
                 <ul class="portfolio-group">
                   <!-- Portfolio Item -->
-                  <center><h1 style="color: #3D7A33"> المعامل الاعلي تقيما </h1></center>
+                  <center><h1 style="color: #3D7A33"> المعامل الاعلي تقييما </h1></center>
                   @if($labs)
                   <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
                     <a href="#">
@@ -414,7 +415,7 @@
                       <figcaption>
                         <center> <h1>{{$labs['0']->name}}</h1></center>
                         <center><span style="font-size: 25px ;color: #555555">{{$labs['0']->discription}}</span></center>
-                        <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['0']->rate}}</span></center>
+                        <center><span style="color:#3D7A33 ;font-size: 20px">تقييم:{{$labs['0']->rate}}</span></center>
                       </figcaption>
                     </a>
                   </li>
@@ -427,7 +428,7 @@
                       <figcaption>
                         <center> <h1>{{$labs['1']->name}}</h1></center>
                         <center><span style="font-size: 25px ;color: #555555">{{$labs['1']->discription}}</span></center>
-                        <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['1']->rate}}</span></center>
+                        <center><span style="color:#3D7A33 ;font-size: 20px">تقييم:{{$labs['1']->rate}}</span></center>
                       </figcaption>
                     </a>
                   </li>
@@ -440,7 +441,7 @@
                         <figcaption>
                           <center> <h1>{{$labs['2']->name}}</h1></center>
                           <center><span style="font-size: 25px ;color: #555555">{{$labs['2']->discription}}</span></center>
-                          <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['2']->rate}}</span></center>
+                          <center><span style="color:#3D7A33 ;font-size: 20px">تقييم:{{$labs['2']->rate}}</span></center>
                         </figcaption>
                       </a>
                     </li>
