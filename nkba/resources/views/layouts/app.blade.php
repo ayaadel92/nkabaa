@@ -126,6 +126,13 @@
                             @if(Auth::user()->role === "معمل" || Auth::user()->role === "مستشفي")
                             <a class="fa-gears " href="{{ url('/create') }}">المعمل</a>
                             @endif
+
+
+
+                            @if(Auth::user()->role === "موظف" )
+                            <a class="fa-gears " href="{{ url('/employee-transfer') }}">موظف</a>
+                            @endif
+
                             @endif
 
                         </li>

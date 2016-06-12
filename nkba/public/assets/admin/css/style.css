@@ -287,6 +287,9 @@ ul.sidebar-menu {
 #sidebar > ul > li.active > ul.sub, #sidebar > ul > li > ul.sub > li > a {
     display: block;
 }
+#sidebar > ul > li.active > ul.sub, #sidebar > ul > li > ul.sub > li {
+    background-color: #8E6C48;
+}
 
 ul.sidebar-menu li ul.sub li{
     background: #394a59;
