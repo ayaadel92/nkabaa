@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+        if (!Auth::user() || Auth::user()->role != "ادمن") {
+            return redirect("/");
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -84,5 +92,19 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function login(Request $request)
+    {
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $admin_count= DB::table('admins')
+        ->where([['email',$email],['password',$password]])->count();
+        if($admin_count > 0){
+            return view('admin.layout.master');
+        }
+        else{
+            return view('admin.admin');
+        }
     }
 }

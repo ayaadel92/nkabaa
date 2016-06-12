@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Redirect;
 
 class ADoctorsController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+        if (!Auth::user() || Auth::user()->role != "ادمن") {
+            return redirect("/");
+        }
+    }
     /**
      * Display a listing of the resource.
      *

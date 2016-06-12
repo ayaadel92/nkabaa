@@ -38,11 +38,10 @@
     @include('admin.include.header')
     @include('admin.include.sidemenu')
       <!--main content start-->
-      <section id="main-content">
+      
           <section class="wrapper">
             @yield('content')
           </section>
-      </section>
       <!--main content end-->
   </section>
   <!-- container section end -->

@@ -11,11 +11,9 @@
                     Your Application's Landing Page.
                 </div>
                 {{-- first mail --}}
-                <h2>Nekaba Project!</h2>
+                
 
-                <div>
-                   شكوي النقابه 
-                </div>
+               
                 {{--  end mail--}}
             </div>
         </div>

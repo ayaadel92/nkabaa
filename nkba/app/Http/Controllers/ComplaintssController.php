@@ -46,6 +46,9 @@ class ComplaintssController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+//    $name = Input::get("Auth::user()->id");
+//
+//        print_r($name);exit();
         $complain = new Complaint;
         $complain->hospital_name = Request::get('name_hosptail');
         $complain->doctor_name = Request::get('name_doctor');
@@ -74,18 +77,12 @@ class ComplaintssController extends Controller {
         $data = array('k1' => "$filename", 'k2' => "$mail",'k3' => "$des");
         Mail::send('emails.complain',$data,function($message) use ($data)
         {
-            $MailBody = "الصوره الشكاوي".$data['k1']."المشكله".$data['k3'];  
+          $MailBody ="<p style='color:#3D7A33;font-size:30px'>". "الصوره الشكاوي"."</p>"."<br> ".$data['k1']."<br>"."<p style='color:#3D7A33;font-size:30px'>"."المشكله"."</p>"."<br>".$data['k3'];  
             $message->setBody($MailBody, 'text/html');
             $message->from( $data['k2']);
             $message->to('nkabaalex@gmail.com','Admin')->subject('شكوي  ');
         });     
-        
-        
-        
-        
-        
-        
-        
+     
         return redirect("/complain/$id");
     }
 
@@ -97,9 +94,15 @@ class ComplaintssController extends Controller {
      */
     public function show($id) {
         //
-        $tasks = "hello";
+      
+    if(Auth::user()->id == $id ){
 
-        return view('complain.index', compact('tasks'));
+          return view('complain.index', compact('tasks'));
+        }
+        else{
+            return redirect("/");
+        }
+       
     }
 
     /**

@@ -6,11 +6,12 @@
     <img src="/assets/images/logo_admin.png" width="100px" height="60 px" alt="">
 
     <!--logo end-->
-
     <div class="top-nav notification-row">                
         <!-- notificatoin dropdown start-->
-        <ul class="nav pull-right top-menu">
 
+        <ul class="nav pull-right top-menu">
+<li style="margin-top: 3px;">{{ link_to_route('employee-transfer.confirmed','عرض التحويلات المؤكدة') }}
+</li>
             <!-- task notificatoin start -->
             <li id="task_notificatoin_bar" class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -28,6 +29,7 @@
                 </ul>
             </li>
             <!-- task notificatoin end -->
+
         </ul>
         <!-- notificatoin dropdown end-->
     </div>
@@ -55,7 +57,7 @@
                         for (var i = 0; i < 5; i++) {
 
                             $('.external').before('<li id="'+i+'"><a  class="tranmenu" href="{{url("employee-transfer")}}/'+data[i].id+'"><div class="task-info">'+
-                               '<div class="desc">تحويلة رقم '+data[i].id+'</div></div></a></li>');
+                             '<div class="desc">تحويلة رقم '+data[i].id+'</div></div></a></li>');
                         }
                     }
                     setTimeout(receiveTransfers,1000);
@@ -65,20 +67,13 @@
                 }
             })
         }
+
         receiveTransfers(); //call the function when the body load
-
+        
     })(jQuery);
-
-    // var pusher = new Pusher('{{ env("PUSHER_KEY")}}');
-    // var channel = pusher.subscribe('event-tansfer');
-
-    // channel.bind('App\Events\TransferEvent', function(data) {
-    //  console.log(data);
-    // });
 </script>
 <style type="text/css">
     img{
         float: left;
-
     }
 </style>

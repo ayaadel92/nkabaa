@@ -34,7 +34,7 @@
                 <a data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-bell col" href="#">
                     <span class="icon-task-l" style="margin-right: 18px;"></span>
                     <span class="badge bg-important" id="transfers-number"></span>
-                </a>
+                </a>              
                 <ul class="dropdown-menu extended tasks-bar selected ">
                     <div class="notify-arrow notify-arrow-blue"></div>
                     <li>
@@ -48,8 +48,6 @@
             <!-- task notificatoin end -->
         </ul>
 </nav>
-
-    @include('laravelPnotify::notify')
 
 @yield('content')
 
