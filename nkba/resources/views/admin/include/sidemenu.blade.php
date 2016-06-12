@@ -86,16 +86,6 @@
                     <li>{{ link_to_route('admin-lab.create', 'إضافة معمل') }}</li>
                 </ul>
             </li>  
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_document_alt"></i>
-                    <span>التحويلات</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li>{{ link_to_route('admin-transfer.index', 'عرض الكل') }}</li>
-                </ul>
-            </li>  
         </ul>
         <!-- sidebar menu end-->
     </div>
