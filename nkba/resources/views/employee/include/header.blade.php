@@ -29,6 +29,9 @@
             </li>
             <!-- task notificatoin end -->
         </ul>
+        <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>خروج</a></li>
+                            </ul>
         <!-- notificatoin dropdown end-->
     </div>
 </header>      
