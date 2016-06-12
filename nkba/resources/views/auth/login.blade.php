@@ -18,14 +18,14 @@
                
                 <center>
                     <div><h5>Noties for First Registration : If You Are Engineer The Message send to Your Mail (Check You Mail After Regist), If You Are Not Engineer Or Rlative You Can't Get Messaage On Mail And You Can't Login </h5></div>
-                <div class="panel-heading"><h3>Login</h3></div>
+                <div class="panel-heading"><h3>تسجيل الدخول</h3></div>
                 <div class="panel-body">
                    <div class="jumbotron"> 
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('login') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label"><span class="glyphicon glyphicon-user" aria-hidden="true"> </span> &nbsp Member_id</label>
+                            <label class="col-md-4 control-label"><span class="glyphicon glyphicon-user" aria-hidden="true"> </span> &nbsp رقم العضوية</label>
 
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="login" value="{{ old('login') }}">
@@ -48,7 +48,7 @@
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             
                             
-                            <label class="col-md-4 control-label"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span>&nbsp &nbsp Password</label>
+                            <label class="col-md-4 control-label"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span>&nbsp &nbsp كلمة المرور</label>
 
                             <div class="col-md-6">
                                 <input type="password" class="form-control" name="password">
@@ -65,7 +65,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> Remember Me
+                                        <input type="checkbox" name="remember"> تذكرنى
                                     </label>
                                 </div>
                             </div>
@@ -74,11 +74,11 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-success" >
-                                    <i class="fa fa-btn fa-sign-in"></i>Login
+                                    <i class="fa fa-btn fa-sign-in"></i>دخول
                                 </button>
                                   {{-- class="btn btn-link" --}}
                                   <br>
-                               <a  href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                               <a  href="{{ url('/password/reset') }}">نسيت كلمة المرور؟</a>
                             </div>
                         </div>
                       </center>
