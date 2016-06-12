@@ -147,6 +147,8 @@ use Illuminate\Http\Request;
 
 //Admin routes
   Route::get('/admin/login',array('as' => 'admin.login', 'uses' => 'AdminController@login'));
+  Route::get('/admin/logout',array('as' => 'admin.logout', 'uses' => 'AdminController@logout'));
+  Route::post('/admin/loggedin',array('as' => 'admin.loggedin', 'uses' => 'AdminController@loggedin'));
   Route::resource('admin','AdminController');
   Route::resource('admin-user','Admin\AUsersController');
   Route::resource('admin-engineer','Admin\AEngineersController');

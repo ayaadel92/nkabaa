@@ -17,21 +17,20 @@
             <div class="panel panel-default">
                
                 <center>
-                <div class="panel-heading"><h3>Login</h3></div>
+                <div class="panel-heading"><h3>تسجيل دخول</h3></div>
                 <div class="panel-body">
                    <div class="jumbotron"> 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.loggedin') }}">
                         {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('login') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label"><span class="glyphicon glyphicon-user" aria-hidden="true"> </span> &nbsp Member_id</label>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label"><span class="glyphicon glyphicon-user" aria-hidden="true"> </span> &nbsp الإيميل</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="login" value="{{ old('login') }}">
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
 
-                                @if ($errors->has('login'))
+                                @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('login') }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -39,7 +38,7 @@
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             
                             
-                            <label class="col-md-4 control-label"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span>&nbsp &nbsp Password</label>
+                            <label class="col-md-4 control-label"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span>&nbsp &nbsp الباسوورد</label>
 
                             <div class="col-md-6">
                                 <input type="password" class="form-control" name="password">
@@ -51,25 +50,13 @@
                                 @endif
                             </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
                         <center>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-success" >
-                                        <i class="fa fa-btn fa-sign-in"></i>Login
+                                        <i class="fa fa-btn fa-sign-in"></i>دخول
                                     </button>
-                                      {{-- class="btn btn-link" --}}
                                       <br>
-                                   <a  href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                                 </div>
                             </div>
                       </center>
@@ -82,9 +69,4 @@
         </div>
     </div>
 </div>
-<script>
-    function sub(){
-        alert();
-    }
-</script>
 @endsection

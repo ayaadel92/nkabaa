@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
+use Session;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth');
-        if (!Auth::user() || Auth::user()->role != "ادمن") {
-            return redirect("/");
+        // print_r('session:'.Session::has('id'));exit();
+        if (!Session::has('id')) {
+            return view("admin.login");
         }
     }
     /**
@@ -23,7 +23,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.layout.master');
+        if (!Session::has('id')) {
+            return redirect("/admin/login");
+        }else
+        {
+            return view('admin.layout.master');
+        }
     }
 
     /**
@@ -35,8 +40,6 @@ class AdminController extends Controller
     {
         //
     }
-
-
 
     /**
      * Store a newly created resource in storage.
@@ -96,15 +99,26 @@ class AdminController extends Controller
 
     public function login(Request $request)
     {
+        return view('admin.login');
+    }
+    public function loggedin(Request $request)
+    {
         $email = $request->input('email');
         $password = $request->input('password');
-        $admin_count= DB::table('admins')
-        ->where([['email',$email],['password',$password]])->count();
+        $admin_count= DB::table('admins')->where([['email',$email],['password',$password]])->count();
         if($admin_count > 0){
-            return view('admin.layout.master');
+            $admin = DB::table('admins')->where([['email',$email],['password',$password]])->get();
+            $admin_json=response()->json($admin)->getData()[0];
+            Session::put('id',$admin_json->id);
+            return  redirect("/admin");
         }
         else{
-            return view('admin.admin');
+            return redirect("/admin/login");
         }
+    }
+     public function logout(Request $request)
+    {
+        Session::flush();
+        return redirect("/admin/login");
     }
 }
