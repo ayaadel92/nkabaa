@@ -458,7 +458,16 @@
 
   
 </div>
+<div id="footer" class="background-grey" style="background-color: #555555">
+    <div class="container">
+        <div class="row">
 
+            <!-- Copyright -->
+            
+            <!-- End Copyright -->
+        </div>
+    </div>
+</div>
           @endsection
 
 
