@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use App\Transfer;
@@ -13,7 +14,12 @@ use DateTime;
 
 class EmplyeeTransferController extends Controller
 {
-
+    public function __construct() {
+        $this->middleware('auth');
+        if(Auth::user()->role != "موظف" ){
+            return redirect("/");
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -82,7 +88,7 @@ class EmplyeeTransferController extends Controller
                 ->where('id', $limit)
                 ->get(); 
                 $limit_json=response()->json($limit_obj)->getData()[0];
-                if((1000-$limit_json->analysis_credit)>=$transfer->total_cost)//credit_analysis=the reminder from 1000LE
+                if($limit_json->analysis_credit>=$transfer->total_cost)//credit_analysis=the reminder from 1000LE
                 {
                     $examine_obj = DB::table('analysisradios')
                     ->where('name', $transfer->type_name)
@@ -142,4 +148,49 @@ class EmplyeeTransferController extends Controller
         return view('employee.show',compact('transfer'));
     }
 
+    public function confirmed()
+    {
+        return view('employee.confirmed');
+    }
+    public function decreaseLimit($id)
+    {
+     $transfer_obj = DB::table('transfers')->where('id',$id)->get();
+     $transfer = response()->json($transfer_obj)->getData()[0];
+     if($transfer->patient_type==="مهندس")
+     {
+        $limit=$enginer->limit_id;
+        }//end of patient is engineer 
+        else
+        {
+            $where = ['eng_id'=> $transfer->eng_id, 'relation_type' => $transfer->patient_type,'name'=> $transfer->patient_name];
+            $relative = DB::table('relatives')
+            ->where($where)
+            ->get();
+            $relativ=response()->json($relative)->getData()[0];
+            $limit=$relativ->limit_id;
+        }//end of patient is relative
+        $limit_obj= DB::table('limits')
+        ->where('id', $limit)
+        ->get();
+        if(!$limit_obj){
+            return "هذا المستخدم غير مسجل بالويب سايت وﻻ يمكنك الخصم له من خلال الويب سايت";
+        }
+        else{
+            $limit_json=response()->json($limit_obj)->getData()[0];
+        }
+        $analysis_credit = $limit_json->analysis_credit;
+        $total_remainder = $limit_json->total_remainder;
+        $limit_id = $limit_json->id;
+        return view('employee.decrease_done',compact('analysis_credit', 'limit_id', 'total_remainder','transfer'));
+    }
+    public function decreaseInsure($limit_id , $analysis_credit, $total_remainder, $transfer_cost)
+    {
+        //'total_remainder', 'surgery_credit', 'analysis_credit', 'user_id'
+        DB::table('limits')
+        ->where('id',$limit_id)
+        ->update([
+            'analysis_credit' => $analysis_credit - $transfer_cost,
+            'total_remainder'=> $total_remainder - $transfer_cost]);
+        return Redirect::route('employee.confirmed');
+    }
 }

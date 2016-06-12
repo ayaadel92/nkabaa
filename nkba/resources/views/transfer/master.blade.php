@@ -28,13 +28,13 @@
 <body>
 
 <nav class="navbar navbar-default " role="navigation">
-<ul class="nav pull-right ">
+<ul class="nav pull-right">
             <!-- task notificatoin start -->
             <li id="task_notificatoin_bar" class="dropdown ">
                 <a data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-bell col" href="#">
                     <span class="icon-task-l" style="margin-right: 18px;"></span>
                     <span class="badge bg-important" id="transfers-number"></span>
-                </a>
+                </a>              
                 <ul class="dropdown-menu extended tasks-bar selected ">
                     <div class="notify-arrow notify-arrow-blue"></div>
                     <li>
@@ -46,10 +46,10 @@
                 </ul>
             </li>
             <!-- task notificatoin end -->
-        </ul>
-</nav>
+        </ul><ul class="nav pull-left ">
+                      <li ><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>خروج</a></li></ul>
 
-    @include('laravelPnotify::notify')
+</nav>
 
 @yield('content')
 

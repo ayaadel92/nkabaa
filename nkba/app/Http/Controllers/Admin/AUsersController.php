@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
+use Session;
 use App\User;
 
 use App\Http\Requests;
@@ -12,8 +13,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+
 class AUsersController extends Controller
 {
+    public function __construct() {
+        if (!Session::has('id')) {
+            return redirect("/admin/login");
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -53,7 +61,7 @@ class AUsersController extends Controller
             $user->role = $input['role'];
             $user->login = $input['login'];
             $user->email = $input['email'];
-            $user->password = $input['password'];
+            $user->password = bcrypt($input['password']);
             $user->save();
             return Redirect::route('admin-user.index');
         // } 

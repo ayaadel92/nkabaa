@@ -17,6 +17,7 @@ class CreateHospitalsTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phone')->nullable();
+            $table->string('email')->unique();
             $table->string('governorate');
             $table->string('area');
             $table->string('discription')->nullable();

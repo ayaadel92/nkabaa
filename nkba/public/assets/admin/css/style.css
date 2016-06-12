@@ -264,7 +264,7 @@ table tr th { color: #688a7e;}
     width: 180px;
     height: 100%;
     position: fixed;
-    background: #394a59;
+    background: #663300;
 }
 
 .nav-collapse.collapse {
@@ -286,6 +286,9 @@ ul.sidebar-menu {
 
 #sidebar > ul > li.active > ul.sub, #sidebar > ul > li > ul.sub > li > a {
     display: block;
+}
+#sidebar > ul > li.active > ul.sub, #sidebar > ul > li > ul.sub > li {
+    background-color: #8E6C48;
 }
 
 ul.sidebar-menu li ul.sub li{
@@ -337,6 +340,7 @@ ul.sidebar-menu li{
 ul.sidebar-menu li.sub-menu{
     line-height: 15px;
     font-size: 16px;
+    background-color: #663300;
 }
 
 ul.sidebar-menu li a span{
@@ -364,7 +368,7 @@ ul.sidebar-menu li a{
     top: 2px;
 }*/
 ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #2e3b46;
+    background: #664d33;
     color: #fff;
     display: block;
     /*border-radius: 4px;
@@ -379,7 +383,7 @@ ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
     border-bottom: 1px solid #d0d8df;
 }
 /*ul.sidebar-menu li.active a,*/ ul.sidebar-menu .sub-menu li.active a{
-    border-bottom: 1px solid #d0d8df;   
+    border-bottom: 1px solid #F3F3F3;   
 }
 
 ul.sidebar-menu li a i {
@@ -1045,7 +1049,7 @@ div[data-role="editor-toolbar"] {
 .dark-bg {
   color : #fff;
   background : #1a2732;
-  background-color : #6b9f1e;
+  background-color : #3D7A33;
 }
 .facebook-bg {
   color: #fff;

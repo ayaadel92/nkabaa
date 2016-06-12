@@ -19,6 +19,7 @@
            <p>العنوان:{{ $doc->address}}</p><br>
            <p>الوصف :{{$doc->discription }}</p><br>
            <p>الهاتف :{{$doc->phone}}</p><br>
+           @if (!Auth::guest())
                 <form>
                     <fieldset id="reviewStars-input">
                         <span class="star-cb-group">
@@ -32,6 +33,7 @@
                         </span>
                     </fieldset>
                 </form>
+                @endif
                 <!-- End Read More -->
             </div>
         </div>

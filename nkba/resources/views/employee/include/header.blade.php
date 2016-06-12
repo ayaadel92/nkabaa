@@ -6,31 +6,32 @@
     <img src="/assets/images/logo_admin.png" width="100px" height="60 px" alt="">
 
     <!--logo end-->
-
     <div class="top-nav notification-row">                
         <!-- notificatoin dropdown start-->
-        <ul class="nav pull-right top-menu">
-
-            <!-- task notificatoin start -->
-            <li id="task_notificatoin_bar" class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <span class="icon-task-l" style="margin-right: 18px;"></span>
-                    <span class="badge bg-important" id="transfers-number"></span>
-                </a>
-                <ul class="dropdown-menu extended tasks-bar selected">
-                    <div class="notify-arrow notify-arrow-blue"></div>
-                    <li>
-                        <p class="blue">التحويلات الحالية</p>
-                    </li>
-                    <li class="external">
-                        {{ link_to_route('employee-transfer.index','عرض جميع التحويلات') }}
-                    </li>
-                </ul>
-            </li>
-            <!-- task notificatoin end -->
-        </ul>
-        <!-- notificatoin dropdown end-->
-    </div>
+       <ul class="nav pull-right top-menu">
+       <li> <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>خروج</a></li>
+        <li style="margin-top: 3px;">{{ link_to_route('employee-transfer.confirmed','عرض التحويلات المؤكدة') }}
+        </li>
+        <!-- task notificatoin start -->
+        <li id="task_notificatoin_bar" class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <span class="icon-task-l" style="margin-right: 18px;"></span>
+                <span class="badge bg-important" id="transfers-number"></span>
+            </a>
+            <ul class="dropdown-menu extended tasks-bar selected">
+                <div class="notify-arrow notify-arrow-blue"></div>
+                <li>
+                    <p class="blue">التحويلات الحالية</p>
+                </li>
+                <li class="external">
+                    {{ link_to_route('employee-transfer.index','عرض جميع التحويلات') }}
+                </li>
+            </ul>
+        </li>
+        <!-- task notificatoin end -->
+    </ul>
+    <!-- notificatoin dropdown end-->
+</div>
 </header>      
 <!--header end-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -65,20 +66,13 @@
                 }
             })
         }
+
         receiveTransfers(); //call the function when the body load
-
+        
     })(jQuery);
-
-    // var pusher = new Pusher('{{ env("PUSHER_KEY")}}');
-    // var channel = pusher.subscribe('event-tansfer');
-
-    // channel.bind('App\Events\TransferEvent', function(data) {
-    //  console.log(data);
-    // });
 </script>
 <style type="text/css">
     img{
         float: left;
-
     }
 </style>

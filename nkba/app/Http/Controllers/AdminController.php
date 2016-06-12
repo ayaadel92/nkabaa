@@ -1,13 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
+use Session;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
+    public function __construct() {
+        // print_r('session:'.Session::has('id'));exit();
+        if (!Session::has('id')) {
+            return view("admin.login");
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +23,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.layout.master');
+        if (!Session::has('id')) {
+            return redirect("/admin/login");
+        }else
+        {
+            return view('admin.dashboard.content');
+        }
     }
 
     /**
@@ -27,8 +40,6 @@ class AdminController extends Controller
     {
         //
     }
-
-
 
     /**
      * Store a newly created resource in storage.
@@ -84,5 +95,30 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function login(Request $request)
+    {
+        return view('admin.login');
+    }
+    public function loggedin(Request $request)
+    {
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $admin_count= DB::table('admins')->where([['email',$email],['password',$password]])->count();
+        if($admin_count > 0){
+            $admin = DB::table('admins')->where([['email',$email],['password',$password]])->get();
+            $admin_json=response()->json($admin)->getData()[0];
+            Session::put('id',$admin_json->id);
+            return  redirect("/admin");
+        }
+        else{
+            return redirect("/admin/login");
+        }
+    }
+     public function logout(Request $request)
+    {
+        Session::flush();
+        return redirect("/admin/login");
     }
 }

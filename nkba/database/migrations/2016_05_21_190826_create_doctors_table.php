@@ -17,6 +17,7 @@ class CreateDoctorsTable extends Migration
             $table->string('name');
             $table->string('degree');
             $table->string('specialization');
+            $table->string('email')->unique();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('governorate');

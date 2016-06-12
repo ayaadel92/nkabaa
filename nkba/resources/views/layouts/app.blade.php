@@ -52,17 +52,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
-  <link href="favicon.ico" rel="shortcut icon">
-        <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="/assets/css/bootstrap.css" rel="stylesheet">
-        <!-- Template CSS -->
-        <link rel="stylesheet" href="/assets/css/animate.css" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/nexus.css" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/responsive.css" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/custom.css" rel="stylesheet">
-        <!-- Google Fonts-->
-        <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+<link href="favicon.ico" rel="shortcut icon">
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="/assets/css/bootstrap.css" rel="stylesheet">
+<!-- Template CSS -->
+<link rel="stylesheet" href="/assets/css/animate.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/nexus.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/custom.css" rel="stylesheet">
+<!-- Google Fonts-->
+<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
 
 
 <!--<![endif]-->
@@ -79,130 +79,136 @@
         <![endif]-->
         {{-- End End End --}}
         <!-- Fonts -->
-   
-
-
-     <!-- Styles -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<!--     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}-->
 
 
 
-    @include('headers')
+        <!-- Styles -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!--     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}-->
 
-</head> 
- <div id="header" style="height: 300px ; background-color: #F3F3F3">
-                <div class="container">
-                    <div class="row">
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a href="{{url('/')}}" title="">
-                                <img src="/assets/img/logo.png" alt="Logo" />
-                            </a>
-                        </div>
-                        <!-- End Logo -->
-                    </div>
+
+
+        @include('headers')
+
+    </head> 
+    <div id="header" style="height: 300px ; background-color: #F3F3F3">
+        <div class="container">
+            <div class="row">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="{{url('/')}}" title="">
+                        <img src="/assets/img/logo.png" alt="Logo" />
+                    </a>
                 </div>
+                <!-- End Logo -->
             </div>
-<!--#3D7A33-->
-<!--#33747a-->
-       <div id="hornav" class="bottom-border-shadow">
-                <div class="container no-padding border-bottom">
-                    <div class="row">
-                        <div class="col-md-8 no-padding">
-                            <div class="visible-lg">
-                                <ul id="hornavmenu" class="nav navbar-nav">
-                                    <li>
-                                  
-                                         <a class="fa-home active" href="{{url('/')}}">الرئيسية</a>
-                                    </li>
-                                    <li>
-                                       
-                                        @if (!Auth::guest())
+        </div>
+    </div>
+    <!--#3D7A33-->
+    <!--#33747a-->
+    <div id="hornav" class="bottom-border-shadow">
+        <div class="container no-padding border-bottom">
+            <div class="row">
+                <div class="col-md-8 no-padding">
+                    <div class="visible-lg">
+                        <ul id="hornavmenu" class="nav navbar-nav">
+                            <li>
 
-                    @if (Auth::user()->role === "مهندس" || Auth::user()->role === "قريب")
-                    <a class="fa-gears " href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a>
-                    @endif
-                  @if(Auth::user()->role === "معمل" || Auth::user()->role === "مستشفي")
-                  <a class="fa-gears " href="{{ url('/create') }}">المعمل</a>
-                  @endif
-                    @endif
-                                
-                                    </li>
-                                    <li>
-                                     
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">دخول</a></li>
-                    <li><a href="{{ url('/register') }}">التسجيل</a></li>
-                    @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                             <span class="caret"></span>
-                        </a>
+                             <a class="fa-home active" href="{{url('/')}}">الرئيسية</a>
+                         </li>
+                         <li>
 
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>خروج</a></li>
-                        </ul>
+                            @if (!Auth::guest())
+
+                            @if (Auth::user()->role === "مهندس" || Auth::user()->role === "قريب")
+                            <a class="fa-gears " href="{{ url('/engineer') }}/{{ Auth::user()->id }}">الشخصية</a>
+                            @endif
+                            @if(Auth::user()->role === "معمل" || Auth::user()->role === "مستشفي")
+                            <a class="fa-gears " href="{{ url('/create') }}">التحويلات</a>
+                            @endif
+
+
+
+                            @if(Auth::user()->role === "موظف" )
+                            <a class="fa-gears " href="{{ url('/employee-transfer') }}">موظف</a>
+                            @endif
+
+                            @endif
+
+                        </li>
+                        <li>
+
+                            <!-- Authentication Links -->
+                            @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}">دخول</a></li>
+                            <li><a href="{{ url('/register') }}">التسجيل</a></li>
+                            @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                 <span class="caret"></span>
+                             </a>
+
+                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>خروج</a></li>
+                            </ul>
+                        </li>
+                        @endif
+
                     </li>
-                    @endif
-                            
-                                    </li>
-                                   </ul >
-                        </div>
-                    </div>
-                </div>
+                </ul >
             </div>
-       </div>    
-           
-   
+        </div>
+    </div>
+</div>
+</div>    
+
+
 
 @include('laravelPnotify::notify')
 @yield('content')
 
 
-  <!-- JS -->
+<!-- JS -->
 
-            <script type="text/javascript" src="/assets/js/jquery.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="/assets/js/scripts.js"></script>
-            <!-- Isotope - Portfolio Sorting -->
-            <script type="text/javascript" src="/assets/js/jquery.isotope.js" type="text/javascript"></script>
-            <!-- Mobile Menu - Slicknav -->
-            <script type="text/javascript" src="/assets/js/jquery.slicknav.js" type="text/javascript"></script>
-            <!-- Animate on Scroll-->
-            <script type="text/javascript" src="/assets/js/jquery.visible.js" charset="utf-8"></script>
-            <!-- Sticky Div -->
-            <script type="text/javascript" src="/assets/js/jquery.sticky.js" charset="utf-8"></script>
-            <!-- Slimbox2-->
-            <script type="text/javascript" src="/assets/js/slimbox2.js" charset="utf-8"></script>
-            <!-- Modernizr -->
-            <script src="/assets/js/modernizr.custom.js" type="text/javascript"></script>
-            <!-- End JS -->
-            
+<script type="text/javascript" src="/assets/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/js/scripts.js"></script>
+<!-- Isotope - Portfolio Sorting -->
+<script type="text/javascript" src="/assets/js/jquery.isotope.js" type="text/javascript"></script>
+<!-- Mobile Menu - Slicknav -->
+<script type="text/javascript" src="/assets/js/jquery.slicknav.js" type="text/javascript"></script>
+<!-- Animate on Scroll-->
+<script type="text/javascript" src="/assets/js/jquery.visible.js" charset="utf-8"></script>
+<!-- Sticky Div -->
+<script type="text/javascript" src="/assets/js/jquery.sticky.js" charset="utf-8"></script>
+<!-- Slimbox2-->
+<script type="text/javascript" src="/assets/js/slimbox2.js" charset="utf-8"></script>
+<!-- Modernizr -->
+<script src="/assets/js/modernizr.custom.js" type="text/javascript"></script>
+<!-- End JS -->
+
 <!-- JavaScripts -->
-    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+<!-- JavaScripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
 
-    <!-- JavaScripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+<!-- JavaScripts -->
+<script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+<!-- pnotify -->
+<script type="text/javascript" src="/assets/js/jquery.pnotify.js"></script>
 
-        <!-- JavaScripts -->
-        <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
-         <!-- pnotify -->
-      <script type="text/javascript" src="/assets/js/jquery.pnotify.js"></script>
-
-        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-        <script type="text/javascript" src="/assets/js/pnotify.core.min.js"></script> 
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+<script type="text/javascript" src="/assets/js/pnotify.core.min.js"></script> 
 
 <!--     <script type="text/javascript" src="assets/js/pnotify.buttons.min.js"></script>
 -->   
- <script type="text/javascript" src="/assets/js/pnotify.custom.min.js"></script> 
+<script type="text/javascript" src="/assets/js/pnotify.custom.min.js"></script> 
 
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         {{-- <script src="{{ elixir('js/app.js') }}"></script> 
 
  

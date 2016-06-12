@@ -20,34 +20,35 @@ use Illuminate\Support\Facades\Auth;
 
 class TransferController extends Controller
 {
-            public function __construct() {
-                  $this->middleware('auth');
-             }
+
+	public function __construct() {
+		$this->middleware('auth');
+	}
 	public function index(){
 		return view('transfer.index');
 	}
 	public function create(){
-            
-            $role = Auth::user()->role;
-            if( Auth::user()->role == "معمل" || Auth::user()->role == "مستشفي"){
-		return view('transfer.new');
-            }
-            else{
-                 return redirect("/");
-            }
+		
+		$role = Auth::user()->role;
+		if( Auth::user()->role == "معمل" || Auth::user()->role == "مستشفي"){
+			return view('transfer.new');
+		}
+		else{
+			return redirect("/");
+		}
 	}
 
 	public function store(Request $request){
 		$input=Input::all();
+
 		$validation=Validator::make($input, Transfer::$transfer_rules);
 		$transfer= new Transfer;
 		if ($validation->passes())
-		{                 
-
+		{                
 			$transfer->eng_id=$input['eng_id'];
 			$transfer->health_id = $input['health_id'];
 			$transfer->patient_name=$input['patient_name'];
-			$transfer->patient_type=$input['patient_type'];
+			$transfer->patient_type=$input['degree'];
 			$transfer->medical_diagnosis  =$input['medical_diagnosis'];
 			$transfer->type=$input['type'];	
 			$transfer->type_name=$input['list'];	
@@ -60,11 +61,10 @@ class TransferController extends Controller
 			$transfer->transfer_date=$input['transfer_date']	;
 			$transfer->save();
 			if($transfer->save()){
-				//$id=$transfer->id;
-				//Session::set('val',$transfer);
 				return Redirect::route('transfer.create');	
-				// return view('transfer.new');
 
+			}else{
+				dd($input);
 			}
 			// Event::fire(new TransferEvent()); // fire the transfer event
 			event(new TransferEvent(new Transfer($transfer->toarray())));
@@ -79,7 +79,7 @@ class TransferController extends Controller
 
 	public function confirm($id){
 		DB::table('transfers')
-	            ->where('id', $id)
-	            ->update(['confirm' => 'نعم']);
+		->where('id', $id)
+		->update(['confirm' => 'نعم']);
 	}
 }
