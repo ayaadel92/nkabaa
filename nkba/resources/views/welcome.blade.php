@@ -276,13 +276,6 @@
                     </div>
                 </div>
 
-<div id="icons" class="bottom-border-shadow">
-  <div class="container background-grey bottom-border">
-               
-
-           
-
-
 
 
         <div id="content" class="bottom-border-shadow">
