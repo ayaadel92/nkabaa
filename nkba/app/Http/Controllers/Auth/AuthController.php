@@ -90,7 +90,6 @@ class AuthController extends Controller
         $userEngineer = DB::table('engineers')
         ->select(DB::raw('*'))
         ->where('eng_id', '=', $LoginData)
-        ->where('email' ,'=', $EmailData)
         ->get();
 
         $userHospital = DB::table('hospitals')
@@ -108,11 +107,17 @@ class AuthController extends Controller
         ->where('email' ,'=', $EmailData)
         ->get();
 
+        $userRelative = DB::table('relatives')
+        ->select(DB::raw('*'))
+        ->where('login_id' ,'=', $LoginData)
+        ->get();
+
         $CountLabs=count($userLab);
         $CountDoctor=count($userDoctor);
         $CountHospitals=count($userHospital);
         $CountEngi=count($userEngineer);
-        if($CountEngi == 1 || $CountEngi == 1 || $CountLabs == 1 || $userDoctor == 1)
+        $CountRelative=count($userRelative);
+        if($CountEngi == 1 || $CountEngi == 1 || $CountLabs == 1 || $userDoctor == 1 || $CountRelative == 1)
         {
 
 
