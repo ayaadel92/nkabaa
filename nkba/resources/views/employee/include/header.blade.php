@@ -6,11 +6,12 @@
     <img src="/assets/images/logo_admin.png" width="100px" height="60 px" alt="">
 
     <!--logo end-->
-
     <div class="top-nav notification-row">                
         <!-- notificatoin dropdown start-->
-        <ul class="nav pull-right top-menu">
 
+        <ul class="nav pull-right top-menu">
+<li style="margin-top: 3px;">{{ link_to_route('employee-transfer.confirmed','عرض التحويلات المؤكدة') }}
+</li>
             <!-- task notificatoin start -->
             <li id="task_notificatoin_bar" class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -28,6 +29,7 @@
                 </ul>
             </li>
             <!-- task notificatoin end -->
+
         </ul>
         <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>خروج</a></li>
@@ -58,7 +60,7 @@
                         for (var i = 0; i < 5; i++) {
 
                             $('.external').before('<li id="'+i+'"><a  class="tranmenu" href="{{url("employee-transfer")}}/'+data[i].id+'"><div class="task-info">'+
-                               '<div class="desc">تحويلة رقم '+data[i].id+'</div></div></a></li>');
+                             '<div class="desc">تحويلة رقم '+data[i].id+'</div></div></a></li>');
                         }
                     }
                     setTimeout(receiveTransfers,1000);
@@ -69,37 +71,8 @@
             })
         }
 
-        // function receiveConfirm() {
-        //     var created, lastelem;
-        //     var count = $(".selected").children().length;
-        //     created = $('li').last().attr('id');
-        //     lastelem = $('.selected li:last-child').attr('id');
-        //     if (!lastelem) {lastelem = 0;}
-        //     if (!created) {created = 0;}
-
-        //     $.ajax({
-        //         url: "{{url('ajax')}}/"+created,
-        //         type: "GET",
-        //         success: function(data) {
-        //             if (data.length){$('#transfers-number').text(data.length);}
-        //             if (count < 8) {
-        //                 for (var i = 0; i < 5; i++) {
-
-        //                     $('.external').before('<li id="'+i+'"><a  class="tranmenu" href="{{url("employee-transfer")}}/'+data[i].id+'"><div class="task-info">'+
-        //                        '<div class="desc">تحويلة رقم '+data[i].id+'</div></div></a></li>');
-        //                 }
-        //             }
-        //             setTimeout(receiveTransfers,1000);
-        //         },
-        //         error: function(err) {
-        //             setTimeout(receiveTransfers,5000);
-        //         }
-        //     })
-        // }
-
         receiveTransfers(); //call the function when the body load
-        // receiveConfirm();
-
+        
     })(jQuery);
 </script>
 <style type="text/css">

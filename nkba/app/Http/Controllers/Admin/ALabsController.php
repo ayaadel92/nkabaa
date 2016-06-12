@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
+use Session;
 use App\Lab;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -11,9 +12,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class ALabsController extends Controller
 {
+    public function __construct() {
+        if (!Session::has('id')) {
+            return redirect("/admin/login");
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +56,16 @@ class ALabsController extends Controller
         // $validation = Validator::make($input, Lab::$rules);
         // if ($validation->passes())
         // {
-            //add lab in labs table 
+     //add lab in labs table 
+        $destinatonPath = '';
+        $photoname = '';
+        if(Input::file('path')){
+            $photo = Input::file('path');
+            $destinationPath = '/assets/images/';
+            $extension = Input::file('path')->getClientOriginalExtension();
+            $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
+            $photo->move($destinationPath,$photoname);
+        }
         $lab = new lab;
         $lab->name = $input['name'];
         $lab->address = $input['address'];
@@ -57,7 +73,7 @@ class ALabsController extends Controller
         $lab->governorate = $input['governorate'];
         $lab->area = $input['area'];
         $lab->discription = $input['discription'];
-        $lab->path = $input['path'];
+        $lab->path = $destinationPath.$photoname;  
         $lab->save();
 
         return Redirect::route('admin-lab.index');

@@ -2,11 +2,11 @@
 <aside style="float: right;">
     <div id="sidebar"  class="nav-collapse hidden-md hidden-sm">
         <!-- sidebar menu start-->
-        <ul class="sidebar-menu">                
-            <li class="active">
-                <a class="" href="/admin">
+        <ul class="sidebar-menu" style="backgroung-color: #F3F3F3;">                
+            <li class="active" style="backgroung-color: #F3F3F3;">
+                <a class="" href="/admin" style="color: #F3F3F3;">
                     <i class="icon_house_alt"></i>
-                    <span>الصفحة الرئيسية</span>
+                    <span style="color: #F3F3F3;">الصفحة الرئيسية</span>
                 </a>
             </li>
             <li class="sub-menu">
@@ -84,16 +84,6 @@
                 <ul class="sub">
                     <li>{{ link_to_route('admin-lab.index', 'عرض الكل') }}</li>                          
                     <li>{{ link_to_route('admin-lab.create', 'إضافة معمل') }}</li>
-                </ul>
-            </li>  
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_document_alt"></i>
-                    <span>التحويلات</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li>{{ link_to_route('admin-transfer.index', 'عرض الكل') }}</li>
                 </ul>
             </li>  
         </ul>

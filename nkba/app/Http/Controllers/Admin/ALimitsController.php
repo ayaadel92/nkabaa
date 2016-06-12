@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
+use Session;
 use App\User;
 use App\Limit;
 
@@ -13,9 +14,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class ALimitsController extends Controller
 {
+    public function __construct() {
+        if (!Session::has('id')) {
+            return redirect("/admin/login");
+        }
+    }
     /**
      * Display a listing of the resource.
      *

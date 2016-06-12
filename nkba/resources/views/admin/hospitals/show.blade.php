@@ -9,7 +9,7 @@
 			</header>
 
 			<div class="panel-body">
-				<img src= "{{ $hospital->path }}">
+				<img src= "{{ $hospital->path }}" width="100px" height="100px">
 				<table class="table table-bordered">
 					<tr>
 						<th class="text-center">الاسم</th>

@@ -21,30 +21,30 @@ use Illuminate\Support\Facades\Auth;
 class TransferController extends Controller
 {
 
-            public function __construct() {
-                  $this->middleware('auth');
-             }
+	public function __construct() {
+		$this->middleware('auth');
+	}
 	public function index(){
 		return view('transfer.index');
 	}
 	public function create(){
-            
-            $role = Auth::user()->role;
-            if( Auth::user()->role == "معمل" || Auth::user()->role == "مستشفي"){
-		return view('transfer.new');
-            }
-            else{
-                 return redirect("/");
-            }
+		
+		$role = Auth::user()->role;
+		if( Auth::user()->role == "معمل" || Auth::user()->role == "مستشفي"){
+			return view('transfer.new');
+		}
+		else{
+			return redirect("/");
+		}
 	}
 
 	public function store(Request $request){
 		$input=Input::all();
 
 		$validation=Validator::make($input, Transfer::$transfer_rules);
-		 $transfer= new Transfer;
+		$transfer= new Transfer;
 		if ($validation->passes())
-		    {                
+		{                
 			$transfer->eng_id=$input['eng_id'];
 			$transfer->health_id = $input['health_id'];
 			$transfer->patient_name=$input['patient_name'];
@@ -63,9 +63,9 @@ class TransferController extends Controller
 			if($transfer->save()){
 				return Redirect::route('transfer.create');	
 
-		    }else{
-		    	dd($input);
-		    }
+			}else{
+				dd($input);
+			}
 			// Event::fire(new TransferEvent()); // fire the transfer event
 			event(new TransferEvent(new Transfer($transfer->toarray())));
 		}		     
@@ -79,7 +79,7 @@ class TransferController extends Controller
 
 	public function confirm($id){
 		DB::table('transfers')
-	            ->where('id', $id)
-	            ->update(['confirm' => 'نعم']);
+		->where('id', $id)
+		->update(['confirm' => 'نعم']);
 	}
 }

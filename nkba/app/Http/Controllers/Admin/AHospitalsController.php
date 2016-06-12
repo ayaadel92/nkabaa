@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
+use Session;
 use App\Hospital;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -11,9 +12,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class AHospitalsController extends Controller
 {
+    public function __construct() {
+        if (!Session::has('id')) {
+            return redirect("/admin/login");
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +56,16 @@ class AHospitalsController extends Controller
         // $validation = Validator::make($input, Hospital::$rules);
         // if ($validation->passes())
         // {
-            //add hospital in hospitals table 
+    //add hospital in hospitals table 
+        $destinatonPath = '';
+        $photoname = '';
+        if(Input::file('path')){
+            $photo = Input::file('path');
+            $destinationPath = '/assets/images/';
+            $extension = Input::file('path')->getClientOriginalExtension();
+            $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
+            $photo->move($destinationPath,$photoname);
+        }
         $hospital = new hospital;
         $hospital->name = $input['name'];
         $hospital->address = $input['address'];
@@ -57,7 +73,7 @@ class AHospitalsController extends Controller
         $hospital->governorate = $input['governorate'];
         $hospital->area = $input['area'];
         $hospital->discription = $input['discription'];
-        $hospital->path = $input['path'];
+        $hospital->path = $destinationPath.$photoname;
         $hospital->save();
 
         return Redirect::route('admin-hospital.index');

@@ -8,7 +8,7 @@
 				بيانات المعمل
 			</header>
 			<div class="panel-body">
-				<img src= "{{ $lab->path }}">
+				<img src= "{{ $lab->path }}" width="100px" height="100px">
 				<table class="table table-bordered">
 					<tr><!-- 'name', 'address', 'phone', 'governorate', 'area', 'discription', 'path' -->
 						<th class="text-center">الاسم</th>
