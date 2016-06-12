@@ -2,89 +2,89 @@
 @section('content')
 
 <!--rgb(17, 113, 37)-->
-<div id="" class="bottom-border-shadow">
-  <div class="container no-padding background-white bottom-border">
-    <div class="row">
+  <div id="" class="bottom-border-shadow">
+      <div class="container no-padding background-white bottom-border">
+          <div class="row">
 
-     <img src="/assets/img/slideshow/image11.jpg" alt="Logo" />
-   </div>
- </div>
-</div>
-<div id="icons" class="bottom-border-shadow">
-  <div class="container background-grey bottom-border">
-    <div class="row padding-vert-60">
-      <!-- Icons -->
-      <div class="col-md-4 text-center">
-        <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
-        <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">خدمات التحويلات </h2>
-        <p class="animate fadeIn"> لان اصبح من الهل دون ضايع وقتك في الذهاب الي النقابه لاخذ التحويله العلاجيه دون مشقه</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
-        <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">اقرب دكتور اليك</h2>
-        <p class="animate fadeIn"> اوجد اقرب دكتور اليك علي حسب موقعك الخغرافي</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
-        <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">كشف الحساب </h2>
-        <p class="animate fadeIn">اصبح من السهل معرفك حسابات التامين الصحي الخاص بيك و البيانات الكامله الخاصه بيك </p>
-      </div>
-      <!-- End Icons -->
-    </div>
-
-    <div class="row padding-vert-60">
-      <!-- Icons -->
-      <div class="col-md-4 text-center">
-        <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
-        <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">ملفك الشخصي </h2>
-        <p class="animate fadeIn">اصبح من السهل معرفه معلومات الشخصيه محدثه من النقابه بستمرار </p>
-      </div>
-      <div class="col-md-4 text-center">
-        <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
-        <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">مواعيدك الشخصيه</h2>
-        <p class="animate fadeIn">لان مواعيد الشخصيه تهمنا باضافه ان مواعيد ادويتك و جوزاتك مهمه بنسبه لنا </p>
-      </div>
-      <div class="col-md-4 text-center">
-        <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
-        <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">الشكاوي</h2>
-        <p class="animate fadeIn">لان ريك ما يدعمنا اصبح من حقك ان تبدي برايك او شكاوتك في اي وقت و سوف نهتم بيها </p>
-      </div>
-      <!-- End Icons -->
-    </div>
-    <div class="row padding-vert-60">
-      <!-- Icons -->
-      <div class="col-md-4 text-center">
-        <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
-        <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">التجديد الاشتراك </h2>
-        <p class="animate fadeIn"> اصبح من حقك ان توفر وقتك و تجديد الاشتركات الخاصه بيك سواء الاشتراك السنوي او الاشتراك في التامين عن طريق التليفون</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
-        <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">الاشتراك التامين</h2>
-        <p class="animate fadeIn">لان اصبح من حقك الاشتراك لك ولاسرتك سواء ولادتك او ولادك او لزوجتك او لابنك عن طريق الانترنت </p>
-      </div>
-
-      <!-- End Icons -->
-    </div>
+           <img src="/assets/img/slideshow/image11.jpg" alt="Logo" />
+         </div>
+     </div>
   </div>
-</div>
+        <div id="icons" class="bottom-border-shadow">
+          <div class="container background-grey bottom-border">
+                      <div class="row padding-vert-60">
+                        <!-- Icons -->
+                                <div class="col-md-4 text-center">
+                                  <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                                  <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">خدمات التحويلات </h2>
+                                  <p class="animate fadeIn"> لان اصبح من الهل دون ضايع وقتك في الذهاب الي النقابه لاخذ التحويله العلاجيه دون مشقه</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                  <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
+                                  <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">اقرب دكتور اليك</h2>
+                                  <p class="animate fadeIn"> اوجد اقرب دكتور اليك علي حسب موقعك الخغرافي</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                  <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                                  <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">كشف الحساب </h2>
+                                  <p class="animate fadeIn">اصبح من السهل معرفك حسابات التامين الصحي الخاص بيك و البيانات الكامله الخاصه بيك </p>
+                                </div>
+                        <!-- End Icons -->
+                      </div>
+
+            <div class="row padding-vert-60">
+              <!-- Icons -->
+                        <div class="col-md-4 text-center">
+                          <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
+                          <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">ملفك الشخصي </h2>
+                          <p class="animate fadeIn">اصبح من السهل معرفه معلومات الشخصيه محدثه من النقابه بستمرار </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                          <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                          <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">مواعيدك الشخصيه</h2>
+                          <p class="animate fadeIn">لان مواعيد الشخصيه تهمنا باضافه ان مواعيد ادويتك و جوزاتك مهمه بنسبه لنا </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                          <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                          <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">الشكاوي</h2>
+                          <p class="animate fadeIn">لان ريك ما يدعمنا اصبح من حقك ان تبدي برايك او شكاوتك في اي وقت و سوف نهتم بيها </p>
+                        </div>
+              <!-- End Icons -->
+            </div>
+                      <div class="row padding-vert-60">
+                        <!-- Icons -->
+                                    <div class="col-md-4 text-center">
+                                      <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                                      <h2 class="padding-top-10 animate fadeIn"  style="font-size: 35px">التجديد الاشتراك </h2>
+                                      <p class="animate fadeIn"> اصبح من حقك ان توفر وقتك و تجديد الاشتركات الخاصه بيك سواء الاشتراك السنوي او الاشتراك في التامين عن طريق التليفون</p>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                      <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                                      <h2 class="padding-top-10 animate fadeIn" style="font-size: 35px">الاشتراك التامين</h2>
+                                      <p class="animate fadeIn">لان اصبح من حقك الاشتراك لك ولاسرتك سواء ولادتك او ولادك او لزوجتك او لابنك عن طريق الانترنت </p>
+                                    </div>
+
+                        <!-- End Icons -->
+                      </div>
+          </div>
+        </div>
 
 
-<div id="content" class="bottom-border-shadow">
-  <div class="container background-white bottom-border">
-    <div class="row margin-vert-30">
-      <!-- Main Text -->
-      <div class="col-md-12">
-        <h3 style="color: #3D7A33">اهلا بيك في نقابه مهندسين الاسكندريه</h3>
-        <div style="height: 50px"></div> 
-        <p style="alignment-adjust: central"> لان هدفنا اسعادك و تحقيق الرفاهيه المطلوبه لحياه اسعد لكل المهندسين المصرين فاصبح من الوجب عمل هذا الموقع لتحقيق كل رغبتك</p>
-        <p style="alignment-adjust: central"> المهندس هو من تقوم علي اكتافه الدول المتقدمه فلاهتمام بك جزاء لا يتجزء من منظومه التطور التي تسعد اليها البلاد </p>
-      </div>
-      <!-- End Main Text -->
+                      <div id="content" class="bottom-border-shadow">
+                        <div class="container background-white bottom-border">
+                          <div class="row margin-vert-30">
+                            <!-- Main Text -->
+                            <div class="col-md-12">
+                              <h3 style="color: #3D7A33">اهلا بيك في نقابه مهندسين الاسكندريه</h3>
+                              <div style="height: 50px"></div> 
+                              <p style="alignment-adjust: central"> لان هدفنا اسعادك و تحقيق الرفاهيه المطلوبه لحياه اسعد لكل المهندسين المصرين فاصبح من الوجب عمل هذا الموقع لتحقيق كل رغبتك</p>
+                              <p style="alignment-adjust: central"> المهندس هو من تقوم علي اكتافه الدول المتقدمه فلاهتمام بك جزاء لا يتجزء من منظومه التطور التي تسعد اليها البلاد </p>
+                            </div>
+                            <!-- End Main Text -->
 
-    </div>
-  </div>
-</div>
+                          </div>
+                        </div>
+                      </div>
 
 
 <div id="icons" class="bottom-border-shadow">
@@ -97,120 +97,104 @@
       
      
 
-      <div class="form-group">
-        <center><h3> اختر نوعيه البحث </h3></center>
-
-        <select class="input-large form-control" id="choiceSearch" onchange="GetValueSelected()">
-          <option value="" selected="selected">--اختر--</option>
-          <option value="1">البحث عن طبيب</option>
-          <option value="2" >البحث عن مستشفى </option>
-          <option value="3">البحث عن معمل</option>
-
-
-        </select>
-      </div>
+                    <div class="form-group">
+                      <center><h3> اختر نوعيه البحث </h3></center>
+                      <select class="input-large form-control" id="choiceSearch" onchange="GetValueSelected()">
+                        <option value="" selected="selected">--اختر--</option>
+                        <option value="1">البحث عن طبيب</option>
+                        <option value="2" >البحث عن مستشفى </option>
+                        <option value="3">البحث عن معمل</option>
+                      </select>
+                    </div>
 
       {{-- For Hospiatl --}}
-      <div style=" visibility: hidden;" id="hospital">
-
-        <label><h5>اختر نوعيه البحث </h5></label>
-        <select class="input-large form-control" id="choicehospital" onchange="GetValueSelected()">
-          <option value="" selected="selected">--اختر--</option>
-          <option value="1">اسم المستشفى </option>
-
-
-        </select>
-      </div>
+                    <div style=" visibility: hidden;" id="hospital">
+                      <label><h5>اختر نوعيه البحث </h5></label>
+                      <select class="input-large form-control" id="choicehospital" onchange="GetValueSelected()">
+                        <option value="" selected="selected">--اختر--</option>
+                        <option value="1">اسم المستشفى </option>
+                      </select>
+                    </div>
 
       {{-- End Hospital --}}
 
       {{-- For Lab --}}
-      <div style=" visibility: hidden;" id="lab">
-
-        <label><h5>اختر نوعيه البحث </h5></label>
-        <select class="input-large form-control" id="choicelab" onchange="GetValueSelected()">
-          <option value="" selected="selected">--اختر--</option>
-          <option value="1">البحث بالمنطقه  </option>
-
-
-        </select>
-      </div>
+                    <div style=" visibility: hidden;" id="lab">
+                      <label><h5>اختر نوعيه البحث </h5></label>
+                      <select class="input-large form-control" id="choicelab" onchange="GetValueSelected()">
+                        <option value="" selected="selected">--اختر--</option>
+                        <option value="1">البحث بالمنطقه  </option>
+                      </select>
+                    </div>
       {{-- End Lab --}}
 
 
       {{-- For Doctor --}}
 
 
-      <div style=" visibility: hidden;" id="doctor">
-        <h3> البحث عن طبيب </h3>
-        <label><h5> اختر نوعيه البحث </h5></label>
-        <select class="input-large form-control" id="choicedoctor" onchange="GetValueSelected()">
-          <option value="" selected="selected">--اختر--</option>
-          <option value="1">المحافظه</option>
-          <option value="2" >التخصص</option>
-          <option value="3">اسم الدكتور</option>
+                  <div style=" visibility: hidden;" id="doctor">
+                    <h3> البحث عن طبيب </h3>
+                    <label><h5> اختر نوعيه البحث </h5></label>
+                    <select class="input-large form-control" id="choicedoctor" onchange="GetValueSelected()">
+                      <option value="" selected="selected">--اختر--</option>
+                      <option value="1">المحافظه</option>
+                      <option value="2" >التخصص</option>
+                      <option value="3">اسم الدكتور</option>
+                    </select>
+                  </div>
+
+                  <div id="glopalSelect" style=" visibility: hidden;">
+                    <p> اختر المحافظه</p>
+                    <select class="input-large form-control" name="choice" >
+                      <option value="1" selected="selected">الاسكندريه</option>
+                    </select>
+                  </div>
+                  <div id="areaSelect" style=" visibility: hidden;">
+                    <p> اختر المنطقه</p>
+                    <select class="input-large form-control" name="choice" id="area">
+                      <option value="" selected="selected">--اختر--</option>
+                      @foreach($area as $areas)
+                      @foreach($areas as $ar)
+                      <option value="{{$ar}}" >{{$ar}}</option>
+                      @endforeach   
+                      @endforeach
+                    </select>
+                    <button id="myButtonArea" class="float-left submit-button" >Search</button>
+                  </div>
 
 
-        </select>
-      </div>
+                  <div id="areaSelectLab" style=" visibility: hidden;">
+                    <p> اختر المنطقه</p>
+                    <select class="input-large form-control" name="choice" id="areaLab">
+                      <option value="" selected="selected">--اختر--</option>
+                      @foreach($areaLab as $areaLab)
+                      @foreach($areaLab as $arLab)
+                      <option value="{{$arLab}}" >{{$arLab}}</option>
+                      @endforeach   
+                      @endforeach
+                    </select>
+                    <button id="myButton" class="float-left submit-button" >Search</button>
+                  </div>
 
-      <div id="glopalSelect" style=" visibility: hidden;">
-        <p> اختر المحافظه</p>
-        <select class="input-large form-control" name="choice" >
-          <option value="1" selected="selected">الاسكندريه</option>
-
-
-
-        </select>
-      </div>
-      <div id="areaSelect" style=" visibility: hidden;">
-        <p> اختر المنطقه</p>
-        <select class="input-large form-control" name="choice" id="area">
-          <option value="" selected="selected">--اختر--</option>
-          @foreach($area as $areas)
-          @foreach($areas as $ar)
-          <option value="{{$ar}}" >{{$ar}}</option>
-          @endforeach   
-          @endforeach
-        </select>
-        <button id="myButtonArea" class="float-left submit-button" >Search</button>
-      </div>
-
-
-      <div id="areaSelectLab" style=" visibility: hidden;">
-        <p> اختر المنطقه</p>
-        <select class="input-large form-control" name="choice" id="areaLab">
-          <option value="" selected="selected">--اختر--</option>
-          @foreach($areaLab as $areaLab)
-          @foreach($areaLab as $arLab)
-          <option value="{{$arLab}}" >{{$arLab}}</option>
-          @endforeach   
-          @endforeach
-        </select>
-        <button id="myButton" class="float-left submit-button" >Search</button>
-      </div>
-
-      <div id="specialSelect" style=" visibility: hidden;">
-        <p>اختر التخصص</p>
-        <select class="input-large form-control" name="choice" id="special">
-          <option value=" " selected="selected">--اختر--</option>
-          @foreach($specialization as $specials)
-          @foreach($specials as $special)
-          <option value="{{$special}}" >{{$special}}</option>
-          @endforeach   
-          @endforeach
-
-
-        </select>
-        <button id="myButton2" class="float-left submit-button" >Search</button>
-      </div>
+                  <div id="specialSelect" style=" visibility: hidden;">
+                    <p>اختر التخصص</p>
+                    <select class="input-large form-control" name="choice" id="special">
+                      <option value=" " selected="selected">--اختر--</option>
+                      @foreach($specialization as $specials)
+                      @foreach($specials as $special)
+                      <option value="{{$special}}" >{{$special}}</option>
+                      @endforeach   
+                      @endforeach
+                    </select>
+                    <button id="myButton2" class="float-left submit-button" >Search</button>
+                  </div>
 
       {{-- Name Of Doctor --}}
-      <div id="nameDoctor" style=" visibility: hidden;">
-        <p id ='name'></p>
-        <input type="text" vlaue="namedoctor" name="doctor" id="nameDoctor2">
-        <button id="myButton3" class="float-left submit-button" >Search</button>
-      </div>
+                  <div id="nameDoctor" style=" visibility: hidden;">
+                    <p id ='name'></p>
+                    <input type="text" vlaue="namedoctor" name="doctor" id="nameDoctor2">
+                    <button id="myButton3" class="float-left submit-button" >Search</button>
+                  </div>
 
 
 
@@ -218,65 +202,50 @@
       {{-- End Doctor --}}
       {{-- E searching --}}
 
-      <hr>
+      
       <!--end-banner-->
       {{-- test --}}
-      <center>
-        <table>  
+
+                 <div id="glopalSelect" style=" visibility: hidden;">
+                  <p> اختر المحافظه</p>
+                  <select class="input-large form-control" name="choice" >
+                    <option value="1" selected="selected">الاسكندريه</option>
+                  </select>
+                </div>
+                <div id="areaSelect" style=" visibility: hidden;">
+                  <p> اختر المنطقه</p>
+                  <select class="input-large form-control" name="choice" id="area">
+                    <option value="" selected="selected">--اختر--</option>
+                    @foreach($area as $areas)
+                    @foreach($areas as $ar)
+                    <option value="{{$ar}}" >{{$ar}}</option>
+                    @endforeach   
+                    @endforeach
+                  </select>
+                  <button id="myButton" class="float-left submit-button" >Search</button>
+                </div>
 
 
+                <div id="specialSelect" style=" visibility: hidden;">
+                  <p>اختر التخصص</p>
+                  <select class="input-large form-control" name="choice" id="special">
+                    <option value=" " selected="selected">--اختر--</option>
+                    @foreach($specialization as $specials)
+                    @foreach($specials as $special)
+                    <option value="{{$special}}" >{{$special}}</option>
+                    @endforeach   
+                    @endforeach
 
 
-        
+                  </select>
+                  <button id="myButton2" class="float-left submit-button" >Search</button>
+                </div>
 
-
-         
-
-            
-
-             <div id="glopalSelect" style=" visibility: hidden;">
-              <p> اختر المحافظه</p>
-              <select class="input-large form-control" name="choice" >
-                <option value="1" selected="selected">الاسكندريه</option>
-
-
-
-              </select>
-            </div>
-            <div id="areaSelect" style=" visibility: hidden;">
-              <p> اختر المنطقه</p>
-              <select class="input-large form-control" name="choice" id="area">
-                <option value="" selected="selected">--اختر--</option>
-                @foreach($area as $areas)
-                @foreach($areas as $ar)
-                <option value="{{$ar}}" >{{$ar}}</option>
-                @endforeach   
-                @endforeach
-              </select>
-              <button id="myButton" class="float-left submit-button" >Search</button>
-            </div>
-
-
-            <div id="specialSelect" style=" visibility: hidden;">
-              <p>اختر التخصص</p>
-              <select class="input-large form-control" name="choice" id="special">
-                <option value=" " selected="selected">--اختر--</option>
-                @foreach($specialization as $specials)
-                @foreach($specials as $special)
-                <option value="{{$special}}" >{{$special}}</option>
-                @endforeach   
-                @endforeach
-
-
-              </select>
-              <button id="myButton2" class="float-left submit-button" >Search</button>
-            </div>
-
-            <div id="nameDoctor" style=" visibility: hidden;">
-              <p>ادخل اسم الدكتور</p>
-              <input type="text" vlaue="namedoctor" name="doctor" id="nameDoctor2">
-              <button id="myButton3" class="float-left submit-button" >Search</button>
-            </div>
+                <div id="nameDoctor" style=" visibility: hidden;">
+                  <p>ادخل اسم الدكتور</p>
+                  <input type="text" vlaue="namedoctor" name="doctor" id="nameDoctor2">
+                  <button id="myButton3" class="float-left submit-button" >Search</button>
+                </div>
 
 
 
@@ -457,10 +426,10 @@
 
         <!-- Portfolio -->
 
-       
-          </div>
+  
+</div>
 
-         {{--  @endsection --}}
+          @endsection
 
 
 
