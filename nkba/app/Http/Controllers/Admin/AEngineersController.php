@@ -66,10 +66,10 @@ class AEngineersController extends Controller
             $destinationPath = '/assets/images/';
             $extension = Input::file('path')->getClientOriginalExtension();
             $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
-            $photo->move($destinationPath,$photoname);
+            $photo->move(public_path().$destinationPath,$photoname);
         }
         $engineer = new Engineer;
-        $engineer->user_id = $user->id;
+        $engineer->user_id = null;
         $engineer->name = $input['name'];
         $engineer->email = $input['email'];
         $engineer->national_id = $input['national_id'];
@@ -83,6 +83,7 @@ class AEngineersController extends Controller
         $engineer->health_id = $input['health_id'];
         $engineer->credit_number = $input['credit_number'];
         $engineer->path = $destinationPath.$photoname;
+
         $engineer->save();
 
         return Redirect::route('admin-engineer.index');
@@ -129,16 +130,9 @@ class AEngineersController extends Controller
     public function update(Request $request, $id)
     {
         $engineer = Engineer::findOrFail($id);
-        $validation=$this->validate($request, [
-            'name' => 'required',
-            'email' => 'required'
-            ]);
         $input = $request->all();
         $engineer->fill($input)->save();
-        return Redirect::route('admin-engineer.show',$engineer->id)
-        ->withInput()
-        ->withErrors($validation)
-        ->with('message', 'There were validation errors.');
+        return Redirect::route('admin-engineer.show',$engineer->id);
     }
 
     /**

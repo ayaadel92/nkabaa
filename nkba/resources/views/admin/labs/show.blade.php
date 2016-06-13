@@ -10,7 +10,11 @@
 			<div class="panel-body">
 				<img src= "{{ $lab->path }}" width="100px" height="100px">
 				<table class="table table-bordered">
-					<tr><!-- 'name', 'address', 'phone', 'governorate', 'area', 'discription', 'path' -->
+					<tr>
+						<th class="text-center">رمز الدخول</th>
+						<td class="text-center">{{ $lab->login_id }}</td> 
+					</tr>
+					<tr>
 						<th class="text-center">الاسم</th>
 						<td class="text-center">{{ $lab->name }}</td> 
 					</tr>

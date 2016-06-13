@@ -86,6 +86,17 @@
                     <li>{{ link_to_route('admin-lab.create', 'إضافة معمل') }}</li>
                 </ul>
             </li>  
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
+                    <i class="icon_document_alt"></i>
+                    <span>الأشعة والتحاليل</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    <li>{{ link_to_route('admin-radio.index', 'عرض الكل') }}</li>                          
+                    <li>{{ link_to_route('admin-radio.create', 'إضافة الأشعة او تحليل') }}</li>
+                </ul>
+            </li>  
         </ul>
         <!-- sidebar menu end-->
     </div>

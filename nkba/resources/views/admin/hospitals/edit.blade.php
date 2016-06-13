@@ -13,6 +13,14 @@
 				<!-- 'files' => true to accept uploading photos -->
 				{{ Form::open(array('route' =>array( 'admin-hospital.update',$hospital->id), 'method' => 'put', 'files' => true)) }}
 				<ul>
+
+					<li>
+						<div class="form-group">
+							{{ Form::label('login_id', 'رمز الدخول') }}
+							{{ Form::text('login_id', $hospital->login_id, array('class' => 'form-control')) }}
+						</div>
+					</li>
+
 					<li>
 						<div class="form-group">
 							{{ Form::label('name', 'الاسم') }}

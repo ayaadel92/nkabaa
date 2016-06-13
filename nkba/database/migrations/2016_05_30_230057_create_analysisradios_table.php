@@ -18,6 +18,7 @@ class CreateAnalysisradiosTable extends Migration
             $table->enum('type',['تحليل','اشعة']);
             $table->enum('limit',['yes','no']);
             $table->integer('limits_num');
+            $table->timestamps();
         });
     }
 

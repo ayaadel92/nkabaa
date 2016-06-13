@@ -63,6 +63,17 @@ class AUsersController extends Controller
             $user->email = $input['email'];
             $user->password = bcrypt($input['password']);
             $user->save();
+            $user_obj = USER::orderBy('id','desc')->first();
+            $user_json = response()->json($user_obj)->getData();
+            if ($user->role == 'مهندس') {
+                DB::table('engineers')->where('eng_id',$input['login'])->update(['user_id'=>$user_json->id]);
+            }elseif ($user->role == 'قريب') {
+                DB::table('relatives')->where('eng_id',$input['login'])->update(['user_id'=>$user_json->id]);
+            }elseif ($user->role == 'معمل') {
+                DB::table('labs')->where('id',$input['login'])->update(['user_id'=>$user_json->id]);
+            }elseif ($user->role == 'مستشفى') {
+                DB::table('hospitals')->where('id',$input['login'])->update(['user_id'=>$user_json->id]);
+            }
             return Redirect::route('admin-user.index');
         // } 
 
