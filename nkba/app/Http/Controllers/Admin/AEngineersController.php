@@ -59,17 +59,9 @@ class AEngineersController extends Controller
         // if ($validation->passes())
         // {
       //add engineer in engineers table
-        $destinatonPath = '';
-        $photoname = '';
-        if(Input::file('path')){
-            $photo = Input::file('path');
-            $destinationPath = '/assets/images/';
-            $extension = Input::file('path')->getClientOriginalExtension();
-            $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
-            $photo->move($destinationPath,$photoname);
-        }
+        
         $engineer = new Engineer;
-        $engineer->user_id = $user->id;
+        $engineer->user_id = null;
         $engineer->name = $input['name'];
         $engineer->email = $input['email'];
         $engineer->national_id = $input['national_id'];
@@ -82,7 +74,7 @@ class AEngineersController extends Controller
         $engineer->eng_id = $input['eng_id'];
         $engineer->health_id = $input['health_id'];
         $engineer->credit_number = $input['credit_number'];
-        $engineer->path = $destinationPath.$photoname;
+        $engineer->path = null;
         $engineer->save();
 
         return Redirect::route('admin-engineer.index');

@@ -24,7 +24,7 @@
                 <div class="col-md-8 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input  name="first_name" value="{{$user['0']->name}}" class="form-control"  type="text" readonly style="height: 40px">
+                        <input  name="first_name" value="{{ $user['0']->name }}" class="form-control"  type="text" readonly style="height: 40px">
                     </div>
                 </div>
             </div>

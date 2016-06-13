@@ -9,9 +9,9 @@
         <div style="height: 100px"></div> 
     </div>
         <div class="container content" >
-<i class="fa-stethoscope fa-2x" style="size: 20px"> متابعة رصيد العمليات</i> 
+<i class="fa-stethoscope fa-2x" style="size: 20px">         متابعة رصيد العمليات</i> 
                 <br>
-               <i class="fa-stethoscope fa-2x">متابعة رصيد التحاليل والأشعة</i> 
+               <i class="fa-stethoscope fa-2x" style="size: 20px">متابعة رصيد التحاليل والأشعة         </i> 
    <div style="height: 100px"></div> 
                 <div class="sing-img-text-left">
                     <div class="blog-right1">
@@ -44,12 +44,12 @@
 
                                             <div class="chart clearfix">
                                               <p style="color:#B32B2B ; font-size: 25px" > المتبقي من الإجمالي :{{$limit['0']->total_remainder}}</p>
-                                             
+                                                <div style="height: 25px;"></div>
                                               <div class="item animate swing">
 
                                                 <div class="bar">
 
-                                                    <span class="percent">{{ ($limit['0']->total_remainder /17000)*100}}%</span>
+                                                    <span class="percent" style="color: #000;font-size: 30px">{{abs(($limit['0']->total_remainder /17000)*100)}}%</span>
 
                                                     <div class="item-progress" data-percent="{{ ($limit['0']->total_remainder /17000)*100}}">
                                                         <span class="title"></span>
@@ -58,24 +58,28 @@
                                                 </div>
                                                 <!-- //.bar -->
                                             </div>
+                                                 <div style="height: 25px;"></div>
                                             <!-- //.item -->
                                             <p style="color:#B32B2B ; font-size: 25px"> المتبقي من العمليات :{{$limit['0']->surgery_credit}}</p>
+                                             <div style="height: 25px;"></div>
                                             <div class="item animate swing">
                                                 <div class="bar">
-                                                    <span class="percent">{{($limit['0']->surgery_credit/5000)*100}}%</span>
+                                                    <span class="percent" style="color: #000;font-size: 30px">{{abs(($limit['0']->surgery_credit/11000)*100)}}%</span>
 
-                                                    <div class="item-progress" data-percent="{{ ($limit['0']->surgery_credit/5000)*100}}">
+                                                    <div class="item-progress" data-percent="{{ ($limit['0']->surgery_credit/11000)*100}}">
 
                                                     </div>
                                                     <!-- //.item-progress -->
                                                 </div>
                                                 <!-- //.bar -->
                                             </div>
+                                              <div style="height: 25px;"></div>
                                             <!-- //.item -->
                                             <p style="color:#B32B2B ; font-size: 25px"> المتبقي من التحاليل و الأشعة:{{$limit['0']->analysis_credit}}</p>
+                                               <div style="height: 25px;"></div>
                                             <div class="item  animate swing">
                                                 <div class="bar">
-                                                    <span class="percent">{{($limit['0']->analysis_credit/1000)*100}}%</span>
+                                                    <span class="percent" style="color: #000;font-size: 30px">{{($limit['0']->analysis_credit/1000)*100}}%</span>
 
                                                     <div class="item-progress" data-percent="{{($limit['0']->analysis_credit/1000)*100}}">
 

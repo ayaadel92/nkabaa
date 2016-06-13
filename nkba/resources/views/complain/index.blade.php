@@ -11,11 +11,8 @@
     </div>
    
             
-<i class="fa-user-md fa-2x animate flash" style="size: 20px"> اصبح من حقك ان تضع ملاحظاتك علي مستشفي</i> 
-                <br>
-               <i class="fa-user-md fa-2x animate flash">اصبح من حقك ان تضع ملاحظاتك علي الدكتور</i> 
-                 <br>
-               <i class="fa-user-md fa-2x animate flash">اصبح من حقك ان تضع ملاحظاتك علي المعمل الاشعه و التحليل </i> 
+<i class="fa-stethoscope  fa-2x animate flash" style="size: 20px">اصبح من حقك ان تضع ملاحظاتك سوء علي طيب ,دكتور او مشفي </i> 
+               
    <div style="height: 100px"></div> 
            
             
@@ -37,7 +34,9 @@
                                                 </div>
                                                 <div class="col-md-7">
                                                     <h5 class="no-margin no-padding" style="color:#B32B2B">شكوي عن مشفي </h5>
-                                                    <p>يمكنك ان تقول الان كامل ملاحظاتك عن المشفي التابع للنقابه مع ارفاق اوراق  او صور عن الشكوي و ذلك سعيا منا علي رفع مستوي المشفي التي تخدم مهندسينا</p>
+                                                       <br><br><br>
+                                                    <p style="font-size: 25px">يمكنك ان تقول الان كامل ملاحظاتك عن المشفي التابع للنقابه مع ارفاق اوراق  او صور عن الشكوي و ذلك سعيا منا علي رفع مستوي المشفي التي تخدم مهندسينا</p>
+                                                       <br><br><br>
                                                                 <button type="button" class="btn-green " data-toggle="modal" data-target="#myModal">اضافه شكوي مستشفي <span class="glyphicon glyphicon-send"></span></button>
 
                                                 </div>
@@ -61,7 +60,9 @@
                                                 </div>
                                                 <div class="col-md-7">
                                                     <h5 class="no-margin no-padding" style="color:#B32B2B" >اضافه شكوي علي طبيب</h5>
-                                                    <p>يمكنك ان تقول الان كامل ملاحظاتك عن الدكتور  التابع للنقابه مع ارفاق اوراق او صور عن الشكوي و ذلك سعيا منا علي رفع مستوي الدكتور</p>
+                                                    <br><br><br>
+                                                    <p style="font-size: 25px">يمكنك ان تقول الان كامل ملاحظاتك عن الدكتور  التابع للنقابه مع ارفاق اوراق او صور عن الشكوي و ذلك سعيا منا علي رفع مستوي الدكتور</p>
+                                                       <br><br><br>
                                                 <button type="button" class=" btn-green" data-toggle="modal" data-target="#myModal1">اضافه شكوي دكتور <span class="glyphicon glyphicon-send"></span></button>
 
                                                 </div>
@@ -85,7 +86,9 @@
                                                 </div>
                                                 <div class="col-md-7">
                                                    <h5 class="no-margin no-padding" style="color:#B32B2B" >اضافه شكوي علي معمل اشعهة و تحاليل</h5>
-                                                    <p>يمكنك ان تقول الان كامل ملاحظاتك عن معمل الاشعه التابع للنقابه مع ارفاق اوراق او صور عن الشكوي و ذلك سعيا منا لرفع مستوي معمل الاشعه و التحاليل</p>
+                                                   <br><br><br>
+                                                    <p style="font-size: 25px">يمكنك ان تقول الان كامل ملاحظاتك عن معمل الاشعه التابع للنقابه مع ارفاق اوراق او صور عن الشكوي و ذلك سعيا منا لرفع مستوي معمل الاشعه و التحاليل</p>
+                                                     <br><br><br>
                                                 <button type="button" class=" btn-green" data-toggle="modal" data-target="#myModal3">اضافه شكوي معمل <span class="glyphicon glyphicon-send"></span></button>
 
                                                 </div>
