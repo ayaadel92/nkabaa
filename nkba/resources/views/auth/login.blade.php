@@ -17,7 +17,7 @@
             <div class="panel panel-default">
                
                 <center>
-                    <div><h5>Noties for First Registration : If You Are Engineer The Message send to Your Mail (Check You Mail After Regist), If You Are Not Engineer Or Rlative You Can't Get Messaage On Mail And You Can't Login </h5></div>
+                   
                 <div class="panel-heading"><h3>تسجيل الدخول</h3></div>
                 <div class="panel-body">
                    <div class="jumbotron"> 
@@ -37,6 +37,8 @@
                                 @endif
                             </div>
                         </div>
+                      
+                          
 
 {{-- <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">@</span>
@@ -82,11 +84,13 @@
                             </div>
                         </div>
                       </center>
+                       <div><h6>تنويه !!<br> فى حاله التسجيل لأول مره , اذا كنت من احد اعضاء نقابه المهندسين فبأمكانك التسجيل وسيتم ارسال رساله عبر البريد الالكترونى الخاص بك . اذ لم تكن من احد اعضاء النقابه فلن تتمكن من التسجيل داخل الموقع ! </h6></div>
                     </form>
                    </div>
                 </div>
             </div>
             <br><br><br><br><br><br>
+
              </center>
         </div>
     </div>
