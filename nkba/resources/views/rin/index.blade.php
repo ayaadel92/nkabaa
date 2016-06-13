@@ -19,9 +19,9 @@
          <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">يمكنك الان تجديد اشتراكات </h5>
          <p style="font-size: 25px" class="animate slideInDown"> اصبج الاشتراك السنوي اكثر سهوله   </p>
                 <p style="font-size: 25px" class="animate slideInDown"> يمكنك الدفع عن طريق فودافون كاش </p>
-                <p style="font-size: 25px" class="animate slideInDown"> 010000000000</p>
+                <p style="font-size: 25px" class="animate slideInDown"> 0105433124813</p>
                 <p style="font-size: 25px" class="animate slideInDown"> و يمكنك الدفع عن طريق موبي كاش </p>
-                <p style="font-size: 25px" class="animate slideInDown"> 012000000000</p>
+                <p style="font-size: 25px" class="animate slideInDown"> 012255115235</p>
                 
                 
 
@@ -69,7 +69,7 @@
         @if (count($memb) > 0)
             <div class="panel panel-default" style="background-color: rgb(227, 247, 201)">
                 <div class="panel-heading">
-                   القارب التي تم التسجيل لهم
+                   الاقارب الذين تم التسجيل لهم 
                 </div>
 
                 <div class="panel-body" >

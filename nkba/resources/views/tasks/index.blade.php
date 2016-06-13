@@ -33,7 +33,7 @@
 
             <!-- Task Name -->
             <div class="form-group animate swing">
-                <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> مسمي معادك:</p>  </label>  
+                <label class="col-md-4 control-label">  <p style='color: #339933 ;font-size: 20px'> ميعادك:</p>  </label>  
                 <div class="col-md-8 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -92,7 +92,7 @@
         @if (count($tasks) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
-                مواعيدك الحاليه
+                <p style="font-size:  30px;color: #3D7A33" > مواعيدك الحاليه </p>
             </div>
 
             <div class="panel-body">
@@ -123,7 +123,7 @@
 
                             </td>
                             <td>
-                                <button type="button" class="btn-green" data-toggle="modal" data-target="#myModal{{ $task->id}}" id="update-task-{{ $task->id}}">تعديل المعاد   <span class="glyphicon glyphicon-send"></span></button>
+                                <button type="button" class="btn-green" data-toggle="modal" data-target="#myModal{{ $task->id}}" id="update-task-{{ $task->id}}" style="width: 100px">تعديل المعاد   <span class="glyphicon glyphicon-send"></span></button>
 
                                 <div class="modal fade" id="myModal{{ $task->id}}" role="dialog">
                                     <div class="modal-dialog">
@@ -142,17 +142,17 @@
                                                 ]) !!}
 
                                                 <div class="form-group">
-                                                    {!! Form::label('name', 'name:', ['class' => 'control-label']) !!}
+                                                    {!! Form::label('name', 'الميعاد:', ['class' => 'control-label']) !!}
                                                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                                                 </div>
 
                                                 <div class="form-group">
-                                                    {!! Form::label('date', 'date:', ['class' => 'control-label']) !!}
+                                                    {!! Form::label('date', 'التاريخ:', ['class' => 'control-label']) !!}
                                                     {!! Form::date('date', null, ['class' => 'form-control']) !!}
                                                 </div>
                                                 
                                                    <div class="form-group">
-                                                    {!! Form::label('time', 'time:', ['class' => 'control-label']) !!}
+                                                    {!! Form::label('time', 'الوقت:', ['class' => 'control-label']) !!}
                                                     {!! Form::time('time', null, ['class' => 'form-control']) !!}
                                                 </div>
 

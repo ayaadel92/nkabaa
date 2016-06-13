@@ -1,4 +1,5 @@
 <?php
+
 use App\Analysisradios;
 use App\Transfer;
 use Illuminate\Support\Facades\Input;
@@ -21,7 +22,7 @@ use Illuminate\Http\Request;
 
 
  
-  
+
 //Evaluation Route
   Route::get('/','EvaluateController@GetEvaluate');
  
@@ -39,23 +40,24 @@ use Illuminate\Http\Request;
    
 
 
-  Route::auth();
+Route::auth();
 
-  Route::resource('/home', 'HomeController');
+Route::resource('/home', 'HomeController');
+
 
   Route::resource('/engineer', 'EngineerController');
 
 
-  Route::resource('/users', 'UserController');
+Route::resource('/users', 'UserController');
 
   Route::resource('/fin', 'FainancesController');
   Route::resource('/rin', 'RenewsController');
 
-  Route::resource('/member', 'MembersController');
+Route::resource('/member', 'MembersController');
 
-  Route::resource('/task', 'TasksController');
+Route::resource('/task', 'TasksController');
 
-  Route::resource('/complain', 'ComplaintssController');
+Route::resource('/complain', 'ComplaintssController');
 
  
 //transfer routes
@@ -128,6 +130,7 @@ use Illuminate\Http\Request;
  });
 
 //acceptance transfer
+
   Route::get('ajax-response/{updated}',function($updated){
     if (Request::ajax()) {
       $where = ['done'=>'نعم', 'confirm' =>'لا'];
@@ -139,11 +142,12 @@ use Illuminate\Http\Request;
             return response()->json($transfers);
           }
         }
-      }
     }
-  });
+    }
+});
 
 //Admin routes
+
   Route::get('/admin/login',array('as' => 'admin.login', 'uses' => 'AdminController@login'));
   Route::get('/admin/logout',array('as' => 'admin.logout', 'uses' => 'AdminController@logout'));
   Route::post('/admin/loggedin',array('as' => 'admin.loggedin', 'uses' => 'AdminController@loggedin'));
@@ -164,14 +168,13 @@ use Illuminate\Http\Request;
   Route::put('/employee-transfer/decreaseInsure',array('as' => 'employee-transfer.decreaseInsure', 'uses' => 'EmplyeeTransferController@decreaseInsure'));
   Route::get('ajax/{created}',function($created){
     if (Request::ajax()) {
-      if (Transfer::where('done','لا')->count() > 0) {
-        $last_created = Transfer::orderBy('created_at','desc')->first();
-        if ($last_created !== $created) {
-          $transfers = Transfer::where([['created_at','>',$created],['done','=','لا']])->get();
-          return response()->json($transfers);
+        if (Transfer::where('done', 'لا')->count() > 0) {
+            $last_created = Transfer::orderBy('created_at', 'desc')->first();
+            if ($last_created !== $created) {
+                $transfers = Transfer::where([['created_at', '>', $created], ['done', '=', 'لا']])->get();
+                return response()->json($transfers);
+            }
         }
-        
-      }
     }
   });
   Route::get('ajaxConfirm/{updated}',function($updated){

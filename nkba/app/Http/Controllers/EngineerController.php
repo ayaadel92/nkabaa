@@ -27,6 +27,7 @@ class EngineerController extends Controller {
         $user = DB::table('engineers')
                 ->where('user_id', $id)
                 ->get();
+       // print_r($user);exit;
         return view('engineer.index', compact('user'));
          }else{
               $user = DB::table('relatives')

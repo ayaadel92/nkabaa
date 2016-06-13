@@ -83,7 +83,6 @@ class AEngineersController extends Controller
         $engineer->health_id = $input['health_id'];
         $engineer->credit_number = $input['credit_number'];
         $engineer->path = $destinationPath.$photoname;
-
         $engineer->save();
 
         return Redirect::route('admin-engineer.index');

@@ -16,6 +16,7 @@ class CreateRelativesTable extends Migration {
             $table->enum('status',['نعم','لا']);
             $table->string('name'); 
             $table->string('health_id');
+            $table->string('login_id');
             $table->integer('eng_id')->unsigned();
             $table->date('birth_date'); 
             $table->enum('gender', ['ذكر', 'انثى']); // dah el no3 

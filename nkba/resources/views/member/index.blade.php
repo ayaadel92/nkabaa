@@ -4,16 +4,16 @@
 
          <div style="height: 100px"></div> 
     <div style="margin-right: 0px" >
-        <h3 style="color: #3D7A33 ;alignment-adjust: left">الاشتراك في التامين الصحي </h3>
+        <h3 style="color: #3D7A33 ;alignment-adjust: left">الإشتراك في التأمين الصحي </h3>
         <div style="height: 100px"></div> 
     </div>
  
-         <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">المطلبات الاساسيه الاشتراك في التامين الصحي </h5>
-         <p style="font-size: 25px" class="animate slideInDown"> اذا كنت تريد الاشتراك لوالد فأورق المطلوبه صوره لشخص بالضافه الي صوره البطاقه  </p>
-                <p style="font-size: 25px" class="animate slideInDown"> اذا كنت تريد الاشتراك   الوالده  فأورق المطلوبه صوره لشخص بالضافه الي شهاده الميلاد </p>
-                <p style="font-size: 25px" class="animate slideInDown"> اذا كنت تريد الاشتراك الابن  فأورق المطلوبه صوره لشخص بالضافه الي شهاده الميلاد  علي ان يكون اقل من سن التخرج</p>
-                <p style="font-size: 25px" class="animate slideInDown"> اذا كنت تريد الاشتراك الابنه فاورق  المطلوبه صوره لشخص بالضافه الي شهاده الميلاد علي ان يكون غير متزوجه</p>
-                <p style="font-size: 25px" class="animate slideInDown"> اذا كنت تريد الاشتراك  الزوجهه و الزوج  فاورق  المطلوبه صوره لشخص بالضافه الي شهاده الميلاد علي ان يكون غير متزوجه</p>
+         <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">الطلبات الأساسيه لإشتراك  الصحي </h5>
+         <p style="font-size: 25px" class="animate slideInDown">** إذا كنت تريد الإشتراك للوالد فالأوراق المطلوبه للإشتراك صوره البطاقه الشخصيه مع صوره شخصيه</p>
+                <p style="font-size: 25px" class="animate slideInDown"> ** إذا كنت تريد الإشتراك للوالده فالاوراق المطلوبه للإشتراك صوره شهاده ميلاد المهندس مع صوره شخصيه</p>
+                <p style="font-size: 25px" class="animate slideInDown">** إذا كنت تريد الإشتراك للزوجه فالاوراق المطلوبه للإشتراك صوره قسيمه الزواج مع صوره شخصيه </p>
+                <p style="font-size: 25px" class="animate slideInDown">** إذا كنت تريد الإشتراك للإبنه فالأوراق  المطلوبه صوره شخصيه بالإضافه لشهادة الميلاد علي أن تكون غير متزوجه</p>
+                <p style="font-size: 25px" class="animate slideInDown">** إذا كنت تريد الإشتراك  للإبن  فالأوراق  المطلوبه صوره شخصيه بالإضافه  الميلاد على أن يكون متخرج  بالاضافه علي صوره من شهاده الميلاد</p>
 <div style="height: 100px"></div>
 
 
@@ -21,7 +21,7 @@
                     <div class="blog-right1">
 
                         <div class="categories">
-                            <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">المطلبات الاساسيه الاشتراك في التامين الصحي</h5>
+                            <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">الطلبات الأساسيه للإشتراك في التأمين الصحي</h5>
                             <div class="clearfix"> </div>
                             
                         </div>

@@ -6,7 +6,7 @@
 <div class="col-md-9">
  <div style="height: 100px"></div> 
     <div style="margin-right: 0px" >
-        <h3 style="color: #3D7A33 ;alignment-adjust: left">المعلومات الشخصيه بالمهندس</h3>
+        <h3 style="color: #3D7A33 ;alignment-adjust: left">المعلومات الشخصيه</h3>
         <div style="height: 100px"></div> 
     </div>
 
@@ -24,7 +24,7 @@
                 <div class="col-md-8 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input  name="first_name" value="{{$user['0']->name}}" class="form-control"  type="text" readonly style="height: 40px">
+                        <input  name="first_name" value="{{ $user['0']->name }}" class="form-control"  type="text" readonly style="height: 40px">
                     </div>
                 </div>
             </div>
@@ -181,7 +181,7 @@
 <div class="col-md-9">
   <div style="height: 100px"></div> 
     <div style="margin-right: 0px" >
-        <h3 style="color: #3D7A33 ;alignment-adjust: left">المعلومات الشخصيه بالقريب</h3>
+        <h3 style="color: #3D7A33 ;alignment-adjust: left">المعلومات الشخصيه </h3>
         <div style="height: 100px"></div> 
     </div>
 
@@ -324,9 +324,7 @@
         <div class="row">
 
             <!-- Copyright -->
-            <div id="copyright" class="col-md-12>
-                 <p class="pull-right" style="font-size: 20px ; color: #fff">(c) ITI OPEN SOURCE AYA ADEL & AYA AHMED & MANAR AHMED & MERVET MOSAD </p>
-            </div>
+            
             <!-- End Copyright -->
         </div>
     </div>
