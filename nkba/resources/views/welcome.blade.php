@@ -403,7 +403,7 @@
                   </li>
                   <!-- //Portfolio Item// -->
                   <!-- Portfolio Item -->
-                  <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                 {{--  <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
                     <a href="#">
                       <figure class="animate fadeInRight">
                         <img alt="image2" src="{{$labs['2']->path}}" style="height: 300px">
@@ -413,7 +413,7 @@
                           <center><span style="color:#3D7A33 ;font-size: 20px">تقيم:{{$labs['2']->rate}}</span></center>
                         </figcaption>
                       </a>
-                    </li>
+                    </li> --}}
                     @endif
                     <!-- //Portfolio Item// -->
                   </ul>
