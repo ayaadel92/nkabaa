@@ -6,44 +6,45 @@
 	<div class="col-sm-10" style="float: left;">
 		<section class="panel">
 			<header class="panel-heading">
-				تعديل المهندس
+				تعديل القريب
 			</header>
 			<div class="panel-body">
 				<!-- 'files' => true to accept uploading photos -->
-				{{ Form::open(array('route' =>array( 'admin-engineer.update',$engineer->id), 'method' => 'put', 'files' => true)) }}
+				{{ Form::open(array('route' =>array( 'admin-relative.update',$relative->id), 'method' => 'put', 'files' => true)) }}
 				<ul>
+					
 					<li>
 						<div class="form-group">
 							{{ Form::label('name', 'الاسم') }}
-							{{ Form::text('name', $engineer->name, array('class' => 'form-control col-sm-7')) }}
+							{{ Form::text('name', $relative->name, array('class' => 'form-control col-sm-7')) }}
 						</div>
 					</li>
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('email', 'الإيميل') }}
-							{{ Form::email('email', $engineer->email, array('class' => 'form-control col-sm-6'))}}
+							{{ Form::label('health_id', 'رقم البطاقة العﻻجية') }}
+							{{ Form::text('health_id', $relative->health_id, array('class' => 'form-control col-sm-6'))}}
 						</div>
 					</li>
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('password', 'الباسوورد') }}
-							{{ Form::password('password', array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('eng_id', 'عضوية المهندس') }}
+							{{ Form::text('eng_id',$relative->eng_id, array('class' => 'form-control col-sm-7')) }}
 						</div>
 					</li>
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('password', 'تأكيد الباسوورد') }}
-							{{ Form::password('password_confirmation', array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('birth_date', 'تاريخ الميﻻد') }}
+							{{ Form::date('birth_date',$relative->birth_date, array('class' => 'form-control col-sm-7')) }}
 						</div>
 					</li> 
 
 					<li>
 						<div class="form-group">
 							{{ Form::label('gender', 'الجنس') }}<br>
-							@if($engineer->gender == 'male')
+							@if($relative->gender == 'male')
 							{{ Form::radio('gender','male', true) }}ذكر
 							{{ Form::radio('gender', 'female') }}أنثى
 							@else
@@ -52,71 +53,54 @@
 							@endif
 							
 						</div>
-					</li>       
+					</li>        
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('address', 'العنوان') }}
-							{{ Form::text('address', $engineer->address, array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('relation_type', 'صلة القرابة') }}
+							<select id="relation_type" name="relation_type" class="form-control">
+								@foreach($relations as $relation)
+								{{ $relation }}
+								@if( $radio->relation  == $relation )
+								<option selected>{{ $relation }}</option>
+								@else
+								<option>{{ $relation }}</option>
+								@endif
+								@endforeach
+							</select>
 						</div>
 					</li>
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('phone_number', 'الموبايل') }}
-							{{ Form::text('phone_number', $engineer->phone_number, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-
-					<li>
-						<div class="form-group">
-							{{ Form::label('birth_date', 'تاريخ الميلاد') }}
-							{{ Form::date('birth_date' , $engineer->birth_date, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-					
-					<li>
-						<div class="form-group">
-							{{ Form::label('gradu_year', 'سنة التخرج') }}
-							{{ Form::text('gradu_year', $engineer->gradu_year, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-					
-					<li>
-						<div class="form-group">
-							{{ Form::label('relative_num', 'عدد الأقارب') }}
-							{{ Form::number('relative_num', $engineer->relative_num, array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('status', 'تجديد الاشتراك') }}
+							<select id="status" name="status" class="form-control">
+								@foreach($statuses as $status)
+								{{ $status }}
+								@if( $radio->status  == $status )
+								<option selected>{{ $status }}</option>
+								@else
+								<option>{{ $status }}</option>
+								@endif
+								@endforeach
+							</select>
 						</div>
 					</li>
 
 					<li>
 						<div class="form-group">
 							{{ Form::label('national_id', 'الرقم القومي') }}
-							{{ Form::text('national_id', $engineer->national_id, array('class' => 'form-control col-sm-7')) }}
+							{{ Form::text('national_id', $relative->national_id, array('class' => 'form-control col-sm-7')) }}
 						</div>
 					</li>
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('eng_id', 'رقم العضوية') }}
-							{{ Form::text('eng_id', $engineer->eng_id, array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('limit_id', 'رقم كشف الحساب') }}
+							{{ Form::number('limit_id', $relative->limit_id, array('class' => 'form-control col-sm-7')) }}
 						</div>
 					</li>
 
-					<li>
-						<div class="form-group">
-							{{ Form::label('health_id', 'رقم التأمين') }}
-							{{ Form::text('health_id', $engineer->health_id, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-
-					<li>
-						<div class="form-group">
-							{{ Form::label('credit_number', 'رقم حساب مصرفي') }}
-							{{ Form::text('credit_number', $engineer->credit_number, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-					
 
 					<li>
 						<div class="form-group">

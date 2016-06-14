@@ -12,6 +12,11 @@
 				<img src= "{{ $hospital->path }}" width="100px" height="100px">
 				<table class="table table-bordered">
 					<tr>
+						<th class="text-center">رمز الدخول</th>
+						<td class="text-center">{{ $hospital->login_id }}</td> 
+					</tr>
+
+					<tr>
 						<th class="text-center">الاسم</th>
 						<td class="text-center">{{ $hospital->name }}</td> 
 					</tr>

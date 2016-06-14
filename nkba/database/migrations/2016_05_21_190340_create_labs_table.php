@@ -14,11 +14,12 @@ class CreateLabsTable extends Migration
     {
         Schema::create('labs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name');mt_rand(1, 100000)
             $table->string('address');
             $table->string('phone')->nullable();
             $table->string('governorate');
             $table->string('area'); 
+            $table->string('login_id');
             $table->string('email')->unique();
             $table->enum('type', ['مركز اشعة', 'معمل تحاليل']); // dah el no3 
             $table->string('discription')->nullable();

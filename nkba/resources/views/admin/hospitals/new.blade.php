@@ -10,8 +10,15 @@
 			</header>
 			<div class="panel-body">
 				<!-- 'files' => true to accept uploading photos -->
-				{{ Form::open(array('route' => 'admin-doctor.store', 'files' => true)) }}
+				{{ Form::open(array('route' => 'admin-hospital.store', 'files' => true)) }}
 				<ul>
+					<li>
+						<div class="form-group">
+							{{ Form::label('login_id', 'رمز الدخول') }}
+							{{ Form::text('login_id', null, array('class' => 'form-control')) }}
+						</div>
+					</li>
+
 					<li>
 						<div class="form-group">
 							{{ Form::label('name', 'الاسم') }}

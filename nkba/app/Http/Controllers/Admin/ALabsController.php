@@ -26,12 +26,12 @@ class ALabsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function index()
+    public function index()
     {
         $labs = Lab::all();
         $labs->toarray();
         return view('admin.labs.index', compact('labs'));
-   }
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -61,10 +61,10 @@ class ALabsController extends Controller
         $photoname = '';
         if(Input::file('path')){
             $photo = Input::file('path');
-            $destinationPath = '/assets/images/';
+            $destinationPath = '/assets/images/admin/doctors/';
             $extension = Input::file('path')->getClientOriginalExtension();
             $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
-            $photo->move($destinationPath,$photoname);
+            $photo->move(public_path().$destinationPath,$photoname);
         }
         $lab = new lab;
         $lab->name = $input['name'];
@@ -72,6 +72,7 @@ class ALabsController extends Controller
         $lab->phone = $input['phone'];
         $lab->governorate = $input['governorate'];
         $lab->area = $input['area'];
+        $lab->login_id = $input['login_id'];
         $lab->discription = $input['discription'];
         $lab->path = $destinationPath.$photoname;  
         $lab->save();
@@ -109,7 +110,7 @@ class ALabsController extends Controller
         $types = array('مركز اشعة' => 'مركز اشعة','معمل تحاليل' => 'معمل تحاليل');
         $lab = Lab::find($id);
         return View('admin.labs.edit',compact('lab','types'));
-   }
+    }
 
     /**
      * Update the specified resource in storage.
@@ -125,13 +126,13 @@ class ALabsController extends Controller
        //  'name' => 'required',
        //  'email' => 'required'
        //  ]);
-       $input = $request->all();
-       $lab->fill($input)->save();
-       return Redirect::route('admin-lab.show',$lab->id);
+        $input = $request->all();
+        $lab->fill($input)->save();
+        return Redirect::route('admin-lab.show',$lab->id);
        // ->withInput()
        // ->withErrors($validation)
        // ->with('message', 'There were validation errors.');
-   }
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -144,5 +145,5 @@ class ALabsController extends Controller
         $lab = Lab::findOrFail($id);
         $lab->delete();
         return Redirect::route('admin-lab.index');
-   }
+    }
 }

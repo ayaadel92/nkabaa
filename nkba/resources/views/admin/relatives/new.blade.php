@@ -6,12 +6,13 @@
 	<div class="col-sm-10" style="float: left;">
 		<section class="panel">
 			<header class="panel-heading">
-				إضافة مهندس
+				إضافة قريب
 			</header>
 			<div class="panel-body">
 				<!-- 'files' => true to accept uploading photos -->
-				{{ Form::open(array('route' => 'admin-engineer.store', 'files' => true)) }}
+				{{ Form::open(array('route' => 'admin-relative.store', 'files' => true)) }}
 				<ul>
+				{{-- `id`, `status`, `name`, `health_id`, `eng_id`, `birth_date`, `gender`, `relation_type`, `national_id`, `path`, `limit_id`, `created_at`, `updated_at`, `user_id` --}}
 					<li>
 						<div class="form-group">
 							{{ Form::label('name', 'الاسم') }}
@@ -21,22 +22,22 @@
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('email', 'الإيميل') }}
-							{{ Form::email('email', null, array('class' => 'form-control col-sm-6'))}}
+							{{ Form::label('health_id', 'رقم البطاقة العﻻجية') }}
+							{{ Form::text('health_id', null, array('class' => 'form-control col-sm-6'))}}
 						</div>
 					</li>
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('password', 'الباسوورد') }}
-							{{ Form::password('password', array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('eng_id', 'عضوية المهندس') }}
+							{{ Form::text('eng_id',null, array('class' => 'form-control col-sm-7')) }}
 						</div>
 					</li>
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('password', 'تأكيد الباسوورد') }}
-							{{ Form::password('password_confirmation', array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('birth_date', 'تاريخ الميﻻد') }}
+							{{ Form::date('birth_date',null, array('class' => 'form-control col-sm-7')) }}
 						</div>
 					</li> 
 
@@ -50,36 +51,15 @@
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('address', 'العنوان') }}
-							{{ Form::text('address', null, array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('relation_type', 'صلة القرابة') }}
+							{{ Form::select('relation_type',['اب'=>'اب','ام'=>'ام','ابن'=>'ابن','ابنه'=>'ابنه','زوج'=>'زوج','زوجه'=>'زوجه'],null,array('required','class' => 'form-control')) }}
 						</div>
 					</li>
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('phone_number', 'الموبايل') }}
-							{{ Form::text('phone_number', null, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-
-					<li>
-						<div class="form-group">
-							{{ Form::label('birth_date', 'تاريخ الميلاد') }}
-							{{ Form::date('birth_date' ,null, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-					
-					<li>
-						<div class="form-group">
-							{{ Form::label('gradu_year', 'سنة التخرج') }}
-							{{ Form::text('gradu_year', null, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-					
-					<li>
-						<div class="form-group">
-							{{ Form::label('relative_num', 'عدد الأقارب') }}
-							{{ Form::number('relative_num', null, array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('status', 'تجديد الاشتراك') }}
+							{{ Form::select('status',['نعم'=>'نعم','لا'=>'لا'],null,array('required','class' => 'form-control')) }}
 						</div>
 					</li>
 
@@ -92,25 +72,11 @@
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('eng_id', 'رقم العضوية') }}
-							{{ Form::text('eng_id', null, array('class' => 'form-control col-sm-7')) }}
+							{{ Form::label('limit_id', 'رقم كشف الحساب') }}
+							{{ Form::number('limit_id', null, array('class' => 'form-control col-sm-7')) }}
 						</div>
 					</li>
 
-					<li>
-						<div class="form-group">
-							{{ Form::label('health_id', 'رقم التأمين') }}
-							{{ Form::text('health_id', null, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-
-					<li>
-						<div class="form-group">
-							{{ Form::label('credit_number', 'رقم حساب مصرفي') }}
-							{{ Form::text('credit_number', null, array('class' => 'form-control col-sm-7')) }}
-						</div>
-					</li>
-					
 					<li>
 						<div class="form-group">
 							{{ Form::label('path', 'اختر صورة') }}

@@ -59,7 +59,15 @@ class AEngineersController extends Controller
         // if ($validation->passes())
         // {
       //add engineer in engineers table
-        
+        $destinatonPath = '';
+        $photoname = '';
+        if(Input::file('path')){
+            $photo = Input::file('path');
+            $destinationPath = '/assets/images/';
+            $extension = Input::file('path')->getClientOriginalExtension();
+            $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
+            $photo->move(public_path().$destinationPath,$photoname);
+        }
         $engineer = new Engineer;
         $engineer->user_id = null;
         $engineer->name = $input['name'];
@@ -74,7 +82,7 @@ class AEngineersController extends Controller
         $engineer->eng_id = $input['eng_id'];
         $engineer->health_id = $input['health_id'];
         $engineer->credit_number = $input['credit_number'];
-        $engineer->path = null;
+        $engineer->path = $destinationPath.$photoname;
         $engineer->save();
 
         return Redirect::route('admin-engineer.index');
@@ -121,16 +129,9 @@ class AEngineersController extends Controller
     public function update(Request $request, $id)
     {
         $engineer = Engineer::findOrFail($id);
-        $validation=$this->validate($request, [
-            'name' => 'required',
-            'email' => 'required'
-            ]);
         $input = $request->all();
         $engineer->fill($input)->save();
-        return Redirect::route('admin-engineer.show',$engineer->id)
-        ->withInput()
-        ->withErrors($validation)
-        ->with('message', 'There were validation errors.');
+        return Redirect::route('admin-engineer.show',$engineer->id);
     }
 
     /**
