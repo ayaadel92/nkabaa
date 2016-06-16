@@ -100,11 +100,12 @@ class ComplaintssController extends Controller {
     if(Auth::user()->id == $id ){
               $hospitals = DB::select("select name from hospitals");
            $doctors = DB::select("select name from doctors");
+            $labs = DB::select("select name from labs");
                    
                     $number = DB::table('hospitals')
                         ->count();
 
-          return view('complain.index', compact(['hospitals','number','doctors']));
+          return view('complain.index', compact(['hospitals','number','doctors','labs']));
         }
         else{
             return redirect("/");

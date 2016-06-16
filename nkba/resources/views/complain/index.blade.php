@@ -267,7 +267,27 @@
 
                             <div class="col-sm-6">
                                 <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'>الاسم: </p>  </label>  
-                                <input type="text" name="name_lab" id="task-name" class="form-control" >
+                                <div class="form-group">
+					
+					<select id="role" name="name_hosptail" class="form-control">
+                                             
+
+						
+                                                 @for ($i = 0; $i < $number ; $i++)
+						 @foreach($labs as $lab)
+                                                 
+						<option>{{ $lab->name }}</option>
+                                                 
+						@endforeach
+						 @endfor
+
+                                                
+					</select>
+				</div>
+                                     <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> تاريخ الشكوي :</p>  </label> 
+                                      <input type="date" name="date" id="task-name" class="form-control" >
+                                       <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> وقت الشكوي :</p>  </label> 
+                                                   <input type="time" name="time" id="task-name" class="form-control" >
                                 <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> محتوى الشكوي :</p>  </label> 
                                 <textarea class="form-control" rows="5" name="dec"></textarea>
                                  <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> الملف المرفق :</p>  </label>  
