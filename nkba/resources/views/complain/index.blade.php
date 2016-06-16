@@ -281,7 +281,7 @@
                                 <button type="submit" class="btn-green">
                                     <i class="fa fa-btn fa-plus"></i>اضف شكوي معمل
                                 </button>
-                            </div>
+                            </div>    
                         </div>
                     </form>
                 </div>
