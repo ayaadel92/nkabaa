@@ -14,7 +14,7 @@ class CreateLabsTable extends Migration
     {
         Schema::create('labs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');mt_rand(1, 100000)
+            $table->string('name');
             $table->string('address');
             $table->string('phone')->nullable();
             $table->string('governorate');
