@@ -119,7 +119,7 @@
                         <div class="form-group">
                              <h5 class="no-margin no-padding" style="color:#B32B2B">شكوي عن مشفي </h5>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                     <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> الاسم :</p>  </label>  
                              
                              
@@ -129,14 +129,13 @@
                                              
 
 						
-                                                 @for ($i = 0; $i < $number ; $i++)
+                                               
 						 @foreach($hospitals as $hospital)
                                                  
 						<option>{{ $hospital->name }}</option>
                                                  
 						@endforeach
-						 @endfor
-
+						
                                                 
 					</select>
 				</div>
@@ -195,7 +194,7 @@
                         <div class="form-group">
                               <h5 class="no-margin no-padding" style="color:#B32B2B">شكوي عن دكتور </h5>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                   <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> الاسم :</p>  </label>  
                                 <div class="form-group">
 					
@@ -203,14 +202,13 @@
                                              
 
 						
-                                                 @for ($i = 0; $i < $number ; $i++)
+                                        
 						 @foreach($doctors as $doctor)
                                                  
 						<option>{{ $doctor->name }}</option>
                                                  
 						@endforeach
-						 @endfor
-
+					
                                                 
 					</select>
 				</div>
@@ -265,7 +263,7 @@
                         <div class="form-group">
                             <h5 class="no-margin no-padding" style="color:#B32B2B">اضف شكوي علي معمل </h5>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'>الاسم: </p>  </label>  
                                 <div class="form-group">
 					
@@ -273,14 +271,13 @@
                                              
 
 						
-                                                 @for ($i = 0; $i < $number ; $i++)
+                                                 
 						 @foreach($labs as $lab)
                                                  
 						<option>{{ $lab->name }}</option>
                                                  
 						@endforeach
-						 @endfor
-
+					
                                                 
 					</select>
 				</div>
