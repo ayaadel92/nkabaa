@@ -17,6 +17,7 @@ class CreateStaticsTable extends Migration
             $table->string('member');
              $table->string('percent');
               $table->string('renew');
+               $table->string('renew1');
             $table->timestamps();
         });
     }
