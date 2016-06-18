@@ -26,7 +26,7 @@
                             
                         </div>
                     </div>
- <img src="/assets/img/slideshow/ss.png" alt="filler image" class="animate slideInDown">
+ <img src="{{$pic['0']->member}}" alt="filler image" class="animate slideInDown">
  <div style="height: 100px"></div>
                 </div>
 
