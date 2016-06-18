@@ -19,9 +19,9 @@
          <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">يمكنك الان تجديد اشتراكات </h5>
          <p style="font-size: 25px" class="animate slideInDown"> اصبج الاشتراك السنوي اكثر سهوله   </p>
                 <p style="font-size: 25px" class="animate slideInDown"> يمكنك الدفع عن طريق فودافون كاش </p>
-                <p style="font-size: 25px" class="animate slideInDown">{{$renew['0']->renew}}</p>
+                <p style="font-size: 25px" class="animate slideInDown">{{$renew1['0']->renew1}}</p>
                 <p style="font-size: 25px" class="animate slideInDown"> و يمكنك الدفع عن طريق موبي كاش </p>
-                <p style="font-size: 25px" class="animate slideInDown"> 012255115235</p>
+                <p style="font-size: 25px" class="animate slideInDown"> {{$renew['0']->renew}}</p>
                 
                 
 
