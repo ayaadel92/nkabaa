@@ -111,16 +111,16 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title"> <p style='color: #1abc9c'>   <span>  ملحوظه لا يمكن التجديد الا في الرقم السري</span></p></h4>
+                                <h4 class="modal-title"> <p style='color: #1abc9c'>   <span> البحث عن الوحدات العلاجيه </span></p></h4>
                             </div>
                             <div class="modal-body">
-                       <center><h3 style="color: #3D7A33"> البحث </h3></center>
+                       <center><h5 style="color: #3D7A33"> البحث </h5></center>
                                   
       
      
 
                                     <div class="form-group">
-                                      <center><h3> اختر نوعيه البحث </h3></center>
+                                      <center><h5> اختر نوعيه البحث </h5></center>
                                       <select class="input-large form-control" id="choiceSearch" onchange="GetValueSelected()">
                                         <option value="" selected="selected">--اختر--</option>
                                         <option value="1">البحث عن طبيب</option>

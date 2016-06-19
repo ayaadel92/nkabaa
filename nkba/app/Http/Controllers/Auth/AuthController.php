@@ -121,13 +121,7 @@ class AuthController extends Controller
         {
 
 
-         $user= User::create([
-            'email' => $data['email'],
-
-            'login' => $data['login'],
-
-            'password' => bcrypt($hashed_random_password),
-            ]);
+         
 
        
       
@@ -138,17 +132,21 @@ class AuthController extends Controller
                 $message->from('nkabaalex@gmail.com','Admin');
                 $message->to($data['email'])->subject('تفعيل الاشتراك بخدمات النقابة ');
             });  
-                   
+                  
+                  $user= User::create([
+            'email' => $data['email'],
+
+            'login' => $data['login'],
+
+            'password' => bcrypt($hashed_random_password),
+            ]); 
       // Auth::login($user);
       // return redirect('/login');
 
     
 
        }
-       else
-       {
-        
-       }
+       
 
 
   
