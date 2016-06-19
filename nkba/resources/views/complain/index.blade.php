@@ -11,11 +11,8 @@
     </div>
    
             
-<i class="fa-user-md fa-2x animate flash" style="size: 20px"> اصبح من حقك ان تضع ملاحظاتك علي مستشفي</i> 
-                <br>
-               <i class="fa-user-md fa-2x animate flash">اصبح من حقك ان تضع ملاحظاتك علي الدكتور</i> 
-                 <br>
-               <i class="fa-user-md fa-2x animate flash">اصبح من حقك ان تضع ملاحظاتك علي المعمل الاشعه و التحليل </i> 
+<i class="fa-stethoscope  fa-2x animate flash" style="size: 20px">اصبح من حقك ان تضع ملاحظاتك سوء علي طيب ,دكتور او مشفي </i> 
+               
    <div style="height: 100px"></div> 
            
             
@@ -37,7 +34,9 @@
                                                 </div>
                                                 <div class="col-md-7">
                                                     <h5 class="no-margin no-padding" style="color:#B32B2B">شكوي عن مشفي </h5>
-                                                    <p>يمكنك ان تقول الان كامل ملاحظاتك عن المشفي التابع للنقابه مع ارفاق اوراق  او صور عن الشكوي و ذلك سعيا منا علي رفع مستوي المشفي التي تخدم مهندسينا</p>
+                                                       <br><br><br>
+                                                    <p style="font-size: 25px">يمكنك ان تقول الان كامل ملاحظاتك عن المشفي التابع للنقابه مع ارفاق اوراق  او صور عن الشكوي و ذلك سعيا منا علي رفع مستوي المشفي التي تخدم مهندسينا</p>
+                                                       <br><br><br>
                                                                 <button type="button" class="btn-green " data-toggle="modal" data-target="#myModal">اضافه شكوي مستشفي <span class="glyphicon glyphicon-send"></span></button>
 
                                                 </div>
@@ -61,7 +60,9 @@
                                                 </div>
                                                 <div class="col-md-7">
                                                     <h5 class="no-margin no-padding" style="color:#B32B2B" >اضافه شكوي علي طبيب</h5>
-                                                    <p>يمكنك ان تقول الان كامل ملاحظاتك عن الدكتور  التابع للنقابه مع ارفاق اوراق او صور عن الشكوي و ذلك سعيا منا علي رفع مستوي الدكتور</p>
+                                                    <br><br><br>
+                                                    <p style="font-size: 25px">يمكنك ان تقول الان كامل ملاحظاتك عن الدكتور  التابع للنقابه مع ارفاق اوراق او صور عن الشكوي و ذلك سعيا منا علي رفع مستوي الدكتور</p>
+                                                       <br><br><br>
                                                 <button type="button" class=" btn-green" data-toggle="modal" data-target="#myModal1">اضافه شكوي دكتور <span class="glyphicon glyphicon-send"></span></button>
 
                                                 </div>
@@ -85,7 +86,9 @@
                                                 </div>
                                                 <div class="col-md-7">
                                                    <h5 class="no-margin no-padding" style="color:#B32B2B" >اضافه شكوي علي معمل اشعهة و تحاليل</h5>
-                                                    <p>يمكنك ان تقول الان كامل ملاحظاتك عن معمل الاشعه التابع للنقابه مع ارفاق اوراق او صور عن الشكوي و ذلك سعيا منا لرفع مستوي معمل الاشعه و التحاليل</p>
+                                                   <br><br><br>
+                                                    <p style="font-size: 25px">يمكنك ان تقول الان كامل ملاحظاتك عن معمل الاشعه التابع للنقابه مع ارفاق اوراق او صور عن الشكوي و ذلك سعيا منا لرفع مستوي معمل الاشعه و التحاليل</p>
+                                                     <br><br><br>
                                                 <button type="button" class=" btn-green" data-toggle="modal" data-target="#myModal3">اضافه شكوي معمل <span class="glyphicon glyphicon-send"></span></button>
 
                                                 </div>
@@ -116,9 +119,30 @@
                         <div class="form-group">
                              <h5 class="no-margin no-padding" style="color:#B32B2B">شكوي عن مشفي </h5>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                     <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> الاسم :</p>  </label>  
-                             <input type="text" name="name_hosptail" id="task-name" class="form-control" >
+                             
+                             
+				<div class="form-group">
+					
+					<select id="role" name="name_hosptail" class="form-control">
+                                             
+
+						
+                                               
+						 @foreach($hospitals as $hospital)
+                                                 
+						<option>{{ $hospital->name }}</option>
+                                                 
+						@endforeach
+						
+                                                
+					</select>
+				</div>
+                                     <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> تاريخ الشكوي :</p>  </label> 
+                                      <input type="date" name="date" id="task-name" class="form-control" >
+                                       <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> وقت الشكوي :</p>  </label> 
+                                       <input type="time" name="time" id="task-name" class="form-control" >
            <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> وصف الشكوي :</p>  </label>  
 
                                 <textarea class="form-control " rows="5" name="dec"></textarea>
@@ -170,9 +194,28 @@
                         <div class="form-group">
                               <h5 class="no-margin no-padding" style="color:#B32B2B">شكوي عن دكتور </h5>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                   <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> الاسم :</p>  </label>  
-                                <input type="text" name="name_doctor" id="task-name" class="form-control" >
+                                <div class="form-group">
+					
+					<select id="role" name="name_hosptail" class="form-control">
+                                             
+
+						
+                                        
+						 @foreach($doctors as $doctor)
+                                                 
+						<option>{{ $doctor->name }}</option>
+                                                 
+						@endforeach
+					
+                                                
+					</select>
+				</div>
+                                     <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> تاريخ الشكوي :</p>  </label> 
+                                      <input type="date" name="date" id="task-name" class="form-control" >
+                                       <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> وقت الشكوي :</p>  </label> 
+                                                   <input type="time" name="time" id="task-name" class="form-control" >
                                  <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> محتوى الشكوي :</p>  </label>  
                                 <textarea class="form-control" rows="5" name="dec"></textarea>
                                 <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> الملف المرفق :</p>  </label>  
@@ -220,9 +263,28 @@
                         <div class="form-group">
                             <h5 class="no-margin no-padding" style="color:#B32B2B">اضف شكوي علي معمل </h5>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'>الاسم: </p>  </label>  
-                                <input type="text" name="name_lab" id="task-name" class="form-control" >
+                                <div class="form-group">
+					
+					<select id="role" name="name_hosptail" class="form-control">
+                                             
+
+						
+                                                 
+						 @foreach($labs as $lab)
+                                                 
+						<option>{{ $lab->name }}</option>
+                                                 
+						@endforeach
+					
+                                                
+					</select>
+				</div>
+                                     <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> تاريخ الشكوي :</p>  </label> 
+                                      <input type="date" name="date" id="task-name" class="form-control" >
+                                       <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> وقت الشكوي :</p>  </label> 
+                                                   <input type="time" name="time" id="task-name" class="form-control" >
                                 <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> محتوى الشكوي :</p>  </label> 
                                 <textarea class="form-control" rows="5" name="dec"></textarea>
                                  <label class="col-md-8 control-label">  <p style='color: #339933 ;font-size: 20px; float:right;'> الملف المرفق :</p>  </label>  
@@ -236,7 +298,7 @@
                                 <button type="submit" class="btn-green">
                                     <i class="fa fa-btn fa-plus"></i>اضف شكوي معمل
                                 </button>
-                            </div>
+                            </div>    
                         </div>
                     </form>
                 </div>

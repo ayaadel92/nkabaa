@@ -71,7 +71,7 @@ class ADoctorsController extends Controller
                 $destinationPath = '/assets/images/admin/doctors/';
                 $extension = Input::file('path')->getClientOriginalExtension();
                 $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
-                $photo->move($destinationPath,$photoname);
+                $photo->move(public_path().$destinationPath,$photoname);
             }
             $doctor = new Doctor;
             $doctor->name = $input['name'];

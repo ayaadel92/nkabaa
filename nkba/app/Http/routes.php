@@ -159,6 +159,8 @@ Route::resource('/complain', 'ComplaintssController');
   Route::resource('admin-doctor','Admin\ADoctorsController');
   Route::resource('admin-hospital','Admin\AHospitalsController');
   Route::resource('admin-lab','Admin\ALabsController');
+  Route::resource('admin-radio','Admin\ARadiosController');
+
 
 //Employee
   Route::get('/employee-transfer/confirmed',array('as' => 'employee-transfer.confirmed', 'uses' => 'EmplyeeTransferController@confirmed'));

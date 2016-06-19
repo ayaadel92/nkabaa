@@ -13,15 +13,15 @@
 
  <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">مواعيد التجديد السنوي </h5>
          <p style="font-size: 25px" class="animate slideInDown"> شهر ديسيمبر ويناير و فبراير  </p>
-                <p style="font-size: 25px" class="animate slideInDown"> يتم دفع غرامه 15% عن سنه 2016 في حاله تاخير الدفع الي ذلك الشهر  </p>
+                <p style="font-size: 25px" class="animate slideInDown"> يتم دفع غرامه {{$per['0']->percent}}عن سنه 2016 في حاله تاخير الدفع الي ذلك الشهر  </p>
                 <p style="font-size: 25px" class="animate slideInDown"> يتم دفع 25 جنيه عن كل السنوات التي لم يتم الدفع بيها
  <div style="height: 100px"></div>
          <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">يمكنك الان تجديد اشتراكات </h5>
          <p style="font-size: 25px" class="animate slideInDown"> اصبج الاشتراك السنوي اكثر سهوله   </p>
                 <p style="font-size: 25px" class="animate slideInDown"> يمكنك الدفع عن طريق فودافون كاش </p>
-                <p style="font-size: 25px" class="animate slideInDown"> 010000000000</p>
+                <p style="font-size: 25px" class="animate slideInDown">{{$renew1['0']->renew1}}</p>
                 <p style="font-size: 25px" class="animate slideInDown"> و يمكنك الدفع عن طريق موبي كاش </p>
-                <p style="font-size: 25px" class="animate slideInDown"> 012000000000</p>
+                <p style="font-size: 25px" class="animate slideInDown"> {{$renew['0']->renew}}</p>
                 
                 
 

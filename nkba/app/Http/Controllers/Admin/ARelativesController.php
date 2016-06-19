@@ -64,7 +64,7 @@ class ARelativesController extends Controller
             $destinationPath = '/assets/images/';
             $extension = Input::file('path')->getClientOriginalExtension();
             $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
-            $photo->move($destinationPath,$photoname);
+            $photo->move(public_path().$destinationPath,$photoname);
         }
             //add relative in relatives table
         $relative = new Relative;
@@ -78,7 +78,7 @@ class ARelativesController extends Controller
         $relative->national_id = $input['national_id'];
         $relative->path = $destinationPath.$photoname;  
         $relative->limit_id = $input['limit_id'];
-        $relative->user_id = $user->id;
+        $relative->user_id = null;
         $relative->save();
 
         return Redirect::route('admin-relative.index');
@@ -111,9 +111,11 @@ class ARelativesController extends Controller
      */
     public function edit($id)
     {
-     $relative = Relative::find($id);
-     return View('admin.relatives.edit',compact('relative'));
- }
+        $relations = array('اب'=>'اب','ام'=>'ام','ابن'=>'ابن','ابنه'=>'ابنه','زوج'=>'زوج','زوجه'=>'زوجه');
+        $statuses = array('نعم'='نعم' , 'لا' => 'لا');
+        $relative = Relative::find($id);
+        return View('admin.relatives.edit',compact('relative','relations','statuses'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -124,18 +126,18 @@ class ARelativesController extends Controller
      */
     public function update(Request $request, $id)
     {
-     $relative = Relative::findOrFail($id);
+       $relative = Relative::findOrFail($id);
        // $validation=$this->validate($request, [
        //  'name' => 'required',
        //  'email' => 'required'
        //  ]);
-     $input = $request->all();
-     $relative->fill($input)->save();
-     return Redirect::route('admin-relative.show',$relative->id);
+       $input = $request->all();
+       $relative->fill($input)->save();
+       return Redirect::route('admin-relative.show',$relative->id);
        // ->withInput()
        // ->withErrors($validation)
        // ->with('message', 'There were validation errors.');
- }
+   }
 
     /**
      * Remove the specified resource from storage.
@@ -145,8 +147,8 @@ class ARelativesController extends Controller
      */
     public function destroy($id)
     {
-     $relative = Relative::findOrFail($id);
-     $relative->delete();
-     return Redirect::route('admin-relative.index');
- }
+       $relative = Relative::findOrFail($id);
+       $relative->delete();
+       return Redirect::route('admin-relative.index');
+   }
 }

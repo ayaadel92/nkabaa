@@ -9,11 +9,11 @@
     </div>
  
          <h5 style="color:#B32B2B" class="fa-stethoscope fa-2x">الطلبات الأساسيه لإشتراك  الصحي </h5>
-         <p style="font-size: 25px" class="animate slideInDown"> إذا كنت تريد الإشتراك للوالد فالأوراق المطلوبه للإشتراك صوره البطاقه الشخصيه مع صوره شخصيه</p>
-                <p style="font-size: 25px" class="animate slideInDown"> إذا كنت تريد الإشتراك للوالده فالاوراق المطلوبه للإشتراك صوره شهاده ميلاد المهندس مع صوره شخصيه</p>
-                <p style="font-size: 25px" class="animate slideInDown"> إذا كنت تريد الإشتراك للزوجه فالاوراق المطلوبه للإشتراك صوره قسيمه الزواج مع صوره شخصيه</p>
-                <p style="font-size: 25px" class="animate slideInDown"> إذا كنت تريد الإشتراك للإبنه فالأوراق  المطلوبه صوره شخيص بالإضافه لشهادة الميلاد علي أن تكون غير متزوجه</p>
-                <p style="font-size: 25px" class="animate slideInDown"> إذا كنت تريد الإشتراك  للإبن  فالأوراق  المطلوبه صوره شخيص بالإضافه  شها\ة الميلاد على أن يكون غير متزوج </p>
+         <p style="font-size: 25px" class="animate slideInDown">** إذا كنت تريد الإشتراك للوالد فالأوراق المطلوبه للإشتراك صوره البطاقه الشخصيه مع صوره شخصيه</p>
+                <p style="font-size: 25px" class="animate slideInDown"> ** إذا كنت تريد الإشتراك للوالده فالاوراق المطلوبه للإشتراك صوره شهاده ميلاد المهندس مع صوره شخصيه</p>
+                <p style="font-size: 25px" class="animate slideInDown">** إذا كنت تريد الإشتراك للزوجه فالاوراق المطلوبه للإشتراك صوره قسيمه الزواج مع صوره شخصيه </p>
+                <p style="font-size: 25px" class="animate slideInDown">** إذا كنت تريد الإشتراك للإبنه فالأوراق  المطلوبه صوره شخصيه بالإضافه لشهادة الميلاد علي أن تكون غير متزوجه</p>
+                <p style="font-size: 25px" class="animate slideInDown">** إذا كنت تريد الإشتراك  للإبن  فالأوراق  المطلوبه صوره شخصيه بالإضافه  الميلاد على أن يكون متخرج  بالاضافه علي صوره من شهاده الميلاد</p>
 <div style="height: 100px"></div>
 
 
@@ -26,7 +26,7 @@
                             
                         </div>
                     </div>
- <img src="/assets/img/slideshow/ss.png" alt="filler image" class="animate slideInDown">
+ <img src="{{$pic['0']->member}}" alt="filler image" class="animate slideInDown">
  <div style="height: 100px"></div>
                 </div>
 

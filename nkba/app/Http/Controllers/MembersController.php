@@ -74,7 +74,10 @@ class MembersController extends Controller
    $role = Auth::user()->role;
    if($role == "مهندس"||$role == "قريب"){
     if(Auth::user()->id == $id ){
-      return view('member.index');
+       $pic = DB::select("select member from statics"); 
+      // print_r($pic);exit();
+        return view('member.index', compact(['pic']));
+     
     }
     else{
       return redirect("/");

@@ -51,6 +51,8 @@ class ComplaintssController extends Controller {
 //        print_r($name);exit();
         $complain = new Complaint;
         $complain->hospital_name = Request::get('name_hosptail');
+        $complain->date = Request::get('date');
+            $complain->time = Request::get('time');
         $complain->doctor_name = Request::get('name_doctor');
         $complain->lab_name = Request::get('name_lab');
         $complain->description = Request::get('dec');
@@ -96,8 +98,14 @@ class ComplaintssController extends Controller {
         //
       
     if(Auth::user()->id == $id ){
+              $hospitals = DB::select("select name from hospitals");
+           $doctors = DB::select("select name from doctors");
+            $labs = DB::select("select name from labs");
+                   
+                    $number = DB::table('hospitals')
+                        ->count();
 
-          return view('complain.index', compact('tasks'));
+          return view('complain.index', compact(['hospitals','number','doctors','labs']));
         }
         else{
             return redirect("/");

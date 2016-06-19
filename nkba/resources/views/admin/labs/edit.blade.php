@@ -14,6 +14,13 @@
 				<ul>
 					<li>
 						<div class="form-group">
+							{{ Form::label('login_id', 'رمز الدخول') }}
+							{{ Form::text('login_id', $lab->login_id, array('class' => 'form-control')) }}
+						</div>
+					</li>
+					
+					<li>
+						<div class="form-group">
 							{{ Form::label('name', 'الاسم') }}
 							{{ Form::text('name', $lab->name, array('class' => 'form-control')) }}
 						</div>

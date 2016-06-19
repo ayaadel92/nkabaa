@@ -20,6 +20,8 @@ class CreateComplaintsTable extends Migration
             $table->string('description');
             $table->string('vedio_path')->nullable();
             $table->string('img_path')->nullable();
+            $table->date('date');
+            $table->time('time');
             $table->timestamps(); 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // delete on cascade

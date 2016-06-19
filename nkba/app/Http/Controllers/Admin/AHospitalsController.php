@@ -61,10 +61,10 @@ class AHospitalsController extends Controller
         $photoname = '';
         if(Input::file('path')){
             $photo = Input::file('path');
-            $destinationPath = '/assets/images/';
+            $destinationPath = '/assets/images/admin/doctors/';
             $extension = Input::file('path')->getClientOriginalExtension();
             $photoname = mt_rand(1, 100000).$photo->getClientOriginalName();
-            $photo->move($destinationPath,$photoname);
+            $photo->move(public_path().$destinationPath,$photoname);
         }
         $hospital = new hospital;
         $hospital->name = $input['name'];
@@ -72,6 +72,7 @@ class AHospitalsController extends Controller
         $hospital->phone = $input['phone'];
         $hospital->governorate = $input['governorate'];
         $hospital->area = $input['area'];
+        $hospital->login_id = $input['login_id'];
         $hospital->discription = $input['discription'];
         $hospital->path = $destinationPath.$photoname;
         $hospital->save();

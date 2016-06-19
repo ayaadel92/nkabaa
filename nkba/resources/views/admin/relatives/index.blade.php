@@ -15,14 +15,10 @@
 						<tr>
 							<th class="text-center">id</th>
 							<th class="text-center">الاسم</th>
-							<th class="text-center">الاشتراك</th>
-							<th class="text-center">رقم التأمين</th>
+							<th class="text-center">رقم البطاقة</th>
 							<th class="text-center">عضوية المهندس</th>
-							<th class="text-center">تاريخ الميﻻد</th>
-							<th class="text-center">النوع</th>
-							<th class="text-center">درجة القرابة</th>
-							<th class="text-center">الرقم القومي</th>
-							<th class="text-center">رقم الرصيد</th>
+							<th class="text-center">صلة القرابة</th>
+							<th class="text-center">حالة الاشتراك</th>
 							<th colspan="4" class="text-center"></th>
 						</tr>
 					</thead>
@@ -31,15 +27,11 @@
 						<tr>
 							<td class="text-center">{{ $relative['id']}}</td>
 							<td class="text-center">{{ $relative['name'] }}</td>
-							<td class="text-center">{{ $relative['status'] }}</td>
 							<td class="text-center">{{ $relative['health_id'] }}</td>
 							<td class="text-center">{{ $relative['eng_id'] }}</td>
-							<td class="text-center">{{ $relative['birth_date'] }}</td>
-							<td class="text-center">{{ $relative['gender'] }}</td>
 							<td class="text-center">{{ $relative['relation_type'] }}</td>
-							<td class="text-center">{{ $relative['national_id'] }}</td>
-							<td class="text-center">{{ $relative['limit_id'] }}</td>
-							<td class="text-center">{{ $relative['user_id'] }}</td>
+							<td class="text-center">{{ $relative['status'] }}</td>
+
 							<td class="text-center">
 								{{ link_to_route('admin-relative.show', 'عرض', array($relative->id), array('class' => 'btn btn-info')) }}</td>
 							<td class="text-center">

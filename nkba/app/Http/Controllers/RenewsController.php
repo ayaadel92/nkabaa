@@ -87,13 +87,15 @@ class RenewsController extends Controller {
                 $memb = DB::select('select h.name,d.health_id,d.year from relatives h , renews d where h.health_id= d.health_id');
 
 
-
-
+ $per = DB::select("select percent from statics"); 
+ $renew = DB::select("select renew from statics"); 
+      $renew1 = DB::select("select renew1 from statics");
+        
 
 
                 // $data = array("k1' => "$filename", 'k2' => "$type",'k3' => "$mail" ,'k4' => "$filename1");    
                 // print_r($memb);exit();
-                return view('rin.index', compact(['user_1', 'number_status_no', 'memb']));
+                return view('rin.index', compact(['user_1', 'number_status_no', 'memb','per','renew','renew1']));
             } else {
                 return redirect("/");
             }

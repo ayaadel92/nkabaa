@@ -12,8 +12,14 @@
 
 			<div class="panel-body">
 				<!-- 'files' => true to accept uploading photos -->
-				{{ Form::open(array('route' => 'admin-doctor.store', 'files' => true)) }}
+				{{ Form::open(array('route' => 'admin-lab.store', 'files' => true)) }}
 				<ul>
+					<li>
+						<div class="form-group">
+							{{ Form::label('login_id', 'رمز الدخول') }}
+							{{ Form::text('login_id', null, array('class' => 'form-control')) }}
+						</div>
+					</li>
 					<li>
 						<div class="form-group">
 							{{ Form::label('name', 'الاسم') }}
@@ -51,7 +57,7 @@
 
 					<li>
 						<div class="form-group">
-							{{ Form::label('type', 'المنطقة') }}
+							{{ Form::label('type', 'النوع') }}
 							{{ Form::select('type',['مركز اشعة' => 'مركز اشعة','معمل تحاليل' => 'معمل تحاليل'],'أختر نوع المعمل',array('required','required','class' => 'form-control')) }}
 						</div>
 					</li>
